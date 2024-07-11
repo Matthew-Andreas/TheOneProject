@@ -793,7 +793,9 @@
     <di class="selected">
     <h1>Database:</h1>
         <ul id="selected-filters">
-            <!-- Selected filters will be displayed here -->
+            <?php
+                $T1 = new myObject($queryStatment);
+            ?>
         </ul>
     </div>
   <script>
@@ -802,20 +804,14 @@
     }
     function toggleDropdown(dropboxNum,dropdownContentNum) {
         var dropdownContent = document.getElementById(dropdownContentNum);
-        /*var dropbox = document.getElementById(dropboxNum);*/
         var sidebarButton = document.getElementById('sidebar-button');
-
-        /*if (dropbox.classList.contains("expand")) {*/
+        
         if(dropdownContent.classList.contains("expand")){
-            /*dropdownContent.style.display = "none";*/
-            /*dropbox.classList.remove("expand");*/
             dropdownContent.classList.remove("expand");
             dropdownContent.style.maxHeight = null;
             sidebarButton.classList.remove("expand");
             document.documentElement.style.setProperty('--matched-height',(sidebarButton.clientHeight-dropdownContent.scrollHeight) + "px");
         } else {
-            /*dropdownContent.style.display = "block";*/
-            /*dropbox.classList.add("expand");*/
             dropdownContent.classList.add("expand");
             dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
             sidebarButton.classList.add("expand");
