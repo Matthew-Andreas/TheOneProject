@@ -1,0 +1,216 @@
+{source}
+This code is the same code as file 5. Limit is a list box which makes it to be a <br>
+variable now. We still need to do the following:<br>
+- The program should work against any object and not just the Ticket table <br>
+- Can we make the list box to be a radio button or make it to print horizontally? <br>
+- Need to provide "checkboxes" as we have in the file 0-OOP <br>
+- The where clause should be dynamic to pick any attribute and combine them into one <br><br>
+
+<hr>
+
+<?php
+
+use Joomla\CMS\Factory;
+use Joomla\CMS\Table\Menu;
+
+//===============================================================================
+
+    class myObject
+    {
+
+         public $limit; public $offset; public $db; public $query; 
+         public $columns; public $columnData; public $total; public $Space;
+
+//===============================================================================
+
+         public function NumOfRowsPrintedAtATime()
+         {
+              ?>
+               <!DOCTYPE html>
+               <html lang="en">
+               <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+               <head>
+                    <style>
+                         hr.custom { width: 5.1in; color: black; background-color: blue; height: 110px; border: none; }
+                         input[type="submit"] { background-color: RED; color: white; border: none; padding: 2px 10px; cursor: pointer; border-radius: 4px; }
+                    </style>
+                    <body>
+                         <form method="post"><label for="cars">Select The number of rows you like to see at a time? :</label>
+                              <select name="limit" id="limit">
+                                   <option value="5"> 5 </option>    <option value="10">10</option>    <option value="15">15</option>   
+                                   <option value="20">20</option>    <option value="25">25</option>
+                              </select>
+                              <input type="submit" value="Submit">
+                          </form>
+                          </body>
+                          <hr class="custom">
+               </head>
+               </html> 
+
+               <?php
+         }  
+
+
+//===============================================================================
+
+        public function ChangeMenu()
+        {
+              $app = Factory::getApplication();
+              $db = Factory::getDbo();
+
+              $activeMenu = $app->getMenu()->getActive();
+              if ($activeMenu) 
+                    $menuItemId = $activeMenu->id;
+              else
+              {
+                    echo "No active menu item found.";
+                    return;
+              }
+
+              $menuTable = new Menu($db);
+              $menuTable->load($menuItemId);
+              $menuTable->home = 1;
+
+              if (!$menuTable->store())
+              {
+                     echo "Failed to save changes to the database.";
+                     return;
+              }
+
+         }
+
+//===============================================================================
+         public function openDB()
+         {
+             $limit = $this->limit; $offset = $this->offset; $db = $this->db; 
+             JLoader::register('Table', JPATH_LIBRARIES . '/joomla/database/table.php');
+
+            $input = Factory::getApplication()->input;
+            $limit = $input->getInt('limit', 10);
+            $offset = $input->getInt('start', 0);
+            $db = JFactory::getDbo();
+            $this->limit = $limit; $this->offset = $offset; $this->db=$db;
+         }
+  
+//===============================================================================
+        public function getQuery($select, $from, $where)
+        {
+            $query = $this->query; $columns = $this->columns; $limit = $this->limit; 
+            $offset = $this->offset; $db = $this->db;
+
+            $query = $db->getQuery(true);
+
+            $query->select($db->quoteName(array($select)));
+            $query->from($db->quoteName($from)); // Updated table name here        
+
+            $expression = $where;
+            $parts = explode(' ', $expression, 3); // Assuming column, operator, and value
+            $quotedColumn = $db->quoteName($parts[0]);
+            $quotedExpression = $quotedColumn . ' ' . $parts[1] . ' ' . $parts[2];
+            $query->where($quotedExpression);
+            $query->setLimit($limit, $offset);
+           
+            $db->setQuery($query);
+            $columns = $db->loadObjectList();
+            $this->query = $query; $this->columns = $columns; $this->limit = $limit; 
+            $this->offset = $offset; $this->db = $db;
+       }
+
+
+ //===============================================================================
+
+       public function getTheNumberOfRows()
+       {     
+           $db = $this->db; $columnsData = $this->columnsData; 
+           $columns = $this->columns; $total = $this->total; $query = $this->query;
+           
+           $queryCount = clone $query;
+           $queryCount->clear('select')->clear('order')->clear('limit');
+           $queryCount->select('COUNT(*)');
+           $db->setQuery($queryCount);
+           $total = $db->loadResult();
+           $columnsData = array('columns' => $columns, 'total' => $total);
+
+           $columns = $columnsData['columns'];
+           $total = $columnsData['total'];
+
+           $this->db = $db; $this->columnsData = $columnsData; 
+           $this->columns = $columns; $this->total = $total; $this->query = $query;
+       }
+
+//===============================================================================
+       public function printHeader()
+       {
+            $Space =  "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+            echo "<table>";
+             echo "<tr style=\"background-color:Blue;color:White\">";
+                echo "<th>" .  "<td>" . "Ticket ID" . $Space . "</td>" .  "<td>" . "Event ID" . $Space . "</td>" .  "<td>" .  
+                         "Audience ID" . $Space . "</td>" . "<td>" ."Seat Number" .  "</td>" ."</th>" . "</tr>";
+            $this->Space = $Space;
+        }
+
+//===============================================================================
+      public function printData()
+      {
+           $columns = $this->columns;
+           $Space = $this->Space;
+           foreach ($columns as $column)
+                echo "<tr>" . "<th>" . "<td>" .  $column->TicketID . "</td>" . $Space . "<td>" .$column->EventID ."</td>" .$Space .  
+                      "<td>" . $column->AudienceID .$Space . "</td>" . "<td>" .$column->SeatNumber . "</td>" . "</th>" . "</tr>";
+           echo "</table>";
+       }
+
+//===============================================================================
+       public function DoPagination()  
+       {
+            $total = $this->total; $limit = $this->limit; $offset = $this->offset;
+            $totalPages = ceil($total / $limit);
+            $currentUrl = $_SERVER['PHP_SELF'];
+            //$currentUrl = "https://cs643.cs.csusm.edu/Ahmad/index.php?option=com_content&view=article&id=79&Itemid=194";
+            $paginationLinks = '';
+            if ($totalPages > 1) 
+            {
+                 $paginationLinks .= '<ul class="flex space-x-2 justify-left my-4">';
+                 for ($i = 1; $i <= $totalPages; $i++)
+                 {
+                      $activeClass = $offset / $limit == ($i - 1) ? 'bg-red-500 text-white' : '';
+                      $paginationLinks .= '<li><a href="' . $currentUrl . '?start=' . (($i - 1) * $limit) . '&limit=' . $limit .
+                          '" class="py-2 px-2 rounded-md border border-red-300 hover:bg-red-100 ' . $activeClass . '">' . $i  .'</a></li>';
+
+                      if ($i % 5 ==0)
+                           $paginationLinks .= '</ul>'. '<ul class="flex space-x-2 justify-left my-4">';
+                  }
+                  $paginationLinks .= '</ul>';
+              }
+              echo $paginationLinks;
+       }    
+
+
+//===============================================================================
+      public function __Construct($select, $from, $where)
+       {
+            $this->NumOfRowsPrintedAtATime();
+            $this->ChangeMenu();
+            $this->openDB();
+            $this->getQuery($select, $from, $where);
+            $this->getTheNumberOfRows();
+            $this->printHeader();
+            $this->printData();
+            $this->DoPagination();
+       }
+//===============================================================================
+    } // end of the class
+
+
+//***********************************************************************************************************************
+//***********************************************************************************************************************
+
+$T1 = new myObject ("*", "Ticket", "TicketID >= 25 and TicketID <= 78 ");
+
+?>
+</body>
+</html>
+{/source}
+
+

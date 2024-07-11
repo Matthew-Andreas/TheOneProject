@@ -1,0 +1,160 @@
+{source}
+This code is the same code as file 3. The pagination section works which means <br>
+as soon as a page is selected, the system makes it to be the default page. However, <br>
+there are still two issues: <br>
+1) the code that dynamically changes the default page is not part of the class function <br>
+2) The code does not work with any query. It only works for the Ticket table <br>
+<hr>
+
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<?php
+use Joomla\CMS\Factory;
+use Joomla\CMS\Table\Menu;
+$activeMenu = $mainframe->getMenu()->getActive();
+
+if ($activeMenu) 
+    $menuItemId = $activeMenu->id;
+
+$menuTable = new Menu($db); // Load the menu item
+$menuTable->load($menuItemId);
+$menuTable->home = 1; // Load the menu item
+$menuTable->store(); // Save changes to the database
+
+//===============================================================================
+
+    class myObject
+    {
+         public $limit; public $offset; public $db; public $query; 
+         public $columns; public $columnData; public $total; public $Space;
+//===============================================================================
+
+         public function openDB()
+         {
+             $limit = $this->limit; $offset = $this->offset; $db = $this->db; 
+             //defined('_JEXEC') or die;
+             JLoader::register('Table', JPATH_LIBRARIES . '/joomla/database/table.php');
+
+            $input = Factory::getApplication()->input;
+            $limit = $input->getInt('limit', 10);
+            $offset = $input->getInt('start', 0);
+            $db = JFactory::getDbo();
+            $this->limit = $limit; $this->offset = $offset; $this->db=$db;
+        }
+  
+
+//===============================================================================
+        public function getQuery()
+        {
+            $query = $this->query; $columns = $this->columns; $limit = $this->limit; 
+            $offset = $this->offset; $db = $this->db;
+
+            $query = $db->getQuery(true);
+            $query->select($db->quoteName(array('*')));
+            $query->from($db->quoteName('Ticket')); // Updated table name here 
+            $query->where($db->quoteName('TicketID') . ' > ' . $db->quote('22')) . 'and' .
+            $query->where($db->quoteName('TicketID') . ' < ' . $db->quote('76') );
+            $query->setLimit($limit, $offset);
+            $db->setQuery($query);
+            $columns = $db->loadObjectList();
+            $this->query = $query; $this->columns = $columns; $this->limit = $limit; 
+            $this->offset = $offset; $this->db = $db;
+       }
+
+
+ //===============================================================================
+
+       public function getTheNumberOfRows()
+       {     
+           $db = $this->db; $columnsData = $this->columnsData; 
+           $columns = $this->columns; $total = $this->total; $query = $this->query;
+           
+           $queryCount = clone $query;
+           $queryCount->clear('select')->clear('order')->clear('limit');
+           $queryCount->select('COUNT(*)');
+           $db->setQuery($queryCount);
+           $total = $db->loadResult();
+           $columnsData = array('columns' => $columns, 'total' => $total);
+
+           $columns = $columnsData['columns'];
+           $total = $columnsData['total'];
+
+           $this->db = $db; $this->columnsData = $columnsData; 
+           $this->columns = $columns; $this->total = $total; $this->query = $query;
+       }
+
+//===============================================================================
+       public function printHeader()
+       {
+            $Space =  "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+            echo "<table>";
+             echo "<tr style=\"background-color:Blue;color:White\">";
+                echo "<th>" .  "<td>" . "Ticket ID" . $Space . "</td>" .  "<td>" . "Event ID" . $Space . "</td>" .  "<td>" .  
+                         "Audience ID" . $Space . "</td>" . "<td>" ."Seat Number" .  "</td>" ."</th>" . "</tr>";
+            $this->Space = $Space;
+        }
+
+//===============================================================================
+      public function printData()
+      {
+           $columns = $this->columns;
+           $Space = $this->Space;
+           foreach ($columns as $column)
+                echo "<tr>" . "<th>" . "<td>" .  $column->TicketID . "</td>" . $Space . "<td>" .$column->EventID ."</td>" .$Space .  
+                      "<td>" . $column->AudienceID .$Space . "</td>" . "<td>" .$column->SeatNumber . "</td>" . "</th>" . "</tr>";
+           echo "</table>";
+       }
+
+//===============================================================================
+       public function DoPagination()  
+       {
+            $total = $this->total; $limit = $this->limit; $offset = $this->offset;
+            $totalPages = ceil($total / $limit);
+            $currentUrl = $_SERVER['PHP_SELF'];
+            //$currentUrl = "https://cs643.cs.csusm.edu/Ahmad/index.php?option=com_content&view=article&id=79&Itemid=194";
+            $paginationLinks = '';
+            if ($totalPages > 1) 
+            {
+                 $paginationLinks .= '<ul class="flex space-x-2 justify-left my-4">';
+                 for ($i = 1; $i <= $totalPages; $i++)
+                 {
+                      $activeClass = $offset / $limit == ($i - 1) ? 'bg-red-500 text-white' : '';
+                      $paginationLinks .= '<li><a href="' . $currentUrl . '?start=' . (($i - 1) * $limit) . '&limit=' . $limit .
+                          '" class="py-2 px-2 rounded-md border border-red-300 hover:bg-red-100 ' . $activeClass . '">' . $i  .'</a></li>';
+
+                      if ($i % 5 ==0)
+                           $paginationLinks .= '</ul>'. '<ul class="flex space-x-2 justify-left my-4">';
+                  }
+                  $paginationLinks .= '</ul>';
+              }
+              echo $paginationLinks;
+       }    
+
+
+//===============================================================================
+      public function __Construct()
+       {
+            $this->openDB();
+            $this->getQuery();
+            $this->getTheNumberOfRows();
+            $this->printHeader();
+            $this->printData();
+            $this->DoPagination();
+       }
+//===============================================================================
+    } // end of the class
+
+
+//***********************************************************************************************************************
+//***********************************************************************************************************************
+
+
+$T1 = new myObject;
+
+?>
+</body>
+</html>
+{/source}

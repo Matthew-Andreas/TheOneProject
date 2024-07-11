@@ -1,0 +1,124 @@
+{source}
+
+<br>
+This is code is the same code as file 1. But it is divided into functions to make <br>
+it more clear and readable. Again it supports pagination but it only works when <br>
+the menu item associated to this article is a default. Otherwise, it does not work. <br>
+Once we select a page, it jumps to default page
+<hr>
+
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<?php
+     use Joomla\CMS\Factory;
+//===============================================================================
+// Open the database and set limit 
+
+function openDB(&$limit, &$offset, &$db)
+{
+     defined('_JEXEC') or die;
+     JLoader::register('Table', JPATH_LIBRARIES . '/joomla/database/table.php');
+
+     // Open the database
+     $input = Factory::getApplication()->input;
+     $limit = $input->getInt('limit', 10);
+     $offset = $input->getInt('start', 0);
+     $db = JFactory::getDbo();
+}
+
+     //===============================================================================
+function getQuery(&$query, &$columns, &$limit, &$offset, &$db)
+{
+     //Get the query
+     $query = $db->getQuery(true);
+     $query->select($db->quoteName(array('*')));
+     $query->from($db->quoteName('Ticket')); // Updated table name here 
+     $query->where($db->quoteName('TicketID') . ' > ' . $db->quote('22')) . 'and' .
+     $query->where($db->quoteName('TicketID') . ' < ' . $db->quote('76') );
+     $query->setLimit($limit, $offset);
+     $db->setQuery($query);
+     $columns = $db->loadObjectList();
+}
+ //===============================================================================
+
+function getTheNumberOfRows(&$db, &$columnsData, &$columns, &$total, &$query)
+{     
+     $queryCount = clone $query;
+     $queryCount->clear('select')->clear('order')->clear('limit');
+     $queryCount->select('COUNT(*)');
+     $db->setQuery($queryCount);
+     $total = $db->loadResult();
+     $columnsData = array('columns' => $columns, 'total' => $total);
+
+     $columns = $columnsData['columns'];
+     $total = $columnsData['total'];
+}
+
+//===============================================================================
+// print the header and the rows
+function printHeader(&$Space)
+{
+     $Space =  "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+     echo "<table>";
+     echo "<tr style=\"background-color:Blue;color:White\">";
+                echo "<th>" .  "<td>" . "Ticket ID" . $Space . "</td>" .  "<td>" . "Event ID" . $Space . "</td>" .  "<td>" .  
+                         "Audience ID" . $Space . "</td>" . "<td>" ."Seat Number" .  "</td>" ."</th>" . "</tr>";
+      //echo "</table>";
+}
+//===============================================================================
+function printData(&$Space, &$columns)
+{
+    //echo "<table>";
+    foreach ($columns as $column)
+            echo "<tr>" . "<th>" . "<td>" .  $column->TicketID . "</td>" . $Space . "<td>" .$column->EventID ."</td>" .$Space .  
+                      "<td>" . $column->AudienceID .$Space . "</td>" . "<td>" .$column->SeatNumber . "</td>" . "</th>" . "</tr>";
+     echo "</table>";
+}
+
+
+//===============================================================================
+// Do the pagination
+function DoPagination(&$total, &$limit, &$offset)
+{
+     $totalPages = ceil($total / $limit);
+     $currentUrl = $_SERVER['PHP_SELF'];
+     $paginationLinks = '';
+     if ($totalPages > 1) 
+     {
+           $paginationLinks .= '<ul class="flex space-x-2 justify-left my-4">';
+           for ($i = 1; $i <= $totalPages; $i++)
+           {
+                 $activeClass = $offset / $limit == ($i - 1) ? 'bg-red-500 text-white' : '';
+                 $paginationLinks .= '<li><a href="' . $currentUrl . '?start=' . (($i - 1) * $limit) . '&limit=' . $limit .
+                          '" class="py-2 px-2 rounded-md border border-red-300 hover:bg-red-100 ' . $activeClass . '">' . $i  .'</a></li>';
+
+                 if ($i % 5 ==0)
+                      $paginationLinks .= '</ul>'. '<ul class="flex space-x-2 justify-left my-4">';
+           }
+           $paginationLinks .= '</ul>';
+     }
+     echo $paginationLinks;
+ }    
+//===============================================================================
+function TheConstructor( &$limit, &$offset, &$db, &$query, &$columns, &$columnData, &$total, &$Space)
+{
+     openDB($limit, $offset, $db);
+     getQuery($query, $columns, $limit, $offset, $db);
+     getTheNumberOfRows($db, $columnsData, $columns, $total, $query);
+     printHeader($Space);
+     printData($Space, $columns);
+     DoPagination($total, $limit, $offset);
+}
+
+//***********************************************************************************************************************
+//***********************************************************************************************************************
+//Main Program starts in here
+TheConstructor($limit, $offset, $db, $query, $columns, $columnData, $total, $Space);
+//***********************************************************************************************************************
+
+?>
+</body>
+{/source}

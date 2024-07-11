@@ -1,0 +1,470 @@
+{source}
+
+<style>
+
+.com-content-article__body{
+  position: relative;
+    left: 10%;
+  }
+
+  .title{
+    color: #203A72;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 40px;
+  }
+
+  .subTitle{
+    color: #203A72;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+
+  .FilterSearch{
+    width: 250px;
+    height: 35px;
+    background-color: #203A72;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .FilterSearchTitle{
+    position: relative;
+    display: inline;
+    top: 5px;
+    left: 30px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .FilterSearchTextBox{
+    width: 1200px;
+    height: 325px;
+    background-color: #EAEAEA;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .FilterSearchText{
+    position: relative;
+    top: 25px;
+    left: 30px;
+    color: #203A72;
+    font-family: 'Montserrat';
+  }
+
+  .bullet-list {
+    position: relative;
+    top: 25px;
+    left: 80px;
+    list-style-type: disc; /* Other options: circle, square */
+    padding-left: 20px; /* Add padding to create space for the bullets */
+    font-family: 'Montserrat'; /* Change font */
+    font-size: 16px; /* Change font size */
+    color: #203A72;
+  }
+
+  .bullet-list li {
+    margin-bottom: 10px; /* Add space between items */
+  }
+
+  .hereLink{
+    color: #203A72;
+    font-family: 'Montserrat'; /* Change font */
+    cursor: pointer;
+  }
+
+  .CuratedQuestions{
+    width: 375px;
+    height: 35px;
+    background-color: #203A72;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-top: 30px;
+  }
+
+  .CuratedQuestionsTitle{
+    position: relative;
+    top: 5px;
+    left: 30px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .CuratedQuestionsTextBox{
+    width: 860px;
+    height: 100px;
+    background-color: #EAEAEA;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .CuratedQuestionsText{
+    position: relative;
+    top: 25px;
+    left: 30px;
+    color: #203A72;
+    font-family: 'Montserrat';
+  }
+
+  .CategorizationTitle{
+    color: #203A72;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: 100px;
+  }
+
+  .titleBox{
+    width: 350px;
+    height: 35px;
+    background-color: #203A72;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-top: 30px;
+  }
+
+  #SBTitle.titleBox{
+    transition: width 0.8s ease-in-out;
+  }
+
+  #ToBTitle.titleBox{
+    transition: width 0.8s ease-in-out;
+  }
+
+  .CategoryTitle{
+    position: relative;
+    display: inline;
+    top: 3px;
+    left: 25px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .dropdownButtonimg{
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.8s;
+  }
+
+  .dropdownButton{
+    position: relative;
+    display: inline;
+    left: 185px;
+    top: 2px;
+  }
+
+  #Geo.dropdownButton{
+    left: 196px;
+  }
+
+  #SBButton.dropdownButton{
+    left: 134px;
+    transition: left 0.8s ease-in-out;
+  }
+
+  #ToBButton.dropdownButton{
+    left: 142px;
+    transition: left 0.8s ease-in-out
+  }
+
+  #Ind.dropdownButton{
+    left: 219px;
+  }
+
+  .flipped {
+      transform: rotateX(180deg);
+  }
+  
+  .dropdown-content {
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, max-width 0.8s ease-in-out;
+    max-height: 0px;
+    max-width: 350px;
+  }
+
+  .descriptionBox{
+    background-color: #eaeaea;
+    width: 350px;
+  }
+
+  #FoP.descriptionBox{
+    height: 83px;
+  }
+
+  #Geo.descriptionBox{
+    height: 60px;
+  }
+
+  #SB.descriptionBox{
+    height: 45px;
+    width: 1200px;
+  }
+
+  #ToB.descriptionBox{
+    height: 45px;
+    width: 1200px;
+  }
+
+  #Ind.descriptionBox{
+    height: 60px;
+  }
+
+  .descText{
+    position: relative;
+    left: 25px;
+    top: 10px;
+    color: #203A72;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .CategText{
+    position: relative;
+    left: 25px;
+    top: 10px;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .Categories{
+    background-color: #7B95B1;
+    width: 350px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #FoP.Categories{
+    height: 85px;
+  }
+
+  #Geo.Categories{
+    height: 170px;
+  }
+
+  #SB.Categories{
+    height: 200px;
+    width: 1200px;
+  }
+
+  #ToB.Categories{
+    height: 170px;
+    width: 1200px;
+  }
+
+  #Ind.Categories{
+    height: 280px;
+  }
+
+  .arrow{
+    position: absolute;
+    display: inline;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-weight: 100;
+  }
+
+  #FS.arrow{
+    left: 200px;
+    top: 126px;
+  }
+
+  #CQ.arrow{
+    left: 325px;
+    top: 517px;
+  }
+
+  .arrow:hover{
+    color: white;
+  }
+
+</style>
+
+<h1 class="title">How to Use This Database</h1>
+<p class="subTitle">There are two main ways to use the database</p>
+
+<div class="FilterSearch">
+  <p class="FilterSearchTitle">1. Filter Search </p>
+  <a href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=6&Itemid=101" class="arrow" id="FS">&#x279C;</a>
+</div>
+<div class="FilterSearchTextBox">
+  <p class="FilterSearchText">To find the resources you are looking for, you can check all the categories and filters we created to find specific resouces.<br>
+    Below are some examples:<br></p>
+  <ul class="bullet-list">
+    <li>If you want resources on funding for students, you can check "Funding" in the category "Topic of Resource" and "Students" in the <br> 
+      category "Target Audience".</li>
+    <li>If you want to know resources for legal help regarding trademarks that are free of charge; you would check the "Legal assistance:<br> 
+      Intellectual property, Trade marks, Patents" in the "Legal Assistance" category of "Topic of Resouces", as well as "Free" in the <br>
+      category "Free or Paid".</li>
+  </ul>
+  <p class="FilterSearchText">To learn more about each category and options, you can scroll down to our explanations of the categories at "Categorization<br> 
+    of the Resources Info" or click <a  class="hereLink" href="">here</a> for a pamphlet.</p>
+</div>
+
+<div class="CuratedQuestions">
+  <p class="CuratedQuestionsTitle">2. Curated Questions Catalog</p>
+  <a href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=24&Itemid=136" class="arrow" id="CQ">&#x279C;</a>
+</div>
+<div class="CuratedQuestionsTextBox">
+  <p class="CuratedQuestionsText">The curated questions catalog provides a list of commonly asked questions (filters) related to a topic.<br>
+  This is a great way to learn more if you don't have a specific question or resource needed in mind.</p>
+</div>
+
+<p class="CategorizationTitle">Categorization of the Resouces Info</p>
+
+<div class="titleBox" id="FoP">
+  <p class="CategoryTitle">Free or Paid</p>
+  <div class="dropdownButton">
+    <img src="images/whitearrowdown.png#joomlaImage://local-images/whitearrowdown.png?width=147&height=114" alt="" class="dropdownButtonimg" onclick="toggleDropdown('dropdown-contentFoP','200px')" >
+  </div>
+</div>
+<div class="dropdown-content" id="dropdown-contentFoP">
+  <div class="descriptionBox" id="FoP">
+    <p class="descText">This indicator shows if the resource is free<br>
+    to use, costs money to use, or is a mixture<br>
+    of both</p>
+  </div>
+  <div class="Categories" id="FoP">
+    <p class="CategText">Free<br>Paid</p>
+  </div>
+</div>
+
+<div class="titleBox" id="Geo">
+  <p class="CategoryTitle">Geography</p>
+  <div class="dropdownButton" id="Geo">
+    <img src="images/whitearrowdown.png#joomlaImage://local-images/whitearrowdown.png?width=147&height=114" alt="" class="dropdownButtonimg" onclick="toggleDropdown('dropdown-contentGeo','250px')" >
+  </div>
+</div>
+<div class="dropdown-content" id="dropdown-contentGeo">
+  <div class="descriptionBox" id="Geo">
+    <p class="descText">Geographical location that an<br>
+    organization/program focuses their work.</p>
+  </div>
+  <div class="Categories" id="Geo">
+    <p class="CategText">Local North County<br>Local San Diego<br>California<br>National<br>International</p>
+  </div>
+</div>
+
+<div class="titleBox" id="SBTitle">
+  <p class="CategoryTitle">Stage of Business</p>
+  <div class="dropdownButton" id="SBButton">
+    <img src="images/whitearrowdown.png#joomlaImage://local-images/whitearrowdown.png?width=147&height=114" alt="" class="dropdownButtonimg" onclick="toggleDropdownWide('dropdown-contentSB','400px','SBTitle','SBButton','134px','980px')" >
+  </div>
+</div>
+<div class="dropdown-content" id="dropdown-contentSB">
+  <div class="descriptionBox" id="SB">
+    <p class="descText">The stage that a business is in.<p>
+  </div>
+  <div class="Categories" id="SB">
+    <p class="CategText">Ideation - Entrepreneur has an idea, is trying to implement<br>
+    Seeding - Business started, selling a bit, still some trial and error in what to do<br>
+    Establishing - Business started, selling, reached owners expected income - could be income enough for them to sustain themselves or what<br>
+    they were expecting to generate as a side job<br>
+    Growing - Business is established and generates income for entrepreneur to sustain themselves, entrepreneur is trying to grow their business<br>
+    Selling/exiting - Business owner decided either to close the business or sell</p>
+  </div>
+</div>
+
+<div class="titleBox" id="ToBTitle">
+  <p class="CategoryTitle">Type of Business</p>
+  <div class="dropdownButton" id="ToBButton">
+    <img src="images/whitearrowdown.png#joomlaImage://local-images/whitearrowdown.png?width=147&height=114" alt="" class="dropdownButtonimg" onclick="toggleDropdownWide('dropdown-contentToB','400px','ToBTitle', 'ToBButton','142px','988px')" >
+  </div>
+</div>
+<div class="dropdown-content" id="dropdown-contentToB">
+  <div class="descriptionBox" id="ToB">
+    <p class="descText">The type of business (size, focus, etc.).</p>
+  </div>
+  <div class="Categories" id="ToB">
+    <p class="CategText">Micorenterprise - Small business that has no brick and mortar location, does not have more than 2 employees that are not family members<br>
+    Innovation/Tech - High growth business, focused on innovation and/or tech<br>
+    Main Street - Business that have a brick and mortar location and have more than 2 employees that are not family members<br>
+    Medium/Large business - Business that are a medium/large size - more than 5 employees<br>
+    Pop ups/Vendors - Business does popups (sells their products in framers markets and other places but at specific dates)</p>
+  </div>
+</div>
+
+
+<div class="titleBox" id="Ind">
+  <p class="CategoryTitle">Industry</p>
+  <div class="dropdownButton" id="Ind">
+    <img src="images/whitearrowdown.png#joomlaImage://local-images/whitearrowdown.png?width=147&height=114" alt="" class="dropdownButtonimg" onclick="toggleDropdown('dropdown-contentInd','350px')" >
+  </div>
+</div>
+<div class="dropdown-content" id="dropdown-contentInd">
+  <div class="descriptionBox" id="Ind">
+    <p class="descText"> The type of business the service or<br>
+    company aims to serve.</p>
+  </div>
+  <div class="Categories" id="Ind">
+    <p class="CategText">Tech Indusrty<br>Non-profit Social<br>Sector<br>Government Sector<br>Agricultural<br>Comsumer Goods<br>Retail<br>Entertainment<br>Other Industry</p>
+  </div>
+</div>
+<br><br><br><br><br><br><br>
+
+<script>
+  function toggleDropdown(dropdownContentId, maxHeightDD) {
+    var dropdownContent = document.getElementById(dropdownContentId);
+
+    if (dropdownContent.classList.contains("expand")) {
+      dropdownContent.style.maxHeight = null;
+      dropdownContent.classList.remove("expand");
+    } else {
+      dropdownContent.style.maxHeight = maxHeightDD;
+      dropdownContent.classList.add("expand");
+    }
+  }
+
+  function toggleDropdownWide(dropdownContentId, maxHeightDD, titleboxID, dropdownButtonID, sizeIn, sizeOut) {
+    var dropdownContent = document.getElementById(dropdownContentId);
+    var titleBox = document.getElementById(titleboxID);
+    var dropdownButton = document.getElementById(dropdownButtonID);
+
+    if (dropdownContent.classList.contains("expand")) {
+      titleBox.style.width = "350px";
+      dropdownButton.style.left = sizeIn;
+      dropdownContent.style.maxHeight = null;
+      dropdownContent.style.maxWidth = "350px";
+      dropdownContent.classList.remove("expand");
+    } else {
+      titleBox.style.width = "1200px";
+      dropdownButton.style.left = sizeOut;
+      dropdownContent.style.maxHeight = maxHeightDD;
+      dropdownContent.style.maxWidth = "1200px";
+      dropdownContent.classList.add("expand");
+    }
+  }
+
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('dropdownButtonimg')) {
+        event.target.classList.toggle('flipped');
+    }
+  });
+</script>
+
+{/source}
