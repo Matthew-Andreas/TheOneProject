@@ -11,7 +11,8 @@
           public $db;
           public $query;
           public $columns;
-          public $Space;  
+          public $Space; 
+          
 
           Public Function OpenDatabase($q)
           {
@@ -66,31 +67,63 @@
 // Main program starts in here
 //******************************************************************************************
      //$T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources ");
+    $isWhere = false;
+    $oldGroup = "";
+    $isdifferent = false;
+    $data = [];
+    $queryStatment = "Select Title, email, phoneNum, price, description from Resources ";
 
+    function addWhere($addition, $queryStatment, $isWhere, $isdifferent){
+        //echo $isWhere;
+        if(!$isWhere){
+            $queryStatment .= "where (";
+        }elseif($isdifferent){
+            $queryStatment .= ") AND (";
+        }else{
+            $queryStatment .= " OR ";
+        }
+        $queryStatment .= $addition;
+        //echo $queryStatment . "<br>";
+        return $queryStatment;
+    }
+
+
+    $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
+    //$checkBoxValues = ["Free","Paid" ,"localNorthCounty", "localSanDeigo", "California", "National" , "International"];
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
         if (isset($_POST['filters']) && is_array($_POST['filters'])) {
             
-            /*foreach ($_POST['filters'] as $option) {
-                echo "<li>" . htmlspecialchars($option) . "</li>";
-            }*/
             $data = $_POST['filters'];
-            if(in_array('Free',$data)&&in_array('Paid',$data)){
-                $T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources ");
-            }elseif(in_array('Free',$data)){
-                $T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources where free = 1");
-            }elseif(in_array('Paid',$data)){
-                $T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources where paid = 1");
-            }else{
-                $T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources ");
+
+            $hasFilter = false;
+            foreach($checkBoxValues as $value => $group){
+                //echo $value. "<br>";
+                if(in_array($value,$data)){
+                    //echo "Here2";
+                    if(!$isWhere){
+                        $oldGroup = $group;
+                    }elseif($oldGroup != $group){
+                        $isdifferent = true;
+                        $oldGroup = $group;
+                    }
+                    //echo "Here";
+                    $queryStatment = addWhere(($value . " = 1"), $queryStatment, $isWhere, $isdifferent);
+                    $isWhere = True;
+                    $isdifferent = false;
+                    $hasFilter = true;
+                }
             }
-        } else {
-            echo "<li>No filters selected.</li>";
-            //$T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources where free = 1");
+            if($hasFilter){
+                $queryStatment .= ")";
+            }
+
+            $T1 = new myObject($queryStatment);
+
         }
         exit();
-    }else{
-        //$T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources where free = 1 ");
     }
+
+
 ?>
 
   <style>
@@ -321,11 +354,11 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content2">
                 <label class="checkbox-container">Local North County
-                    <input type="checkbox" name="filters[]" value="Local North County" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="localNorthCounty" onclick="updateFilters()">
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">Local San Deigo
-                    <input type="checkbox" name="filters[]" value="Local San Deigo" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="localSanDeigo" onclick="updateFilters()">
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">California
