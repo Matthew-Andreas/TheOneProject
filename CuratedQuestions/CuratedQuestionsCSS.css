@@ -1,0 +1,517 @@
+  
+
+  .title{
+    text-align: center;
+    color: #203A72;
+    font-family: 'Montserrat';
+  }
+
+  .boxTitle{
+    color: white;
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-weight: 600;
+    top: 10px;
+    left: 30px;
+    display: inline;
+  }
+
+  .box {
+    display: block;
+    width: 1000px;
+    height: 50px;
+    border: none;
+    margin-top: 25px;
+    /*margin-bottom: 25px;*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #blue.box{
+    background-color: #203A72;
+  }
+
+  #lightBlue.box{
+    background-color: #7B95B1;
+  }
+
+  .dropdown {
+    display: block;
+    width: 1000px;
+    height: 775px;
+    border: none;
+    /*margin-bottom: 25px;*/
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 10px;
+    background-color: #969FA6; /*#c3cdd6;*/
+  }
+
+  #FundingBased.dropdown{
+    height: 750px;
+  }
+  
+  #businessLaw.dropdown{
+    height: 545px;
+  }
+
+  #ActiveNetworkingTraining.dropdown{
+    height: 705px;
+  }
+
+  #DigitalAssistance.dropdown{
+    height: 705px;
+  }
+
+  #Workshops.dropdown{
+    height: 250px;
+  }
+
+  #DiversityBased.dropdown{
+    height: 595px;
+  }
+
+  .CuratedQuestions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .dropdownButton{
+    position: relative;
+    display: inline;
+    left: 780px;
+    top: 5px;
+  }
+
+  #FB.dropdownButton{
+    left: 765px;
+  }
+
+  #BL.dropdownButton{
+    left: 781px;
+  }
+
+  #ANT.dropdownButton{
+    left: 623px;
+  }
+  
+  #DA.dropdownButton{
+    left: 737px;
+  }
+
+  #W.dropdownButton{
+    left: 808px;
+  }
+
+  #DB.dropdownButton{
+    left: 760px;
+  }
+
+  .dropdownButtonimg{
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.6s;
+  }
+
+  .dropdown-content {
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+    max-height: 0px;
+  }
+
+  .dropdown-Selections{
+    position: relative;
+    left: 40px;
+    top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .selectBox{
+    position: relative;
+    width: 485px;
+    height: 40px;
+    background-color: #203A72;
+    top: 25px;
+    left: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #RB2.selectBox{
+    width: 505px;
+  }
+
+  #RB3.selectBox{
+    width: 415px;
+  }
+
+  #RB4.selectBox{
+    width: 500px;
+  }
+
+  #FB1.selectBox{
+    width: 615px;
+    background-color: #7B95B1;
+  }
+
+  #FB2.selectBox{
+    width: 465px;
+    background-color: #7B95B1;
+  }
+
+  #FB3.selectBox{
+    width: 415px;
+    background-color: #7B95B1;
+  }
+
+  #FB4.selectBox{
+    width: 500px;
+    background-color: #7B95B1;
+  }
+
+  #BL1.selectBox{
+    width: 665px;
+  }
+
+  #BL2.selectBox{
+    width: 475px;
+  }
+
+  #BL3.selectBox{
+    width: 465px;
+  }
+
+  #ANT1.selectBox{
+    width: 475px;
+    background-color: #7B95B1;
+  }
+
+  #ANT2.selectBox{
+    width: 505px;
+    background-color: #7B95B1;
+  }
+
+  #ANT3.selectBox{
+    width: 440px;
+    background-color: #7B95B1;
+  }
+
+  #ANT4.selectBox{
+    width: 355px;
+    background-color: #7B95B1;
+  }
+
+  #DA1.selectBox{
+    width: 375px;
+  }
+
+  #DA2.selectBox{
+    width: 400px;
+  }
+
+  #DA3.selectBox{
+    width: 475px;
+  }
+
+  #DA4.selectBox{
+    width: 500px;
+  }
+
+  #W1.selectBox{
+    width: 440px;
+    background-color: #7B95B1;
+  }
+
+  #DB1.selectBox{
+    width: 460px;
+  }
+
+  #DB2.selectBox{
+    width: 500px;
+  }
+
+  #DB3.selectBox{
+    width: 510px;
+  }
+
+  .selectBoxText{
+    color: white;
+    font-family: 'Montserrat';
+  }
+
+  .selectButton{
+    margin-top: 12.5px;
+    margin-left: 22px;
+    margin-right: 5px;
+  }
+
+  .descriptionBox{
+    position: relative;
+    width: 870px;
+    height: 70px;
+    top: 25px;
+    left: 25px;
+    background-color: #EAEAEA;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  #RB2.descriptionBox{
+    width: 790px;
+    height: 90px;
+  }
+
+  #RB3.descriptionBox{
+    width: 810px;
+  }
+
+  #RB4.descriptionBox{
+    width: 820px;
+  }
+
+  #FB1.descriptionBox{
+    width: 810px;
+    height: 45px;
+  }
+
+  #FB2.descriptionBox{
+    width: 790px;
+    height: 90px;
+  }
+
+  #FB3.descriptionBox{
+    width: 810px;
+  }
+
+  #FB4.descriptionBox{
+    width: 820px;
+  }
+
+  #BL1.descriptionBox{
+    width: 790px;
+  }
+
+  #BL2.descriptionBox{
+    width: 680px;
+    height: 45px;
+  }
+
+  #BL3.descriptionBox{
+    width: 835px;
+    height: 45px;
+  }
+
+  #ANT1.descriptionBox{
+    width: 780px;
+    height: 45px;
+  }
+
+  #ANT2.descriptionBox{
+    width: 770px;
+  }
+
+  #ANT3.descriptionBox{
+    width: 800px;
+    height: 45px;
+  }
+
+  #ANT4.descriptionBox{
+    width: 850px;
+  }
+
+  #DA1.descriptionBox{
+    width: 850px;
+  }
+
+  #DA2.descriptionBox{
+    width: 720px;
+  }
+
+  #DA3.descriptionBox{
+    width: 570px;
+    height: 45px;
+  }
+
+  #DA4.descriptionBox{
+    width: 660px;
+    height: 45px;
+  }
+
+  #W1.descriptionBox{
+    width: 600px;
+    height: 45px;
+  }
+
+  #DB1.descriptionBox{
+    width: 810px;
+  }
+
+  #DB2.descriptionBox{
+    width: 780px;
+  }
+
+  #DB3.descriptionBox{
+    width: 785px;
+  }
+
+  .descriptionText{
+    position: relative;
+    width: 830px;
+    color: #203A72;
+    font-family: 'Montserrat';
+    top: 10px;
+    left: 45px;
+  }
+
+  #RB2.descriptionText{
+    width: 730px;
+  }
+
+  #RB3.descriptionText{
+    width: 750px;
+  }
+
+  #RB4.descriptionText{
+    width: 770px;
+  }
+
+  #FB1.descriptionText{
+    width: 770px;
+  }
+
+  #FB2.descriptionText{
+    width: 730px;
+  }
+
+  #FB3.descriptionText{
+    width: 750px;
+  }
+
+  #FB4.descriptionText{
+    width: 770px;
+  }
+
+  #BL1.descriptionText{
+    width: 770px;
+  }
+
+  #BL2.descriptionText{
+    width: 730px;
+  }
+
+  #BL3.descriptionText{
+    width: 800px;
+  }
+
+  #ANT1.descriptionText{
+    width: 730px;
+  }
+
+  #ANT2.descriptionText{
+    width: 730px;
+  }
+
+  #ANT3.descriptionText{
+    width: 740px;
+  }
+
+  #ANT4.descriptionText{
+    width: 800px;
+  }
+
+  #DA1.descriptionText{
+    width: 810px;
+  }
+
+  #DA2.descriptionText{
+    width: 660px;
+  }
+
+  #DA3.descriptionText{
+    width: 500px;
+  }
+
+  #DA4.descriptionText{
+    width: 600px;
+  }
+
+  #W1.descriptionText{
+    width: 550px;
+  }
+
+  #DB1.descriptionText{
+    width: 770px;
+  }
+
+  #DB2.descriptionText{
+    width: 770px;
+  }
+
+  #DB3.descriptionText{
+    width: 770px;
+  }
+
+  .submitButton {
+    display: inline-block;
+    border: none;
+    position: relative;
+    color: white;
+    padding: 6px 60px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-weight: 500; 
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 7.5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s;
+    top: 40px;
+    left: 775px;
+  }
+
+  #blue.submitButton{
+    background-color: #203A72; /* Original button color */
+  }
+
+  #blue.submitButton:hover {
+    background-color: #2C4E99; /* Darker shade for hover */
+  }
+
+  #blue.submitButton:active {
+    background-color: #1A2E57; /* Darker shade for hover */
+    transform: scale(0.95);
+  }
+
+  #lightBlue.submitButton{
+    background-color: #7B95B1; /* Original button color */
+  }
+
+  #lightBlue.submitButton:hover {
+    background-color: #677A94; /* Darker shade for hover */
+  }
+
+  #lightBlue.submitButton:active {
+    background-color: #546270; /* Darker shade for hover */
+    transform: scale(0.95);
+  }
+
+  .ResourceQuestions{
+    margin-bottom: 25px;
+  }
+
+  .flipped {
+      transform: rotateX(180deg);
+  }
