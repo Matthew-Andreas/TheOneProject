@@ -1,72 +1,14 @@
 {source}
+<!DOCTYPE html>
 
-    <?php
-    // Check if it's an AJAX request
+<head>
+  <jdoc:include type="head" />
+  <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css" type="text/css" />
+</head>
+<body>
+<?php
+    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/HomePHP.php';
     
-
-    class myObject
-     {
-          public $result;
-          public $results;
-          public $db;
-          public $query;
-          public $columns;
-          public $Space; 
-          
-
-          Public Function OpenDatabase($q)
-          {
-                $this->db = JFactory::getDbo();
-                $this->query = $this->db->getQuery(true);
-                $this->Space =  "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-                $this->query = $q;
-                $this->db->setQuery($this->query);
-                $this->result = $this->db->loadObjectList();
-                $this->results = $this->db->loadAssocList();
-                $this->columns = array_keys($this->results[0]);
-           }
-
-
-//==================================================================== 
-           
-            Public Function PrintHeader()
-           {
-                  
-                         echo "<table>";
-                         echo "<tr style=\"background-color:Blue;color:White\">";
-                         foreach($this->columns as &$columnName)
-                                       echo "<th>" . $columnName . $this->Space . $this->Space . $this->Space . "</th>";
-                         echo "</tr>";
-                         echo "</table>";
-           }
-//====================================================================            
-            Public Function PrintData()
-           {   
-                    echo "<table>"; 
-                      foreach ($this->result as &$row) 
-                      {
-                            echo "<tr>";
-                            foreach($this->columns as &$columnName) 
-                                        echo "<td>" . $row->$columnName . $this->Space .  "</td>";
-                            echo "</tr>"; // Close out the row.
-                      }        
-                      echo "</table>"; // Close out the table at the end of the loop.
-           }
-//============================================================
-
-        public function __construct($q) 
-       {
-             $this->OpenDatabase($q);
-             $this->PrintHeader();
-             $this->PrintData();
-        }
-//============================================================
-     } // end of the class
-
-//******************************************************************************************
-// Main program starts in here
-//******************************************************************************************
-     //$T1 = new myObject ("Select Title, email, phoneNum, price, description from Resources ");
     $isWhere = false;
     $oldGroup = "";
     $isdifferent = false;
@@ -74,7 +16,6 @@
     $queryStatment = "Select Title, email, phoneNum, price, description from Resources ";
 
     function addWhere($addition, $queryStatment, $isWhere, $isdifferent){
-        //echo $isWhere;
         if(!$isWhere){
             $queryStatment .= "where (";
         }elseif($isdifferent){
@@ -83,13 +24,11 @@
             $queryStatment .= " OR ";
         }
         $queryStatment .= $addition;
-        //echo $queryStatment . "<br>";
         return $queryStatment;
     }
 
 
     $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
-    //$checkBoxValues = ["Free","Paid" ,"localNorthCounty", "localSanDeigo", "California", "National" , "International"];
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
         if (isset($_POST['filters']) && is_array($_POST['filters'])) {
             
@@ -97,16 +36,13 @@
 
             $hasFilter = false;
             foreach($checkBoxValues as $value => $group){
-                //echo $value. "<br>";
                 if(in_array($value,$data)){
-                    //echo "Here2";
                     if(!$isWhere){
                         $oldGroup = $group;
                     }elseif($oldGroup != $group){
                         $isdifferent = true;
                         $oldGroup = $group;
                     }
-                    //echo "Here";
                     $queryStatment = addWhere(($value . " = 1"), $queryStatment, $isWhere, $isdifferent);
                     $isWhere = True;
                     $isdifferent = false;
@@ -126,205 +62,11 @@
 
 ?>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      display: flex;
-  }
 
-  .sidebar {
-      width: 300px;
-      padding: 15px;
-      background-color: #f7f7f7;
-      border-right: 1px solid #ccc;
-      height: auto;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      position: hidden;
-      left: 0;
-      top: 303;
-      overflow-y: auto;
-      overflow-x: hidden;
-      transition: 0.3s;
-  }
 
-  .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 25px;
-  }
 
-  .checkbox-container {
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      user-select: none;
-  }
-
-  .checkbox-container input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-  }
-
-  .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      background-color: #eee;
-      border: 1px solid #ccc;
-  }
-
-  .checkbox-container:hover input ~ .checkmark {
-      background-color: #ccc;
-  }
-
-  .checkbox-container input:checked ~ .checkmark {
-      background-color: #2196F3;
-      border: none;
-  }
-
-  .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-  }
-
-  .checkbox-container input:checked ~ .checkmark:after {
-      display: block;
-  }
-
-  .checkbox-container .checkmark:after {
-      left: 9px;
-      top: 5px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      transform: rotate(45deg);
-  }
-
-  body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-  }
-
-  .filter-option {
-      margin-bottom: 20px;
-  }
-
-  .dropdown {
-      margin-left: 20px;
-      display: none;
-  }
-
-  .dropdown label {
-      display: block;
-      margin-bottom: 5px;
-  }
-
-  .grid-child.container-component{
-      height:4500px;
-  }
-
-  .dropdown-content {
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    max-height: 0;
-  }
-
-  .dropbox{
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-  }
-
-  .FilterTitleText{
-      cursor: pointer;
-      color:#000000;
-      background-color: #f7f7f7;
-      border: 0px;
-      font-size: 22px;
-      width: 250px;
-      height: 50px;
-      text-align: left;
-      font-family: 'Montserrat';
-      font-weight: bold;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  .sidebar {
-    height: auto;
-    width: 300px;
-    position: absolute;
-    top: 200px;
-    left: -300px;
-    background-color: #f7f7f7;
-    overflow-x: hidden;
-    transition: 0.6s;
-    padding-top: 20px;
-  }
-
-  .sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.6s;
     
-  }
-
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-
-
-  .open-sidebar .sidebar {
-    left: 0;
-  }
-
-  .sidebar-button{
-    position: absolute;
-    top: 200px;
-    left: 20px;
-    transform: translateX(-100%);
-    width: 20px;
-    height: var(--matched-height);
-    background-color: #eaeaea;
-    /*display: inline-block;*/
-    justify-content: center;  /* Center horizontally */
-    align-items: center;      /* Center vertically */
-    transition: 0.6s;
-    border: 0;
-    color: #203A72;
-  }
-  .open-sidebar .sidebar-button{
-    left: 300px;
-    transform: translateX(0);
-  }
-
-  .selected{
-    position: absolute;
-    top: 200px;
-    left: 100px;
-    transition: 0.6s;
-  }
-
-  .open-sidebar .selected{
-    left: 400px;
-  }
-  </style>
-  <button class="sidebar-button" id="sidebar-button">
+    <button class="sidebar-button" id="sidebar-button">
     >
   </button>
   <div class="sidebar" id="mySidebar">
@@ -798,78 +540,7 @@
             ?>
         </ul>
     </div>
-  <script>
-    document.getElementById("sidebar-button").onclick = function() {
-      document.body.classList.toggle("open-sidebar");
-    }
-    function toggleDropdown(dropboxNum,dropdownContentNum) {
-        var dropdownContent = document.getElementById(dropdownContentNum);
-        var sidebarButton = document.getElementById('sidebar-button');
-        
-        if(dropdownContent.classList.contains("expand")){
-            dropdownContent.classList.remove("expand");
-            dropdownContent.style.maxHeight = null;
-            sidebarButton.classList.remove("expand");
-            document.documentElement.style.setProperty('--matched-height',(sidebarButton.clientHeight-dropdownContent.scrollHeight) + "px");
-        } else {
-            dropdownContent.classList.add("expand");
-            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
-            sidebarButton.classList.add("expand");
-            document.documentElement.style.setProperty('--matched-height',(sidebarButton.clientHeight+dropdownContent.scrollHeight) + "px");
-        }
-       
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        for (let i = 1; i <= 9; i++) {
-            const checkbox = document.getElementById(`main-checkbox${i}`);
-            const dropdown = document.getElementById(`dropdown${i}`);
-            var dropdownContent = document.getElementById('dropdown-content7');
-
-            checkbox.addEventListener('change', () => {
-              dropdown.style.display = checkbox.checked ? 'block' : 'none';
-                    if (checkbox.checked) {
-                        dropdown.classList.add('expand');
-                        dropdown.style.maxHeight = null;
-                        dropdownContent.style.maxHeight = (dropdownContent.scrollHeight+ dropdown.scrollHeight)+ "px";
-                    } else {
-                        dropdown.classList.remove('expand');
-                        dropdown.style.maxHeight = 0;
-                        dropdownContent.style.maxHeight = (dropdownContent.scrollHeight-dropdown.scrollHeight)+ "px";
-                    }
-                });
-        }
-        
-    });
-
-    function matchHeights(){
-      var sidebar = document.getElementById('mySidebar');
-      var sidebarButton = document.getElementById('sidebar-button');
-      var maxHeight = sidebar.clientHeight;
-      document.documentElement.style.setProperty('--matched-height',maxHeight + 'px')
-    }
-
-    function updateFilters() {
-        var checkboxes = document.querySelectorAll('input[name="filters[]"]:checked');
-        var values = [];
-        checkboxes.forEach((checkbox) => {
-            values.push(checkbox.value);
-        });
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                document.getElementById("selected-filters").innerHTML = xhr.responseText;
-                
-            }
-        };
-        xhr.send("ajax=1&filters[]=" + values.join("&filters[]="));
-    }
-
-    window.onload = matchHeights;
-    window.onresize = matchHeights;
-
-  </script>
+</body>
+<script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js" type="text/javascript"></script>
+</html>
 {/source}
