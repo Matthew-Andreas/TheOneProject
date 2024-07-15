@@ -1,5 +1,5 @@
-.com-content-article__body{
-  position: relative;
+  .com-content-article__body{
+    position: relative;
     left: 10%;
   }
 
@@ -170,7 +170,7 @@
   }
 
   #Geo.dropdownButton{
-    left: 196px;
+    left: 195px;
   }
 
   #SBButton.dropdownButton{
@@ -185,6 +185,10 @@
 
   #Ind.dropdownButton{
     left: 219px;
+  }
+
+  #TA.dropdownButton{
+    left: 144px;
   }
 
   .flipped {
@@ -222,6 +226,10 @@
   }
 
   #Ind.descriptionBox{
+    height: 60px;
+  }
+
+  #TA.descriptionBox{
     height: 60px;
   }
 
@@ -274,6 +282,10 @@
 
   #Ind.Categories{
     height: 280px;
+  }
+
+  #TA.Categories{
+    height: 365px;
   }
 
   .arrow{
