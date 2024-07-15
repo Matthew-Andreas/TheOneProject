@@ -8,45 +8,45 @@
     <title>Input with Icon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .input-container {
-            position: relative;
-            display: inline-block;
-        }
+        .input-container {
+          position: relative;
+          display: inline-block;
+        }
 
-        .input-container input {
-            padding-left: 30px; /* Adjust the padding to make room for the icon */
-        }
+        .input-container input {
+          padding-left: 30px; /* Adjust the padding to make room for the icon */
+        }
 
-        .input-container::before {
-            content: "\f007"; /* Unicode for Font Awesome user icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #aaa; /* Adjust color as needed */
-            transition: opacity 0.3s ease;
-        }
+        .input-container::before {
+          content: "\f007"; /* Unicode for Font Awesome user icon */
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: #aaa; /* Adjust color as needed */
+          transition: opacity 0.3s ease;
+        }
 
-        .input-container.has-text::before {
-            opacity: 0;
-        }
-    </style>
+        .input-container.has-text::before {
+          opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="input-container">
-        <input type="text" placeholder="Enter your name" id="name-input">
+        <input type="text" placeholder="Enter your name" id="name-input">
     </div>
     <script>
-        document.getElementById('name-input').addEventListener('input', function() {
-            if (this.value) {
-                this.parentElement.classList.add('has-text');
-            } else {
-                this.parentElement.classList.remove('has-text');
-            }
-        });
+        document.getElementById('name-input').addEventListener('input', function() {
+          if (this.value) {
+              this.parentElement.classList.add('has-text');
+          } else {
+              this.parentElement.classList.remove('has-text');
+          }
+        });
     </script>
 </body>
 </html>
