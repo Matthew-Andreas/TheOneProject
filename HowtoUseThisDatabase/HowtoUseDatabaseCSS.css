@@ -1,6 +1,15 @@
-  .com-content-article__body{
+  /*.com-content-article__body{
     position: relative;
     left: 10%;
+  }*/
+
+  :root{
+    --left-spacing: 10%;
+  }
+
+  .spacer{
+    position: relative;
+    left: var(--left-spacing);
   }
 
   .title{
@@ -8,6 +17,7 @@
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 40px;
+    left: 10%;
   }
 
   .subTitle{
