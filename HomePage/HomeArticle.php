@@ -61,11 +61,7 @@
 
 
 ?>
-
-
-
-
-    
+ 
     <button class="sidebar-button" id="sidebar-button">
     >
   </button>
@@ -533,7 +529,7 @@
     
   </div>
     <di class="selected">
-    <h1>Database:</h1>
+    <h1>Database Test:</h1>
         <ul id="selected-filters">
             <?php
                 $T1 = new myObject($queryStatment);
