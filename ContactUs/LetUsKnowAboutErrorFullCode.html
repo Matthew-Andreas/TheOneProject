@@ -8,178 +8,180 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 
-        label {
-            display: block;
-            font-family: 'Montserrat';
-            margin-bottom: 15px;
-            color: #60A800;
-            font-size: 22px;
-            font-weight: 500;
-        }
+        
+      label {
+        display: block;
+        font-family: 'Montserrat';
+        margin-bottom: 15px;
+        color: #60A800;
+        font-size: 22px;
+        font-weight: 500;
+      }
 
-        .input-container {
-            position: relative;
-            display: block;
-            margin-bottom: 20px;
-        }
+      .input-container {
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+      }
 
-        .input-container input::placeholder{
-          color: #a5a5a5;
-          font-family: 'Montserrat';
-        }
+      .input-container input::placeholder{
+        color: #a5a5a5;
+        font-family: 'Montserrat';
+      }
 
-        .input-container input {
-            padding-left: 50px; /* Adjust the padding to make room for the icon */
-            background-color: #eaeaea;
-            border: 0;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #a5a5a5;
-            height: 46px;
-            width: 425px;
-        }
+      .input-container input {
+        padding-left: 50px; /* Adjust the padding to make room for the icon */
+        background-color: #eaeaea;
+        border: 0;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #464646;
+        height: 46px;
+        width: 425px;
+      }
 
-        #resource.input-container input{
-          padding-left: 25px;
-        }
+      #resource.input-container input{
+        padding-left: 25px;
+      }
 
-        input[type="text"]:focus {
-            outline: none;
-        }
+      input[type="text"]:focus {
+        outline: none;
+      }
 
-        #Name.input-container::before {
-            content: "\f007"; /* Unicode for Font Awesome user icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #aaa; /* Adjust color as needed */
-        }
+      #Name.input-container::before {
+        content: "\f007"; /* Unicode for Font Awesome user icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #aaa; /* Adjust color as needed */
+      }
 
-        #Email.input-container::before {
-            content: "\2709"; /* Unicode for Font Awesome user icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #aaa; /* Adjust color as needed */
-        }
+      #Email.input-container::before {
+        content: "\2709"; /* Unicode for Font Awesome user icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #aaa; /* Adjust color as needed */
+      }
 
-        .input-container2{
-            background-color: #eaeaea;
-            border: 0;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            color:#a5a5a5;
-            width: 425px; /* Set width of the text area */
-            height: 100px; /* Set height of the text area */
-            padding: 15px; /* Optional: Add padding for spacing */
-            padding-left: 25px;
-            resize: none; /* Prevent resizing of the text area */
-            line-height: 1.5; /* Optional: Adjust line height */
-            overflow-y: auto; /* Optional: Add scrollbar when content overflows vertically */
-        }
+      .input-container2{
+        background-color: #eaeaea;
+        border: 0;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color:#464646;
+        width: 425px; /* Set width of the text area */
+        height: 100px; /* Set height of the text area */
+        padding: 15px; /* Optional: Add padding for spacing */
+        padding-left: 25px;
+        resize: none; /* Prevent resizing of the text area */
+        line-height: 1.5; /* Optional: Adjust line height */
+        overflow-y: auto; /* Optional: Add scrollbar when content overflows vertically */
+      }
 
-        textarea[type="text"]::placeholder{
-          color: #a5a5a5;
-          font-family: 'Montserrat';
-        }
+      textarea[type="text"]::placeholder{
+        color: #a5a5a5;
+        font-family: 'Montserrat';
+      }
 
-        textarea[type="text"]:focus{
-            outline: none;
-        }
+      textarea[type="text"]:focus{
+        outline: none;
+      }
 
-        .Contact-Form{
-            display: inline;
-            float: right;
-            margin-right: 10%;
-            margin-top: 50px;
-        }
+      .Contact-Form{
+        display: inline;
+        float: right;
+        margin-right: 10%;
+        margin-top: 50px;
+        margin-bottom: 200px;
+      }
 
-        .SendButton {
-            display: inline-block;
-            border: none;
-            background-color: #60A800; /* Original button color */
-            color: white;
-            padding: 6px 60px;
-            text-align: center;
-            text-decoration: none;
-            font-family: 'Montserrat';
-            font-weight: 500; 
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 7.5px; /* Rounded corners */
-            transition: background-color 0.3s, transform 0.1s;
-        }
+      .SendButton {
+        display: inline-block;
+        border: none;
+        background-color: #60A800; /* Original button color */
+        color: white;
+        padding: 6px 60px;
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Montserrat';
+        font-weight: 500; 
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 7.5px; /* Rounded corners */
+        transition: background-color 0.3s, transform 0.1s;
+      }
 
-        .SendButton:hover {
-            background-color: #558C00; /* Darker shade for hover */
-        }
+      .SendButton:hover {
+        background-color: #558C00; /* Darker shade for hover */
+      }
 
-        .SendButton:active {
-            background-color: #4E7E00; /* Darker shade for hover */
-            transform: scale(0.95);
-        }
+      .SendButton:active {
+        background-color: #4E7E00; /* Darker shade for hover */
+        transform: scale(0.95);
+      }
 
-        .ContactImg-container{
-            display: inline;
-            margin-left: 20%;
-        }
+      .ContactImg-container{
+        display: inline;
+        margin-left: 20%;
+      }
 
-        .ContactImg{
-            margin-top: 100px;
-            width: 500px;
-            height: auto;
-        }
+      .ContactImg{
+        margin-top: 100px;
+        width: 500px;
+        height: auto;
+      }
 
-        .checkbox-label{
-          color: #a5a5a5;
-          font-size: 13px;
-          display: inline;
-          padding-left: 5px;
-          cursor: pointer;
-        }
+      .checkbox-label{
+        color: #a5a5a5;
+        font-size: 13px;
+        display: inline;
+        padding-left: 5px;
+        cursor: pointer;
+      }
 
-        #WDE.checkbox-container{
-          padding-left: 45px;
-          padding-right: 60px;
-        }
+      #WDE.checkbox-container{
+        padding-left: 45px;
+        padding-right: 60px;
+      }
 
-        #CSI.checkbox-container{
-          padding-left: 45px;
-          padding-right: 35px;
-        }
-        #Other.checkbox-container{
-          padding-left: 45px;
-        }
+      #CSI.checkbox-container{
+        padding-left: 45px;
+        padding-right: 35px;
+      }
+      #Other.checkbox-container{
+        padding-left: 45px;
+      }
 
-        .checkbox-rows{
-          padding-bottom: 10px;
-        }
+      .checkbox-rows{
+        padding-bottom: 10px;
+      }
 
-        .checkbox-container{
-          display: inline;
-        }
+      .checkbox-container{
+        display: inline;
+      }
 
-        .checkbox{
-          cursor: pointer;
-        }
+      .checkbox{
+        cursor: pointer;
+      }
 
-        .checkboxTitle{
-          padding-left: 25px;
-          font-family: 'Montserrat';
-          color: #a5a5a5;
-          font-size: 14px;
-        }
+      .checkboxTitle{
+        padding-left: 25px;
+        font-family: 'Montserrat';
+        color: #a5a5a5;
+        font-size: 14px;
+      }
 
     </style>
 </head>

@@ -64,7 +64,7 @@ input[type="text"]:focus {
   border-radius: 5px;
   font-size: 14px;
   font-weight: 500;
-  color:#a5a5a5;
+  color:#464646;
   width: 425px; /* Set width of the text area */
   height: 175px; /* Set height of the text area */
   padding: 15px; /* Optional: Add padding for spacing */
@@ -88,6 +88,7 @@ textarea[type="text"]:focus{
   float: right;
   margin-right: 10%;
   margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 .SendButton {

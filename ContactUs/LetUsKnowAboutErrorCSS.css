@@ -15,8 +15,8 @@ label {
 }
 
 .input-container input::placeholder{
-color: #a5a5a5;
-font-family: 'Montserrat';
+  color: #a5a5a5;
+  font-family: 'Montserrat';
 }
 
 .input-container input {
@@ -26,13 +26,13 @@ font-family: 'Montserrat';
   border-radius: 5px;
   font-size: 14px;
   font-weight: 500;
-  color: #a5a5a5;
+  color: #464646;
   height: 46px;
   width: 425px;
 }
 
 #resource.input-container input{
-padding-left: 25px;
+  padding-left: 25px;
 }
 
 input[type="text"]:focus {
@@ -69,7 +69,7 @@ input[type="text"]:focus {
   border-radius: 5px;
   font-size: 14px;
   font-weight: 500;
-  color:#a5a5a5;
+  color:#464646;
   width: 425px; /* Set width of the text area */
   height: 100px; /* Set height of the text area */
   padding: 15px; /* Optional: Add padding for spacing */
@@ -80,8 +80,8 @@ input[type="text"]:focus {
 }
 
 textarea[type="text"]::placeholder{
-color: #a5a5a5;
-font-family: 'Montserrat';
+  color: #a5a5a5;
+  font-family: 'Montserrat';
 }
 
 textarea[type="text"]:focus{
@@ -93,6 +93,7 @@ textarea[type="text"]:focus{
   float: right;
   margin-right: 10%;
   margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 .SendButton {
@@ -133,41 +134,41 @@ textarea[type="text"]:focus{
 }
 
 .checkbox-label{
-color: #a5a5a5;
-font-size: 13px;
-display: inline;
-padding-left: 5px;
-cursor: pointer;
+  color: #a5a5a5;
+  font-size: 13px;
+  display: inline;
+  padding-left: 5px;
+  cursor: pointer;
 }
 
 #WDE.checkbox-container{
-padding-left: 45px;
-padding-right: 60px;
+  padding-left: 45px;
+  padding-right: 60px;
 }
 
 #CSI.checkbox-container{
-padding-left: 45px;
-padding-right: 35px;
+  padding-left: 45px;
+  padding-right: 35px;
 }
 #Other.checkbox-container{
-padding-left: 45px;
+  padding-left: 45px;
 }
 
 .checkbox-rows{
-padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .checkbox-container{
-display: inline;
+  display: inline;
 }
 
 .checkbox{
-cursor: pointer;
+  cursor: pointer;
 }
 
 .checkboxTitle{
-padding-left: 25px;
-font-family: 'Montserrat';
-color: #a5a5a5;
-font-size: 14px;
+  padding-left: 25px;
+  font-family: 'Montserrat';
+  color: #a5a5a5;
+  font-size: 14px;
 }
