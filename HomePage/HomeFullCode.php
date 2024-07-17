@@ -87,16 +87,13 @@
 
             $hasFilter = false;
             foreach($checkBoxValues as $value => $group){
-                //echo $value. "<br>";
                 if(in_array($value,$data)){
-                    //echo "Here2";
                     if(!$isWhere){
                         $oldGroup = $group;
                     }elseif($oldGroup != $group){
                         $isdifferent = true;
                         $oldGroup = $group;
                     }
-                    //echo "Here";
                     $queryStatment = addWhere(($value . " = 1"), $queryStatment, $isWhere, $isdifferent);
                     $isWhere = True;
                     $isdifferent = false;
