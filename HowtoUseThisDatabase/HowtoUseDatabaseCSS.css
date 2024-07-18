@@ -1,31 +1,31 @@
-  .com-content-article__body{
+.com-content-article__body {
     position: relative;
     left: var(--left-spacing);
     max-width: 1200px;
-  }
+}
 
-  :root{
+:root {
     --left-spacing: 10%;
-  }
+}
 
-  .title{
+.title {
     color: #203A72;
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 40px;
     width: 1200px;
-  }
+}
 
-  .subTitle{
+.subTitle {
     color: #203A72;
     font-family: 'Montserrat';
     width: 1200px;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 40px;
-  }
+}
 
-  .FilterSearch{
+.FilterSearch {
     width: 250px;
     height: 35px;
     background-color: #203A72;
@@ -33,9 +33,9 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  .FilterSearchTitle{
+.FilterSearchTitle {
     position: relative;
     display: inline;
     top: 5px;
@@ -44,9 +44,9 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 18px;
-  }
+}
 
-  .FilterSearchTextBox{
+.FilterSearchTextBox {
     width: 1200px;
     height: 325px;
     background-color: #EAEAEA;
@@ -54,38 +54,38 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-  }
+}
 
-  .FilterSearchText{
+.FilterSearchText {
     position: relative;
     top: 25px;
     left: 30px;
     color: #203A72;
     font-family: 'Montserrat';
-  }
+}
 
-  .bullet-list {
+.bullet-list {
     position: relative;
     top: 25px;
     left: 80px;
-    list-style-type: disc; /* Other options: circle, square */
-    padding-left: 20px; /* Add padding to create space for the bullets */
-    font-family: 'Montserrat'; /* Change font */
-    font-size: 16px; /* Change font size */
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: 'Montserrat';
+    font-size: 16px;
     color: #203A72;
-  }
+}
 
-  .bullet-list li {
-    margin-bottom: 10px; /* Add space between items */
-  }
+.bullet-list li {
+    margin-bottom: 10px;
+}
 
-  .hereLink{
+.hereLink {
     color: #203A72;
-    font-family: 'Montserrat'; /* Change font */
+    font-family: 'Montserrat';
     cursor: pointer;
-  }
+}
 
-  .CuratedQuestions{
+.CuratedQuestions {
     width: 375px;
     height: 35px;
     background-color: #203A72;
@@ -94,9 +94,9 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     margin-top: 30px;
-  }
+}
 
-  .CuratedQuestionsTitle{
+.CuratedQuestionsTitle {
     position: relative;
     top: 5px;
     left: 30px;
@@ -104,9 +104,9 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 18px;
-  }
+}
 
-  .CuratedQuestionsTextBox{
+.CuratedQuestionsTextBox {
     width: 860px;
     height: 100px;
     background-color: #EAEAEA;
@@ -114,26 +114,26 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-  }
+}
 
-  .CuratedQuestionsText{
+.CuratedQuestionsText {
     position: relative;
     top: 25px;
     left: 30px;
     color: #203A72;
     font-family: 'Montserrat';
-  }
+}
 
-  .CategorizationTitle{
+.CategorizationTitle {
     color: #203A72;
     font-family: 'Montserrat';
     font-weight: 700;
     font-size: 32px;
     margin-top: 100px;
     width: 1200px;
-  }
+}
 
-  .titleBox{
+.titleBox {
     width: 350px;
     height: 35px;
     background-color: #203A72;
@@ -142,21 +142,21 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     margin-top: 30px;
-  }
+}
 
-  #SBTitle.titleBox{
+#SBTitle.titleBox {
     transition: width 0.8s ease-in-out;
-  }
+}
 
-  #ToBTitle.titleBox{
+#ToBTitle.titleBox {
     transition: width 0.8s ease-in-out;
-  }
+}
 
-  #ToRTitle.titleBox{
+#ToRTitle.titleBox {
     transition: width 0.8s ease-in-out;
-  }
+}
 
-  .CategoryTitle{
+.CategoryTitle {
     position: relative;
     display: inline;
     top: 3px;
@@ -165,107 +165,107 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 18px;
-  }
+}
 
-  .dropdownButtonimg{
+.dropdownButtonimg {
     width: 40px;
     height: auto;
     cursor: pointer;
     transition: transform 0.8s;
-  }
+}
 
-  .dropdownButton{
+.dropdownButton {
     position: relative;
     display: inline;
     left: 185px;
     top: 2px;
-  }
+}
 
-  #Geo.dropdownButton{
+#Geo.dropdownButton {
     left: 195px;
-  }
+}
 
-  #SBButton.dropdownButton{
+#SBButton.dropdownButton {
     left: 134px;
     transition: left 0.8s ease-in-out;
-  }
+}
 
-  #ToBButton.dropdownButton{
+#ToBButton.dropdownButton {
     left: 142px;
     transition: left 0.8s ease-in-out
-  }
+}
 
-  #Ind.dropdownButton{
+#Ind.dropdownButton {
     left: 219px;
-  }
+}
 
-  #TA.dropdownButton{
+#TA.dropdownButton {
     left: 144px;
-  }
+}
 
-  #ToRButton{
+#ToRButton {
     left: 134px;
     transition: left 0.8s ease-in-out
-  } 
+}
 
-  .flipped {
-      transform: rotateX(180deg);
-  }
-  
-  .dropdown-content {
+.flipped {
+    transform: rotateX(180deg);
+}
+
+.dropdown-content {
     overflow: hidden;
     transition: max-height 0.8s ease-in-out, max-width 0.8s ease-in-out;
     max-height: 0px;
     max-width: 350px;
-  }
+}
 
-  .descriptionBox{
+.descriptionBox {
     background-color: #eaeaea;
     width: 350px;
-  }
+}
 
-  #FoP.descriptionBox{
+#FoP.descriptionBox {
     height: 83px;
-  }
+}
 
-  #Geo.descriptionBox{
+#Geo.descriptionBox {
     height: 60px;
-  }
+}
 
-  #SB.descriptionBox{
+#SB.descriptionBox {
     height: 45px;
     width: 1200px;
-  }
+}
 
-  #ToB.descriptionBox{
+#ToB.descriptionBox {
     height: 45px;
     width: 1200px;
-  }
+}
 
-  #Ind.descriptionBox{
+#Ind.descriptionBox {
     height: 60px;
-  }
+}
 
-  #TA.descriptionBox{
+#TA.descriptionBox {
     height: 60px;
-  }
+}
 
-  #single-line.descriptionBox{
+#single-line.descriptionBox {
     height: 50px;
     width: 1200px;
-  }
+}
 
-  #double-line.descriptionBox{
+#double-line.descriptionBox {
     height: 90px;
     width: 1200px;
-  }
+}
 
-  #triple-line.descriptionBox{
+#triple-line.descriptionBox {
     height: 120px;
     width: 1200px;
-  }
+}
 
-  .descText{
+.descText {
     position: relative;
     left: 25px;
     top: 10px;
@@ -273,26 +273,26 @@
     font-family: 'Montserrat';
     font-size: 14px;
     line-height: 1.5;
-  }
+}
 
-  #ToRSingle.descText{
+#ToRSingle.descText {
     font-size: 20px;
     font-weight: 500;
     line-height: normal;
-  }
+}
 
-  #ToRDouble.descText{
+#ToRDouble.descText {
     font-size: 20px;
     font-weight: 500;
     line-height: normal;
     top: 20%;
-  }
+}
 
-  .descTerm{
+.descTerm {
     font-weight: 600;
-  }
+}
 
-  .CategText{
+.CategText {
     position: relative;
     left: 25px;
     top: 10px;
@@ -301,128 +301,128 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 2;
-  }
+}
 
-  .terms{
+.terms {
     color: white;
     font-weight: 500;
-  }
+}
 
-  .Categories{
+.Categories {
     background-color: #7B95B1;
     width: 350px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-  }
+}
 
-  #FoP.Categories{
+#FoP.Categories {
     height: 85px;
-  }
+}
 
-  #Geo.Categories{
+#Geo.Categories {
     height: 170px;
-  }
+}
 
-  #SB.Categories{
+#SB.Categories {
     height: 200px;
     width: 1200px;
-  }
+}
 
-  #ToB.Categories{
+#ToB.Categories {
     height: 170px;
     width: 1200px;
-  }
+}
 
-  #Ind.Categories{
+#Ind.Categories {
     height: 280px;
-  }
+}
 
-  #TA.Categories{
+#TA.Categories {
     height: 365px;
-  }
+}
 
-  #ToR1.Categories{
+#ToR1.Categories {
     height: 340px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR2.Categories{
+#ToR2.Categories {
     height: 200px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR3.Categories{
+#ToR3.Categories {
     height: 85px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR4.Categories{
+#ToR4.Categories {
     height: 115px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR5.Categories{
-    height:145px;
+#ToR5.Categories {
+    height: 145px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR6.Categories{
+#ToR6.Categories {
     height: 115px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR7.Categories{
-    height:285px;
+#ToR7.Categories {
+    height: 285px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR8.Categories{
+#ToR8.Categories {
     height: 395px;
     width: 1200px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #ToR9.Categories{
-    height:145px;
+#ToR9.Categories {
+    height: 145px;
     width: 1200px;
-  }
+}
 
-  .arrow{
+.arrow {
     position: absolute;
     display: inline;
     text-decoration: none;
     font-size: 30px;
     color: white;
     font-weight: 100;
-  }
+}
 
-  #FS.arrow{
+#FS.arrow {
     left: 200px;
     top: 126px;
-  }
+}
 
-  #CQ.arrow{
+#CQ.arrow {
     left: 325px;
     top: 517px;
-  }
+}
 
-  .arrow:hover{
+.arrow:hover {
     color: white;
-  }
+}

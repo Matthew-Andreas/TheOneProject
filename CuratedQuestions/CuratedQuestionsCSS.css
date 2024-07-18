@@ -1,12 +1,10 @@
-  
-
-  .title{
+.title {
     text-align: center;
     color: #203A72;
     font-family: 'Montserrat';
-  }
+}
 
-  .boxTitle{
+.boxTitle {
     color: white;
     position: relative;
     font-family: 'Montserrat';
@@ -15,127 +13,125 @@
     top: 10px;
     left: 30px;
     display: inline;
-  }
+}
 
-  .box {
+.box {
     display: block;
     width: 1000px;
     height: 50px;
     border: none;
     margin-top: 25px;
-    /*margin-bottom: 25px;*/
     border-top-left-radius: 10px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #blue.box{
+#blue.box {
     background-color: #203A72;
-  }
+}
 
-  #lightBlue.box{
+#lightBlue.box {
     background-color: #7B95B1;
-  }
+}
 
-  .dropdown {
+.dropdown {
     display: block;
     width: 1000px;
     height: 775px;
     border: none;
-    /*margin-bottom: 25px;*/
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 10px;
-    background-color: #969FA6; /*#c3cdd6;*/
-  }
+    background-color: #969FA6;
+}
 
-  #FundingBased.dropdown{
+#FundingBased.dropdown {
     height: 750px;
-  }
-  
-  #businessLaw.dropdown{
+}
+
+#businessLaw.dropdown {
     height: 545px;
-  }
+}
 
-  #ActiveNetworkingTraining.dropdown{
+#ActiveNetworkingTraining.dropdown {
     height: 705px;
-  }
+}
 
-  #DigitalAssistance.dropdown{
+#DigitalAssistance.dropdown {
     height: 705px;
-  }
+}
 
-  #Workshops.dropdown{
+#Workshops.dropdown {
     height: 250px;
-  }
+}
 
-  #DiversityBased.dropdown{
+#DiversityBased.dropdown {
     height: 595px;
-  }
+}
 
-  .CuratedQuestions{
+.CuratedQuestions {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     margin-bottom: 50px;
-  }
+}
 
-  .dropdownButton{
+.dropdownButton {
     position: relative;
     display: inline;
     left: 780px;
     top: 5px;
-  }
+}
 
-  #FB.dropdownButton{
+#FB.dropdownButton {
     left: 765px;
-  }
+}
 
-  #BL.dropdownButton{
+#BL.dropdownButton {
     left: 781px;
-  }
+}
 
-  #ANT.dropdownButton{
+#ANT.dropdownButton {
     left: 623px;
-  }
-  
-  #DA.dropdownButton{
+}
+
+#DA.dropdownButton {
     left: 737px;
-  }
+}
 
-  #W.dropdownButton{
+#W.dropdownButton {
     left: 808px;
-  }
+}
 
-  #DB.dropdownButton{
+#DB.dropdownButton {
     left: 760px;
-  }
+}
 
-  .dropdownButtonimg{
+.dropdownButtonimg {
     width: 50px;
     height: auto;
     cursor: pointer;
     transition: transform 0.6s;
-  }
+}
 
-  .dropdown-content {
+.dropdown-content {
     overflow: hidden;
     transition: max-height 0.8s ease-in-out;
     max-height: 0px;
-  }
+}
 
-  .dropdown-Selections{
+.dropdown-Selections {
     position: relative;
     left: 40px;
     top: 20px;
     margin-bottom: 50px;
-  }
+}
 
-  .selectBox{
+.selectBox {
     position: relative;
     width: 485px;
     height: 40px;
@@ -146,117 +142,117 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-  }
+}
 
-  #RB2.selectBox{
+#RB2.selectBox {
     width: 505px;
-  }
+}
 
-  #RB3.selectBox{
+#RB3.selectBox {
     width: 415px;
-  }
+}
 
-  #RB4.selectBox{
+#RB4.selectBox {
     width: 500px;
-  }
+}
 
-  #FB1.selectBox{
+#FB1.selectBox {
     width: 615px;
     background-color: #7B95B1;
-  }
+}
 
-  #FB2.selectBox{
+#FB2.selectBox {
     width: 465px;
     background-color: #7B95B1;
-  }
+}
 
-  #FB3.selectBox{
+#FB3.selectBox {
     width: 415px;
     background-color: #7B95B1;
-  }
+}
 
-  #FB4.selectBox{
+#FB4.selectBox {
     width: 500px;
     background-color: #7B95B1;
-  }
+}
 
-  #BL1.selectBox{
+#BL1.selectBox {
     width: 665px;
-  }
+}
 
-  #BL2.selectBox{
+#BL2.selectBox {
     width: 475px;
-  }
+}
 
-  #BL3.selectBox{
+#BL3.selectBox {
     width: 465px;
-  }
+}
 
-  #ANT1.selectBox{
+#ANT1.selectBox {
     width: 475px;
     background-color: #7B95B1;
-  }
+}
 
-  #ANT2.selectBox{
+#ANT2.selectBox {
     width: 505px;
     background-color: #7B95B1;
-  }
+}
 
-  #ANT3.selectBox{
+#ANT3.selectBox {
     width: 440px;
     background-color: #7B95B1;
-  }
+}
 
-  #ANT4.selectBox{
+#ANT4.selectBox {
     width: 355px;
     background-color: #7B95B1;
-  }
+}
 
-  #DA1.selectBox{
+#DA1.selectBox {
     width: 375px;
-  }
+}
 
-  #DA2.selectBox{
+#DA2.selectBox {
     width: 400px;
-  }
+}
 
-  #DA3.selectBox{
+#DA3.selectBox {
     width: 475px;
-  }
+}
 
-  #DA4.selectBox{
+#DA4.selectBox {
     width: 500px;
-  }
+}
 
-  #W1.selectBox{
+#W1.selectBox {
     width: 440px;
     background-color: #7B95B1;
-  }
+}
 
-  #DB1.selectBox{
+#DB1.selectBox {
     width: 460px;
-  }
+}
 
-  #DB2.selectBox{
+#DB2.selectBox {
     width: 500px;
-  }
+}
 
-  #DB3.selectBox{
+#DB3.selectBox {
     width: 510px;
-  }
+}
 
-  .selectBoxText{
+.selectBoxText {
     color: white;
     font-family: 'Montserrat';
-  }
+}
 
-  .selectButton{
+.selectButton {
     margin-top: 12.5px;
     margin-left: 22px;
     margin-right: 5px;
-  }
+}
 
-  .descriptionBox{
+.descriptionBox {
     position: relative;
     width: 870px;
     height: 70px;
@@ -267,203 +263,204 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-  }
-  #RB2.descriptionBox{
+}
+
+#RB2.descriptionBox {
     width: 790px;
     height: 90px;
-  }
+}
 
-  #RB3.descriptionBox{
+#RB3.descriptionBox {
     width: 810px;
-  }
+}
 
-  #RB4.descriptionBox{
+#RB4.descriptionBox {
     width: 820px;
-  }
+}
 
-  #FB1.descriptionBox{
+#FB1.descriptionBox {
     width: 810px;
     height: 45px;
-  }
+}
 
-  #FB2.descriptionBox{
+#FB2.descriptionBox {
     width: 790px;
     height: 90px;
-  }
+}
 
-  #FB3.descriptionBox{
+#FB3.descriptionBox {
     width: 810px;
-  }
+}
 
-  #FB4.descriptionBox{
+#FB4.descriptionBox {
     width: 820px;
-  }
+}
 
-  #BL1.descriptionBox{
+#BL1.descriptionBox {
     width: 790px;
-  }
+}
 
-  #BL2.descriptionBox{
+#BL2.descriptionBox {
     width: 680px;
     height: 45px;
-  }
+}
 
-  #BL3.descriptionBox{
+#BL3.descriptionBox {
     width: 835px;
     height: 45px;
-  }
+}
 
-  #ANT1.descriptionBox{
+#ANT1.descriptionBox {
     width: 780px;
     height: 45px;
-  }
+}
 
-  #ANT2.descriptionBox{
+#ANT2.descriptionBox {
     width: 770px;
-  }
+}
 
-  #ANT3.descriptionBox{
+#ANT3.descriptionBox {
     width: 800px;
     height: 45px;
-  }
+}
 
-  #ANT4.descriptionBox{
+#ANT4.descriptionBox {
     width: 850px;
-  }
+}
 
-  #DA1.descriptionBox{
+#DA1.descriptionBox {
     width: 850px;
-  }
+}
 
-  #DA2.descriptionBox{
+#DA2.descriptionBox {
     width: 720px;
-  }
+}
 
-  #DA3.descriptionBox{
+#DA3.descriptionBox {
     width: 570px;
     height: 45px;
-  }
+}
 
-  #DA4.descriptionBox{
+#DA4.descriptionBox {
     width: 660px;
     height: 45px;
-  }
+}
 
-  #W1.descriptionBox{
+#W1.descriptionBox {
     width: 600px;
     height: 45px;
-  }
+}
 
-  #DB1.descriptionBox{
+#DB1.descriptionBox {
     width: 810px;
-  }
+}
 
-  #DB2.descriptionBox{
+#DB2.descriptionBox {
     width: 780px;
-  }
+}
 
-  #DB3.descriptionBox{
+#DB3.descriptionBox {
     width: 785px;
-  }
+}
 
-  .descriptionText{
+.descriptionText {
     position: relative;
     width: 830px;
     color: #203A72;
     font-family: 'Montserrat';
     top: 10px;
     left: 45px;
-  }
+}
 
-  #RB2.descriptionText{
+#RB2.descriptionText {
     width: 730px;
-  }
+}
 
-  #RB3.descriptionText{
+#RB3.descriptionText {
     width: 750px;
-  }
+}
 
-  #RB4.descriptionText{
+#RB4.descriptionText {
     width: 770px;
-  }
+}
 
-  #FB1.descriptionText{
+#FB1.descriptionText {
     width: 770px;
-  }
+}
 
-  #FB2.descriptionText{
+#FB2.descriptionText {
     width: 730px;
-  }
+}
 
-  #FB3.descriptionText{
+#FB3.descriptionText {
     width: 750px;
-  }
+}
 
-  #FB4.descriptionText{
+#FB4.descriptionText {
     width: 770px;
-  }
+}
 
-  #BL1.descriptionText{
+#BL1.descriptionText {
     width: 770px;
-  }
+}
 
-  #BL2.descriptionText{
+#BL2.descriptionText {
     width: 730px;
-  }
+}
 
-  #BL3.descriptionText{
+#BL3.descriptionText {
     width: 800px;
-  }
+}
 
-  #ANT1.descriptionText{
+#ANT1.descriptionText {
     width: 730px;
-  }
+}
 
-  #ANT2.descriptionText{
+#ANT2.descriptionText {
     width: 730px;
-  }
+}
 
-  #ANT3.descriptionText{
+#ANT3.descriptionText {
     width: 740px;
-  }
+}
 
-  #ANT4.descriptionText{
+#ANT4.descriptionText {
     width: 800px;
-  }
+}
 
-  #DA1.descriptionText{
+#DA1.descriptionText {
     width: 810px;
-  }
+}
 
-  #DA2.descriptionText{
+#DA2.descriptionText {
     width: 660px;
-  }
+}
 
-  #DA3.descriptionText{
+#DA3.descriptionText {
     width: 500px;
-  }
+}
 
-  #DA4.descriptionText{
+#DA4.descriptionText {
     width: 600px;
-  }
+}
 
-  #W1.descriptionText{
+#W1.descriptionText {
     width: 550px;
-  }
+}
 
-  #DB1.descriptionText{
+#DB1.descriptionText {
     width: 770px;
-  }
+}
 
-  #DB2.descriptionText{
+#DB2.descriptionText {
     width: 770px;
-  }
+}
 
-  #DB3.descriptionText{
+#DB3.descriptionText {
     width: 770px;
-  }
+}
 
-  .submitButton {
+.submitButton {
     display: inline-block;
     border: none;
     position: relative;
@@ -472,46 +469,46 @@
     text-align: center;
     text-decoration: none;
     font-family: 'Montserrat';
-    font-weight: 500; 
+    font-weight: 500;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 7.5px; /* Rounded corners */
+    border-radius: 7.5px;
     transition: background-color 0.3s, transform 0.2s;
     top: 40px;
     left: 775px;
-  }
+}
 
-  #blue.submitButton{
-    background-color: #203A72; /* Original button color */
-  }
+#blue.submitButton {
+    background-color: #203A72;
+}
 
-  #blue.submitButton:hover {
-    background-color: #2C4E99; /* Darker shade for hover */
-  }
+#blue.submitButton:hover {
+    background-color: #2C4E99;
+}
 
-  #blue.submitButton:active {
-    background-color: #1A2E57; /* Darker shade for hover */
+#blue.submitButton:active {
+    background-color: #1A2E57;
     transform: scale(0.95);
-  }
+}
 
-  #lightBlue.submitButton{
-    background-color: #7B95B1; /* Original button color */
-  }
+#lightBlue.submitButton {
+    background-color: #7B95B1;
+}
 
-  #lightBlue.submitButton:hover {
-    background-color: #677A94; /* Darker shade for hover */
-  }
+#lightBlue.submitButton:hover {
+    background-color: #677A94;
+}
 
-  #lightBlue.submitButton:active {
-    background-color: #546270; /* Darker shade for hover */
+#lightBlue.submitButton:active {
+    background-color: #546270;
     transform: scale(0.95);
-  }
+}
 
-  .ResourceQuestions{
+.ResourceQuestions {
     margin-bottom: 25px;
-  }
+}
 
-  .flipped {
-      transform: rotateX(180deg);
-  }
+.flipped {
+    transform: rotateX(180deg);
+}
