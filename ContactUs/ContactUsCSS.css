@@ -1,7 +1,7 @@
 label {
     display: block;
     font-family: 'Montserrat';
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     color: #60A800;
     font-size: 22px;
     font-weight: 500;
@@ -10,6 +10,15 @@ label {
 .input-container {
     position: relative;
     display: block;
+    margin-top: 20px;
+}
+
+#Name-Container.input-container {
+    margin-top: 15px;
+}
+
+.Message-container{
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -34,7 +43,7 @@ input[type="text"]:focus {
     outline: none;
 }
 
-#Name.input-container::before {
+#Name-Container.input-container::before {
     content: "\f007";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -46,7 +55,7 @@ input[type="text"]:focus {
     color: #aaa;
 }
 
-#Email.input-container::before {
+#Email-Container.input-container::before {
     content: "\2709";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -126,4 +135,8 @@ textarea[type="text"]:focus {
     margin-top: 50px;
     width: 500px;
     height: auto;
+}
+
+.error{
+    color: rgb(255, 0, 0);
 }

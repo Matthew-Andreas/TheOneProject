@@ -16,20 +16,90 @@
             <img src="images/GetinTouch.png#joomlaImage://local-images/GetinTouch.png?width=1080&height=703"
                 class="ContactImg">
         </div>
-        <form class="Contact-Form">
+        <form class="Contact-Form" id="Contact-Form">
             <label for="textbox">Contact Form</label>
-            <div class="input-container" id="Name">
-                <input type="text" placeholder="Name">
+            <div class="input-container" id="Name-Container">
+                <input type="text" placeholder="Name" id="Name">
             </div>
-            <div class="input-container" id="Email">
-                <input type="text" placeholder="Email">
+            <p class="error" id="Name-Error"></p>
+            <div class="input-container" id="Email-Container">
+                <input type="text" placeholder="Email" id="Email">
             </div>
-            <div id="Message">
-                <textarea class="input-container2" type="text" placeholder="Message"></textarea>
+            <p class="error" id="Email-Error"></p>
+            <div class="" id="Message-container">
+                <textarea class="input-container2" type="text" placeholder="Message" id="Message"></textarea>
             </div>
-            <button class="SendButton">Send</button>
+            <p class="error" id="Message-Error"></p>
+            <button class="SendButton" type="submit">Send</button>
         </form>
     </div>
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById('Contact-Form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values of the inputs
+            const Name = document.getElementById('Name').value;
+            const Email = document.getElementById('Email').value;
+            const Message = document.getElementById('Message').value;
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            var emailCorrect = true;
+
+            if (!(emailRegex.test(Email))) {
+                document.getElementById('Email-Error').innerHTML='Invalid email address. Please enter a valid email.'
+                document.getElementById('Email').style.border = '2px solid #FF0000';
+                emailCorrect = false;
+            }
+
+            // Perform any action with the input values
+            if(Name ===''){
+                document.getElementById('Name-Error').innerHTML = "Please enter your Name.";
+                document.getElementById('Name').style.border = '2px solid #FF0000';
+            }else{
+                document.getElementById('Name-Error').innerHTML='';
+                document.getElementById('Name').style.border = '0';
+            }
+
+            if(Email ===''){
+                document.getElementById('Email-Error').innerHTML = "Please enter your Email.";
+                document.getElementById('Email').style.border = '2px solid #FF0000';
+            }else if(emailCorrect){
+                document.getElementById('Email-Error').innerHTML='';
+                document.getElementById('Email').style.border = '0';                   
+            }
+            
+            if(Message ===''){
+                document.getElementById('Message-Error').innerHTML = "Please enter your Message.";
+                document.getElementById('Message').style.border = '2px solid #FF0000';
+            }else{
+                document.getElementById('Message-Error').innerHTML='';
+                document.getElementById('Message').style.border = '0';
+                
+            }
+
+            if ((!(Name === '' || Email === '' || Message === ''))&&emailCorrect){
+                const output = `Name: ${Name}<br>
+                                Email: ${Email}<br>
+                                Message: ${Message}`;
+                
+                document.getElementById('Name-Error').innerHTML='';
+                document.getElementById('Email-Error').innerHTML='';
+                document.getElementById('Message-Error').innerHTML='';
+                document.getElementById('Name').style.border = '0';
+                document.getElementById('Email').style.border = '0';
+                document.getElementById('Message').style.border = '0';
+
+                
+                // Display the output in a paragraph
+                document.getElementById('output').innerHTML = output;
+            }
+        });
+    </script>
+
 </body>
 
 </html>
