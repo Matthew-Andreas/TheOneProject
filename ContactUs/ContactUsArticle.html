@@ -42,42 +42,40 @@
 
             // Get the values of the inputs
             const Name = document.getElementById('Name').value;
+            const nameError = document.getElementById('Name-Error');
+            const nameBorder = document.getElementById('Name');
             const Email = document.getElementById('Email').value;
+            const emailError = document.getElementById('Email-Error');
+            const emailBorder = document.getElementById('Email');
             const Message = document.getElementById('Message').value;
+            const messageError = document.getElementById('Message-Error');
+            const messageBorder = document.getElementById('Message');
             
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             var emailCorrect = true;
 
             if (!(emailRegex.test(Email))) {
-                document.getElementById('Email-Error').innerHTML='Invalid email address. Please enter a valid email.'
-                document.getElementById('Email').style.border = '2px solid #FF0000';
+                editErrors(emailError,emailBorder,"Invalid email address. Please enter a valid email.","2px solid #FF0000");
                 emailCorrect = false;
             }
 
-            // Perform any action with the input values
             if(Name ===''){
-                document.getElementById('Name-Error').innerHTML = "Please enter your Name.";
-                document.getElementById('Name').style.border = '2px solid #FF0000';
+                editErrors(nameError,nameBorder,"Please enter your Name.","2px solid #FF0000");
             }else{
-                document.getElementById('Name-Error').innerHTML='';
-                document.getElementById('Name').style.border = '0';
+                editErrors(nameError,nameBorder,"","0");
             }
 
             if(Email ===''){
-                document.getElementById('Email-Error').innerHTML = "Please enter your Email.";
-                document.getElementById('Email').style.border = '2px solid #FF0000';
+                editErrors(emailError,emailBorder,"Please enter your Email.","2px solid #FF0000");
             }else if(emailCorrect){
-                document.getElementById('Email-Error').innerHTML='';
-                document.getElementById('Email').style.border = '0';                   
+                editErrors(emailError,emailBorder,"","0");                   
             }
-            
+
             if(Message ===''){
-                document.getElementById('Message-Error').innerHTML = "Please enter your Message.";
-                document.getElementById('Message').style.border = '2px solid #FF0000';
+                editErrors(messageError,messageBorder,"Please enter your Message.","2px solid #FF0000");
             }else{
-                document.getElementById('Message-Error').innerHTML='';
-                document.getElementById('Message').style.border = '0';
+                editErrors(messageError,messageBorder,"","0");
                 
             }
 
@@ -86,18 +84,22 @@
                                 Email: ${Email}<br>
                                 Message: ${Message}`;
                 
-                document.getElementById('Name-Error').innerHTML='';
-                document.getElementById('Email-Error').innerHTML='';
-                document.getElementById('Message-Error').innerHTML='';
-                document.getElementById('Name').style.border = '0';
-                document.getElementById('Email').style.border = '0';
-                document.getElementById('Message').style.border = '0';
+                editErrors(nameError,nameBorder,"","0");
+                editErrors(emailError,emailBorder,"","0");  
+                editErrors(messageError,messageBorder,"","0");
 
                 
                 // Display the output in a paragraph
                 document.getElementById('output').innerHTML = output;
             }
         });
+
+        function editErrors(errorName, borderName, errorMessage, borderStyle){
+            errorName.innerHTML = errorMessage;
+            borderName.style.border = borderStyle;
+        }
+
+        
     </script>
 
 </body>

@@ -1,7 +1,6 @@
 label {
     display: block;
     font-family: 'Montserrat';
-    margin-bottom: 15px;
     color: #60A800;
     font-size: 22px;
     font-weight: 500;
@@ -10,7 +9,11 @@ label {
 .input-container {
     position: relative;
     display: block;
-    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#Name-Container.input-container {
+    margin-top: 15px;
 }
 
 .input-container input::placeholder {
@@ -30,7 +33,7 @@ label {
     width: 425px;
 }
 
-#resource.input-container input {
+#Resource-Container.input-container input {
     padding-left: 25px;
 }
 
@@ -38,7 +41,7 @@ input[type="text"]:focus {
     outline: none;
 }
 
-#Name.input-container::before {
+#Name-Container.input-container::before {
     content: "\f007";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -50,7 +53,7 @@ input[type="text"]:focus {
     color: #aaa;
 }
 
-#Email.input-container::before {
+#Email-Container.input-container::before {
     content: "\2709";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -62,7 +65,7 @@ input[type="text"]:focus {
     color: #aaa;
 }
 
-.input-container2 {
+.More-Info {
     background-color: #eaeaea;
     border: 0;
     border-radius: 5px;
@@ -76,6 +79,7 @@ input[type="text"]:focus {
     resize: none;
     line-height: 1.5;
     overflow-y: auto;
+    margin-top: 10px;
 }
 
 textarea[type="text"]::placeholder {
@@ -147,7 +151,7 @@ textarea[type="text"]:focus {
 
 #CSI.checkbox-container {
     padding-left: 45px;
-    padding-right: 35px;
+    padding-right: 34px;
 }
 
 #Other.checkbox-container {
@@ -156,6 +160,10 @@ textarea[type="text"]:focus {
 
 .checkbox-rows {
     padding-bottom: 10px;
+}
+
+#Other-Row.checkbox-rows {
+    padding-bottom: 0px;
 }
 
 .checkbox-container {
@@ -171,4 +179,8 @@ textarea[type="text"]:focus {
     font-family: 'Montserrat';
     color: #a5a5a5;
     font-size: 14px;
+}
+
+.error{
+    color: rgb(255, 0, 0);
 }
