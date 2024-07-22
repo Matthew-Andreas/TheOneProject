@@ -527,9 +527,12 @@
         </form>
     </div>
     
-  </div>
-    <di class="selected">
-    <h1>Database Test:</h1>
+    </div>
+
+    
+
+    <div class="selected">
+        <h1>Database Test:</h1>
         <ul id="selected-filters">
             <?php
                 $T1 = new myObject($queryStatment);
