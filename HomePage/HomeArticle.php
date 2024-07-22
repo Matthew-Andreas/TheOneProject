@@ -8,33 +8,91 @@
 <body>
 <?php
     include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/HomePHP.php';
-    
-    $isWhere = false;
-    $oldGroup = "";
-    $isdifferent = false;
-    $data = [];
-    $queryStatment = "Select Title, email, phoneNum, price, description from Resources ";
 
-    function addWhere($addition, $queryStatment, $isWhere, $isdifferent){
-        if(!$isWhere){
-            $queryStatment .= "where (";
-        }elseif($isdifferent){
-            $queryStatment .= ") AND (";
-        }else{
-            $queryStatment .= " OR ";
+    class DatabaseQuery{
+        private $isWhere = false;
+        private $oldGroup = "";
+        private $isdifferent = false;
+        private $data = [];
+        private $queryStatement = "";
+        private $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
+
+        public function __construct(){
+            $this->queryStatement = "Select Title, email, phoneNum, price, description from Resources ";
         }
-        $queryStatment .= $addition;
-        return $queryStatment;
+
+        public function __construct($mData){
+            $this->data = $mData;
+            whereSetUp();
+        }
+
+        public function getQueryStatement(){
+            return $this->queryStatement;
+        }
+
+        private function addWhere($addition){
+            $queryStatement = $this->queryStatement;
+            if(!$this->isWhere){
+                $queryStatement .= "where (";
+            }elseif($this->isdifferent){
+                $queryStatement .= ") AND (";
+            }else{
+                $queryStatement .= " OR ";
+            }
+            $queryStatement .= $addition;
+            $this->queryStatement = $queryStatement;
+        }
+
+        private function whereSetUp(){
+            foreach($this->checkBoxValues as $value => $group){
+                if(in_array($value,$data)){
+                    if(!$this->isWhere){
+                        $this->oldGroup = $group;
+                    }elseif($this->oldGroup != $group){
+                        $this->isdifferent = true;
+                        $this->oldGroup = $group;
+                    }
+                    addWhere(($value . " = 1"));
+                    $this->isWhere = True;
+                    $this->isdifferent = false;
+                }
+            }
+            if($this->isWhere){
+                $this->queryStatement .= ")";
+            }
+        }
+
+
     }
 
 
-    $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
+    
+    /*$isWhere = false;
+    $oldGroup = "";
+    $isdifferent = false;
+    $data = [];
+    $queryStatement = "Select Title, email, phoneNum, price, description from Resources ";
+
+    function addWhere($addition, $queryStatement, $isWhere, $isdifferent){
+        if(!$isWhere){
+            $queryStatement .= "where (";
+        }elseif($isdifferent){
+            $queryStatement .= ") AND (";
+        }else{
+            $queryStatement .= " OR ";
+        }
+        $queryStatement .= $addition;
+        return $queryStatement;
+    }
+
+
+    $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];*/
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
         if (isset($_POST['filters']) && is_array($_POST['filters'])) {
             
             $data = $_POST['filters'];
 
-            $hasFilter = false;
+            /*$hasFilter = false;
             foreach($checkBoxValues as $value => $group){
                 if(in_array($value,$data)){
                     if(!$isWhere){
@@ -43,17 +101,19 @@
                         $isdifferent = true;
                         $oldGroup = $group;
                     }
-                    $queryStatment = addWhere(($value . " = 1"), $queryStatment, $isWhere, $isdifferent);
+                    $queryStatement = addWhere(($value . " = 1"), $queryStatement, $isWhere, $isdifferent);
                     $isWhere = True;
                     $isdifferent = false;
                     $hasFilter = true;
                 }
             }
             if($hasFilter){
-                $queryStatment .= ")";
-            }
+                $queryStatement .= ")";
+            }*/
+            $Q1 = new DatabaseQuery($data);
 
-            $T1 = new myObject($queryStatment);
+            //$T1 = new DatabaseTable($queryStatement);
+            $T1 = new DatabaseTable($Q1->getQueryStatement());
 
         }
         exit();
@@ -535,7 +595,8 @@
         <h1>Database Test:</h1>
         <ul id="selected-filters">
             <?php
-                $T1 = new myObject($queryStatment);
+                
+                $T1 = new DatabaseTable($queryStatement);
             ?>
         </ul>
     </div>

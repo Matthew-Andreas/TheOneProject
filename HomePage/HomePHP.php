@@ -1,5 +1,5 @@
 <?php
-class MyObject {
+class DatabaseTable {
     public $result;
     public $results;
     public $db;
