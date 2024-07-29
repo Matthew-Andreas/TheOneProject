@@ -78,7 +78,7 @@ function collectCheckboxValues(name) {
 
 function updateFilters() {
     var filterValues = collectCheckboxValues("filters[]");
-    //var selectValues = collectCheckboxValues("select[]");
+    var selectValues = collectCheckboxValues("select[]");
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "", true);  // Update the URL as needed
@@ -94,12 +94,14 @@ function updateFilters() {
         }
     };
 
+    var data = "ajax=1";
+    data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
     //var data = "ajax=1&filters[]=" + filterValues.join("&filters[]=");
     //data += "&filters[]=" + values.join("&filters[]=");
-    //data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
+    data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
-    //xhr.send(data);
-    xhr.send("ajax=1&filters[]=" + filterValues.join("&filters[]="));
+    xhr.send(data);
+    //xhr.send("ajax=1&filters[]=" + filterValues.join("&filters[]="));
 }
 
 document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {

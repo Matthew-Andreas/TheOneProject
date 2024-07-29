@@ -7,79 +7,18 @@
 </head>
 <body>
 <?php
-    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/HomePHP.php';
-
-    class DatabaseQuery{
-        public $isWhere = false;
-        public $oldGroup = "";
-        public $isdifferent = false;
-        public $whereData = [];
-        public $queryStatement = "Select Title, email, phoneNum";
-        public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
-
-        public function __construct($mData){
-            $this->whereData = $mData;
-            $this->whereSetUp();
-        }
-
-        public function getQueryStatement(){
-            return $this->queryStatement;
-        }
-
-        /*public function addSelect(){
-
-        }*/
-
-        public function addWhere($addition){
-            if(!($this->isWhere)){
-                $this->queryStatement .= "where (";
-            }elseif($this->isdifferent){
-                $this->queryStatement .= ") AND (";
-            }else{
-                $this->queryStatement .= " OR ";
-            }
-            $this->queryStatement .= $addition;
-        }
-
-        public function whereSetUp(){
-            $this->queryStatement .= " from Resources ";
-            foreach($this->checkBoxValues as $value => $group){
-                if(in_array($value,$this->data)){
-                    if(!($this->isWhere)){
-                        $this->oldGroup = $group;
-                    }elseif($this->oldGroup != $group){
-                        $this->isdifferent = true;
-                        $this->oldGroup = $group;
-                    }
-                    $this->addWhere($value . " = 1");
-                    $this->isWhere = True;
-                    $this->isdifferent = false;
-                }
-            }
-            if($this->isWhere){
-                $this->queryStatement .= ")";
-            }
-        }
-
-
-    };
+    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseTable.php';
+    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseQuery.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
-        if (isset($_POST['filters']) && is_array($_POST['filters'])) {
-            $data = $_POST['filters'];
-            //$select = isset($_POST['select']) ? $_POST['select'] : [];
-            //print_r($data2);
-            $Q1 = new DatabaseQuery($data);
+        $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
+        $select = isset($_POST['select']) ? $_POST['select'] : [];
 
-            $T1 = new DatabaseTable($Q1->getQueryStatement());
+        $Q1 = new DatabaseQuery($filters, $select);
 
-        }else{
-            $T1 = new DatabaseTable("Select Title, email, phoneNum, price, description from Resources");
-        }
+        $T1 = new DatabaseTable($Q1->getQueryStatement());
         exit();
     }
-
-
 ?>
  
     <button class="sidebar-button" id="sidebar-button">
@@ -553,11 +492,11 @@
 
     <div class="selected">
         <label class="checkbox-container">
-            <input type="checkbox" name="select[]" value="price"> Price
+            <input type="checkbox" name="select[]" value="price" onclick="updateFilters()"> Price
             <span class="checkmark"></span>
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" name="select[]" value="description"> Description
+            <input type="checkbox" name="select[]" value="description" onclick="updateFilters()"> Description
             <span class="checkmark"></span>
         </label>
         <h1>Database Test:</h1>
