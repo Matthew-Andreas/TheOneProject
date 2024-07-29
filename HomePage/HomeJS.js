@@ -48,25 +48,6 @@ function matchHeights() {
     document.documentElement.style.setProperty('--matched-height', maxHeight + 'px')
 }
 
-/*function updateFilters() {
-    var checkboxes = document.querySelectorAll('input[name="filters[]"]:checked');
-    var values = [];
-    checkboxes.forEach((checkbox) => {
-        values.push(checkbox.value);
-    });
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("selected-filters").innerHTML = xhr.responseText;
-
-        }
-    };
-    xhr.send("ajax=1&filters[]=" + values.join("&filters[]="));
-}*/
-
 function collectCheckboxValues(name) {
     var checkboxes = document.querySelectorAll('input[name="' + name + '"]:checked');
     var values = [];
@@ -96,12 +77,9 @@ function updateFilters() {
 
     var data = "ajax=1";
     data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
-    //var data = "ajax=1&filters[]=" + filterValues.join("&filters[]=");
-    //data += "&filters[]=" + values.join("&filters[]=");
     data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
     xhr.send(data);
-    //xhr.send("ajax=1&filters[]=" + filterValues.join("&filters[]="));
 }
 
 document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {
