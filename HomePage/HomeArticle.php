@@ -13,18 +13,22 @@
         public $isWhere = false;
         public $oldGroup = "";
         public $isdifferent = false;
-        public $data = [];
-        public $queryStatement = "Select Title, email, phoneNum, price, description from Resources ";
+        public $whereData = [];
+        public $queryStatement = "Select Title, email, phoneNum";
         public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
 
         public function __construct($mData){
-            $this->data = $mData;
+            $this->whereData = $mData;
             $this->whereSetUp();
         }
 
         public function getQueryStatement(){
             return $this->queryStatement;
         }
+
+        /*public function addSelect(){
+
+        }*/
 
         public function addWhere($addition){
             if(!($this->isWhere)){
@@ -38,6 +42,7 @@
         }
 
         public function whereSetUp(){
+            $this->queryStatement .= " from Resources ";
             foreach($this->checkBoxValues as $value => $group){
                 if(in_array($value,$this->data)){
                     if(!($this->isWhere)){
@@ -61,13 +66,15 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
         if (isset($_POST['filters']) && is_array($_POST['filters'])) {
-
             $data = $_POST['filters'];
-
+            //$select = isset($_POST['select']) ? $_POST['select'] : [];
+            //print_r($data2);
             $Q1 = new DatabaseQuery($data);
 
             $T1 = new DatabaseTable($Q1->getQueryStatement());
 
+        }else{
+            $T1 = new DatabaseTable("Select Title, email, phoneNum, price, description from Resources");
         }
         exit();
     }
@@ -545,10 +552,18 @@
     
 
     <div class="selected">
+        <label class="checkbox-container">
+            <input type="checkbox" name="select[]" value="price"> Price
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="select[]" value="description"> Description
+            <span class="checkmark"></span>
+        </label>
         <h1>Database Test:</h1>
         <ul id="selected-filters">
             <?php
-                $T1 = new DatabaseTable("Select Title, email, phoneNum, price, description from Resources");
+                $T1 = new DatabaseTable("Select Title, email, phoneNum from Resources");
             ?>
         </ul>
     </div>

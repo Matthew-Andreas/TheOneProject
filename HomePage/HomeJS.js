@@ -48,7 +48,7 @@ function matchHeights() {
     document.documentElement.style.setProperty('--matched-height', maxHeight + 'px')
 }
 
-function updateFilters() {
+/*function updateFilters() {
     var checkboxes = document.querySelectorAll('input[name="filters[]"]:checked');
     var values = [];
     checkboxes.forEach((checkbox) => {
@@ -65,7 +65,48 @@ function updateFilters() {
         }
     };
     xhr.send("ajax=1&filters[]=" + values.join("&filters[]="));
+}*/
+
+function collectCheckboxValues(name) {
+    var checkboxes = document.querySelectorAll('input[name="' + name + '"]:checked');
+    var values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+    });
+    return values;
 }
+
+function updateFilters() {
+    var filterValues = collectCheckboxValues("filters[]");
+    //var selectValues = collectCheckboxValues("select[]");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "", true);  // Update the URL as needed
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {  // Request is complete
+            if (xhr.status == 200) {  // Request was successful
+                document.getElementById("selected-filters").innerHTML = xhr.responseText;
+            } else {
+                console.error("Request failed. Status: " + xhr.status);
+            }
+        }
+    };
+
+    //var data = "ajax=1&filters[]=" + filterValues.join("&filters[]=");
+    //data += "&filters[]=" + values.join("&filters[]=");
+    //data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
+
+    //xhr.send(data);
+    xhr.send("ajax=1&filters[]=" + filterValues.join("&filters[]="));
+}
+
+document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', updateFilters);
+});
+
+
 
 window.onload = matchHeights;
 window.onresize = matchHeights;
