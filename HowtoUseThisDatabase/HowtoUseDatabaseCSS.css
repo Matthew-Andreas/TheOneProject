@@ -28,11 +28,6 @@
 .FilterSearch {
     width: 250px;
     height: 35px;
-    background-color: #203A72;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
 }
 
 .FilterSearchTitle {
@@ -40,16 +35,16 @@
     display: inline;
     top: 5px;
     left: 30px;
-    color: white;
+    color: #203A72;
     font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 800;
+    font-size: 24px;
 }
 
 .FilterSearchTextBox {
     width: 1200px;
     height: 325px;
-    background-color: #EAEAEA;
+    background-color: #ffffff;
     border-top-left-radius: 0px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -60,6 +55,7 @@
     position: relative;
     top: 25px;
     left: 30px;
+    font-weight: 500;
     color: #203A72;
     font-family: 'Montserrat';
 }
@@ -72,6 +68,7 @@
     padding-left: 20px;
     font-family: 'Montserrat';
     font-size: 16px;
+    font-weight: 500;
     color: #203A72;
 }
 
@@ -88,11 +85,6 @@
 .CuratedQuestions {
     width: 375px;
     height: 35px;
-    background-color: #203A72;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
     margin-top: 30px;
 }
 
@@ -100,16 +92,16 @@
     position: relative;
     top: 5px;
     left: 30px;
-    color: white;
+    color: #203A72;
     font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 800;
+    font-size: 24px;
 }
 
 .CuratedQuestionsTextBox {
     width: 860px;
     height: 100px;
-    background-color: #EAEAEA;
+    background-color: #ffffff;
     border-top-left-radius: 0px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -120,6 +112,7 @@
     position: relative;
     top: 25px;
     left: 30px;
+    font-weight: 500;
     color: #203A72;
     font-family: 'Montserrat';
 }
@@ -222,6 +215,9 @@
 .descriptionBox {
     background-color: #eaeaea;
     width: 350px;
+    border-left: 1px solid #203A72;
+    border-right: 1px solid #203A72;
+    border-bottom: 1px solid #203A72;
 }
 
 #FoP.descriptionBox {
@@ -273,6 +269,7 @@
     font-family: 'Montserrat';
     font-size: 14px;
     line-height: 1.5;
+    font-weight: 600;
 }
 
 #ToRSingle.descText {
@@ -289,28 +286,31 @@
 }
 
 .descTerm {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .CategText {
     position: relative;
     left: 25px;
     top: 10px;
-    color: #EAEAEA;
+    color: #203A72;
     font-family: 'Montserrat';
-    font-weight: 300;
+    font-weight: 600;
     font-size: 14px;
     line-height: 2;
 }
 
 .terms {
-    color: white;
-    font-weight: 500;
+    color: #203A72;
+    font-weight: 700;
 }
 
 .Categories {
-    background-color: #7B95B1;
+    background-color: #FFFFFF;
     width: 350px;
+    border-left: 1px solid #203A72;
+    border-right: 1px solid #203A72;
+    border-bottom: 1px solid #203A72;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 10px;
@@ -414,13 +414,28 @@
 }
 
 #FS.arrow {
-    left: 200px;
-    top: 126px;
+    left: 240px;
+    top: 140px;
 }
 
 #CQ.arrow {
-    left: 325px;
-    top: 517px;
+    left: 425px;
+    top: 530px;
+}
+
+.arrowButton{
+    background-color: #60A800;
+    border: 0;
+    border-radius: 5px;
+    width: 50px;
+    height:30px;
+    color: white;
+    font-weight: 100;
+}
+
+.arrowText{
+    position: relative;
+    bottom: 10px;
 }
 
 .arrow:hover {
