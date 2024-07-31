@@ -38,7 +38,7 @@
 .dropdown {
     display: block;
     width: 1000px;
-    height: 775px;
+    height: 710px;
     border: none;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -48,19 +48,19 @@
 }
 
 #FundingBased.dropdown {
-    height: 750px;
+    height: 690px;
 }
 
 #businessLaw.dropdown {
-    height: 545px;
+    height: 530px;
 }
 
 #ActiveNetworkingTraining.dropdown {
-    height: 705px;
+    height: 650px;
 }
 
 #DigitalAssistance.dropdown {
-    height: 705px;
+    height:650px;
 }
 
 #Workshops.dropdown {
@@ -68,7 +68,7 @@
 }
 
 #DiversityBased.dropdown {
-    height: 595px;
+    height: 550px;
 }
 
 .CuratedQuestions {
@@ -131,121 +131,6 @@
     margin-bottom: 30px;
 }
 
-.selectBox {
-    position: relative;
-    width: 485px;
-    height: 40px;
-    background-color: #203A72;
-    top: 25px;
-    left: 25px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-
-#RB2.selectBox {
-    width: 505px;
-}
-
-#RB3.selectBox {
-    width: 415px;
-}
-
-#RB4.selectBox {
-    width: 500px;
-}
-
-#FB1.selectBox {
-    width: 615px;
-    background-color: #7B95B1;
-}
-
-#FB2.selectBox {
-    width: 465px;
-    background-color: #7B95B1;
-}
-
-#FB3.selectBox {
-    width: 415px;
-    background-color: #7B95B1;
-}
-
-#FB4.selectBox {
-    width: 500px;
-    background-color: #7B95B1;
-}
-
-#BL1.selectBox {
-    width: 665px;
-}
-
-#BL2.selectBox {
-    width: 475px;
-}
-
-#BL3.selectBox {
-    width: 465px;
-}
-
-#ANT1.selectBox {
-    width: 475px;
-    background-color: #7B95B1;
-}
-
-#ANT2.selectBox {
-    width: 505px;
-    background-color: #7B95B1;
-}
-
-#ANT3.selectBox {
-    width: 440px;
-    background-color: #7B95B1;
-}
-
-#ANT4.selectBox {
-    width: 355px;
-    background-color: #7B95B1;
-}
-
-#DA1.selectBox {
-    width: 375px;
-}
-
-#DA2.selectBox {
-    width: 400px;
-}
-
-#DA3.selectBox {
-    width: 475px;
-}
-
-#DA4.selectBox {
-    width: 500px;
-}
-
-#W1.selectBox {
-    width: 440px;
-    background-color: #7B95B1;
-}
-
-#DB1.selectBox {
-    width: 460px;
-}
-
-#DB2.selectBox {
-    width: 500px;
-}
-
-#DB3.selectBox {
-    width: 510px;
-}
-
-.selectBoxText {
-    color: white;
-    font-family: 'Montserrat';
-}
-
 .selectButton {
     margin-top: 12.5px;
     margin-left: 22px;
@@ -263,110 +148,16 @@
     border-radius: 10px;
 }
 
+#doubleLines.descriptionBox{
+    height: 90px;
+}
+
 #tripleLines.descriptionBox{
     height: 110px;
 }
 
 #quadLines.descriptionBox{
     height: 130px;
-}
-
-#RB2.descriptionBox {
-    width: 790px;
-    height: 90px;
-}
-
-#RB3.descriptionBox {
-    width: 810px;
-}
-
-#RB4.descriptionBox {
-    width: 820px;
-}
-
-#FB1.descriptionBox {
-    width: 810px;
-    height: 45px;
-}
-
-#FB2.descriptionBox {
-    width: 790px;
-    height: 90px;
-}
-
-#FB3.descriptionBox {
-    width: 810px;
-}
-
-#FB4.descriptionBox {
-    width: 820px;
-}
-
-#BL1.descriptionBox {
-    width: 790px;
-}
-
-#BL2.descriptionBox {
-    width: 680px;
-    height: 45px;
-}
-
-#BL3.descriptionBox {
-    width: 835px;
-    height: 45px;
-}
-
-#ANT1.descriptionBox {
-    width: 780px;
-    height: 45px;
-}
-
-#ANT2.descriptionBox {
-    width: 770px;
-}
-
-#ANT3.descriptionBox {
-    width: 800px;
-    height: 45px;
-}
-
-#ANT4.descriptionBox {
-    width: 850px;
-}
-
-#DA1.descriptionBox {
-    width: 850px;
-}
-
-#DA2.descriptionBox {
-    width: 720px;
-}
-
-#DA3.descriptionBox {
-    width: 570px;
-    height: 45px;
-}
-
-#DA4.descriptionBox {
-    width: 660px;
-    height: 45px;
-}
-
-#W1.descriptionBox {
-    width: 600px;
-    height: 45px;
-}
-
-#DB1.descriptionBox {
-    width: 810px;
-}
-
-#DB2.descriptionBox {
-    width: 780px;
-}
-
-#DB3.descriptionBox {
-    width: 785px;
 }
 
 .descriptionTitle{
@@ -376,101 +167,12 @@
 
 .descriptionText {
     position: relative;
-    /*width: 830px;*/
     color: #203A72;
     font-family: 'Montserrat';
     font-weight: 600;
     top: 15px;
     left: 20px;
     line-height: 1.3;
-}
-
-#RB2.descriptionText {
-    width: 730px;
-}
-
-#RB3.descriptionText {
-    width: 750px;
-}
-
-#RB4.descriptionText {
-    width: 770px;
-}
-
-#FB1.descriptionText {
-    width: 770px;
-}
-
-#FB2.descriptionText {
-    width: 730px;
-}
-
-#FB3.descriptionText {
-    width: 750px;
-}
-
-#FB4.descriptionText {
-    width: 770px;
-}
-
-#BL1.descriptionText {
-    width: 770px;
-}
-
-#BL2.descriptionText {
-    width: 730px;
-}
-
-#BL3.descriptionText {
-    width: 800px;
-}
-
-#ANT1.descriptionText {
-    width: 730px;
-}
-
-#ANT2.descriptionText {
-    width: 730px;
-}
-
-#ANT3.descriptionText {
-    width: 740px;
-}
-
-#ANT4.descriptionText {
-    width: 800px;
-}
-
-#DA1.descriptionText {
-    width: 810px;
-}
-
-#DA2.descriptionText {
-    width: 660px;
-}
-
-#DA3.descriptionText {
-    width: 500px;
-}
-
-#DA4.descriptionText {
-    width: 600px;
-}
-
-#W1.descriptionText {
-    width: 550px;
-}
-
-#DB1.descriptionText {
-    width: 770px;
-}
-
-#DB2.descriptionText {
-    width: 770px;
-}
-
-#DB3.descriptionText {
-    width: 770px;
 }
 
 .submitButton {
@@ -484,7 +186,7 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 15px 2px;
     cursor: pointer;
     border-radius: 7.5px;
     transition: background-color 0.3s, transform 0.2s;
@@ -508,15 +210,6 @@
 
 .flipped {
     transform: rotateX(180deg);
-}
-
-.selections{
-    display: inline-block;
-    position: relative;
-    top: 15px;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #203A72;
 }
 
 .custom-checkbox input[type="checkbox"] {
@@ -552,6 +245,12 @@
     position: relative;
     top: 2px;
     left: 6px;
+}
+
+#doubleLines.custom-checkbox{
+    display: inline-block;
+    position: relative;
+    top: 25px;
 }
 
 #tripleLines.custom-checkbox{
