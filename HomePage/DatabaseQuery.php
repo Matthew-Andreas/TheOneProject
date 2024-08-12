@@ -5,8 +5,10 @@ class DatabaseQuery{
     public $isdifferent = false;
     public $whereData = [];
     public $selectData = [];
-    public $queryStatement = "Select Title, email, phoneNum";
-    public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP","localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"];
+    public $queryStatement = "Select Name_of_organization, address, description";
+    public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP",
+                                "localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"
+                            ];
 
     public function __construct($filters,$selected){
         $this->whereData = $filters;

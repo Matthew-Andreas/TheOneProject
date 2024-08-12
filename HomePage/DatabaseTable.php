@@ -13,27 +13,26 @@ class DatabaseTable {
         $this->space = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
         $this->query = $q;
         $this->db->setQuery($this->query);
-        $this->result = $this->db->loadObjectList();
+        $this->result = $this->db->loadObjectList(); 
         $this->results = $this->db->loadAssocList();
         $this->columns = array_keys($this->results[0]);
     }
 
     public function printHeader() {
         echo "<table>";
-        echo "<tr style=\"background-color:Blue;color:White\">";
+        echo "<tr style=\"background-color:#203A72;color:White\">";
         foreach ($this->columns as $columnName) {
-            echo "<th>" . $columnName . $this->space . $this->space . $this->space . "</th>";
+            $result = str_replace('_', ' ', $columnName);
+            echo "<th >" . $result ."</th>";
         }
         echo "</tr>";
-        echo "</table>";
     }
 
     public function printData() {
-        echo "<table>";
         foreach ($this->result as $row) {
             echo "<tr>";
             foreach ($this->columns as $columnName) {
-                echo "<td>" . $row->$columnName . $this->space . "</td>";
+                echo "<td>" . $row->$columnName . "</td>";
             }
             echo "</tr>"; // Close out the row.
         }

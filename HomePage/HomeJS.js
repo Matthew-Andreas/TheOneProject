@@ -1,6 +1,9 @@
-document.getElementById("sidebar-button").onclick = function () {
-    document.body.classList.toggle("open-sidebar");
-}
+document.querySelectorAll(".sidebar-button").forEach(function(button) {
+    button.onclick = function() {
+        document.body.classList.toggle("open-sidebar");
+    };
+});
+
 function toggleDropdown(dropboxNum, dropdownContentNum) {
     var dropdownContent = document.getElementById(dropdownContentNum);
     var sidebarButton = document.getElementById('sidebar-button');

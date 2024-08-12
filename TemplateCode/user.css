@@ -128,12 +128,9 @@ textarea {
 
 body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-101 {
     padding: 0px;
-    min-width: 1080px;
+    margin: 0px;
 }
 
-body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-104 {
-    min-width: 1080px;
-}
 
 .metismenu.mod-menu .mm-collapse {
     color: #EAEAEA;
@@ -143,8 +140,4 @@ body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-104 {
 
 .metismenu.mod-menu .parent>ul {
     color: #EAEAEA;
-}
-
-body {
-    min-width: 1080px;
 }

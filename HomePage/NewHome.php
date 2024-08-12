@@ -1,220 +1,320 @@
 {source}
 <!DOCTYPE html>
 
-<head>
-  <jdoc:include type="head" />
-  <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css" type="text/css" />
-</head>
-<body>
-<?php
-    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseTable.php';
-    include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseQuery.php';
+    <head>
+    <jdoc:include type="head" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css" type="text/css" />
+    </head>
+    <body>
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
-        $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
-        $select = isset($_POST['select']) ? $_POST['select'] : [];
+        <?php
+            include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseTable.php';
+            include_once JPATH_BASE . '/media/templates/site/cassiopeia/CustomCode/HomePage/DatabaseQuery.php';
 
-        $Q1 = new DatabaseQuery($filters, $select);
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
+                $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
+                $select = isset($_POST['select']) ? $_POST['select'] : [];
+        
+                $Q1 = new DatabaseQuery($filters, $select);
+        
+                $T1 = new DatabaseTable($Q1->getQueryStatement());
+                exit();
+            }
+        ?>
 
-        $T1 = new DatabaseTable($Q1->getQueryStatement());
-        exit();
-    }
-?>
- 
-    <button class="sidebar-button" id="sidebar-button">
-    >
-  </button>
-  <div class="sidebar" id="mySidebar">
- 
-  <h3>Filter Options</h3>
-      <div class="dropbox" id="dropbox">
-          <button class="FilterTitleText" onclick="toggleDropdown('dropbox','dropdown-content')" >
-              Free or Paid
-          </button>
+        <div class="filters">
+        <button class="AllFiltersButton sidebar-button">All Filters</button>
+            <p class="showText">Show in search:</p>
+            <div class="selectCheckboxes">
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Website" onclick="updateFilters()"> Website
+                    <span class="checkmarkSelect"></span>
+                </label>
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Geography" onclick="updateFilters()"> Geography
+                    <span class="checkmarkSelect"></span>
+                </label>
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
+                    <span class="checkmarkSelect"></span>
+                </label>
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
+                    <span class="checkmarkSelect"></span>
+                </label>
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Sector" onclick="updateFilters()"> Sector
+                    <span class="checkmarkSelect"></span>
+                </label>
+                <label class="checkbox-containerSelect">
+                    <input type="checkbox" name="select[]" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
+                    <span class="checkmarkSelect"></span>
+                </label>
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="Database">
+            <div class="selected">
+                <h1>Database Test:</h1>
+                <div id="selected-filters">
+                    <?php
+                        $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources");
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+
+
+    <div class="sidebar" id="mySidebar">
+    <div style="display: flex;">
+        <p class="filterTitle">All Filters</p>
+        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="sidebar-button Exit">
+    </div>
+    
+    <div class="dropbox" id="dropbox">
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Free or Paid</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow FoP" onclick="toggleDropdown('dropbox','dropdown-content')" >
+        </div>
             <form method="post">
                 <div class="dropdown-content" id="dropdown-content">
-                    <label class="checkbox-container">Free
+                    <label class="checkbox-container">
                         <input type="checkbox" name="filters[]" value="Free" onclick="updateFilters()">
                         <span class="checkmark"></span>
+                        Free
                     </label>
-                    <label class="checkbox-container">Paid
+                    <label class="checkbox-container bottom">
                         <input type="checkbox" name="filters[]" value="Paid" onclick="updateFilters()">
                         <span class="checkmark"></span>
+                        Paid
                     </label>
                 </div>
             </form>
       </div>
-      <div class="dropbox" id="dropbox2">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox2','dropdown-content2')">
-            Geography
-        </button>
+    <div class="dropbox" id="dropbox2">
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Geography</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Geo" onclick="toggleDropdown('dropbox2','dropdown-content2')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content2">
-                <label class="checkbox-container">Local North County
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="localNorthCounty" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Local North County
                 </label>
-                <label class="checkbox-container">Local San Deigo
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="localSanDeigo" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Local San Deigo
                 </label>
-                <label class="checkbox-container">California
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="California" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    California
                 </label>
-                <label class="checkbox-container">National
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="National" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    National
                 </label>
-                <label class="checkbox-container">International
+                <label class="checkbox-container bottom">
                     <input type="checkbox" name="filters[]" value="International" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    International
                 </label>
             </div>
         </form>
     </div>
     <div class="dropbox" id="dropbox3">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox3','dropdown-content3')">Stage of business</button>
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Stage of Business</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow SoB" onclick="toggleDropdown('dropbox3','dropdown-content3')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content3">
-                <label class="checkbox-container">Ideation
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Ideation" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Ideation
                 </label>
-                <label class="checkbox-container">Seeding
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Seeding" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Seeding
                 </label>
-                <label class="checkbox-container">Establishing
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Establishing" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Establishing
                 </label>
-                <label class="checkbox-container">Growing
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Growing" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Growing
                 </label>
-                <label class="checkbox-container">Selling/exiting
+                <label class="checkbox-container bottom">
                     <input type="checkbox" name="filters[]" value="Selling/exiting" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Selling/exiting
                 </label>
             </div>
         </form>
     </div>
     <div class="dropbox" id="dropbox4">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox4','dropdown-content4')">Type of business</button>
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Type of Business</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToB" onclick="toggleDropdown('dropbox4','dropdown-content4')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content4">
-                <label class="checkbox-container">Microenterprise
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Microenterprise" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Microenterprise
                 </label>
-                <label class="checkbox-container">Innovation/tech
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Innovation/tech" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Innovation/tech
                 </label>
-                <label class="checkbox-container">Main Street
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Main Street" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Main Street
                 </label>
-                <label class="checkbox-container">Medium/Large Business
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Medium/Large Business" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Medium/Large Business
                 </label>
-                <label class="checkbox-container">Pop Ups/Venders
+                <label class="checkbox-container bottom">
                     <input type="checkbox" name="filters[]" value="Pop Ups/Venders" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Pop Ups/Venders
                 </label>
             </div>
         </form>
     </div>
     <div class="dropbox" id="dropbox5">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox5','dropdown-content5')">Indusrty</button>
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Industry</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Ind" onclick="toggleDropdown('dropbox5','dropdown-content5')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content5">
-                <label class="checkbox-container">Tech Industry
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Tech Industry" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Tech Industry
                 </label>
-                <label class="checkbox-container">Non-profit social sector
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Non-profit social sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Non-profit social sector
                 </label>
-                <label class="checkbox-container">Agricultural sector
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Agricultural sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Agricultural sector
                 </label>
-                <label class="checkbox-container">Consumer goods/retail
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Consumer goods/retail" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Consumer goods/retail
                 </label>
-                <label class="checkbox-container">Entertainment
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Entertainment" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Entertainment
                 </label>
-                <label class="checkbox-container">Other Indusrty
+                <label class="checkbox-container bottom">
                     <input type="checkbox" name="filters[]" value="Other Indusrty" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Other Indusrty
                 </label>
             </div>
         </form>
     </div>
     <div class="dropbox" id="dropbox6">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox6','dropdown-content6')">Sector</button>
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Sector</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" onclick="toggleDropdown('dropbox6','dropdown-content6')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content6">
-                <label class="checkbox-container">Veteran
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Veteran" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Veteran
                 </label>
-                <label class="checkbox-container">Women
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Women" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Women
                 </label>
-                <label class="checkbox-container">People with Disabilities
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="People with Disabilities" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    People with Disabilities
                 </label>
-                <label class="checkbox-container">Multicultural
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Multicultural" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Multicultural
                 </label>
-                <label class="checkbox-container">Black
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Black" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Black
                 </label>
-                <label class="checkbox-container">Asian
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Asian" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Asian
                 </label>
-                <label class="checkbox-container">Latin X
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Latin X" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Latin X
                 </label>
-                <label class="checkbox-container">Immigrants
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Immigrants" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Immigrants
                 </label>
-                <label class="checkbox-container">Under privileged (low income)
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Under privileged (low income)" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Under privileged (low income)
                 </label>
-                <label class="checkbox-container">LGBTQ+
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="LGBTQ+" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    LGBTQ+
                 </label>
-                <label class="checkbox-container">Veteran Women
+                <label class="checkbox-container">
                     <input type="checkbox" name="filters[]" value="Veteran Women" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Veteran Women
                 </label>
-                <label class="checkbox-container">Student
+                <label class="checkbox-container bottom">
                     <input type="checkbox" name="filters[]" value="Student" onclick="updateFilters()">
                     <span class="checkmark"></span>
+                    Student
                 </label>
             </div>
         </form>
     </div>
     <div class="dropbox" id="dropbox7">
-        <button class="FilterTitleText" onclick="toggleDropdown('dropbox7','dropdown-content7')">Type of Resources</button>
+        <div class="FilterTitleText" style="display: flex;">
+            <p style="margin:0; white-space:nowrap;">Type of Resources</p>
+            <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToR" onclick="toggleDropdown('dropbox7','dropdown-content7')" >
+        </div>
         <form method="post">
             <div class="dropdown-content" id="dropdown-content7">
                 <div class="filter-option">
@@ -488,25 +588,7 @@
     
     </div>
 
-    
-
-    <div class="selected">
-        <label class="checkbox-container">
-            <input type="checkbox" name="select[]" value="price" onclick="updateFilters()"> Price
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" name="select[]" value="description" onclick="updateFilters()"> Description
-            <span class="checkmark"></span>
-        </label>
-        <h1>Database Test:</h1>
-        <div id="selected-filters">
-            <?php
-                $T1 = new DatabaseTable("Select Title, email, phoneNum from Resources");
-            ?>
-        </div>
-    </div>
-</body>
-<script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js" type="text/javascript"></script>
+    </body>
+    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js" type="text/javascript"></script>
 </html>
 {/source}
