@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdown.style.maxHeight = null;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";
             } else {
+                dropdown.querySelectorAll('input[type="checkbox"]').forEach((cb) => cb.checked = false);
                 dropdown.classList.remove('expand');
                 dropdown.style.maxHeight = 0;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight - dropdown.scrollHeight) + "px";
@@ -43,13 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
-function matchHeights() {
-    var sidebar = document.getElementById('mySidebar');
-    var sidebarButton = document.getElementById('sidebar-button');
-    var maxHeight = sidebar.clientHeight;
-    document.documentElement.style.setProperty('--matched-height', maxHeight + 'px')
-}
 
 function collectCheckboxValues(name) {
     var checkboxes = document.querySelectorAll('input[name="' + name + '"]:checked');
@@ -90,6 +84,3 @@ document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').for
 });
 
 
-
-window.onload = matchHeights;
-window.onresize = matchHeights;

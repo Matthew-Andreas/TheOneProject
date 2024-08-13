@@ -7,7 +7,11 @@ class DatabaseQuery{
     public $selectData = [];
     public $queryStatement = "Select Name_of_organization, address, description";
     public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP",
-                                "localNorthCounty" => "Geo", "localSanDeigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo"
+                                "Local_North_County" => "Geo", "Local_San_Deigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo",
+                                "Ideation" => "SoB", "Seeding" => "SoB", "Establishing" => "SoB", "Growing" => "SoB", "Selling_Exiting" => "SoB",
+                                "Microenterprise" => "ToB", "Innovation_Tech" => "ToB", "Main_Street" => "ToB", "Medium_Large_Business" => "ToB", "Pop_Ups_Vendors" => "ToB",
+                                "Tech_Industry" => "Ind", "NonProfit_Social_Sector" => "Ind", "Agricultural_Sector" => "Ind", "Consumer_Goods_Retail" => "Ind", "Entertainment" => "Ind", "Other_Industry" => "Ind",
+                                "Veteran" => "Sec", "Women" => "Sec", "People_With_Disabilities" => "Sec", "Multicultural" => "Sec", "Black" => "Sec", "Asian" => "Sec", "Latin_X" => "Sec", "Immigrants" => "Sec", "Under_Privileged" => "Sec", "LGBTQ" => "Sec", "Veteran_Women" => "Sec", "Student" => "Sec"  
                             ];
 
     public function __construct($filters,$selected){

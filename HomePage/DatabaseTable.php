@@ -37,6 +37,7 @@ class DatabaseTable {
             echo "</tr>"; // Close out the row.
         }
         echo "</table>"; // Close out the table at the end of the loop.
+        echo "<div class=\"bottomTable\"></div>";
     }
 
     public function __construct($q) {

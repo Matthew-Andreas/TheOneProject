@@ -103,12 +103,12 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content2">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="localNorthCounty" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Local_North_County" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Local North County
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="localSanDeigo" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Local_San_Deigo" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Local San Deigo
                 </label>
@@ -158,9 +158,9 @@
                     Growing
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Selling/exiting" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Selling_Exiting" onclick="updateFilters()">
                     <span class="checkmark"></span>
-                    Selling/exiting
+                    Selling/Exiting
                 </label>
             </div>
         </form>
@@ -178,22 +178,22 @@
                     Microenterprise
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Innovation/tech" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Innovation_Tech" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Innovation/tech
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Main Street" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Main_Street" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Main Street
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Medium/Large Business" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Medium_Large_Business" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Medium/Large Business
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Pop Ups/Venders" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Pop_Ups_Venders" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Pop Ups/Venders
                 </label>
@@ -208,22 +208,22 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content5">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Tech Industry" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Tech_Industry" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Tech Industry
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Non-profit social sector" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="NonProfit_Social_Sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Non-profit social sector
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Agricultural sector" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Agricultural_Sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Agricultural sector
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Consumer goods/retail" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Consumer_Goods_Retail" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Consumer goods/retail
                 </label>
@@ -233,7 +233,7 @@
                     Entertainment
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Other Indusrty" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Other_Indusrty" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Other Indusrty
                 </label>
@@ -258,7 +258,7 @@
                     Women
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="People with Disabilities" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="People_With_Disabilities" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     People with Disabilities
                 </label>
@@ -278,7 +278,7 @@
                     Asian
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Latin X" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Latin_X" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Latin X
                 </label>
@@ -288,17 +288,17 @@
                     Immigrants
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Under privileged (low income)" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Under_Privileged" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Under privileged (low income)
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="LGBTQ+" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="LGBTQ" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     LGBTQ+
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Veteran Women" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" value="Veteran_Women" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Veteran Women
                 </label>
