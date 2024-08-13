@@ -35,14 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdown.style.maxHeight = null;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";
             } else {
-                dropdown.querySelectorAll('input[type="checkbox"]').forEach((cb) => cb.checked = false);
+                dropdown.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+                    cb.checked = false;
+                });
+
+                // Apply changes
                 dropdown.classList.remove('expand');
                 dropdown.style.maxHeight = 0;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight - dropdown.scrollHeight) + "px";
+
+                // Defer the updateFilters call
+                setTimeout(() => {
+                    updateFilters();
+                }, 50); // A small delay to allow the DOM to fully update
             }
+            
         });
     }
-
 });
 
 function collectCheckboxValues(name) {
@@ -55,6 +64,7 @@ function collectCheckboxValues(name) {
 }
 
 function updateFilters() {
+    console.log("Here");
     var filterValues = collectCheckboxValues("filters[]");
     var selectValues = collectCheckboxValues("select[]");
 

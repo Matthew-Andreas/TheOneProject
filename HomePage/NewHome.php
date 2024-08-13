@@ -319,29 +319,29 @@
             <div class="dropdown-content" id="dropdown-content7">
                 <div class="filter-option">
                 <label class="checkbox-container" >
-                    <input type="checkbox" id="main-checkbox1" name="filters[]" value="funding" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox1" name="filters[]" value="Funding" onclick="updateFilters()">
                     Funding
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown1">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding Venture Capital" onclick="updateFilters()"> Funding Venture Capital
+                    <input type="checkbox" name="filters[]" value="Funding_Venture_Capital" onclick="updateFilters()"> Funding Venture Capital
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Private Equity Firms" onclick="updateFilters()"> Private Equity Firms
+                    <input type="checkbox" name="filters[]" value="Private_Equity_Firms" onclick="updateFilters()"> Private Equity Firms
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding Angel" onclick="updateFilters()"> Funding Angel
+                    <input type="checkbox" name="filters[]" value="Funding_Angel" onclick="updateFilters()"> Funding Angel
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding Grants" onclick="updateFilters()"> Funding Grants
+                    <input type="checkbox" name="filters[]" value="Funding_Grants" onclick="updateFilters()"> Funding Grants
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding Loans" onclick="updateFilters()"> Funding Loans
+                    <input type="checkbox" name="filters[]" value="Funding_Loans" onclick="updateFilters()"> Funding Loans
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -349,36 +349,36 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Microcredit/Mircoloans" onclick="updateFilters()"> Microcredit/Mircoloans 
+                    <input type="checkbox" name="filters[]" value="Microcredit_Microloans" onclick="updateFilters()"> Microcredit/Microloans 
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Other funding" onclick="updateFilters()"> Other funding
+                    <input type="checkbox" name="filters[]" value="Other_Funding" onclick="updateFilters()"> Other funding
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox2" name="filters[]" value="Financial Information" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox2" name="filters[]" value="Financial_Information" onclick="updateFilters()">
                     Financial Information
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown2">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Investment Advisor" onclick="updateFilters()"> Investment Advisor
+                    <input type="checkbox" name="filters[]" value="Investment_Advisor" onclick="updateFilters()"> Investment Advisor
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Education: Financial Literacy, Business Plans, Business Cards" onclick="updateFilters()"> Education: Financial Literacy, Business Plans, Business Cards
+                    <input type="checkbox" name="filters[]" value="Education_FL_BP_BC" onclick="updateFilters()"> Education: Financial Literacy, Business Plans, Business Cards
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Wealth Managment" onclick="updateFilters()"> Wealth Managment
+                    <input type="checkbox" name="filters[]" value="Wealth_Managment" onclick="updateFilters()"> Wealth Managment
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Accounting Assitance" onclick="updateFilters()"> Accounting Assitance
+                    <input type="checkbox" name="filters[]" value="Accounting_Assistance" onclick="updateFilters()"> Accounting Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -399,14 +399,14 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Networking" onclick="updateFilters()"> Networking
+                    <input type="checkbox" name="filters[]" value="Networking_Two" onclick="updateFilters()"> Networking
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox4" name="filters[]" value="Incubator/Accelerator" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox4" name="filters[]" value="Incubator_Accelerator" onclick="updateFilters()">
                     Incubator/Accelerator
                     <span class="checkmark"></span>
                 </label>
@@ -433,18 +433,18 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Startup Advisor" onclick="updateFilters()"> Startup Advisor
+                    <input type="checkbox" name="filters[]" value="Startup_Advisor" onclick="updateFilters()"> Startup Advisor
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Business Counseling" onclick="updateFilters()"> Business Counseling
+                    <input type="checkbox" name="filters[]" value="Business_Counseling" onclick="updateFilters()"> Business Counseling
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox6" name="filters[]" value="Educational/Training" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox6" name="filters[]" value="Educational_Training" onclick="updateFilters()">
                     Educational/Training
                     <span class="checkmark"></span>
                 </label>
@@ -465,21 +465,21 @@
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox7" name="filters[]" value="Tech Assitance" onclick="updateFilters()">
-                    Tech Assitance
+                    <input type="checkbox" id="main-checkbox7" name="filters[]" value="Tech_Assistance" onclick="updateFilters()">
+                    Tech Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown7">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Tech Help" onclick="updateFilters()"> Tech Help
+                    <input type="checkbox" name="filters[]" value="Tech_Help" onclick="updateFilters()"> Tech Help
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Project Management Software" onclick="updateFilters()"> Project Management Software
+                    <input type="checkbox" name="filters[]" value="Project_Management_Software" onclick="updateFilters()"> Project Management Software
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Website Assitance" onclick="updateFilters()"> Website Assitance
+                    <input type="checkbox" name="filters[]" value="Website_Assistance" onclick="updateFilters()"> Website Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -487,44 +487,44 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mobile & Web App Development" onclick="updateFilters()"> Mobile & Web App Development
+                    <input type="checkbox" name="filters[]" value="Mobile_n_Web_App_Development" onclick="updateFilters()"> Mobile & Web App Development
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mobile Form Development" onclick="updateFilters()"> Mobile Form Development
+                    <input type="checkbox" name="filters[]" value="Mobile_Form_Development" onclick="updateFilters()"> Mobile Form Development
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Cyber Security" onclick="updateFilters()"> Cyber Security
+                    <input type="checkbox" name="filters[]" value="Cyber_Security" onclick="updateFilters()"> Cyber Security
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Website Builder" onclick="updateFilters()"> Website Builder
+                    <input type="checkbox" name="filters[]" value="Website_Builder" onclick="updateFilters()"> Website Builder
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Software Development" onclick="updateFilters()"> Software Development
+                    <input type="checkbox" name="filters[]" value="Software_Development" onclick="updateFilters()"> Software Development
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox8" name="filters[]" value="General Business Assitance" onclick="updateFilters()">
-                    General Business Assitance
+                    <input type="checkbox" id="main-checkbox8" name="filters[]" value="General_Business_Assistance" onclick="updateFilters()">
+                    General Business Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown8">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mental Health" onclick="updateFilters()"> Mental Health
+                    <input type="checkbox" name="filters[]" value="Mental_Health" onclick="updateFilters()"> Mental Health
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Hiring Assitance" onclick="updateFilters()"> Hiring Assitance
+                    <input type="checkbox" name="filters[]" value="Hiring_Assistance" onclick="updateFilters()"> Hiring Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Work Space" onclick="updateFilters()"> Work Space
+                    <input type="checkbox" name="filters[]" value="Work_Space" onclick="updateFilters()"> Work Space
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -536,7 +536,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="General Business Assitance/Services" onclick="updateFilters()"> General Business Assitance/Services
+                    <input type="checkbox" name="filters[]" value="General_Business_Assistance_Services" onclick="updateFilters()"> General Business Assistance/Services
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -544,7 +544,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Supply Chain" onclick="updateFilters()"> Supply Chain
+                    <input type="checkbox" name="filters[]" value="Supply_Chain" onclick="updateFilters()"> Supply Chain
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -552,7 +552,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Commercialization and Marketplaces" onclick="updateFilters()"> Commercialization and Marketplaces
+                    <input type="checkbox" name="filters[]" value="Commercialization_and_Marketplaces" onclick="updateFilters()"> Commercialization and Marketplaces
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -563,21 +563,21 @@
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox9" name="filters[]" value="Legal Assitance" onclick="updateFilters()">
-                    Legal Assitance
+                    <input type="checkbox" id="main-checkbox9" name="filters[]" value="Legal_Assistance" onclick="updateFilters()">
+                    Legal Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown9">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="General Legal Assitance" onclick="updateFilters()"> General Legal Assitance
+                    <input type="checkbox" name="filters[]" value="General_Legal_Assistance" onclick="updateFilters()"> General Legal Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Legal Assitance: Intelectual property, Trade marks, Patents" onclick="updateFilters()"> Legal Assitance: Intelectual property, Trade marks, Patents
+                    <input type="checkbox" name="filters[]" value="Legal_Assistance_IP_TM_P" onclick="updateFilters()"> Legal Assistance: Intelectual property, Trade marks, Patents
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Legal Assitance: Legal Formation" onclick="updateFilters()"> Legal Assitance: Legal Formation
+                    <input type="checkbox" name="filters[]" value="Legal_Assistance_Legal_Formation" onclick="updateFilters()"> Legal Assistance: Legal Formation
                     <span class="checkmark"></span>
                 </label>
                 </div>
