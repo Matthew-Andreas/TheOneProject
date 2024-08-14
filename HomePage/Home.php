@@ -85,7 +85,7 @@
     <div class="sidebar" id="mySidebar">
     <div style="display: flex;">
         <p class="filterTitle">All Filters</p>
-        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="sidebar-button Exit">
+        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="Exit" onclick="reloadPage()">
     </div>
     
     <div class="dropbox" id="dropbox">

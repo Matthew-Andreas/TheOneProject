@@ -97,10 +97,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to all checkboxes
     document.querySelectorAll('.checkbox-item').forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
+            // Save the checkbox state in localStorage
             localStorage.setItem(checkbox.id, checkbox.checked);
         });
     });
 });
+
+function reloadPage(){
+     // Set the page parameter to 1
+     const url = new URL(window.location.href);
+     url.searchParams.set('page', '1');
+
+     // Reload the page with the updated URL
+     window.location.href = url.toString();
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
