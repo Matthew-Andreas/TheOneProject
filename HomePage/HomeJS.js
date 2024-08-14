@@ -93,4 +93,20 @@ document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').for
     checkbox.addEventListener('change', updateFilters);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listeners to all checkboxes
+    document.querySelectorAll('.checkbox-item').forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+    });
+});
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Restore the state of each checkbox based on localStorage
+    document.querySelectorAll('.checkbox-item').forEach(function (checkbox) {
+        var checked = localStorage.getItem(checkbox.id) === 'true';
+        checkbox.checked = checked;
+    });
+});

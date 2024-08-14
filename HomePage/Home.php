@@ -14,6 +14,9 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
                 $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
                 $select = isset($_POST['select']) ? $_POST['select'] : [];
+
+                $_SESSION['filters'] = $filters;
+                $_SESSION['select'] = $select;
         
                 $Q1 = new DatabaseQuery($filters, $select);
         
@@ -27,27 +30,27 @@
             <p class="showText">Show in search:</p>
             <div class="selectCheckboxes">
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Website" onclick="updateFilters()"> Website
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Website" onclick="updateFilters()"> Website
                     <span class="checkmarkSelect"></span>
                 </label>
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Geography" onclick="updateFilters()"> Geography
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Geography" value="Geography" onclick="updateFilters()"> Geography
                     <span class="checkmarkSelect"></span>
                 </label>
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Topic_of_Resource" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
                     <span class="checkmarkSelect"></span>
                 </label>
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Free_or_Paid" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
                     <span class="checkmarkSelect"></span>
                 </label>
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Sector" onclick="updateFilters()"> Sector
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Sector
                     <span class="checkmarkSelect"></span>
                 </label>
                 <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
+                    <input type="checkbox" name="select[]" class="checkbox-item" id="Stage_of_Business" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
                     <span class="checkmarkSelect"></span>
                 </label>
             </div>
@@ -60,7 +63,17 @@
                 <h1>Database Test:</h1>
                 <div id="selected-filters">
                     <?php
-                        $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources");
+                        if(!((empty($_SESSION['filters'])) && (empty($_SESSION['select'])))){
+                
+                            $filters = $_SESSION['filters'];
+                            $select = $_SESSION['select'];
+                
+                            $Q1 = new DatabaseQuery($filters, $select);
+                    
+                            $T1 = new DatabaseTable($Q1->getQueryStatement());
+                        }else{
+                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources");
+                        }
                     ?>
                 </div>
             </div>
@@ -83,12 +96,12 @@
             <form method="post">
                 <div class="dropdown-content" id="dropdown-content">
                     <label class="checkbox-container">
-                        <input type="checkbox" name="filters[]" value="Free" onclick="updateFilters()">
+                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Free" value="Free" onclick="updateFilters()">
                         <span class="checkmark"></span>
                         Free
                     </label>
                     <label class="checkbox-container bottom">
-                        <input type="checkbox" name="filters[]" value="Paid" onclick="updateFilters()">
+                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Paid" value="Paid" onclick="updateFilters()">
                         <span class="checkmark"></span>
                         Paid
                     </label>
@@ -103,27 +116,27 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content2">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Local_North_County" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="Local_North_County" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Local North County
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Local_San_Deigo" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_San_Deigo" value="Local_San_Deigo" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Local San Deigo
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="California" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="California" value="California" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     California
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="National" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="National" value="National" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     National
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="International" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="International" value="International" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     International
                 </label>
@@ -138,27 +151,27 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content3">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Ideation" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Ideation" value="Ideation" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Ideation
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Seeding" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Seeding" value="Seeding" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Seeding
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Establishing" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Establishing" value="Establishing" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Establishing
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Growing" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Growing" value="Growing" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Growing
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Selling_Exiting" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Selling_Exiting" value="Selling_Exiting" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Selling/Exiting
                 </label>
@@ -173,27 +186,27 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content4">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Microenterprise" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microenterprise" value="Microenterprise" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Microenterprise
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Innovation_Tech" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Innovation_Tech" value="Innovation_Tech" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Innovation/tech
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Main_Street" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Main_Street" value="Main_Street" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Main Street
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Medium_Large_Business" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Medium_Large_Business" value="Medium_Large_Business" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Medium/Large Business
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Pop_Ups_Venders" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Venders" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Pop Ups/Venders
                 </label>
@@ -208,32 +221,32 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content5">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Tech_Industry" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Industry" value="Tech_Industry" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Tech Industry
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="NonProfit_Social_Sector" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="NonProfit_Social_Sector" value="NonProfit_Social_Sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Non-profit social sector
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Agricultural_Sector" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Agricultural_Sector" value="Agricultural_Sector" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Agricultural sector
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Consumer_Goods_Retail" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Consumer_Goods_Retail" value="Consumer_Goods_Retail" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Consumer goods/retail
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Entertainment" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Entertainment" value="Entertainment" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Entertainment
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Other_Indusrty" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Indusrty" value="Other_Indusrty" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Other Indusrty
                 </label>
@@ -248,62 +261,62 @@
         <form method="post">
             <div class="dropdown-content" id="dropdown-content6">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Veteran" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran" value="Veteran" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Veteran
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Women" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Women" value="Women" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Women
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="People_With_Disabilities" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="People_With_Disabilities" value="People_With_Disabilities" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     People with Disabilities
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Multicultural" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Multicultural" value="Multicultural" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Multicultural
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Black" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Black" value="Black" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Black
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Asian" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Asian" value="Asian" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Asian
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Latin_X" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Latin_X" value="Latin_X" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Latin X
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Immigrants" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Immigrants" value="Immigrants" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Immigrants
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Under_Privileged" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Under_Privileged" value="Under_Privileged" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Under privileged (low income)
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="LGBTQ" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="LGBTQ" value="LGBTQ" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     LGBTQ+
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Veteran_Women" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran_Women" value="Veteran_Women" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Veteran Women
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" value="Student" onclick="updateFilters()">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Student" value="Student" onclick="updateFilters()">
                     <span class="checkmark"></span>
                     Student
                 </label>
@@ -319,265 +332,265 @@
             <div class="dropdown-content" id="dropdown-content7">
                 <div class="filter-option">
                 <label class="checkbox-container" >
-                    <input type="checkbox" id="main-checkbox1" name="filters[]" value="Funding" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox1" name="filters[]" class="checkbox-item" id="Funding" value="Funding" onclick="updateFilters()">
                     Funding
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown1">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding_Venture_Capital" onclick="updateFilters()"> Funding Venture Capital
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Venture_Capital" value="Funding_Venture_Capital" onclick="updateFilters()"> Funding Venture Capital
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Private_Equity_Firms" onclick="updateFilters()"> Private Equity Firms
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Private_Equity_Firms" value="Private_Equity_Firms" onclick="updateFilters()"> Private Equity Firms
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding_Angel" onclick="updateFilters()"> Funding Angel
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Angel" value="Funding_Angel" onclick="updateFilters()"> Funding Angel
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding_Grants" onclick="updateFilters()"> Funding Grants
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Funding_Grants" onclick="updateFilters()"> Funding Grants
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Funding_Loans" onclick="updateFilters()"> Funding Loans
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Loans" value="Funding_Loans" onclick="updateFilters()"> Funding Loans
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Crowfunding" onclick="updateFilters()"> Crowfunding
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Crowfunding" value="Crowfunding" onclick="updateFilters()"> Crowfunding
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Microcredit_Microloans" onclick="updateFilters()"> Microcredit/Microloans 
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit_Microloans" onclick="updateFilters()"> Microcredit/Microloans 
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Other_Funding" onclick="updateFilters()"> Other funding
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Funding" value="Other_Funding" onclick="updateFilters()"> Other funding
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox2" name="filters[]" value="Financial_Information" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox2" name="filters[]" class="checkbox-item" id="Financial_Information" value="Financial_Information" onclick="updateFilters()">
                     Financial Information
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown2">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Investment_Advisor" onclick="updateFilters()"> Investment Advisor
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Investment_Advisor" value="Investment_Advisor" onclick="updateFilters()"> Investment Advisor
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Education_FL_BP_BC" onclick="updateFilters()"> Education: Financial Literacy, Business Plans, Business Cards
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Education_FL_BP_BC" value="Education_FL_BP_BC" onclick="updateFilters()"> Education: Financial Literacy, Business Plans, Business Cards
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Wealth_Managment" onclick="updateFilters()"> Wealth Managment
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Managment" value="Wealth_Managment" onclick="updateFilters()"> Wealth Managment
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Accounting_Assistance" onclick="updateFilters()"> Accounting Assistance
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Accounting_Assistance" value="Accounting_Assistance" onclick="updateFilters()"> Accounting Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Banking" onclick="updateFilters()"> Banking
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Banking" value="Banking" onclick="updateFilters()"> Banking
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox3" name="filters[]" value="Networking" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox3" name="filters[]" class="checkbox-item" id="Networking" value="Networking" onclick="updateFilters()">
                     Networking
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown3">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Meetups" onclick="updateFilters()"> Meetups
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Meetups" value="Meetups" onclick="updateFilters()"> Meetups
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Networking_Two" onclick="updateFilters()"> Networking
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Networking_Two" value="Networking_Two" onclick="updateFilters()"> Networking
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox4" name="filters[]" value="Incubator_Accelerator" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox4" name="filters[]" class="checkbox-item" id="Incubator_Accelerator" value="Incubator_Accelerator" onclick="updateFilters()">
                     Incubator/Accelerator
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown4">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Accelerator" onclick="updateFilters()"> Accelerator
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Accelerator" value="Accelerator" onclick="updateFilters()"> Accelerator
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Incubator" onclick="updateFilters()"> Incubator
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Incubator" value="Incubator" onclick="updateFilters()"> Incubator
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox5" name="filters[]" value="Mentorship" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox5" name="filters[]" class="checkbox-item" id="Mentorship" value="Mentorship" onclick="updateFilters()">
                     Mentorship
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown5">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mentoring" onclick="updateFilters()"> Mentoring
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mentoring" value="Mentoring" onclick="updateFilters()"> Mentoring
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Startup_Advisor" onclick="updateFilters()"> Startup Advisor
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Startup_Advisor" value="Startup_Advisor" onclick="updateFilters()"> Startup Advisor
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Business_Counseling" onclick="updateFilters()"> Business Counseling
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Business_Counseling" value="Business_Counseling" onclick="updateFilters()"> Business Counseling
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox6" name="filters[]" value="Educational_Training" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox6" name="filters[]" class="checkbox-item" id="Educational_Training" value="Educational_Training" onclick="updateFilters()">
                     Educational/Training
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown6">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Training" onclick="updateFilters()"> Training
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Training" value="Training" onclick="updateFilters()"> Training
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Article" onclick="updateFilters()"> Article
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Article" value="Article" onclick="updateFilters()"> Article
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Education" onclick="updateFilters()"> Education
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Education" value="Education" onclick="updateFilters()"> Education
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox7" name="filters[]" value="Tech_Assistance" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox7" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Assistance" onclick="updateFilters()">
                     Tech Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown7">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Tech_Help" onclick="updateFilters()"> Tech Help
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Help" onclick="updateFilters()"> Tech Help
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Project_Management_Software" onclick="updateFilters()"> Project Management Software
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Project_Management_Software" value="Project_Management_Software" onclick="updateFilters()"> Project Management Software
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Website_Assistance" onclick="updateFilters()"> Website Assistance
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Assistance" value="Website_Assistance" onclick="updateFilters()"> Website Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Software" onclick="updateFilters()"> Software
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Software" value="Software" onclick="updateFilters()"> Software
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mobile_n_Web_App_Development" onclick="updateFilters()"> Mobile & Web App Development
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_n_Web_App_Development" value="Mobile_n_Web_App_Development" onclick="updateFilters()"> Mobile & Web App Development
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mobile_Form_Development" onclick="updateFilters()"> Mobile Form Development
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_Form_Development" value="Mobile_Form_Development" onclick="updateFilters()"> Mobile Form Development
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Cyber_Security" onclick="updateFilters()"> Cyber Security
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Cyber_Security" value="Cyber_Security" onclick="updateFilters()"> Cyber Security
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Website_Builder" onclick="updateFilters()"> Website Builder
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Builder" value="Website_Builder" onclick="updateFilters()"> Website Builder
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Software_Development" onclick="updateFilters()"> Software Development
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Software_Development" value="Software_Development" onclick="updateFilters()"> Software Development
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox8" name="filters[]" value="General_Business_Assistance" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox8" name="filters[]" class="checkbox-item" id="General_Business_Assistance" value="General_Business_Assistance" onclick="updateFilters()">
                     General Business Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown8">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Mental_Health" onclick="updateFilters()"> Mental Health
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mental_Health" value="Mental_Health" onclick="updateFilters()"> Mental Health
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Hiring_Assistance" onclick="updateFilters()"> Hiring Assistance
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Hiring_Assistance" value="Hiring_Assistance" onclick="updateFilters()"> Hiring Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Work_Space" onclick="updateFilters()"> Work Space
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Work_Space" value="Work_Space" onclick="updateFilters()"> Work Space
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="CRO" onclick="updateFilters()"> CRO
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="CRO" value="CRO" onclick="updateFilters()"> CRO
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Insurance" onclick="updateFilters()"> Insurance
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Insurance" value="Insurance" onclick="updateFilters()"> Insurance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="General_Business_Assistance_Services" onclick="updateFilters()"> General Business Assistance/Services
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Business_Assistance_Services" value="General_Business_Assistance_Services" onclick="updateFilters()"> General Business Assistance/Services
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Marketing" onclick="updateFilters()"> Marketing
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Marketing" value="Marketing" onclick="updateFilters()"> Marketing
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Supply_Chain" onclick="updateFilters()"> Supply Chain
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Supply_Chain" value="Supply_Chain" onclick="updateFilters()"> Supply Chain
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Consulting" onclick="updateFilters()"> Consulting
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Consulting" value="Consulting" onclick="updateFilters()"> Consulting
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Commercialization_and_Marketplaces" onclick="updateFilters()"> Commercialization and Marketplaces
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Commercialization_and_Marketplaces" value="Commercialization_and_Marketplaces" onclick="updateFilters()"> Commercialization and Marketplaces
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Certification" onclick="updateFilters()"> Certification
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Certification" value="Certification" onclick="updateFilters()"> Certification
                     <span class="checkmark"></span>
                 </label>
                 </div>
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox9" name="filters[]" value="Legal_Assistance" onclick="updateFilters()">
+                    <input type="checkbox" id="main-checkbox9" name="filters[]" class="checkbox-item" id="Legal_Assistance" value="Legal_Assistance" onclick="updateFilters()">
                     Legal Assistance
                     <span class="checkmark"></span>
                 </label>
                 <div class="dropdown" id="dropdown9">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="General_Legal_Assistance" onclick="updateFilters()"> General Legal Assistance
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Legal_Assistance" value="General_Legal_Assistance" onclick="updateFilters()"> General Legal Assistance
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Legal_Assistance_IP_TM_P" onclick="updateFilters()"> Legal Assistance: Intelectual property, Trade marks, Patents
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_IP_TM_P" value="Legal_Assistance_IP_TM_P" onclick="updateFilters()"> Legal Assistance: Intelectual property, Trade marks, Patents
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" value="Legal_Assistance_Legal_Formation" onclick="updateFilters()"> Legal Assistance: Legal Formation
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_Legal_Formation" value="Legal_Assistance_Legal_Formation" onclick="updateFilters()"> Legal Assistance: Legal Formation
                     <span class="checkmark"></span>
                 </label>
                 </div>
