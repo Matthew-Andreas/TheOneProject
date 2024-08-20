@@ -184,6 +184,7 @@ td{
     border: 0px;
     max-width: 35px;
     max-height: 35px;
+    transition: transform 0.6s;
 }
 
 .FilterArrow.FoP{
@@ -273,6 +274,10 @@ body.open-sidebar .overlay {
 .ellipsis {
     padding: 8px 12px;
     color: #555;
+}
+
+.flipped {
+    transform: rotateX(180deg);
 }
 
 

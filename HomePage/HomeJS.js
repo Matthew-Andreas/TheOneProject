@@ -120,3 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
         checkbox.checked = checked;
     });
 });
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('FilterArrow')) {
+        event.target.classList.toggle('flipped');
+    }
+});

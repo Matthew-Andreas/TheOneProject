@@ -7,7 +7,7 @@ class DatabaseTable {
     public $originalQuery;
     public $columns;
     public $space;
-    public $limit = 2; // Number of items per page
+    public $limit = 10; // Number of items per page
     public $page;
 
     public function openDatabase($q) {
@@ -70,18 +70,20 @@ class DatabaseTable {
         $this->db->setQuery($countQuery);
         $totalRows = $this->db->loadResult();
         $totalPages = ceil($totalRows / $this->limit);
-        if(!($totalPages<$this->limit)){
+        
+        // Only display pagination if there is more than one page
+        if ($totalPages > 1) {
             $pageRange = 2; // Number of pages to show on each side of the current page
             $paginationStart = max(1, $this->page - $pageRange);
             $paginationEnd = min($totalPages, $this->page + $pageRange);
-
+    
             echo '<div class="pagination">';
-
+    
             // Previous button
             if ($this->page > 1) {
                 echo '<a href="?page=' . ($this->page - 1) . '" class="page-link">Previous</a>';
             }
-
+    
             // First page link
             if ($paginationStart > 1) {
                 echo '<a href="?page=1" class="page-link">1</a>';
@@ -89,7 +91,7 @@ class DatabaseTable {
                     echo '<span class="ellipsis">...</span>';
                 }
             }
-
+    
             // Page links
             for ($i = $paginationStart; $i <= $paginationEnd; $i++) {
                 if ($i == $this->page) {
@@ -98,7 +100,7 @@ class DatabaseTable {
                     echo '<a href="?page=' . $i . '" class="page-link">' . $i . '</a>';
                 }
             }
-
+    
             // Last page link
             if ($paginationEnd < $totalPages) {
                 if ($paginationEnd < $totalPages - 1) {
@@ -106,15 +108,16 @@ class DatabaseTable {
                 }
                 echo '<a href="?page=' . $totalPages . '" class="page-link">' . $totalPages . '</a>';
             }
-
+    
             // Next button
             if ($this->page < $totalPages) {
                 echo '<a href="?page=' . ($this->page + 1) . '" class="page-link">Next</a>';
             }
-
+    
             echo '</div>';
         }
     }
+    
 
     public function __construct($q) {
         $this->openDatabase($q);
