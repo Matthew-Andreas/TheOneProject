@@ -65,7 +65,7 @@ function collectCheckboxValues(name) {
 
 function updateFilters() {
 
-    //var filterValues = collectCheckboxValues("filters[]");
+    var filterValues = collectCheckboxValues("filters[]");
     var selectValues = collectCheckboxValues("select[]");
 
     var xhr = new XMLHttpRequest();
@@ -83,11 +83,31 @@ function updateFilters() {
     };
 
     var data = "ajax=1";
-    //data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
+    data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
     data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
     xhr.send(data);
 }
+
+// Debounce function
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Function to handle checkbox changes
+function onFilterChange() {
+    const page = 1; // Reset to page 1
+    loadPage(page); // Trigger the AJAX request to load the first page with the current filters
+}
+
+// Attach debounced event listeners to all filter checkboxes
+document.querySelectorAll('input[name="filters[]"]').forEach(checkbox => {
+    checkbox.addEventListener('change', debounce(onFilterChange, 300)); // 300ms debounce delay
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     function loadPage(page) {
@@ -97,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('ajax', 1);
         formData.append('page', page);
     
-        const filters = collectCheckboxValues('filters[]');
-        const select = collectCheckboxValues('select[]');
+        var filters = collectCheckboxValues('filters[]');
+        var select = collectCheckboxValues('select[]');
     
         filters.forEach(value => formData.append('filters[]', value));
         select.forEach(value => formData.append('select[]', value));
