@@ -15,12 +15,17 @@
                 $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
                 $select = isset($_POST['select']) ? $_POST['select'] : [];
 
+                // Store filters and selection in session
                 $_SESSION['filters'] = $filters;
                 $_SESSION['select'] = $select;
-        
+
+                // Create the database query based on the filters and selection
                 $Q1 = new DatabaseQuery($filters, $select);
+
+                // Determine the current page for pagination
+                $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
         
-                $T1 = new DatabaseTable($Q1->getQueryStatement());
+                $T1 = new DatabaseTable($Q1->getQueryStatement(), $page);
                 exit();
             }
         ?>
@@ -70,9 +75,9 @@
                 
                             $Q1 = new DatabaseQuery($filters, $select);
                     
-                            $T1 = new DatabaseTable($Q1->getQueryStatement());
+                            $T1 = new DatabaseTable($Q1->getQueryStatement(),1);
                         }else{
-                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources");
+                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1);
                         }
                     ?>
                 </div>
@@ -85,7 +90,7 @@
     <div class="sidebar" id="mySidebar">
     <div style="display: flex;">
         <p class="filterTitle">All Filters</p>
-        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="Exit" onclick="reloadPage()">
+        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="Exit sidebar-button">
     </div>
     
     <div class="dropbox" id="dropbox">

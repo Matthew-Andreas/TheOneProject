@@ -64,8 +64,8 @@ function collectCheckboxValues(name) {
 }
 
 function updateFilters() {
-    console.log("Here");
-    var filterValues = collectCheckboxValues("filters[]");
+
+    //var filterValues = collectCheckboxValues("filters[]");
     var selectValues = collectCheckboxValues("select[]");
 
     var xhr = new XMLHttpRequest();
@@ -83,11 +83,39 @@ function updateFilters() {
     };
 
     var data = "ajax=1";
-    data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
+    //data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
     data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
     xhr.send(data);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    function loadPage(page) {
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+    
+        formData.append('ajax', 1);
+        formData.append('page', page);
+    
+        const filters = collectCheckboxValues('filters[]');
+        const select = collectCheckboxValues('select[]');
+    
+        filters.forEach(value => formData.append('filters[]', value));
+        select.forEach(value => formData.append('select[]', value));
+    
+        xhr.open('POST', '', true);
+        xhr.onload = function() {
+            if (xhr.readyState == 4 && xhr.status === 200) {
+                document.getElementById('selected-filters').innerHTML = xhr.responseText;
+            } else {
+                console.error("Request failed. Status: " + xhr.status);
+            }
+        };
+        xhr.send(formData);
+    }
+
+    window.loadPage = loadPage; // Expose the function globally
+});
 
 document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {
     checkbox.addEventListener('change', updateFilters);

@@ -5,7 +5,7 @@ class DatabaseQuery{
     public $isdifferent = false;
     public $whereData = [];
     public $selectData = [];
-    public $queryStatement = "Select Name_of_organization, address, description";
+    public $queryStatement = "Select Name_of_organization, Address, Description";
     public $checkBoxValues = ["Free" => "FoP","Paid" => "FoP",
                                 "Local_North_County" => "Geo", "Local_San_Deigo" => "Geo", "California" => "Geo", "National" => "Geo", "International" => "Geo",
                                 "Ideation" => "SoB", "Seeding" => "SoB", "Establishing" => "SoB", "Growing" => "SoB", "Selling_Exiting" => "SoB",

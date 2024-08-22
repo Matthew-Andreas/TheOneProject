@@ -1,4 +1,7 @@
 <?php
+
+use Joomla\CMS\Factory;
+
 class DatabaseTable {
     public $result;
     public $results;
@@ -6,14 +9,12 @@ class DatabaseTable {
     public $query;
     public $originalQuery;
     public $columns;
-    public $space;
     public $limit = 10; // Number of items per page
     public $page;
 
     public function openDatabase($q) {
         $this->db = JFactory::getDbo();
         $this->query = $this->db->getQuery(true);
-        $this->space = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
         $this->originalQuery = $q; // Store the original query
         $this->query = $q;
         $this->db->setQuery($this->query);
@@ -32,7 +33,7 @@ class DatabaseTable {
         $totalPages = ceil($totalRows / $this->limit);
 
         // Get current page and calculate the starting point
-        $this->page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        //$this->page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $start = ($this->page - 1) * $this->limit;
 
         // Modify the query to include LIMIT for pagination
@@ -59,8 +60,16 @@ class DatabaseTable {
             }
             echo "</tr>";
         }
+    }
+
+    public function bottomTable(){
+        echo "<tr style=\"background-color:#203A72;color:#203A72\">";
+        foreach ($this->columns as $columnName) {
+            $result = str_replace('_', ' ', $columnName);
+            echo "<th class='bottomTable'>" . $result ."</th>";
+        }
+        echo "</tr>";
         echo "</table>";
-        echo "<div class=\"bottomTable\"></div>";
     }
 
     public function printPagination() {
@@ -81,37 +90,37 @@ class DatabaseTable {
     
             // Previous button
             if ($this->page > 1) {
-                echo '<a href="?page=' . ($this->page - 1) . '" class="page-link">Previous</a>';
+                echo '<button class="page-link" onclick="loadPage(' . ($this->page - 1) . ')">Previous</button>';
             }
     
-            // First page link
+            // First page button
             if ($paginationStart > 1) {
-                echo '<a href="?page=1" class="page-link">1</a>';
+                echo '<button class="page-link" onclick="loadPage(1)">1</button>';
                 if ($paginationStart > 2) {
                     echo '<span class="ellipsis">...</span>';
                 }
             }
     
-            // Page links
+            // Page buttons
             for ($i = $paginationStart; $i <= $paginationEnd; $i++) {
                 if ($i == $this->page) {
                     echo '<span class="current-page">' . $i . '</span>';
                 } else {
-                    echo '<a href="?page=' . $i . '" class="page-link">' . $i . '</a>';
+                    echo '<button class="page-link" onclick="loadPage(' . $i . ')">' . $i . '</button>';
                 }
             }
     
-            // Last page link
+            // Last page button
             if ($paginationEnd < $totalPages) {
                 if ($paginationEnd < $totalPages - 1) {
                     echo '<span class="ellipsis">...</span>';
                 }
-                echo '<a href="?page=' . $totalPages . '" class="page-link">' . $totalPages . '</a>';
+                echo '<button class="page-link" onclick="loadPage(' . $totalPages . ')">' . $totalPages . '</button>';
             }
     
             // Next button
             if ($this->page < $totalPages) {
-                echo '<a href="?page=' . ($this->page + 1) . '" class="page-link">Next</a>';
+                echo '<button class="page-link" onclick="loadPage(' . ($this->page + 1) . ')">Next</button>';
             }
     
             echo '</div>';
@@ -119,11 +128,13 @@ class DatabaseTable {
     }
     
 
-    public function __construct($q) {
+    public function __construct($q,$mPage) {
+        $this->page = $mPage;
         $this->openDatabase($q);
         $this->applyPagination();
         $this->printHeader();
         $this->printData();
+        $this->bottomTable();
         $this->printPagination();
     }
 }
