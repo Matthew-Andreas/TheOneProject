@@ -19,13 +19,7 @@
                 $Q1 = new DatabaseQuery($filters, $select);
 
                 // Determine the current page for pagination
-                if(isset($_POST['page'])){
-                    $page = (int)$_POST['page'];
-                }elseif(isset($_SESSION['page'])){
-                    $page = $_SESSION['page'];
-                }else{
-                    $page = 1;
-                }
+                $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
         
                 $T1 = new DatabaseTable($Q1->getQueryStatement(), $page);
                 exit();
