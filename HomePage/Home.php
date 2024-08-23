@@ -15,10 +15,6 @@
                 $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
                 $select = isset($_POST['select']) ? $_POST['select'] : [];
 
-                // Store filters and selection in session
-                $_SESSION['filters'] = $filters;
-                $_SESSION['select'] = $select;
-
                 // Create the database query based on the filters and selection
                 $Q1 = new DatabaseQuery($filters, $select);
 
@@ -30,8 +26,6 @@
                 }else{
                     $page = 1;
                 }
-                //$page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
-                $_SESSION['page'] = $page;
         
                 $T1 = new DatabaseTable($Q1->getQueryStatement(), $page);
                 exit();
@@ -76,17 +70,7 @@
                 <h1>Database Test:</h1>
                 <div id="selected-filters">
                     <?php
-                        if(!((empty($_SESSION['filters'])) && (empty($_SESSION['select'])))){
-                
-                            $filters = $_SESSION['filters'];
-                            $select = $_SESSION['select'];
-                
-                            $Q1 = new DatabaseQuery($filters, $select);
-                    
-                            $T1 = new DatabaseTable($Q1->getQueryStatement(),1);
-                        }else{
-                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1);
-                        }
+                        $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1);
                     ?>
                 </div>
             </div>
