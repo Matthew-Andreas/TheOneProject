@@ -341,7 +341,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Grants"> Funding Grants
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Grant"> Funding Grants
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -353,7 +353,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit_Microloans"> Microcredit/Microloans 
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit/Microloans"> Microcredit/Microloans 
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
