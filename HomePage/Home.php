@@ -349,11 +349,11 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Crowfunding" value="Crowfunding"> Crowfunding
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Crowdfunding" value="Crowdfunding"> Crowdfunding
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit/Microloans"> Microcredit/Microloans 
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit_Microloans"> Microcredit/Microloans 
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -378,7 +378,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Managment" value="Wealth_Managment"> Wealth Managment
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Management" value="Wealth_Management"> Wealth Management
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
