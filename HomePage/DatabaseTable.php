@@ -18,9 +18,11 @@ class DatabaseTable {
         $this->originalQuery = $q; // Store the original query
         $this->query = $q;
         $this->db->setQuery($this->query);
-        $this->result = $this->db->loadObjectList(); 
-        $this->results = $this->db->loadAssocList();
-        $this->columns = array_keys($this->results[0]);
+        $this->result = $this->db->loadObjectList();
+        if(!empty($this->result)){ 
+            $this->results = $this->db->loadAssocList();
+            $this->columns = array_keys($this->results[0]);
+        }
     }
 
     public function applyPagination() {
@@ -131,11 +133,16 @@ class DatabaseTable {
     public function __construct($q,$mPage) {
         $this->page = $mPage;
         $this->openDatabase($q);
-        $this->applyPagination();
-        $this->printHeader();
-        $this->printData();
-        $this->bottomTable();
-        $this->printPagination();
+        if(empty($this->result)){
+            echo "No resources found.";
+            
+        }else{
+            $this->applyPagination();
+            $this->printHeader();
+            $this->printData();
+            $this->bottomTable();
+            $this->printPagination();
+        }
     }
 }
 ?>

@@ -74,14 +74,14 @@ class DatabaseQuery{
                     }elseif((0==strcasecmp($group, "Sector"))||(0==strcasecmp($group, "Type_of_Business"))||(0==strcasecmp($group, "Industry"))){
                         $addition = $group . " LIKE '%Any%' OR ";
                     }
-                    echo "23";
+                    //echo "23";
                     //$this->oldGroup = $group;
                 }elseif(0==strcasecmp($this->oldGroup, "Topic_of_Resource_Header")){
                     $this->isToR = true;
                 }
 
                 if(0==strcasecmp($group, "Topic_of_Resource_Header")&&(!(0==strcasecmp($this->oldGroup,"Topic_of_Resource")))&&(!$this->isToR)){
-                    echo "here";
+                    //echo "here";
                     $addition = "((";
                     $this->extraParen = true;
                 }
@@ -99,7 +99,7 @@ class DatabaseQuery{
         if($this->extraParen){
             $this->queryStatement .="))";
         }
-        echo $this->queryStatement;
+        //echo $this->queryStatement;
     }
 
 
