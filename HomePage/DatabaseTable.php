@@ -9,7 +9,7 @@ class DatabaseTable {
     public $query;
     public $originalQuery;
     public $columns;
-    public $limit = 10; // Number of items per page
+    public $limit; // Number of items per page
     public $page;
 
     public function openDatabase($q) {
@@ -84,7 +84,6 @@ class DatabaseTable {
         $this->db->setQuery($countQuery);
         $totalRows = $this->db->loadResult();
         $totalPages = ceil($totalRows / $this->limit);
-        
         // Only display pagination if there is more than one page
         if ($totalPages > 1) {
             $pageRange = 2; // Number of pages to show on each side of the current page
@@ -133,8 +132,9 @@ class DatabaseTable {
     }
     
 
-    public function __construct($q,$mPage) {
+    public function __construct($q,$mPage,$itemLimit) {
         $this->page = $mPage;
+        $this->limit = $itemLimit;
         $this->openDatabase($q);
         $this->applyPagination();
         $this->printHeader();

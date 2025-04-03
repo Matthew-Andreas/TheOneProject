@@ -149,3 +149,7 @@ body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-101 {
 .metismenu.mod-menu .parent>ul {
     color: #EAEAEA;
 }
+
+.site-grid {
+    grid-gap: 0 0em !important;
+}

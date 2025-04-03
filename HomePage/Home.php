@@ -14,45 +14,55 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
                 $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
                 $select = isset($_POST['select']) ? $_POST['select'] : [];
-
+                $itemLimit = isset($_POST['itemLimit']) ? (int)$_POST['itemLimit'] : 10; // Default to 10 items per page
                 // Create the database query based on the filters and selection
                 $Q1 = new DatabaseQuery($filters, $select);
 
                 // Determine the current page for pagination
                 $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
         
-                $T1 = new DatabaseTable($Q1->getQueryStatement(), $page);
+                $T1 = new DatabaseTable($Q1->getQueryStatement(), $page, $itemLimit);
                 exit();
             }
         ?>
-        <div class=></div>
-        <div class="filters">
-            <p class="showText">Show in search:</p>
-            <div class="selectCheckboxes">
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Website" onclick="updateFilters()"> Website
-                    <span class="checkmarkSelect"></span>
-                </label>
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Geography" value="Geography" onclick="updateFilters()"> Geography
-                    <span class="checkmarkSelect"></span>
-                </label>
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Topic_of_Resource" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
-                    <span class="checkmarkSelect"></span>
-                </label>
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Free_or_Paid" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
-                    <span class="checkmarkSelect"></span>
-                </label>
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Sector
-                    <span class="checkmarkSelect"></span>
-                </label>
-                <label class="checkbox-containerSelect">
-                    <input type="checkbox" name="select[]" class="checkbox-item" id="Stage_of_Business" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
-                    <span class="checkmarkSelect"></span>
-                </label>
+        <div class="filtersAndPagination">
+            <div class="filters">
+                <p class="showText">Show in search:</p>
+                <div class="selectCheckboxes">
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Website" onclick="updateFilters()"> Website
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Geography" value="Geography" onclick="updateFilters()"> Geography
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Topic_of_Resource" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Free_or_Paid" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Sector
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Stage_of_Business" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="paginationChanger">
+                <p>Number of Resources per page:</p>
+                <input type="radio" id="10" name="pagination" value="10" onclick="updateFilters()" checked>
+                <label for="10">10</label>
+                <input type="radio" id="25" name="pagination" value="25" onclick="updateFilters()">
+                <label for="25">25</label>
+                <input type="radio" id="50" name="pagination" value="50" onclick="updateFilters()">
+                <label for="50">50</label>
             </div>
         </div>
         <div class="filtersAndDatabase">
@@ -579,7 +589,7 @@
                 <div class="selected">
                     <div id="selected-filters">
                         <?php
-                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1);
+                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1, 10);
                         ?>
                     </div>
                 </div>
