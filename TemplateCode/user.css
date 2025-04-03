@@ -61,6 +61,14 @@ ul.mod-menu.mod-menu_dropdown-metismenu.metismenu.mod-list {
     margin-top: 50px;
 }
 
+#mod-custom117.mod-custom.custom {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
 ul.mm-collapse.mm-show li a:hover {
     color: #203A72;
 }
@@ -128,7 +136,7 @@ textarea {
 
 body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-101 {
     padding: 0px;
-    margin: 0px;
+    margin: 0 !important;
 }
 
 

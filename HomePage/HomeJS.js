@@ -1,5 +1,5 @@
-document.querySelectorAll(".sidebar-button").forEach(function(button) {
-    button.onclick = function() {
+document.querySelectorAll(".sidebar-button").forEach(function (button) {
+    button.onclick = function () {
         document.body.classList.toggle("open-sidebar");
     };
 });
@@ -11,13 +11,13 @@ function toggleDropdown(dropboxNum, dropdownContentNum) {
     if (dropdownContent.classList.contains("expand")) {
         dropdownContent.classList.remove("expand");
         dropdownContent.style.maxHeight = null;
-        sidebarButton.classList.remove("expand");
-        document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight - dropdownContent.scrollHeight) + "px");
+        //sidebarButton.classList.remove("expand");
+        //document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight - dropdownContent.scrollHeight) + "px");
     } else {
         dropdownContent.classList.add("expand");
         dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
-        sidebarButton.classList.add("expand");
-        document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight + dropdownContent.scrollHeight) + "px");
+        //sidebarButton.classList.add("expand");
+        //document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight + dropdownContent.scrollHeight) + "px");
     }
 
 }
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     updateFilters();
                 }, 50); // A small delay to allow the DOM to fully update
             }
-            
+
         });
     }
 });
@@ -92,7 +92,7 @@ function updateFilters() {
 // Debounce function
 function debounce(func, delay) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(this, args), delay);
     };
@@ -109,22 +109,22 @@ document.querySelectorAll('input[name="filters[]"]').forEach(checkbox => {
     checkbox.addEventListener('change', debounce(onFilterChange, 300)); // 300ms debounce delay
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     function loadPage(page) {
         const xhr = new XMLHttpRequest();
         const formData = new FormData();
-    
+
         formData.append('ajax', 1);
         formData.append('page', page);
-    
+
         var filters = collectCheckboxValues('filters[]');
         var select = collectCheckboxValues('select[]');
-    
+
         filters.forEach(value => formData.append('filters[]', value));
         select.forEach(value => formData.append('select[]', value));
-    
+
         xhr.open('POST', '', true);
-        xhr.onload = function() {
+        xhr.onload = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 document.getElementById('selected-filters').innerHTML = xhr.responseText;
             } else {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {
-    //checkbox.addEventListener('change', updateFilters);
+//checkbox.addEventListener('change', updateFilters);
 //});
 
 document.addEventListener('click', function (event) {

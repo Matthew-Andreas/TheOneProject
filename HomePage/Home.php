@@ -27,7 +27,6 @@
         ?>
 
         <div class="filters">
-        <button class="AllFiltersButton sidebar-button">All Filters</button>
             <p class="showText">Show in search:</p>
             <div class="selectCheckboxes">
                 <label class="checkbox-containerSelect">
@@ -61,7 +60,6 @@
         </div>
         <div class="Database">
             <div class="selected">
-                <h1>Database Test:</h1>
                 <div id="selected-filters">
                     <?php
                         $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1);
@@ -76,7 +74,6 @@
     <div class="sidebar" id="mySidebar">
     <div style="display: flex;">
         <p class="filterTitle">All Filters</p>
-        <img src="images/Exit-X.png#joomlaImage://local-images/Exit-X.png?width=75&height=74"  class="Exit sidebar-button">
     </div>
     
     <div class="dropbox" id="dropbox">
@@ -112,7 +109,7 @@
                     Local North County
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_San_Deigo" value="Local_San_Deigo">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_San_Diego" value="Local_San_Diego">
                     <span class="checkmark"></span>
                     Local San Deigo
                 </label>
@@ -237,9 +234,9 @@
                     Entertainment
                 </label>
                 <label class="checkbox-container bottom">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Indusrty" value="Other_Indusrty">
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Industry" value="Other_Industry">
                     <span class="checkmark"></span>
-                    Other Indusrty
+                    Other Industry
                 </label>
             </div>
         </form>
@@ -341,11 +338,11 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Funding_Grants"> Funding Grants
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Grant"> Funding Grants
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Loans" value="Funding_Loans"> Funding Loans
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Loans" value="Loans"> Funding Loans
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -353,7 +350,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit_Microloans"> Microcredit/Microloans 
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit/Microloans"> Microcredit/Microloans 
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
@@ -393,7 +390,7 @@
                 </div>
                 <div class="filter-option">
                 <label class="checkbox-container">
-                    <input type="checkbox" id="main-checkbox3" name="filters[]" class="checkbox-item" id="Networking" value="Networking">
+                    <input type="checkbox" id="main-checkbox3" name="filters[]" class="checkbox-item" id="Network" value="Network">
                     Networking
                     <span class="checkmark"></span>
                 </label>
@@ -403,7 +400,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Networking_Two" value="Networking_Two"> Networking
+                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Networking" value="Networking"> Networking
                     <span class="checkmark"></span>
                 </label>
                 </div>
