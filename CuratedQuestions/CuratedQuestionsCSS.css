@@ -1,4 +1,4 @@
-main{
+main {
     padding: 1px 100px 50px 100px;
 }
 
@@ -64,7 +64,7 @@ main{
 }
 
 #DigitalAssistance.dropdown {
-    height:650px;
+    height: 650px;
 }
 
 #Workshops.dropdown {
@@ -152,19 +152,19 @@ main{
     border-radius: 10px;
 }
 
-#doubleLines.descriptionBox{
+#doubleLines.descriptionBox {
     height: 90px;
 }
 
-#tripleLines.descriptionBox{
+#tripleLines.descriptionBox {
     height: 110px;
 }
 
-#quadLines.descriptionBox{
+#quadLines.descriptionBox {
     height: 130px;
 }
 
-.descriptionTitle{
+.descriptionTitle {
     font-weight: 700;
     line-height: 2;
 }
@@ -223,26 +223,34 @@ main{
 /* Create a custom checkbox */
 .custom-checkbox .checkbox-mark {
     display: inline-block;
-    width: 20px; /* Customize width */
-    height: 20px; /* Customize height */
-    border: 2px solid #203A72; /* Customize border color and width */
+    width: 20px;
+    /* Customize width */
+    height: 20px;
+    /* Customize height */
+    border: 2px solid #203A72;
+    /* Customize border color and width */
     border-radius: 2px;
-    background-color: #fff; /* Customize background color */
+    background-color: #fff;
+    /* Customize background color */
     vertical-align: middle;
     cursor: pointer;
 }
 
 /* Add a checkmark for checked state */
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-mark {
-    background-color: #007bff; /* Customize checkmark background color */
-    border-color: #007bff; /* Customize border color when checked */
+.custom-checkbox input[type="checkbox"]:checked+.checkbox-mark {
+    background-color: #007bff;
+    /* Customize checkmark background color */
+    border-color: #007bff;
+    /* Customize border color when checked */
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-mark::after {
+.custom-checkbox input[type="checkbox"]:checked+.checkbox-mark::after {
     content: '';
     display: block;
-    width: 6px; /* Customize checkmark width */
-    height: 10px; /* Customize checkmark height */
+    width: 6px;
+    /* Customize checkmark width */
+    height: 10px;
+    /* Customize checkmark height */
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
@@ -251,13 +259,13 @@ main{
     left: 6px;
 }
 
-#doubleLines.custom-checkbox{
+#doubleLines.custom-checkbox {
     display: inline-block;
     position: relative;
     top: 25px;
 }
 
-#tripleLines.custom-checkbox{
+#tripleLines.custom-checkbox {
     display: inline-block;
     position: relative;
     top: 13px;
