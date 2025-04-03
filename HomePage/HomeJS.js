@@ -6,7 +6,7 @@ document.querySelectorAll(".sidebar-button").forEach(function (button) {
 
 function toggleDropdown(dropboxNum, dropdownContentNum) {
     var dropdownContent = document.getElementById(dropdownContentNum);
-    var sidebarButton = document.getElementById('sidebar-button');
+    //var sidebarButton = document.getElementById('sidebar-button');
 
     if (dropdownContent.classList.contains("expand")) {
         dropdownContent.classList.remove("expand");
@@ -64,10 +64,10 @@ function collectCheckboxValues(name) {
 }
 
 function updateFilters() {
-
+    var paginationValue = getSelectedRadio();
     var filterValues = collectCheckboxValues("filters[]");
     var selectValues = collectCheckboxValues("select[]");
-
+    console.log(paginationValue);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "", true);  // Update the URL as needed
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -83,6 +83,7 @@ function updateFilters() {
     };
 
     var data = "ajax=1";
+    data += "&itemLimit=" + encodeURIComponent(paginationValue);
     data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
     data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
@@ -114,12 +115,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const xhr = new XMLHttpRequest();
         const formData = new FormData();
 
+        document.documentElement.scrollTop = 0;  // For modern browsers
+        document.body.scrollTop = 0;  // For older browsers (especially IE)
+
         formData.append('ajax', 1);
         formData.append('page', page);
 
+        var paginationValue = getSelectedRadio();
         var filters = collectCheckboxValues('filters[]');
         var select = collectCheckboxValues('select[]');
 
+        formData.append('itemLimit', paginationValue)
         filters.forEach(value => formData.append('filters[]', value));
         select.forEach(value => formData.append('select[]', value));
 
@@ -153,3 +159,8 @@ document.addEventListener('click', function (event) {
         event.target.classList.toggle('flipped');
     }
 });
+
+function getSelectedRadio() {
+    const selectedValue = document.querySelector('input[name="pagination"]:checked')?.value;
+    return selectedValue;
+}

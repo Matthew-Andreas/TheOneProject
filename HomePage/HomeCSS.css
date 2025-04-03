@@ -6,7 +6,6 @@ main {
     display: flex;
     gap: 20px;
     margin-left: 300px;
-    margin-bottom: 10px;
 }
 
 
@@ -245,4 +244,23 @@ td {
 .filtersAndDatabase {
     display: flex;
     justify-content: space-evenly;
+}
+
+.filtersAndPagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width:1250px) {
+    .paginationChanger {
+        margin-left: 300px;
+    }
+}
+
+
+.paginationChanger p {
+    margin-bottom: 0;
 }
