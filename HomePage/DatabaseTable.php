@@ -13,14 +13,19 @@ class DatabaseTable {
     public $page;
 
     public function openDatabase($q) {
-        $this->db = JFactory::getDbo();
-        $this->query = $this->db->getQuery(true);
-        $this->originalQuery = $q; // Store the original query
-        $this->query = $q;
-        $this->db->setQuery($this->query);
-        $this->result = $this->db->loadObjectList(); 
-        $this->results = $this->db->loadAssocList();
-        $this->columns = array_keys($this->results[0]);
+        try {
+            $this->db = JFactory::getDbo();
+            $this->query = $this->db->getQuery(true);
+            $this->originalQuery = $q; // Store the original query
+            $this->query = $q;
+            $this->db->setQuery($this->query);
+            $this->result = $this->db->loadObjectList(); 
+            $this->results = $this->db->loadAssocList();
+            $this->columns = array_keys($this->results[0]);
+        } catch (Exception $e) {
+            http_response_code(400); // Set HTTP status code (avoid 500)
+            echo json_encode(["error" => $e->getMessage()]);
+        }
     }
 
     public function applyPagination() {
@@ -43,7 +48,7 @@ class DatabaseTable {
     }
 
     public function printHeader() {
-        echo "<table>";
+        echo "<table id='databaseTable'>";
         echo "<tr style=\"background-color:#203A72;color:White\">";
         foreach ($this->columns as $columnName) {
             $result = str_replace('_', ' ', $columnName);
@@ -86,7 +91,7 @@ class DatabaseTable {
             $paginationStart = max(1, $this->page - $pageRange);
             $paginationEnd = min($totalPages, $this->page + $pageRange);
     
-            echo '<div class="pagination">';
+            echo '<div class="pagination" id="pagination">';
     
             // Previous button
             if ($this->page > 1) {

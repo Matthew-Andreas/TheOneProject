@@ -313,7 +313,7 @@
     </div>
     <div class="dropbox" id="dropbox7">
         <div class="FilterTitleText" style="display: flex;">
-            <p style="margin:0; white-space:nowrap;">Type of Resources</p>
+            <p style="margin:0; white-space:nowrap;">Topic of Resources</p>
             <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToR" onclick="toggleDropdown('dropbox7','dropdown-content7')" >
         </div>
         <form method="post">

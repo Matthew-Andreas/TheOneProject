@@ -129,9 +129,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('selected-filters').innerHTML = xhr.responseText;
             } else {
                 console.error("Request failed. Status: " + xhr.status);
+                document.getElementById("databaseTable").remove();
+                document.getElementById("pagination").remove();
             }
         };
-        xhr.send(formData);
+        try {
+            xhr.send(formData);
+        } catch (error) {
+            console.error("An error occurred:", error.message);
+        }
+
     }
 
     window.loadPage = loadPage; // Expose the function globally
