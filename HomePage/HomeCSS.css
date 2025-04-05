@@ -264,3 +264,16 @@ td {
 .paginationChanger p {
     margin-bottom: 0;
 }
+
+.nameOfOrgLink {
+    color: #203A72;
+}
+
+.nameOfOrgLink:hover {
+    color: #60A800;
+}
+
+.websiteCell {
+    word-break: break-all;
+    white-space: normal;
+}

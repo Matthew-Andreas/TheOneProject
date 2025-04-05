@@ -30,7 +30,7 @@
                 <p class="showText">Show in search:</p>
                 <div class="selectCheckboxes">
                     <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Website" onclick="updateFilters()"> Website
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Address" onclick="updateFilters()"> Address
                         <span class="checkmarkSelect"></span>
                     </label>
                     <label class="checkbox-containerSelect">
@@ -46,7 +46,7 @@
                         <span class="checkmarkSelect"></span>
                     </label>
                     <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Sector
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Entrepreneur Demographics
                         <span class="checkmarkSelect"></span>
                     </label>
                     <label class="checkbox-containerSelect">
@@ -240,7 +240,7 @@
             </div>
             <div class="dropbox" id="dropbox6">
                 <div class="FilterTitleText" style="display: flex;">
-                    <p style="margin:0; white-space:nowrap;">Sector</p>
+                    <p style="margin:0; white-space:nowrap;">Entrepreneur Demographics</p>
                     <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" onclick="toggleDropdown('dropbox6','dropdown-content6')" >
                 </div>
                 <form method="post">
@@ -589,7 +589,7 @@
                 <div class="selected">
                     <div id="selected-filters">
                         <?php
-                            $T1 = new DatabaseTable("Select Name_of_Organization, Address, Description from Resources",1, 10);
+                            $T1 = new DatabaseTable("Select Name_of_Organization, Website, Description from Resources",1, 10);
                         ?>
                     </div>
                 </div>
