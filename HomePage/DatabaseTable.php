@@ -52,16 +52,29 @@ class DatabaseTable {
         echo "<tr style=\"background-color:#203A72;color:White\">";
         foreach ($this->columns as $columnName) {
             $result = str_replace('_', ' ', $columnName);
-            echo "<th>" . $result ."</th>";
+            if($result == "Sector"){
+                echo "<th>" . "Entrepreneur Demographics" ."</th>";
+            }else{
+                echo "<th>" . $result ."</th>";
+            }
+
         }
         echo "</tr>";
     }
 
     public function printData() {
+        $website = "Website";
         foreach ($this->result as $row) {
             echo "<tr>";
             foreach ($this->columns as $columnName) {
-                echo "<td>" . $row->$columnName . "</td>";
+                if($columnName =="Name_of_Organization"){
+                    echo "<td><a class='nameOfOrgLink' href='" . $row->$website ."'>" . $row->$columnName . "</a></td>";
+                }else if($columnName =="Website"){
+                    echo "<td class='websiteCell'>" . $row->$columnName . "</td>";
+                }else{
+                    echo "<td>" . $row->$columnName . "</td>";
+                }
+                
             }
             echo "</tr>";
         }
