@@ -15,14 +15,17 @@
                 $filters = isset($_POST['filters']) ? $_POST['filters'] : [];
                 $select = isset($_POST['select']) ? $_POST['select'] : [];
                 $itemLimit = isset($_POST['itemLimit']) ? (int)$_POST['itemLimit'] : 10; // Default to 10 items per page
-                $allColumns = isset($_POST['allColumns']) ? $_POST['allColumns'] : false; // Default to 10 items per page
-                if(!$allColumns){
+                $allColumns = isset($_POST['allColumns']) ? $_POST['allColumns'] : 12; // Default to 10 items per page
+
+                echo $allColumns;
+
+                if($allColumns){
                     echo "here1";
                 }else{
                     echo "here2";
                 }
                 // Create the database query based on the filters and selection
-                $Q1 = new DatabaseQuery($filters, $select);
+                $Q1 = new DatabaseQuery($filters, $select, $allColumns);
 
                 // Determine the current page for pagination
                 $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;

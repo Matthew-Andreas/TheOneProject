@@ -84,6 +84,7 @@ function updateFilters() {
         }
     };
     console.log(allCollumns)
+    console.log("updateFilters")
     var data = "ajax=1";
     data += "&itemLimit=" + encodeURIComponent(paginationValue);
     data += "&allColumns=" + encodeURIComponent(allCollumns);

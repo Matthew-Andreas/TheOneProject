@@ -25,7 +25,8 @@ class DatabaseQuery{
                                 "Legal_Assistance" => "Topic_of_Resource_Header", "General_Legal_Assistance" => "Topic_of_Resource", "Legal_Assistance_IP_TM_P" => "Topic_of_Resource", "Legal_Assistance_Legal_Formation"
                             ];
 
-    public function __construct($filters,$selected){
+    public function __construct($filters,$selected, $allColumns){
+        echo $allColumns;
         $this->whereData = $filters;
         $this->selectData = $selected;
         $this->addSelect();
