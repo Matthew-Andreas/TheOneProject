@@ -1,3 +1,5 @@
+var allCollumns = false;
+
 document.querySelectorAll(".sidebar-button").forEach(function (button) {
     button.onclick = function () {
         document.body.classList.toggle("open-sidebar");
@@ -66,7 +68,7 @@ function collectCheckboxValues(name) {
 function updateFilters() {
     var paginationValue = getSelectedRadio();
     var filterValues = collectCheckboxValues("filters[]");
-    var selectValues = collectCheckboxValues("select[]");
+    //var selectValues = collectCheckboxValues("select[]");
     console.log(paginationValue);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "", true);  // Update the URL as needed
@@ -81,11 +83,12 @@ function updateFilters() {
             }
         }
     };
-
+    console.log(allCollumns)
     var data = "ajax=1";
     data += "&itemLimit=" + encodeURIComponent(paginationValue);
+    data += "&allColumns=" + encodeURIComponent(allCollumns);
     data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
-    data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
+    //data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
     xhr.send(data);
 }
@@ -124,8 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var paginationValue = getSelectedRadio();
         var filters = collectCheckboxValues('filters[]');
         //var select = collectCheckboxValues('select[]');
-
+        console.log(allCollumns)
+        console .log("load")
         formData.append('itemLimit', paginationValue)
+        formData.append('allColumns',allCollumns)
         filters.forEach(value => formData.append('filters[]', value));
         //select.forEach(value => formData.append('select[]', value));
 
@@ -163,4 +168,9 @@ document.addEventListener('click', function (event) {
 function getSelectedRadio() {
     const selectedValue = document.querySelector('input[name="pagination"]:checked')?.value;
     return selectedValue;
+}
+
+function setColumns(){
+    allCollumns = !allCollumns;
+    console.log(allCollumns);
 }
