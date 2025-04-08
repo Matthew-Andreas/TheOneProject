@@ -25,54 +25,11 @@
                 exit();
             }
         ?>
-        <div class="filtersAndPagination">
-            <div class="filters">
-                <p class="showText">Show in search:</p>
-                <div class="selectCheckboxes">
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Address" onclick="updateFilters()"> Address
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Geography" value="Geography" onclick="updateFilters()"> Geography
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Topic_of_Resource" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Free_or_Paid" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Entrepreneur Demographics
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                    <label class="checkbox-containerSelect">
-                        <input type="checkbox" name="select[]" class="checkbox-item" id="Stage_of_Business" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
-                        <span class="checkmarkSelect"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="paginationChanger">
-                <p>Number of Resources per page:</p>
-                <input type="radio" id="10" name="pagination" value="10" onclick="updateFilters()" checked>
-                <label for="10">10</label>
-                <input type="radio" id="25" name="pagination" value="25" onclick="updateFilters()">
-                <label for="25">25</label>
-                <input type="radio" id="50" name="pagination" value="50" onclick="updateFilters()">
-                <label for="50">50</label>
-            </div>
+            
+        <div style="display: flex;">
+            <p class="filterTitle">All Filters</p>
         </div>
-        <div class="filtersAndDatabase">
-            
-
-            <div class="sidebar" id="mySidebar">
-            <div style="display: flex;">
-                <p class="filterTitle">All Filters</p>
-            </div>
-            
+        <div  class="sidebar"  id="mySidebar"> 
             <div class="dropbox" id="dropbox">
                 <div class="FilterTitleText" style="display: flex;">
                     <p style="margin:0; white-space:nowrap;">Free or Paid</p>
@@ -583,18 +540,59 @@
                     </div>
                 </form>
             </div>
-            
+        
+        </div>
+
+        <div class="filtersAndPagination">
+            <button class="column-button">Show All</button>
+            <!--<div class="filters">
+                <p class="showText">Show in search:</p>
+                <div class="selectCheckboxes">
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Website" value="Address" onclick="updateFilters()"> Address
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Geography" value="Geography" onclick="updateFilters()"> Geography
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Topic_of_Resource" value="Topic_of_Resource" onclick="updateFilters()"> Topic of Resource
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Free_or_Paid" value="Free_or_Paid" onclick="updateFilters()"> Free or Paid
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Sector" value="Sector" onclick="updateFilters()"> Entrepreneur Demographics
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                    <label class="checkbox-containerSelect">
+                        <input type="checkbox" name="select[]" class="checkbox-item" id="Stage_of_Business" value="Stage_of_Business" onclick="updateFilters()"> Stage of Business
+                        <span class="checkmarkSelect"></span>
+                    </label>
+                </div>
+            </div>-->
+            <div class="paginationChanger">
+                <p>Number of Resources per page:</p>
+                <input type="radio" id="10" name="pagination" value="10" onclick="updateFilters()" checked>
+                <label for="10">10</label>
+                <input type="radio" id="25" name="pagination" value="25" onclick="updateFilters()">
+                <label for="25">25</label>
+                <input type="radio" id="50" name="pagination" value="50" onclick="updateFilters()">
+                <label for="50">50</label>
             </div>
-            <div class="Database">
-                <div class="selected">
-                    <div id="selected-filters">
-                        <?php
-                            $T1 = new DatabaseTable("Select Name_of_Organization, Website, Description from Resources",1, 10);
-                        ?>
-                    </div>
+        </div>
+
+        <div class="Database">
+            <div class="selected">
+                <div id="selected-filters">
+                    <?php
+                        $T1 = new DatabaseTable("Select Name_of_Organization, Website, Description from Resources",1, 10);
+                    ?>
                 </div>
             </div>
-
         </div>
 
     </body>

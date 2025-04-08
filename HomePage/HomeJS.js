@@ -123,11 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var paginationValue = getSelectedRadio();
         var filters = collectCheckboxValues('filters[]');
-        var select = collectCheckboxValues('select[]');
+        //var select = collectCheckboxValues('select[]');
 
         formData.append('itemLimit', paginationValue)
         filters.forEach(value => formData.append('filters[]', value));
-        select.forEach(value => formData.append('select[]', value));
+        //select.forEach(value => formData.append('select[]', value));
 
         xhr.open('POST', '', true);
         xhr.onload = function () {
