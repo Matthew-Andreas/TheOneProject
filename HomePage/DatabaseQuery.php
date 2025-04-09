@@ -26,10 +26,9 @@ class DatabaseQuery{
                             ];
 
     public function __construct($filters,$selected, $allColumns){
-        echo $allColumns;
         $this->whereData = $filters;
         $this->selectData = $selected;
-        $this->addSelect();
+        $this->addSelect($allColumns);
         $this->whereSetUp();
     }
 
@@ -37,9 +36,12 @@ class DatabaseQuery{
         return $this->queryStatement;
     }
 
-    public function addSelect(){
-        foreach($this->selectData as $selected){
-            $this->queryStatement .= "," . $selected;
+    public function addSelect($allColumns){
+        //foreach($this->selectData as $selected){
+        //    $this->queryStatement .= "," . $selected;
+        //}
+        if($allColumns == "true"){
+            $this->queryStatement .= ", Address, Geography, Topic_of_Resource, Free_or_Paid, Sector, Stage_of_Business";
         }
         $this->queryStatement .= " from Resources ";
     }

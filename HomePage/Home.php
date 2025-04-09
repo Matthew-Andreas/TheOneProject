@@ -17,13 +17,6 @@
                 $itemLimit = isset($_POST['itemLimit']) ? (int)$_POST['itemLimit'] : 10; // Default to 10 items per page
                 $allColumns = isset($_POST['allColumns']) ? $_POST['allColumns'] : 12; // Default to 10 items per page
 
-                echo $allColumns;
-
-                if($allColumns){
-                    echo "here1";
-                }else{
-                    echo "here2";
-                }
                 // Create the database query based on the filters and selection
                 $Q1 = new DatabaseQuery($filters, $select, $allColumns);
 
@@ -553,7 +546,7 @@
         </div>
 
         <div class="filtersAndPagination">
-            <button class="column-button" onclick="setColumns()">Show All</button>
+            <button class="column-button" id="columnBtn" onclick="setColumns()">Show All Columns</button>
             <!--<div class="filters">
                 <p class="showText">Show in search:</p>
                 <div class="selectCheckboxes">

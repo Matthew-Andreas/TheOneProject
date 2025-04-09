@@ -271,11 +271,13 @@ td {
 }
 
 .column-button {
-    width: 100%;
+    /*width: 100%;*/
     font-family: 'Montserrat';
     background-color: #60A800;
     color: #ffffff;
     border-radius: 20px;
     border: none;
-    max-width: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*max-width: 150px;*/
 }

@@ -172,6 +172,13 @@ function getSelectedRadio() {
 }
 
 function setColumns(){
+    const setColumnsBtn = document.getElementById("columnBtn");
     allCollumns = !allCollumns;
-    console.log(allCollumns);
+    if(allCollumns){
+        setColumnsBtn.textContent = "Show Less Columns";
+    }else{
+        setColumnsBtn.textContent = "Show All Columns";
+    }
+    //console.log(allCollumns);
+    updateFilters();
 }
