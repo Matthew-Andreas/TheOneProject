@@ -148,7 +148,7 @@ td {
 .dropbox {
     /*min-width: 270px;*/
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    border-top: 1px solid #e4e4e4;
+    /*border-top: 1px solid #e4e4e4;*/
     margin-left: 10px;
     margin-right: 10px;
 }
