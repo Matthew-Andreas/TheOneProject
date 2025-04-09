@@ -1,3 +1,5 @@
+var allCollumns = false;
+
 document.querySelectorAll(".sidebar-button").forEach(function (button) {
     button.onclick = function () {
         document.body.classList.toggle("open-sidebar");
@@ -66,7 +68,7 @@ function collectCheckboxValues(name) {
 function updateFilters() {
     var paginationValue = getSelectedRadio();
     var filterValues = collectCheckboxValues("filters[]");
-    var selectValues = collectCheckboxValues("select[]");
+    //var selectValues = collectCheckboxValues("select[]");
     console.log(paginationValue);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "", true);  // Update the URL as needed
@@ -81,11 +83,13 @@ function updateFilters() {
             }
         }
     };
-
+    console.log(allCollumns)
+    console.log("updateFilters")
     var data = "ajax=1";
     data += "&itemLimit=" + encodeURIComponent(paginationValue);
+    data += "&allColumns=" + encodeURIComponent(allCollumns);
     data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
-    data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
+    //data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
 
     xhr.send(data);
 }
@@ -123,11 +127,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var paginationValue = getSelectedRadio();
         var filters = collectCheckboxValues('filters[]');
-        var select = collectCheckboxValues('select[]');
-
+        //var select = collectCheckboxValues('select[]');
+        console.log(allCollumns)
+        console .log("load")
         formData.append('itemLimit', paginationValue)
+        formData.append('allColumns',allCollumns)
         filters.forEach(value => formData.append('filters[]', value));
-        select.forEach(value => formData.append('select[]', value));
+        //select.forEach(value => formData.append('select[]', value));
 
         xhr.open('POST', '', true);
         xhr.onload = function () {
@@ -163,4 +169,16 @@ document.addEventListener('click', function (event) {
 function getSelectedRadio() {
     const selectedValue = document.querySelector('input[name="pagination"]:checked')?.value;
     return selectedValue;
+}
+
+function setColumns(){
+    const setColumnsBtn = document.getElementById("columnBtn");
+    allCollumns = !allCollumns;
+    if(allCollumns){
+        setColumnsBtn.textContent = "Show Less Columns";
+    }else{
+        setColumnsBtn.textContent = "Show All Columns";
+    }
+    //console.log(allCollumns);
+    updateFilters();
 }
