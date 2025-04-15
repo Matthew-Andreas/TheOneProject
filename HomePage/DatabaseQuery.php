@@ -52,12 +52,13 @@ class DatabaseQuery{
         }elseif($this->isdifferent){
             $this->queryStatement .= ") AND (";
         }elseif($this->isToR){
-            $this->queryStatement .= ") OR (";
+            $this->queryStatement .= ")) OR (";
         }
         else{
             $this->queryStatement .= " OR ";
         }
         $this->queryStatement .= $addition;
+
     }
 
     public function whereSetUp(){

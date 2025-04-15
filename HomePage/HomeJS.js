@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error("Request failed. Status: " + xhr.status);
                 document.getElementById("databaseTable").remove();
                 document.getElementById("pagination").remove();
+                document.getElementById("selected-filters").textContent = "No data in this section.";
             }
         };
         try {
