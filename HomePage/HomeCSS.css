@@ -281,3 +281,16 @@ td {
     padding-right: 20px;
     /*max-width: 150px;*/
 }
+
+.reset-button {
+    /*width: 100%;*/
+    display: none;
+    font-family: 'Montserrat';
+    background-color: #203A72;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*max-width: 150px;*/
+}

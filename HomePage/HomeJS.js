@@ -69,6 +69,11 @@ function updateFilters() {
     var paginationValue = getSelectedRadio();
     var filterValues = collectCheckboxValues("filters[]");
     //var selectValues = collectCheckboxValues("select[]");
+    if (filterValues.length != 0 || paginationValue > 10 || allCollumns) {
+        document.getElementById("resetBtn").style.display = "block";
+    } else {
+        document.getElementById("resetBtn").style.display = "none";
+    }
     console.log(paginationValue);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "", true);  // Update the URL as needed
@@ -127,11 +132,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var paginationValue = getSelectedRadio();
         var filters = collectCheckboxValues('filters[]');
+        if (filters.length != 0 || paginationValue > 10 || allCollumns) {
+            document.getElementById("resetBtn").style.display = "block";
+        } else {
+            document.getElementById("resetBtn").style.display = "none";
+        }
         //var select = collectCheckboxValues('select[]');
+        console.log(filters.length != 0)
+        console.log(paginationValue > 10)
         console.log(allCollumns)
-        console .log("load")
+        console.log("load")
         formData.append('itemLimit', paginationValue)
-        formData.append('allColumns',allCollumns)
+        formData.append('allColumns', allCollumns)
         filters.forEach(value => formData.append('filters[]', value));
         //select.forEach(value => formData.append('select[]', value));
 
@@ -172,14 +184,21 @@ function getSelectedRadio() {
     return selectedValue;
 }
 
-function setColumns(){
+function setColumns() {
     const setColumnsBtn = document.getElementById("columnBtn");
     allCollumns = !allCollumns;
-    if(allCollumns){
+    if (allCollumns) {
         setColumnsBtn.textContent = "Show Less Columns";
-    }else{
+    } else {
         setColumnsBtn.textContent = "Show All Columns";
     }
     //console.log(allCollumns);
     updateFilters();
 }
+
+function resetFilters() {
+    location.reload();
+}
+
+
+
