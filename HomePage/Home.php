@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.1" type="text/css" />
     </head>
     <body>
 
@@ -60,6 +60,11 @@
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content2">
                         <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyG">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
+                        <label class="checkbox-container">
                             <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="Local_North_County">
                             <span class="checkmark"></span>
                             Local North County
@@ -94,6 +99,11 @@
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content3">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnySt">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="filters[]" class="checkbox-item" id="Establishing" value="Establishing">
                             <span class="checkmark"></span>
@@ -130,6 +140,11 @@
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content4">
                         <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyT">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
+                        <label class="checkbox-container">
                             <input type="checkbox" name="filters[]" class="checkbox-item" id="Innovation_Tech" value="Innovation_Tech">
                             <span class="checkmark"></span>
                             Innovation/tech
@@ -150,7 +165,7 @@
                             Microenterprise
                         </label>
                         <label class="checkbox-container bottom">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Venders">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Vendors">
                             <span class="checkmark"></span>
                             Pop Ups/Venders
                         </label>
@@ -164,6 +179,11 @@
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content5">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyI">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="filters[]" class="checkbox-item" id="Agricultural_Sector" value="Agricultural_Sector">
                             <span class="checkmark"></span>
@@ -204,6 +224,11 @@
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content6">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnySe">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="filters[]" class="checkbox-item" id="Asian" value="Asian">
                             <span class="checkmark"></span>
@@ -603,6 +628,6 @@
         </div>
 
     </body>
-    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js" type="text/javascript"></script>
+    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.0" type="text/javascript"></script>
 </html>
 {/source}

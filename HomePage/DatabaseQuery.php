@@ -3,17 +3,18 @@ class DatabaseQuery{
     public $isWhere = false;
     public $oldGroup = "";
     public $isdifferent = false;
+    public $isAny = false; 
     public $isToR = false;
     public $extraParen =false;
     public $whereData = [];
     public $selectData = [];
     public $queryStatement = "Select Name_of_Organization, Website, Description";
     public $checkBoxValues = ["Free" => "Free_or_Paid","Paid" => "Free_or_Paid",
-                                "Local_North_County" => "Geography", "Local_San_Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
-                                "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
-                                "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
-                                "Tech_Industry" => "Industry", "NonProfit_Social_Sector" => "Industry", "Agricultural_Sector" => "Industry", "Consumer_Goods_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
-                                "Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latin_X" => "Sector", "Immigrants" => "Sector", "Under_Privileged" => "Sector", "LGBTQ" => "Sector", "Veteran_Women" => "Sector", "Student" => "Sector",
+                                "AnyG" => "Geography","Local_North_County" => "Geography", "Local_San_Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
+                                "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
+                                "AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
+                                "AnyI" => "Industry", "Tech_Industry" => "Industry", "NonProfit_Social_Sector" => "Industry", "Agricultural_Sector" => "Industry", "Consumer_Goods_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
+                                "AnySe" => "Sector","Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latin_X" => "Sector", "Immigrants" => "Sector", "Under_Privileged" => "Sector", "LGBTQ" => "Sector", "Veteran_Women" => "Sector", "Student" => "Sector",
                                 "Funding" => "Topic_of_Resource_Header", "Funding_Venture_Capital" => "Topic_of_Resource", "Private_Equity_Firms" => "Topic_of_Resource", "Funding_Angel" => "Topic_of_Resource", "Grant" => "Topic_of_Resource", "Loans" => "Topic_of_Resource", "Crowdfunding" => "Topic_of_Resource", "Microcredit/Microloans" => "Topic_of_Resource", "Other_Funding" => "Topic_of_Resource", 
                                 "Financial_Information" => "Topic_of_Resource_Header", "Investment_Advisor" => "Topic_of_Resource", "Education_FL_BP_BC" => "Topic_of_Resource", "Wealth_Managment" => "Topic_of_Resource", "Accounting_Assistance" => "Topic_of_Resource", "Banking" => "Topic_of_Resource", 
                                 "Network" => "Topic_of_Resource_Header", "Meetups" => "Topic_of_Resource", "Networking" => "Topic_of_Resource", 
@@ -64,13 +65,26 @@ class DatabaseQuery{
     public function whereSetUp(){
         foreach($this->checkBoxValues as $value => $group){
             if(in_array($value,$this->whereData)){
+                
                 $addition = "";
                 if(!($this->isWhere)){
+                    echo"Here2";
+                    if($this->oldGroup != $group){
+                        $this->isAny = false;
+                    }
+                    if($value == "AnyG"||$value == "AnySt"||$value == "AnyI"||$value == "AnySe"||$value == "AnyT"){
+                        $this->isAny = True;
+                    }
                     $this->oldGroup = $group;
                     if((0==strcasecmp($group, "Sector"))||(0==strcasecmp($group, "Type_of_Business"))||(0==strcasecmp($group, "Industry"))){
                         $addition = $group . " LIKE '%Any%' OR ";
                     }
                 }elseif($this->oldGroup != $group){
+                    echo"Here3";
+                    $this->isAny = false;
+                    if($value == "AnyG"||$value == "AnySt"||$value == "AnyI"||$value == "AnySe"||$value == "AnyT"){
+                        $this->isAny = True;
+                    }
                     $this->isdifferent = true;
                     if(0==strcasecmp($this->oldGroup, "Topic_of_Resource")){
                         $this->isdifferent = false;
@@ -89,9 +103,13 @@ class DatabaseQuery{
                     $addition = "(";
                     $this->extraParen = true;
                 }
+                if(!($this->isAny)){
+                    echo"Here1";
+                    $this->addWhere($addition . $group . " LIKE '%" . $value . "%'");
+                    $this->isWhere = True;
+                }
 
-                $this->addWhere($addition . $group . " LIKE '%" . $value . "%'");
-                $this->isWhere = True;
+                echo $this->isAny;
                 $this->isdifferent = false;
                 $this->isToR = false;
             }
@@ -102,7 +120,7 @@ class DatabaseQuery{
         if($this->extraParen){
             $this->queryStatement .=")";
         }
-        //echo $this->queryStatement;
+        echo $this->queryStatement;
     }
 
 
