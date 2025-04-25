@@ -71,7 +71,7 @@ class DatabaseQuery{
                 
                 $addition = "";
                 if(!($this->isWhere)){
-                    echo"Here2";
+                    //echo"Here2";
                     if($this->oldGroup != $group){
                         $this->isAny = false;
                     }
@@ -83,7 +83,7 @@ class DatabaseQuery{
                         $addition = $group . " LIKE '%Any%' OR ";
                     }
                 }elseif($this->oldGroup != $group){
-                    echo"Here3";
+                    //echo"Here3";
                     $this->isAny = false;
                     if($value == "AnyG"||$value == "AnySt"||$value == "AnyI"||$value == "AnySe"||$value == "AnyT"){
                         $this->isAny = True;
@@ -108,12 +108,12 @@ class DatabaseQuery{
                 }
 
                 if(!($this->isAny)){
-                    echo"Here1";
+                    //echo"Here1";
                     $this->addWhere($addition . $group . " LIKE '%" . $value . "%'");
                     $this->isWhere = True;
                 }
 
-                echo $this->isAny;
+                //echo $this->isAny;
                 $this->isdifferent = false;
                 $this->isToR = false;
             }
@@ -124,7 +124,7 @@ class DatabaseQuery{
         if($this->extraParen){
             $this->queryStatement .=")";
         }
-        echo $this->queryStatement;
+        //echo $this->queryStatement;
     }
 
 
