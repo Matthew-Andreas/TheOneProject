@@ -65,12 +65,12 @@
                             Any
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="Local_North_County">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="Local: North County">
                             <span class="checkmark"></span>
                             Local North County
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_San_Diego" value="Local_San_Diego">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_San_Diego" value="Local: San Diego">
                             <span class="checkmark"></span>
                             Local San Deigo
                         </label>
@@ -342,7 +342,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="checkbox-container">
-                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Education_FL_BP_BC" value="Education_FL_BP_BC"> Education: Financial Literacy, Business Plans, Business Cards
+                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Education_FL_BP_BC" value="Education: Financial Literacy, Business Plans, Business Cards"> Education: Financial Literacy, Business Plans, Business Cards
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="checkbox-container">
@@ -350,7 +350,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="checkbox-container">
-                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Managment" value="Wealth_Managment"> Wealth Managment
+                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Managment" value="Wealth_Management"> Wealth Management
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -537,7 +537,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="checkbox-container">
-                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_n_Web_App_Development" value="Mobile_n_Web_App_Development"> Mobile & Web App Development
+                                    <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_n_Web_App_Development" value="Mobile_&_Web_App_Development"> Mobile & Web App Development
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="checkbox-container">
