@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.1" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.2" type="text/css" />
     </head>
     <body>
 
@@ -132,7 +132,7 @@
                     </div>
                 </form>
             </div>
-            <div class="dropbox" id="dropbox4">
+            <!--<div class="dropbox" id="dropbox4">
                 <div class="FilterTitleText" style="display: flex;">
                     <p style="margin:0; white-space:nowrap;">Type of Business</p>
                     <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToB" onclick="toggleDropdown('dropbox4','dropdown-content4')" >
@@ -216,7 +216,7 @@
                         </label>
                     </div>
                 </form>
-            </div>
+            </div>-->
             <div class="dropbox" id="dropbox6">
                 <div class="FilterTitleText" style="display: flex;">
                     <p style="margin:0; white-space:nowrap;">Entrepreneur Demographics</p>
@@ -301,6 +301,11 @@
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content7">
                         <div class="filter-option">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyTop">
+                                <span class="checkmark"></span>
+                                Any
+                            </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" id="main-checkbox6" name="filters[]" class="checkbox-item" id="Educational_Training" value="Educational_Training">
                                 Educational/Training

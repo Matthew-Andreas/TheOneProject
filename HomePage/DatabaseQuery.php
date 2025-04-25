@@ -12,10 +12,10 @@ class DatabaseQuery{
     public $checkBoxValues = ["Free" => "Free_or_Paid","Paid" => "Free_or_Paid",
                                 "AnyG" => "Geography","Local_North_County" => "Geography", "Local_San_Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
                                 "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
-                                "AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
-                                "AnyI" => "Industry", "Tech_Industry" => "Industry", "NonProfit_Social_Sector" => "Industry", "Agricultural_Sector" => "Industry", "Consumer_Goods_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
+                                //"AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
+                                //"AnyI" => "Industry", "Tech_Industry" => "Industry", "NonProfit_Social_Sector" => "Industry", "Agricultural_Sector" => "Industry", "Consumer_Goods_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
                                 "AnySe" => "Sector","Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latin_X" => "Sector", "Immigrants" => "Sector", "Under_Privileged" => "Sector", "LGBTQ" => "Sector", "Veteran_Women" => "Sector", "Student" => "Sector",
-                                "Funding" => "Topic_of_Resource_Header", "Funding_Venture_Capital" => "Topic_of_Resource", "Private_Equity_Firms" => "Topic_of_Resource", "Funding_Angel" => "Topic_of_Resource", "Grant" => "Topic_of_Resource", "Loans" => "Topic_of_Resource", "Crowdfunding" => "Topic_of_Resource", "Microcredit/Microloans" => "Topic_of_Resource", "Other_Funding" => "Topic_of_Resource", 
+                                "AnyTop" => "Topic_of_Resource_Header","Funding" => "Topic_of_Resource_Header", "Funding_Venture_Capital" => "Topic_of_Resource", "Private_Equity_Firms" => "Topic_of_Resource", "Funding_Angel" => "Topic_of_Resource", "Grant" => "Topic_of_Resource", "Loans" => "Topic_of_Resource", "Crowdfunding" => "Topic_of_Resource", "Microcredit/Microloans" => "Topic_of_Resource", "Other_Funding" => "Topic_of_Resource", 
                                 "Financial_Information" => "Topic_of_Resource_Header", "Investment_Advisor" => "Topic_of_Resource", "Education_FL_BP_BC" => "Topic_of_Resource", "Wealth_Managment" => "Topic_of_Resource", "Accounting_Assistance" => "Topic_of_Resource", "Banking" => "Topic_of_Resource", 
                                 "Network" => "Topic_of_Resource_Header", "Meetups" => "Topic_of_Resource", "Networking" => "Topic_of_Resource", 
                                 "Incubator_Accelerator" => "Topic_of_Resource_Header", "Accelerator" => "Topic_of_Resource", "Incubator" => "Topic_of_Resource", 
@@ -42,7 +42,7 @@ class DatabaseQuery{
         //    $this->queryStatement .= "," . $selected;
         //}
         if($allColumns == "true"){
-            $this->queryStatement .= ", Address, Geography, Topic_of_Resource, Free_or_Paid, Sector, Stage_of_Business";
+            $this->queryStatement .= ", Free_or_Paid, Geography, Stage_of_Business, Sector, Topic_of_Resource";//", Address, Geography, Topic_of_Resource, Free_or_Paid, Sector, Stage_of_Business";
         }
         $this->queryStatement .= " from Resources ";
     }
@@ -65,6 +65,9 @@ class DatabaseQuery{
     public function whereSetUp(){
         foreach($this->checkBoxValues as $value => $group){
             if(in_array($value,$this->whereData)){
+                if($value == "AnyTop"){
+                    break;
+                }
                 
                 $addition = "";
                 if(!($this->isWhere)){
@@ -103,6 +106,7 @@ class DatabaseQuery{
                     $addition = "(";
                     $this->extraParen = true;
                 }
+
                 if(!($this->isAny)){
                     echo"Here1";
                     $this->addWhere($addition . $group . " LIKE '%" . $value . "%'");
