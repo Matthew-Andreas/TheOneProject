@@ -12,8 +12,8 @@ class DatabaseQuery{
     public $checkBoxValues = ["Free" => "Free_or_Paid","Paid" => "Free_or_Paid",
                                 "AnyG" => "Geography","Local: North County" => "Geography", "Local: San Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
                                 "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
-                                //"AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
-                                //"AnyI" => "Industry", "Tech_Industry" => "Industry", "NonProfit_Social_Sector" => "Industry", "Agricultural_Sector" => "Industry", "Consumer_Goods_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
+                                "AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
+                                "AnyI" => "Industry", "Tech_Industry" => "Industry","Government_Sector" => "Industry", "Non-Profit_Social_Sector" => "Industry", "Agricultural" => "Industry", "Consumer_Goods/_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
                                 "AnySe" => "Sector","Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latin_X" => "Sector", "Immigrants" => "Sector", "Under_Privileged" => "Sector", "LGBTQ" => "Sector", "Veteran_Women" => "Sector", "Student" => "Sector",
                                 "AnyTop" => "Topic_of_Resource_Header","Funding" => "Topic_of_Resource_Header", "Funding_Venture_Capital" => "Topic_of_Resource", "Private_Equity_Firms" => "Topic_of_Resource", "Funding_Angel" => "Topic_of_Resource", "Grant" => "Topic_of_Resource", "Loans" => "Topic_of_Resource", "Crowdfunding" => "Topic_of_Resource", "Microcredit/Microloans" => "Topic_of_Resource", "Other_Funding" => "Topic_of_Resource", 
                                 "Financial_Information" => "Topic_of_Resource_Header", "Investment_Advisor" => "Topic_of_Resource", "Education: Financial Literacy, Business Plans, Business Cards" => "Topic_of_Resource", "Wealth_Management" => "Topic_of_Resource", "Accounting_Assistance" => "Topic_of_Resource", "Banking" => "Topic_of_Resource", 
@@ -42,7 +42,7 @@ class DatabaseQuery{
         //    $this->queryStatement .= "," . $selected;
         //}
         if($allColumns == "true"){
-            $this->queryStatement .= ", Free_or_Paid, Geography, Stage_of_Business, Sector, Topic_of_Resource";//", Address, Geography, Topic_of_Resource, Free_or_Paid, Sector, Stage_of_Business";
+            $this->queryStatement .= ", Free_or_Paid, Geography, Industry, Stage_of_Business, Sector, Topic_of_Resource, Type_of_Business";//", Address, Geography, Topic_of_Resource, Free_or_Paid, Sector, Stage_of_Business";
         }
         $this->queryStatement .= " from Resources ";
     }

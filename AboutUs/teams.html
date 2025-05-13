@@ -113,10 +113,30 @@
         /* Darker shade for hover */
         transform: scale(0.95);
     }
+
+    .TeamMemberCard {
+        max-width: 500px;
+        /*max-height: 500px;*/
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .teamImg {
+        grid-column: 1 / 6;
+        grid-row: 1/10;
+    }
+
+    .linkinbtnSpot {
+        grid-column: 3/4;
+        grid-row: 9/11;
+        justify-self: center;
+        align-self: center;
+    }
 </style>
 
 <body>
-    <div class="grid">
+    <!--<div class="grid">
         <div></div>
         <div>
             <div class="Team-Title">
@@ -135,8 +155,7 @@
                         </a>
                     </div>
                                 <div class="overlay-content-2">
-                        <a
-                            href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=4&Itemid=104">
+                        <a href="https://onehubsd.org/">
                             <button class="linkedin-button">in</button>
                         </a>
                     </div>
@@ -159,14 +178,12 @@
                             </div>
                         <div class="overlay">
                                 <div class="overlay-content">
-                        <a
-                            href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=4&Itemid=104">
+                        <a href="https://www.linkedin.com/in/daniel-h-43187b24b/">
                             <button class="linkedin-button">in</button>
                         </a>
                     </div>
                                 <div class="overlay-content-2">
-                        <a
-                            href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=4&Itemid=104">
+                        <a href="https://onehubsd.org/">
                             <button class="linkedin-button">in</button>
                         </a>
                     </div>
@@ -189,14 +206,12 @@
                 </div>
                 <div class="overlay">
                     <div class="overlay-content">
-                        <a
-                            href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=4&Itemid=104">
+                        <a href="https://onehubsd.org/">
                             <button class="linkedin-button">in</button>
                         </a>
                     </div>
                                 <div class="overlay-content-2">
-                        <a
-                            href="https://cs643.cs.csusm.edu/andre150/index.php?option=com_content&view=article&id=4&Itemid=104">
+                        <a href="https://onehubsd.org/">
                             <button class="linkedin-button">in</button>
                         </a>
                     </div>
@@ -206,6 +221,13 @@
             </div>
         </div>
         <div></div>
+    </div>-->
+
+    <div class="TeamMemberCard">
+        <img class="teamImg" src="images/Matthew.png#joomlaImage://local-images/Matthew.png?width=1080&height=1080">
+        <a href="https://onehubsd.org/" class="linkinbtnSpot">
+            <button class="linkedin-button">in</button>
+        </a>
     </div>
 
 </body>

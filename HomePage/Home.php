@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.3" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.4" type="text/css" />
     </head>
     <body>
 
@@ -33,9 +33,9 @@
         </div>
         <div  class="sidebar"  id="mySidebar"> 
             <div class="dropbox" id="dropbox">
-                <div class="FilterTitleText" style="display: flex;">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow FoP','dropdown-content')">
                     <p style="margin:0; white-space:nowrap;">Free or Paid</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow FoP" onclick="toggleDropdown('dropbox','dropdown-content')" >
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow FoP"  id="FilterArrow FoP">
                 </div>
                     <form method="post">
                         <div class="dropdown-content" id="dropdown-content">
@@ -53,9 +53,9 @@
                     </form>
             </div>
             <div class="dropbox" id="dropbox2">
-                <div class="FilterTitleText" style="display: flex;">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Geo','dropdown-content2')" >
                     <p style="margin:0; white-space:nowrap;">Geography</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Geo" onclick="toggleDropdown('dropbox2','dropdown-content2')" >
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Geo" id="FilterArrow Geo">
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content2">
@@ -92,10 +92,60 @@
                     </div>
                 </form>
             </div>
+            <div class="dropbox" id="dropbox5">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Ind','dropdown-content5')">
+                    <p style="margin:0; white-space:nowrap;">Industry</p>
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Ind" id="FilterArrow Ind" >
+                </div>
+                <form method="post">
+                    <div class="dropdown-content" id="dropdown-content5">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyI">
+                            <span class="checkmark"></span>
+                            Any
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Agricultural_Sector" value="Agricultural">
+                            <span class="checkmark"></span>
+                            Agricultural sector
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Consumer_Goods_Retail" value="Consumer_Goods/_Retail">
+                            <span class="checkmark"></span>
+                            Consumer Goods/retail
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Entertainment" value="Entertainment">
+                            <span class="checkmark"></span>
+                            Entertainment
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Government_Sector" value="Government_Sector">
+                            <span class="checkmark"></span>
+                            Government Sector
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="NonProfit_Social_Sector" value="Non-Profit_Social_Sector">
+                            <span class="checkmark"></span>
+                            Non-profit social sector
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Industry" value="Tech_Industry">
+                            <span class="checkmark"></span>
+                            Tech Industry
+                        </label>
+                        <label class="checkbox-container bottom">
+                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Industry" value="Other_Industry">
+                            <span class="checkmark"></span>
+                            Other Industry
+                        </label>
+                    </div>
+                </form>
+            </div>
             <div class="dropbox" id="dropbox3">
-                <div class="FilterTitleText" style="display: flex;">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow SoB','dropdown-content3')">
                     <p style="margin:0; white-space:nowrap;">Stage of Business</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow SoB" onclick="toggleDropdown('dropbox3','dropdown-content3')" >
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow SoB" id="FilterArrow SoB">
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content3">
@@ -132,95 +182,10 @@
                     </div>
                 </form>
             </div>
-            <!--<div class="dropbox" id="dropbox4">
-                <div class="FilterTitleText" style="display: flex;">
-                    <p style="margin:0; white-space:nowrap;">Type of Business</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToB" onclick="toggleDropdown('dropbox4','dropdown-content4')" >
-                </div>
-                <form method="post">
-                    <div class="dropdown-content" id="dropdown-content4">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyT">
-                            <span class="checkmark"></span>
-                            Any
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Innovation_Tech" value="Innovation_Tech">
-                            <span class="checkmark"></span>
-                            Innovation/tech
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Main_Street" value="Main_Street">
-                            <span class="checkmark"></span>
-                            Main Street
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Medium_Large_Business" value="Medium_Large_Business">
-                            <span class="checkmark"></span>
-                            Medium/Large Business
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Microenterprise" value="Microenterprise">
-                            <span class="checkmark"></span>
-                            Microenterprise
-                        </label>
-                        <label class="checkbox-container bottom">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Vendors">
-                            <span class="checkmark"></span>
-                            Pop Ups/Venders
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="dropbox" id="dropbox5">
-                <div class="FilterTitleText" style="display: flex;">
-                    <p style="margin:0; white-space:nowrap;">Industry</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Ind" onclick="toggleDropdown('dropbox5','dropdown-content5')" >
-                </div>
-                <form method="post">
-                    <div class="dropdown-content" id="dropdown-content5">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyI">
-                            <span class="checkmark"></span>
-                            Any
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Agricultural_Sector" value="Agricultural_Sector">
-                            <span class="checkmark"></span>
-                            Agricultural sector
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Consumer_Goods_Retail" value="Consumer_Goods_Retail">
-                            <span class="checkmark"></span>
-                            Consumer goods/retail
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Entertainment" value="Entertainment">
-                            <span class="checkmark"></span>
-                            Entertainment
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="NonProfit_Social_Sector" value="NonProfit_Social_Sector">
-                            <span class="checkmark"></span>
-                            Non-profit social sector
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Industry" value="Tech_Industry">
-                            <span class="checkmark"></span>
-                            Tech Industry
-                        </label>
-                        <label class="checkbox-container bottom">
-                            <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Industry" value="Other_Industry">
-                            <span class="checkmark"></span>
-                            Other Industry
-                        </label>
-                    </div>
-                </form>
-            </div>-->
             <div class="dropbox" id="dropbox6">
-                <div class="FilterTitleText" style="display: flex;">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Sec','dropdown-content6')">
                     <p style="margin:0; white-space:nowrap;">Entrepreneur Demographics</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" onclick="toggleDropdown('dropbox6','dropdown-content6')" >
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" id="FilterArrow Sec">
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content6">
@@ -294,9 +259,9 @@
                 </form>
             </div>
             <div class="dropbox" id="dropbox7">
-                <div class="FilterTitleText" style="display: flex;">
+                <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow ToR','dropdown-content7')" >
                     <p style="margin:0; white-space:nowrap;">Topic of Resources</p>
-                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToR" onclick="toggleDropdown('dropbox7','dropdown-content7')" >
+                    <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToR" id="FilterArrow ToR">
                 </div>
                 <form method="post">
                     <div class="dropdown-content" id="dropdown-content7">
@@ -574,8 +539,49 @@
                         
                         
                     </div>
+                    
                 </form>
             </div>
+            <div class="dropbox" id="dropbox4">
+                    <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow ToB','dropdown-content4')" >
+                        <p style="margin:0; white-space:nowrap;">Type of Business</p>
+                        <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToB" id="FilterArrow ToB">
+                    </div>
+                    <form method="post">
+                        <div class="dropdown-content" id="dropdown-content4">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnyT">
+                                <span class="checkmark"></span>
+                                Any
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Innovation_Tech" value="Innovation_Tech">
+                                <span class="checkmark"></span>
+                                Innovation/tech
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Main_Street" value="Main_Street">
+                                <span class="checkmark"></span>
+                                Main Street
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Medium_Large_Business" value="Medium_Large_Business">
+                                <span class="checkmark"></span>
+                                Medium/Large Business
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Microenterprise" value="Microenterprise">
+                                <span class="checkmark"></span>
+                                Microenterprise
+                            </label>
+                            <label class="checkbox-container bottom">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Vendors">
+                                <span class="checkmark"></span>
+                                Pop Ups/Venders
+                            </label>
+                        </div>
+                    </form>
+                </div>
         
         </div>
 
@@ -633,6 +639,6 @@
         </div>
 
     </body>
-    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.0" type="text/javascript"></script>
+    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.1" type="text/javascript"></script>
 </html>
 {/source}

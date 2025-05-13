@@ -6,18 +6,20 @@ document.querySelectorAll(".sidebar-button").forEach(function (button) {
     };
 });
 
-function toggleDropdown(dropboxNum, dropdownContentNum) {
+function toggleDropdown(filterArrowNum, dropdownContentNum) {
     var dropdownContent = document.getElementById(dropdownContentNum);
-    //var sidebarButton = document.getElementById('sidebar-button');
+    var filterArrow = document.getElementById(filterArrowNum);
 
     if (dropdownContent.classList.contains("expand")) {
         dropdownContent.classList.remove("expand");
         dropdownContent.style.maxHeight = null;
+        filterArrow.classList.toggle('flipped');
         //sidebarButton.classList.remove("expand");
         //document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight - dropdownContent.scrollHeight) + "px");
     } else {
         dropdownContent.classList.add("expand");
         dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+        filterArrow.classList.toggle('flipped');
         //sidebarButton.classList.add("expand");
         //document.documentElement.style.setProperty('--matched-height', (sidebarButton.clientHeight + dropdownContent.scrollHeight) + "px");
     }
@@ -173,11 +175,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //checkbox.addEventListener('change', updateFilters);
 //});
 
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('FilterArrow')) {
-        event.target.classList.toggle('flipped');
-    }
-});
 
 function getSelectedRadio() {
     const selectedValue = document.querySelector('input[name="pagination"]:checked')?.value;
