@@ -82,6 +82,9 @@ class DatabaseQuery{
                     if((0==strcasecmp($group, "Sector"))||(0==strcasecmp($group, "Type_of_Business"))||(0==strcasecmp($group, "Industry"))){
                         $addition = $group . " LIKE '%Any%' OR ";
                     }
+                    if(0==strcasecmp($group, "Sector")){
+                        $addition = $group . " LIKE '%Minority%' OR ";
+                    }
                 }elseif($this->oldGroup != $group){
                     //echo"Here3";
                     $this->isAny = false;
