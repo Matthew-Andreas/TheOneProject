@@ -115,11 +115,36 @@
     }
 
     .TeamMemberCard {
-        max-width: 500px;
+        flex: 1 1 calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        min-width: 300px;
         /*max-height: 500px;*/
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+
+    @media (min-width:1650px) {
+        .TeamMemberCard {
+            flex: 1 1 calc(25% - 16px);
+            max-width: calc(25% - 16px);
+        }
+    }
+
+    @media (min-width:2050px) {
+        .TeamMemberCard {
+            flex: 1 1 calc(20% - 16px);
+            max-width: calc(20% - 16px);
+        }
+    }
+
+    @media (max-width:1050px) {
+        .TeamMemberCard {
+            flex: 1 1 calc(50% - 16px);
+            max-width: calc(50% - 16px);
+        }
     }
 
     .teamImg {
@@ -132,6 +157,16 @@
         grid-row: 9/11;
         justify-self: center;
         align-self: center;
+    }
+
+    .TeamMembers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-around;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 </style>
 
@@ -222,12 +257,58 @@
         </div>
         <div></div>
     </div>-->
-
-    <div class="TeamMemberCard">
-        <img class="teamImg" src="images/Matthew.png#joomlaImage://local-images/Matthew.png?width=1080&height=1080">
-        <a href="https://onehubsd.org/" class="linkinbtnSpot">
-            <button class="linkedin-button">in</button>
-        </a>
+    <div class="Team-Title">
+        <h1 class="Team-Title-Text">Meet Our Team</h1>
+    </div>
+    <div class="TeamMembers">
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Paola.png#joomlaImage://local-images/Paola.png?width=1080&height=1080">
+            <a href="https://www.linkedin.com/in/maria-paola-ometto-72914416/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Ahmad.png#joomlaImage://local-images/Ahmad.png?width=1080&height=1080">
+            <a href="https://onehubsd.org/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Carly.png#joomlaImage://local-images/Carly.png?width=1080&height=1080">
+            <a href="https://www.linkedin.com/in/carly-offidani-bertrand/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Daniel.png#joomlaImage://local-images/Daniel.png?width=1080&height=1080">
+            <a href="https://www.linkedin.com/in/daniel-h-43187b24b/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Bella.png#joomlaImage://local-images/Bella.png?width=1080&height=1080">
+            <a href="https://onehubsd.org/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Matthew.png#joomlaImage://local-images/Matthew.png?width=1080&height=1080">
+            <a href="https://www.linkedin.com/in/matthew-andreas/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Jakob.png#joomlaImage://local-images/Jakob.png?width=500&height=500">
+            <a href="https://onehubsd.org/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
+        <div class="TeamMemberCard">
+            <img class="teamImg" src="images/Kunmi.png#joomlaImage://local-images/Kunmi.png?width=1080&height=1080">
+            <a href="https://onehubsd.org/" class="linkinbtnSpot">
+                <button class="linkedin-button">in</button>
+            </a>
+        </div>
     </div>
 
 </body>
