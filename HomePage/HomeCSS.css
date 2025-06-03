@@ -2,6 +2,10 @@ main {
     padding: 1px 100px 50px 100px;
 }
 
+.page {
+    display: flex;
+}
+
 .filters {
     display: flex;
     gap: 20px;
@@ -56,11 +60,16 @@ p {
     padding-right: 5px;
 }
 
+.tableContainer {
+    overflow-x: auto;
+    width: 100%;
+}
 
 table {
     border-collapse: collapse;
     width: 100%;
     table-layout: auto;
+    min-width: 1200px;
     /* or fixed, depending on your layout needs */
 }
 
@@ -76,13 +85,7 @@ tbody td {
 
 th {
     padding: 10px 20px;
-    white-space: nowrap;
-}
-
-@media (max-width:1700px) {
-    th {
-        white-space: normal;
-    }
+    white-space: normal;
 }
 
 th:first-child {
@@ -113,11 +116,13 @@ td {
 }
 
 .sidebar {
-    display: flex;
+    /*display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
+    */
+    min-width: 322px;
     background-color: #ffffff;
     transition: 0.6s;
+    margin-top: 15px;
     padding-top: 0px;
     padding-bottom: 30px;
     justify-content: space-around;
@@ -151,9 +156,7 @@ td {
 .dropbox {
     max-width: 302px;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    /*border-top: 1px solid #e4e4e4;*/
-    margin-left: 10px;
-    margin-right: 10px;
+    border-top: 1px solid #e4e4e4;
 }
 
 .filterTitle {

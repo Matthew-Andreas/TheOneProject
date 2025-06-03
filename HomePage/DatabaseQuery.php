@@ -8,7 +8,7 @@ class DatabaseQuery{
     public $extraParen =false;
     public $whereData = [];
     public $selectData = [];
-    public $queryStatement = "Select Name_of_Organization, Website, Description";
+    public $queryStatement = "Select Name_of_Organization, Description";
     public $checkBoxValues = ["Free" => "Free_or_Paid","Paid" => "Free_or_Paid",
                                 "AnyG" => "Geography","Local: North County" => "Geography", "Local: San Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
                                 "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
@@ -73,14 +73,14 @@ class DatabaseQuery{
                 if(!($this->isWhere)){
                     //echo"Here2";
                     if($this->oldGroup != $group){
-                        $this->isAny = false;
+                        //$this->isAny = false;
                     }
                     if($value == "AnyG"||$value == "AnySt"||$value == "AnyI"||$value == "AnySe"||$value == "AnyT"){
                         $this->isAny = True;
                     }
                     $this->oldGroup = $group;
                     if((0==strcasecmp($group, "Sector"))||(0==strcasecmp($group, "Type_of_Business"))||(0==strcasecmp($group, "Industry"))){
-                        $addition = $group . " LIKE '%Any%' OR ";
+                        //$addition = $group . " LIKE '%Any%' OR ";
                     }
                     if(0==strcasecmp($group, "Sector")){
                         $addition = $group . " LIKE '%Minority%' OR ";
@@ -89,14 +89,14 @@ class DatabaseQuery{
                     //echo"Here3";
                     $this->isAny = false;
                     if($value == "AnyG"||$value == "AnySt"||$value == "AnyI"||$value == "AnySe"||$value == "AnyT"){
-                        $this->isAny = True;
+                        //$this->isAny = True;
                     }
                     $this->isdifferent = true;
                     if(0==strcasecmp($this->oldGroup, "Topic_of_Resource")){
                         $this->isdifferent = false;
                         $this->isToR = true;
                     }elseif((0==strcasecmp($group, "Sector"))||(0==strcasecmp($group, "Type_of_Business"))||(0==strcasecmp($group, "Industry"))){
-                        $addition = $group . " LIKE '%Any%' OR ";
+                        //$addition = $group . " LIKE '%Any%' OR ";
                     }
                     //echo "23";
                     $this->oldGroup = $group;
