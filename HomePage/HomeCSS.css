@@ -286,7 +286,19 @@ td {
     border: none;
     margin-bottom: 10px;
     padding: 10px 20px;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
     /*max-width: 150px;*/
+}
+
+.column-button:hover {
+    transform: scale(1.1);
+    background-color: #558C00;
+}
+
+.column-button:active {
+    transform: scale(1);
+    background-color: #4E7E00;
 }
 
 .reset-button {
@@ -299,5 +311,17 @@ td {
     border: none;
     margin-bottom: 10px;
     padding: 10px 20px;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
     /*max-width: 150px;*/
+}
+
+.reset-button:hover {
+    transform: scale(1.1);
+    background-color: #2C4E99;
+}
+
+.reset-button:active {
+    transform: scale(1);
+    background-color: #1A2E57;
 }

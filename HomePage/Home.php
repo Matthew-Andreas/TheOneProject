@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.5" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.6" type="text/css" />
     </head>
     <body>
 
