@@ -325,3 +325,7 @@ td {
     transform: scale(1);
     background-color: #1A2E57;
 }
+
+.TableAndBtn {
+    width: 100%;
+}

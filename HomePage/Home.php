@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.6" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.7" type="text/css" />
     </head>
     <body>
 
@@ -632,7 +632,7 @@
                     <div class="selected">
                         <div class="tableContainer" id="selected-filters">
                             <?php
-                                $T1 = new DatabaseTable("Select Name_of_Organization, Description from Resources",1, 10);
+                                $T1 = new DatabaseTable("Select Name_of_Organization, Description, Website from Resources",1, 10);
                             ?>
                         </div>
                     </div>

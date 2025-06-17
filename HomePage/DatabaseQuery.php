@@ -8,7 +8,7 @@ class DatabaseQuery{
     public $extraParen =false;
     public $whereData = [];
     public $selectData = [];
-    public $queryStatement = "Select Name_of_Organization, Description";
+    public $queryStatement = "Select Name_of_Organization, Description, Website";
     public $checkBoxValues = ["Free" => "Free_or_Paid","Paid" => "Free_or_Paid",
                                 "AnyG" => "Geography","Local: North County" => "Geography", "Local: San Diego" => "Geography", "California" => "Geography", "National" => "Geography", "International" => "Geography",
                                 "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",

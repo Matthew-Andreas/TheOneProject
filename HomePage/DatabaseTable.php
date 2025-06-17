@@ -21,7 +21,9 @@ class DatabaseTable {
             $this->db->setQuery($this->query);
             $this->result = $this->db->loadObjectList(); 
             $this->results = $this->db->loadAssocList();
-            $this->columns = array_keys($this->results[0]);
+            $this->columns = array_filter(array_keys($this->results[0]), function($col) {
+                return $col !== 'Website';
+            });
         } catch (Exception $e) {
             http_response_code(400); // Set HTTP status code (avoid 500)
             echo json_encode(["error" => $e->getMessage()]);
@@ -54,7 +56,7 @@ class DatabaseTable {
             $result = str_replace('_', ' ', $columnName);
             if($result == "Sector"){
                 echo "<th>" . "Entrepreneur Demographics" ."</th>";
-            }else{
+            }else if(!($result == "Website")){
                 echo "<th>" . $result ."</th>";
             }
 
@@ -70,7 +72,7 @@ class DatabaseTable {
                 if($columnName =="Name_of_Organization"){
                     echo "<td><a class='nameOfOrgLink' href='" . $row->$website ."'>" . $row->$columnName . "</a></td>";
                 }else if($columnName =="Website"){
-                    echo "<td class='websiteCell'>" . $row->$columnName . "</td>";
+                    //echo "<td class='websiteCell'>" . $row->$columnName . "</td>";
                 }else{
                     echo "<td>" . $row->$columnName . "</td>";
                 }
