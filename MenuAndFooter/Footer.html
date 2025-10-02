@@ -29,6 +29,9 @@
         font-family: 'Montserrat';
         text-align: center;
         font-size: 12px;
+        align-self: end;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .links {
@@ -39,7 +42,11 @@
     }
 
     .links.top {
-        margin-top: 50px;
+        margin: auto;
+    }
+
+    .logoLink {
+        margin: auto;
     }
 
     .links:hover .footer-text {
@@ -51,19 +58,20 @@
         font-family: 'Montserrat';
         font-weight: 500;
         text-align: left;
-        width: 150px;
+        width: 120px;
     }
 
     .flexItem {
         width: 100%;
         text-align: center;
-        margin-top: 30px;
+        display: flex;
+        align-content: center;
     }
 </style>
 
 <div class="footerBlock">
     <div class="flexItem">
-        <a href="https://onehubsd.org/">
+        <a href="https://onehubsd.org/" class="logoLink">
             <img src="images/icon-navy.png#joomlaImage://local-images/icon-navy.png?width=1080&height=1080"
                 class="footer-img">
         </a>
@@ -72,10 +80,10 @@
     <div class="flexItem">
         <br>
         <br>
-        <a href="https://onehubsd.org/">
+        <!--<a href="https://onehubsd.org/">
             <img src="images/LinkedIn.png#joomlaImage://local-images/LinkedIn.png?width=200&height=200"
                 class="footer-img2">
-        </a>
+        </a>-->
         <br><br><br>
         <p class="copyright-text">© 2024, The One Project</p>
     </div>
@@ -85,7 +93,7 @@
             <p class="footer-text">Contact Us</p>
         </a>
         <a  href="https://onehubsd.org/index.php?option=com_content&view=article&id=21&Itemid=127" class="links">
-            <p class="footer-text">Give Feedback</p>
+            <p class="footer-text">Spot An Error?</p>
         </a>
     </div>
 </div>
