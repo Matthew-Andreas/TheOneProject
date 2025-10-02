@@ -17,13 +17,13 @@ function toggleDropdownWide(dropdownContentId, maxHeightDD, titleboxID, dropdown
 
     if (dropdownContent.classList.contains("expand")) {
         titleBox.style.width = "350px";
-        dropdownButton.style.left = sizeIn;
+        //dropdownButton.style.left = sizeIn;
         dropdownContent.style.maxHeight = null;
         dropdownContent.style.maxWidth = "350px";
         dropdownContent.classList.remove("expand");
     } else {
         titleBox.style.width = "1200px";
-        dropdownButton.style.left = sizeOut;
+        //dropdownButton.style.left = sizeOut;
         dropdownContent.style.maxHeight = maxHeightDD;
         dropdownContent.style.maxWidth = "1200px";
         dropdownContent.classList.add("expand");

@@ -135,6 +135,8 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     margin-top: 30px;
+    display: flex;
+    padding-right: 15px;
 }
 
 #SBTitle.titleBox {
@@ -170,34 +172,35 @@
 .dropdownButton {
     position: relative;
     display: inline;
-    left: 185px;
+    /*left: 185px;*/
+    margin-left: auto;
     top: 2px;
 }
 
 #Geo.dropdownButton {
-    left: 195px;
+    /*left: 195px;*/
 }
 
 #SBButton.dropdownButton {
-    left: 134px;
+    /*left: 134px;*/
     transition: left 0.8s ease-in-out;
 }
 
 #ToBButton.dropdownButton {
-    left: 142px;
+    /*left: 142px;*/
     transition: left 0.8s ease-in-out
 }
 
 #Ind.dropdownButton {
-    left: 219px;
+    /* left: 219px;*/
 }
 
 #TA.dropdownButton {
-    left: 144px;
+    /*left: 144px;*/
 }
 
 #ToRButton {
-    left: 134px;
+    /*left: 134px;*/
     transition: left 0.8s ease-in-out
 }
 
@@ -423,17 +426,17 @@
     top: 530px;
 }
 
-.arrowButton{
+.arrowButton {
     background-color: #60A800;
     border: 0;
     border-radius: 5px;
     width: 50px;
-    height:30px;
+    height: 30px;
     color: white;
     font-weight: 100;
 }
 
-.arrowText{
+.arrowText {
     position: relative;
     bottom: 10px;
 }
