@@ -153,3 +153,12 @@ body.site.com_content.wrapper-fluid.view-article.no-layout.no-task.itemid-101 {
 .site-grid {
     grid-gap: 0 0em !important;
 }
+
+.phpdebugbar.phpdebugbar-minimized.phpdebugbar-closed {
+    display: none;
+}
+
+header.header.container-header.full-width {
+    background-color: #ffffff;
+    background-image: none;
+}

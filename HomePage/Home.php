@@ -512,7 +512,7 @@
                             <div class="filter-option">
                                 <label class="checkbox-container">
                                     <input type="checkbox" id="main-checkbox7" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Assistance">
-                                    Tech Assistance
+                                    Technological Assistance
                                     <span class="checkmark"></span>
                                 </label>
                                 <div class="dropdown" id="dropdown7">
@@ -541,7 +541,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="checkbox-container">
-                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Help"> Tech Help
+                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Help"> Technological Help
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="checkbox-container">
