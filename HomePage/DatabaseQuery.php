@@ -142,7 +142,7 @@ class DatabaseQuery{
         if($this->extraParen){
             $this->queryStatement .=")";
         }
-        echo $this->queryStatement;
+        //echo $this->queryStatement;
     }
 
 
