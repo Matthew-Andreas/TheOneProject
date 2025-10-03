@@ -1,3 +1,8 @@
+.contactUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 label {
     display: block;
     font-family: 'Montserrat';
@@ -17,7 +22,7 @@ label {
     margin-top: 15px;
 }
 
-.Message-container{
+.Message-container {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -93,15 +98,14 @@ textarea[type="text"]:focus {
 }
 
 .Contact-Form {
-    display: inline;
-    float: right;
-    margin-right: 10%;
-    margin-top: 50px;
-    margin-bottom: 200px;
+    justify-items: center;
+    display: block;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .SendButton {
-    display: inline-block;
+    display: block;
     border: none;
     background-color: #60A800;
     color: white;
@@ -127,16 +131,16 @@ textarea[type="text"]:focus {
 }
 
 .ContactImg-container {
-    display: inline;
-    margin-left: 20%;
+    display: flex;
 }
 
 .ContactImg {
-    margin-top: 50px;
-    width: 500px;
+    width: 350px;
     height: auto;
+    margin: auto;
+    padding-bottom: 100px;
 }
 
-.error{
+.error {
     color: rgb(255, 0, 0);
 }
