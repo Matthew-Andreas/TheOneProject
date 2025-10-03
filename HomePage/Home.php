@@ -210,9 +210,14 @@
                                 Immigrants
                             </label>
                             <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Latin_X" value="Latin_X">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Indigenous_People" value="Indigenous_People">
                                 <span class="checkmark"></span>
-                                Latin X
+                                Indigenous People
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Latinx" value="Latinx">
+                                <span class="checkmark"></span>
+                                Latinx
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="LGBTQ" value="LGBTQ">
@@ -220,9 +225,14 @@
                                 LGBTQ+
                             </label>
                             <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Low_Income" value="Low_Income">
+                                <span class="checkmark"></span>
+                                Low Income
+                            </label>
+                            <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Multicultural" value="Multicultural">
                                 <span class="checkmark"></span>
-                                Multicultural
+                                Multicultural/BIPOC
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="People_With_Disabilities" value="People_With_Disabilities">
@@ -230,14 +240,19 @@
                                 People With Disabilities
                             </label>
                             <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Previously_Incarcerated" value="Previously_Incarcerated">
+                                <span class="checkmark"></span>
+                                Previously Incarcerated
+                            </label>
+                            <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Student" value="Student">
                                 <span class="checkmark"></span>
                                 Student
                             </label>
                             <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Under_Privileged" value="Under_Privileged">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Undocumented_People" value="Undocumented_People">
                                 <span class="checkmark"></span>
-                                Under Privileged (Low Income)
+                                Undocumented People
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran" value="Veteran">
@@ -245,9 +260,9 @@
                                 Veteran
                             </label>
                             <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran_Women" value="Veteran_Women">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Woman_Veterans" value="Woman_Veterans">
                                 <span class="checkmark"></span>
-                                Veteran Women
+                                Woman Veterans
                             </label>
                             <label class="checkbox-container bottom">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Women" value="Women">

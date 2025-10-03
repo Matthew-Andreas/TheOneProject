@@ -14,7 +14,7 @@ class DatabaseQuery{
                                 "AnySt" => "Stage_of_Business", "Ideation" => "Stage_of_Business", "Seeding" => "Stage_of_Business", "Establishing" => "Stage_of_Business", "Growing" => "Stage_of_Business", "Selling_Exiting" => "Stage_of_Business",
                                 "AnyT" => "Type_of_Business", "Microenterprise" => "Type_of_Business", "Innovation_Tech" => "Type_of_Business", "Main_Street" => "Type_of_Business", "Medium_Large_Business" => "Type_of_Business", "Pop_Ups_Vendors" => "Type_of_Business",
                                 "AnyI" => "Industry", "Tech_Industry" => "Industry","Government_Sector" => "Industry", "Non-Profit_Social_Sector" => "Industry", "Agricultural" => "Industry", "Consumer_Goods/_Retail" => "Industry", "Entertainment" => "Industry", "Other_Industry" => "Industry",
-                                "AnySe" => "Sector","Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latin_X" => "Sector", "Immigrants" => "Sector", "Under_Privileged" => "Sector", "LGBTQ" => "Sector", "Veteran_Women" => "Sector", "Student" => "Sector",
+                                "AnySe" => "Sector","Veteran" => "Sector", "Women" => "Sector", "People_With_Disabilities" => "Sector", "Multicultural" => "Sector", "Black" => "Sector", "Asian" => "Sector", "Latinx" => "Sector", "Immigrants" => "Sector", "Low_Income" => "Sector", "LGBTQ" => "Sector", "Woman_Veterans" => "Sector", "Student" => "Sector", "Indigenous_People" => "Sector", "Previously_Incarcerated" => "Sector", "Undocumented_People" => "Sector",
                                 "AnyTop" => "Topic_of_Resource_Header","Funding" => "Topic_of_Resource_Header", "Funding_Venture_Capital" => "Topic_of_Resource", "Private_Equity_Firms" => "Topic_of_Resource", "Funding_Angel" => "Topic_of_Resource", "Grant" => "Topic_of_Resource", "Loans" => "Topic_of_Resource", "Crowdfunding" => "Topic_of_Resource", "Microcredit/Microloans" => "Topic_of_Resource", "Other_Funding" => "Topic_of_Resource", 
                                 "Financial_Information" => "Topic_of_Resource_Header", "Investment_Advisor" => "Topic_of_Resource", "Education: Financial Literacy, Business Plans, Business Cards" => "Topic_of_Resource", "Wealth_Management" => "Topic_of_Resource", "Accounting_Assistance" => "Topic_of_Resource", "Banking" => "Topic_of_Resource", 
                                 "Network" => "Topic_of_Resource_Header", "Meetups" => "Topic_of_Resource", "Networking" => "Topic_of_Resource", 
@@ -100,8 +100,21 @@ class DatabaseQuery{
                     }
                     //echo "23";
                     $this->oldGroup = $group;
+
+                    if(0==strcasecmp($group, "Sector")){
+                        $addition = $group . " LIKE '%Minority%' OR ";
+                    }
+
                 }elseif(0==strcasecmp($this->oldGroup, "Topic_of_Resource_Header")){
                     $this->isToR = true;
+                }
+
+                if(0==strcasecmp($value, "Local: North County")){
+                    $addition = $group . " LIKE '%local: Oceanside%' OR ".$group." LIKE '%Local: Carlsbad%' OR " ;
+                }
+
+                if(0==strcasecmp($value, "Multicultural")){
+                    $addition = $group . " LIKE '%BIPOC%' OR ";
                 }
 
                 if(0==strcasecmp($group, "Topic_of_Resource_Header")&&(!(0==strcasecmp($this->oldGroup,"Topic_of_Resource")))){
@@ -116,6 +129,8 @@ class DatabaseQuery{
                     $this->isWhere = True;
                 }
 
+                
+
                 //echo $this->isAny;
                 $this->isdifferent = false;
                 $this->isToR = false;
@@ -127,7 +142,7 @@ class DatabaseQuery{
         if($this->extraParen){
             $this->queryStatement .=")";
         }
-        //echo $this->queryStatement;
+        echo $this->queryStatement;
     }
 
 
