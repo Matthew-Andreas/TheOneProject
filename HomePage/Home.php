@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.7" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.8" type="text/css" />
     </head>
     <body>
 
@@ -287,6 +287,10 @@
                                     </label>
                                     <label class="checkbox-container">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Training" value="Training"> Training
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Podcast" value="Podcast"> Podcast
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

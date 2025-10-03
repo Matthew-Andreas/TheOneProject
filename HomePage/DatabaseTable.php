@@ -66,8 +66,14 @@ class DatabaseTable {
 
     public function printData() {
         $website = "Website";
+        $i = 0;
         foreach ($this->result as $row) {
-            echo "<tr>";
+            if($i%2 == 0){
+                echo "<tr>";
+            }else{
+                echo "<tr style=\"background-color:#f0f4fb\">";
+            }
+            $i = $i + 1;
             foreach ($this->columns as $columnName) {
                 if($columnName =="Name_of_Organization"){
                     echo "<td><a class='nameOfOrgLink' href='" . $row->$website ."'>" . $row->$columnName . "</a></td>";
@@ -86,7 +92,8 @@ class DatabaseTable {
         echo "<tr style=\"background-color:#203A72;color:#203A72\">";
         foreach ($this->columns as $columnName) {
             $result = str_replace('_', ' ', $columnName);
-            echo "<th class='bottomTable'>" . $result ."</th>";
+            //echo "<th class='bottomTable'>" . $result ."</th>";
+            echo "<th class='bottomTable'>" . "Hello" ."</th>";
         }
         echo "</tr>";
         echo "</table>";

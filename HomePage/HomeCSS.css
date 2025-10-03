@@ -69,13 +69,12 @@ table {
     border-collapse: collapse;
     width: 100%;
     table-layout: auto;
-    min-width: 1200px;
+    /*min-width: 1200px;
     /* or fixed, depending on your layout needs */
 }
 
 tbody td {
-    min-height: 100px;
-    height: 100px;
+    height: auto;
     /* Enforce height */
     width: auto;
     padding: 10px;
@@ -107,7 +106,7 @@ th.bottomTable:last-child {
 }
 
 td {
-    border: 1px solid #203A72;
+    /*border: 1px solid #203A72;*/
     text-align: left;
     color: #203A72;
     font-family: 'Montserrat';
