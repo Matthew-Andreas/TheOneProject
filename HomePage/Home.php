@@ -3,7 +3,7 @@
 
     <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.8" type="text/css" />
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/HomePage/HomeCSS.css?v=1.0.9" type="text/css" />
     </head>
     <body>
 
@@ -159,15 +159,17 @@
                                 <span class="checkmark"></span>
                                 Establishing
                             </label>
-                            <label class="checkbox-container">
+                            <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Growing" value="Growing">
                                 <span class="checkmark"></span>
                                 Growing
+                                <div class="hover-Content" >Business is established and generates income for entrepreneur to sustain themselves, entrepreneur is trying to grow their business</div>
                             </label>
-                            <label class="checkbox-container">
+                            <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Ideation" value="Ideation">
                                 <span class="checkmark"></span>
                                 Ideation
+                                <div class="hover-Content" >Entrepreneur has an idea, is trying to implement</div>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Seeding" value="Seeding">
@@ -658,7 +660,8 @@
                 </div>
             </div>
         </div>
+        <div id="popup" class="popup">Tooltip outside the hover div!</div>
     </body>
-    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.1" type="text/javascript"></script>
+    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.2" type="text/javascript"></script>
 </html>
 {/source}

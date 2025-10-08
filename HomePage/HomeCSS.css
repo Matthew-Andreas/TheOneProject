@@ -328,3 +328,20 @@ td {
 .TableAndBtn {
     width: 100%;
 }
+
+.hover-Content {
+    display: none;
+}
+
+.popup {
+    display: none;
+    max-width: 250px;
+    position: absolute;
+    background: #222;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -100%);
+    z-index: 9999;
+}

@@ -198,4 +198,26 @@ function resetFilters() {
 }
 
 
+const targets = document.querySelectorAll('.hover-filter');
+const popup = document.getElementById('popup');
+
+targets.forEach(target => {
+    target.addEventListener('mouseenter', (e) => {
+        const rect = target.getBoundingClientRect();
+        const text = target.querySelector(".hover-Content").textContent;
+        popup.style.left = rect.left + rect.width / 2 + "px";
+        popup.style.top = rect.top + window.scrollY - 10 + "px";
+        popup.style.display = "block";
+        popup.textContent = text;
+    });
+
+    target.addEventListener('mouseleave', () => {
+        popup.style.display = "none";
+    });
+});
+
+popup.addEventListener('mouseenter', () => {
+    popup.style.display = "none"; // disappear if hovered
+});
+
 

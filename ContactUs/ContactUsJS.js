@@ -5,13 +5,13 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
     event.preventDefault(); // Prevent the default form submission
 
     // Get the values of the inputs
-    const Name = document.getElementById('Name').value;
+    const Name = document.getElementById('Name').value.trim();
     const nameError = document.getElementById('Name-Error');
     const nameBorder = document.getElementById('Name');
-    const Email = document.getElementById('Email').value;
+    const Email = document.getElementById('Email').value.trim();
     const emailError = document.getElementById('Email-Error');
     const emailBorder = document.getElementById('Email');
-    const Message = document.getElementById('Message').value;
+    const Message = document.getElementById('Message').value.trim();
     const messageError = document.getElementById('Message-Error');
     const messageBorder = document.getElementById('Message');
 
@@ -48,6 +48,12 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
                         Email: ${Email}<br>
                         Message: ${Message}`;
 
+        const contactUs = {
+            name: Name,
+            email: Email,
+            message: Message
+        };
+
         editErrors(nameError, nameBorder, "", "0");
         editErrors(emailError, emailBorder, "", "0");
         editErrors(messageError, messageBorder, "", "0");
@@ -55,6 +61,23 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
 
         // Display the output in a paragraph
         document.getElementById('output').innerHTML = output;
+
+        fetch("media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
+            "method": "POST", // fixed typo here
+            "headers": {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            "body": JSON.stringify(contactUs)
+        })
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+                console.log(data["message"]);
+            })
+            .catch(function (error) {
+                console.error("Error:", error);
+            });
     }
 
 
@@ -67,25 +90,3 @@ function editErrors(errorName, borderName, errorMessage, borderStyle) {
     errorName.innerHTML = errorMessage;
     borderName.style.border = borderStyle;
 }
-
-let user = {
-    "username": "Matthew",
-    "password": "1234"
-}
-
-fetch("media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
-    "method": "POST", // fixed typo here
-    "headers": {
-        "Content-Type": "application/json; charset=utf-8"
-    },
-    "body": JSON.stringify(user)
-})
-    .then(function (response) {
-        return response.text();
-    })
-    .then(function (data) {
-        console.log(data);
-    })
-    .catch(function (error) {
-        console.error("Error:", error);
-    });
