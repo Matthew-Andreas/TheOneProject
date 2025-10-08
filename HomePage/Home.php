@@ -34,7 +34,7 @@
                 </div>
                 <div class="dropbox" id="dropbox">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow FoP','dropdown-content')">
-                        <p style="margin:0; white-space:nowrap;">Free or Paid</p>
+                        <p style="margin:0;">Free or Paid</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow FoP"  id="FilterArrow FoP">
                     </div>
                         <form method="post">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="dropbox" id="dropbox2">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Geo','dropdown-content2')" >
-                        <p style="margin:0; white-space:nowrap;">Geography</p>
+                        <p style="margin:0; ">Geography</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Geo" id="FilterArrow Geo">
                     </div>
                     <form method="post">
@@ -94,7 +94,7 @@
                 </div>
                 <div class="dropbox" id="dropbox5">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Ind','dropdown-content5')">
-                        <p style="margin:0; white-space:nowrap;">Industry</p>
+                        <p style="margin:0; ">Industry</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Ind" id="FilterArrow Ind" >
                     </div>
                     <form method="post">
@@ -144,7 +144,7 @@
                 </div>
                 <div class="dropbox" id="dropbox3">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow SoB','dropdown-content3')">
-                        <p style="margin:0; white-space:nowrap;">Stage of Business</p>
+                        <p style="margin:0; ">Stage of Business</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow SoB" id="FilterArrow SoB">
                     </div>
                     <form method="post">
@@ -186,7 +186,7 @@
                 </div>
                 <div class="dropbox" id="dropbox6">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Sec','dropdown-content6')">
-                        <p style="margin:0; white-space:nowrap;">Entrepreneur Demographics</p>
+                        <p style="margin:0; ">Entrepreneur Demographics</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" id="FilterArrow Sec">
                     </div>
                     <form method="post">
@@ -277,7 +277,7 @@
                 </div>
                 <div class="dropbox" id="dropbox7">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow ToR','dropdown-content7')" >
-                        <p style="margin:0; white-space:nowrap;">Topic of Resources</p>
+                        <p style="margin:0; ">Topic of Resources</p>
                         <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToR" id="FilterArrow ToR">
                     </div>
                     <form method="post">
@@ -565,7 +565,7 @@
                 </div>
                 <div class="dropbox" id="dropbox4">
                         <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow ToB','dropdown-content4')" >
-                            <p style="margin:0; white-space:nowrap;">Type of Business</p>
+                            <p style="margin:0; ">Type of Business</p>
                             <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow ToB" id="FilterArrow ToB">
                         </div>
                         <form method="post">
