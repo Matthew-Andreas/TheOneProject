@@ -339,9 +339,10 @@ td {
     display: none;
     max-width: 250px;
     position: absolute;
-    background: #222;
-    color: white;
+    background: #f0f4fb;
+    color: #203A72;
     padding: 8px;
+    border: #203A72 1px solid;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translate(-50%, -100%);

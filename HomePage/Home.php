@@ -154,10 +154,12 @@
                                 <span class="checkmark"></span>
                                 Any
                             </label>-->
-                            <label class="checkbox-container">
+                            <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Establishing" value="Establishing">
                                 <span class="checkmark"></span>
                                 Establishing
+                                <div class="hover-Content" >Business started, selling, reached owners expected income - could be income enough for them to sustain themselves or what
+they were expecting to generate as a side job</div>
                             </label>
                             <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Growing" value="Growing">
@@ -171,15 +173,17 @@
                                 Ideation
                                 <div class="hover-Content" >Entrepreneur has an idea, is trying to implement</div>
                             </label>
-                            <label class="checkbox-container">
+                            <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Seeding" value="Seeding">
                                 <span class="checkmark"></span>
                                 Seeding
+                                <div class="hover-Content" >Business started, selling a bit, still some trial and error in what to do</div>
                             </label>
-                            <label class="checkbox-container bottom">
+                            <label class="checkbox-container bottom hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Selling_Exiting" value="Selling_Exiting">
                                 <span class="checkmark"></span>
                                 Selling/Exiting
+                                <div class="hover-Content" >Business owner decided either to close the business or sell</div>
                             </label>
                         </div>
                     </form>
@@ -288,271 +292,331 @@
                                     <span class="checkmark"></span>
                                     Any
                                 </label>-->
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox6" name="filters[]" class="checkbox-item" id="Educational_Training" value="Educational_Training">
                                     Educational/Training
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" >Resources such as workshops, educational programs, degrees,books, articles, where entrepreneurs can learn more about entrepreneurship</div>
                                 </label>
                                 <div class="dropdown" id="dropdown6">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Article" value="Article"> Article
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >An article for people to read</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Education" value="Education"> Education
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A company or service that works to provide business education opportunities to entrepreneurs</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Training" value="Training"> Training
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A company that provides training in a certain field</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Podcast" value="Podcast"> Podcast
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A Podcast for people to listen to</div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox2" name="filters[]" class="checkbox-item" id="Financial_Information" value="Financial_Information">
                                     Financial Information
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" >Resources that provides you with general information about finances and banking organization</div>
                                 </label>
                                 <div class="dropdown" id="dropdown2">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Accounting_Assistance" value="Accounting_Assistance"> Accounting Assistance
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A company or service that helps startups with accounting</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Banking" value="Banking"> Banking
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A bank that provides banking services for startups</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Education_FL_BP_BC" value="Education: Financial Literacy, Business Plans, Business Cards"> Education: Financial Literacy, Business Plans, Business Cards
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >Education in these specific fields</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Investment_Advisor" value="Investment_Advisor"> Investment Advisor
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A person or company that provides advise about securities to their clients</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Wealth_Managment" value="Wealth_Management"> Wealth Management
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >Wealth management or wealth management advisory is an investment advisory service that provides financial management and wealth advisory services to a wide array of clients ranging from affluent to high-net-worth and ultra-high-net-worth indviduals and families</div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container" >
+                                <label class="checkbox-container hover-filter" >
                                     <input type="checkbox" id="main-checkbox1" name="filters[]" class="checkbox-item" id="Funding" value="Funding">
                                     Funding
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" >Resources regarding where to find funds or grants to your business or organization</div>
                                 </label>
                                 <div class="dropdown" id="dropdown1">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Crowfunding" value="Crowdfunding"> Crowdfunding
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >The practice of funding a project or venture by raising many small amounts on money from a large number of people, typically via the internet</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Angel" value="Funding_Angel"> Funding Angel
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >An investment form someone that seeks equity in return</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Grants" value="Grant"> Funding Grants
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A grant is an amount of money given to a person that does not need to be paid back</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Loans" value="Loans"> Funding Loans
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A loan is an amount of money given out that need to be paid back</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Funding_Venture_Capital" value="Funding_Venture_Capital"> Funding Venture Capital
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A sum of money investors commit for investment in early-stage companies</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Microcredit_Microloans" value="Microcredit/Microloans"> Microcredit/Microloans 
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >The lending of small amounts of money at low interest to new businesses</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Private_Equity_Firms" value="Private_Equity_Firms"> Private Equity Firms
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >A private equity firm is an investment management company that provides financial backing and makes investments in private
+                                        equity of startup or operating companies through a variety of loosly affiliated investment strategies including leveraged buyout, venture capital, and
+                                        growth capital</div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Other_Funding" value="Other_Funding"> Other Funding
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" >Any other type of funding not included in the other categories</div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox8" name="filters[]" class="checkbox-item" id="General_Business_Assistance" value="General_Business_Assistance">
                                     General Business Assistance
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" >Resources about different aspects of a business such as marketing, human
+                                    resources, and supply chain tools and services; certifications for businesses; places to commercialize your
+                                    products/services; insurances; etc.</div>
                                 </label>
                                 <div class="dropdown" id="dropdown8">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Certification" value="Certification"> Certification
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Commercialization_and_Marketplaces" value="Commercialization_and_Marketplaces"> Commercialization And Marketplaces
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Consulting" value="Consulting"> Consulting
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="CRO" value="CRO"> CRO
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Business_Assistance_Services" value="General_Business_Assistance_Services"> General Business Assistance/Services
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Hiring_Assistance" value="Hiring_Assistance"> Hiring Assistance
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Insurance" value="Insurance"> Insurance
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Marketing" value="Marketing"> Marketing
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mental_Health" value="Mental_Health"> Mental Health
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Supply_Chain" value="Supply_Chain"> Supply Chain
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Work_Space" value="Work_Space"> Work Space
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>                                
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox4" name="filters[]" class="checkbox-item" id="Incubator_Accelerator" value="Incubator_Accelerator">
                                     Incubator/Accelerator
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" ></div>
                                 </label>
                                 <div class="dropdown" id="dropdown4">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Accelerator" value="Accelerator"> Accelerator
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Incubator" value="Incubator"> Incubator
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox9" name="filters[]" class="checkbox-item" id="Legal_Assistance" value="Legal_Assistance">
                                     Legal Assistance
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" ></div>
                                 </label>
                                 <div class="dropdown" id="dropdown9">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Legal_Assistance" value="General_Legal_Assistance"> General Legal Assistance
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_IP_TM_P" value="Legal_Assistance_IP_TM_P"> Legal Assistance: Intelectual Property, Trade Marks, Patents
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_Legal_Formation" value="Legal_Assistance_Legal_Formation"> Legal Assistance: Legal Formation
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox5" name="filters[]" class="checkbox-item" id="Mentorship" value="Mentorship">
                                     Mentorship
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" ></div>
                                 </label>
                                 <div class="dropdown" id="dropdown5">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Business_Counseling" value="Business_Counseling"> Business Counseling
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mentoring" value="Mentoring"> Mentoring
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Startup_Advisor" value="Startup_Advisor"> Startup Advisor
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox3" name="filters[]" class="checkbox-item" id="Network" value="Network">
                                     Networking
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" ></div>
                                 </label>
                                 <div class="dropdown" id="dropdown3">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Meetups" value="Meetups"> Meetups
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Networking" value="Networking"> Networking
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                 </label>
                                 </div>
                             </div>
                             <div class="filter-option">
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" id="main-checkbox7" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Assistance">
                                     Technological Assistance
                                     <span class="checkmark"></span>
+                                    <div class="hover-Content" ></div>
                                 </label>
                                 <div class="dropdown" id="dropdown7">
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Cyber_Security" value="Cyber_Security"> Cyber Security
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_n_Web_App_Development" value="Mobile_&_Web_App_Development"> Mobile & Web App Development
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_Form_Development" value="Mobile_Form_Development"> Mobile Form Development
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Project_Management_Software" value="Project_Management_Software"> Project Management Software
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Software" value="Software"> Software
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Software_Development" value="Software_Development"> Software Development
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Help"> Technological Help
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Assistance" value="Website_Assistance"> Website Assistance
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
-                                    <label class="checkbox-container">
+                                    <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Builder" value="Website_Builder"> Website Builder
                                         <span class="checkmark"></span>
+                                        <div class="hover-Content" ></div>
                                     </label>
                                     
                                 </div>
@@ -575,30 +639,35 @@
                                     <span class="checkmark"></span>
                                     Any
                                 </label>-->
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" name="filters[]" class="checkbox-item" id="Innovation_Tech" value="Innovation_Tech">
                                     <span class="checkmark"></span>
                                     Innovation/Tech
+                                    <div class="hover-Content" >High growth business, focused on innovation and/or tech</div>
                                 </label>
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" name="filters[]" class="checkbox-item" id="Main_Street" value="Main_Street">
                                     <span class="checkmark"></span>
                                     Main Street
+                                    <div class="hover-Content" >Business that have a brick and mortar location and have more than 2 employees that are not family members</div>
                                 </label>
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" name="filters[]" class="checkbox-item" id="Medium_Large_Business" value="Medium_Large_Business">
                                     <span class="checkmark"></span>
                                     Medium/Large Business
+                                    <div class="hover-Content" >Business that are a medium/large size - more than 5 employees</div>
                                 </label>
-                                <label class="checkbox-container">
+                                <label class="checkbox-container hover-filter">
                                     <input type="checkbox" name="filters[]" class="checkbox-item" id="Microenterprise" value="Microenterprise">
                                     <span class="checkmark"></span>
                                     Microenterprise
+                                    <div class="hover-Content" >Small business that has no brick and mortar location, does not have more than 2 employees that are not family members</div>
                                 </label>
-                                <label class="checkbox-container bottom">
+                                <label class="checkbox-container bottom hover-filter">
                                     <input type="checkbox" name="filters[]" class="checkbox-item" id="Pop_Ups_Venders" value="Pop_Ups_Vendors">
                                     <span class="checkmark"></span>
                                     Pop Ups/Vendors
+                                    <div class="hover-Content" >Business does popups (sells their products in framers markets and other places but at specific dates)</div>
                                 </label>
                             </div>
                         </form>
