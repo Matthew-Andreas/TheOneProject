@@ -415,63 +415,64 @@ they were expecting to generate as a side job</div>
                                     <span class="checkmark"></span>
                                     <div class="hover-Content" >Resources about different aspects of a business such as marketing, human
                                     resources, and supply chain tools and services; certifications for businesses; places to commercialize your
-                                    products/services; insurances; etc.</div>
+                                    products/services; insurances; etc</div>
                                 </label>
                                 <div class="dropdown" id="dropdown8">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Certification" value="Certification"> Certification
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A credential that an organization/individual can earn to verify legitmacy and competence in a subject</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Commercialization_and_Marketplaces" value="Commercialization_and_Marketplaces"> Commercialization And Marketplaces
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Spaces or organizations that help entrepreneurs sell products/services (i.e. farmers markets, popup events, online marketplace, etc)</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Consulting" value="Consulting"> Consulting
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A person who advises on how to modify, proceed in, or streamline a given process within a specialized field</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="CRO" value="CRO"> CRO
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A contract research organization is a company that provides support to the pharmaceutical, biotechnology, and medical device industries in the
+                                        form of research services outsourced on a contract basis</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Business_Assistance_Services" value="General_Business_Assistance_Services"> General Business Assistance/Services
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company/individual that will help entrepreneurs wwith general business services</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Hiring_Assistance" value="Hiring_Assistance"> Hiring Assistance
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps startups hire employees</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Insurance" value="Insurance"> Insurance
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Insurance programs for startups</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Marketing" value="Marketing"> Marketing
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that provides marketing services</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mental_Health" value="Mental_Health"> Mental Health
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A resource that helps entrepreneurs with keeping positive mental health</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Supply_Chain" value="Supply_Chain"> Supply Chain
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps businesses with figuring out their supply chain</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Work_Space" value="Work_Space"> Work Space
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A space where people can work on their startup</div>
                                     </label>                                
                                 </div>
                             </div>
@@ -480,18 +481,19 @@ they were expecting to generate as a side job</div>
                                     <input type="checkbox" id="main-checkbox4" name="filters[]" class="checkbox-item" id="Incubator_Accelerator" value="Incubator_Accelerator">
                                     Incubator/Accelerator
                                     <span class="checkmark"></span>
-                                    <div class="hover-Content" ></div>
+                                    <div class="hover-Content" >Information about different incubator and acceleerator programs</div>
                                 </label>
                                 <div class="dropdown" id="dropdown4">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Accelerator" value="Accelerator"> Accelerator
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A program focused on supporting a business from the early-stages of development and providing resources for them</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Incubator" value="Incubator"> Incubator
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A startup incubator is a collaborative program for start up companies -- usually physically located in one central workspace -- designed to
+                                        help startups in their infancy succeed by providing workspace, seed funding, mentoring and training</div>
                                     </label>
                                 </div>
                             </div>
@@ -500,23 +502,23 @@ they were expecting to generate as a side job</div>
                                     <input type="checkbox" id="main-checkbox9" name="filters[]" class="checkbox-item" id="Legal_Assistance" value="Legal_Assistance">
                                     Legal Assistance
                                     <span class="checkmark"></span>
-                                    <div class="hover-Content" ></div>
+                                    <div class="hover-Content" >Any help related with legal matters in a business/nonprofit</div>
                                 </label>
                                 <div class="dropdown" id="dropdown9">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="General_Legal_Assistance" value="General_Legal_Assistance"> General Legal Assistance
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Legal assistance in general areas of business such as labor, taxes, contracts, etc</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_IP_TM_P" value="Legal_Assistance_IP_TM_P"> Legal Assistance: Intelectual Property, Trade Marks, Patents
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Legal assistance regarding the name of the business (snd it is taken or not), trademarking, intellectual property</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_Legal_Formation" value="Legal_Assistance_Legal_Formation"> Legal Assistance: Legal Formation
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Legal assistance regarding how to formalize your business, which type of company you should formalize, etc</div>
                                     </label>
                                 </div>
                             </div>
@@ -525,23 +527,24 @@ they were expecting to generate as a side job</div>
                                     <input type="checkbox" id="main-checkbox5" name="filters[]" class="checkbox-item" id="Mentorship" value="Mentorship">
                                     Mentorship
                                     <span class="checkmark"></span>
-                                    <div class="hover-Content" ></div>
+                                    <div class="hover-Content" >Resources where you can connect with mentors that can help you launch or develop your orgranization</div>
                                 </label>
                                 <div class="dropdown" id="dropdown5">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Business_Counseling" value="Business_Counseling"> Business Counseling
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >One-on-one or group counceling services with prospective business owners tohelp guide them towards their goal</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mentoring" value="Mentoring"> Mentoring
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company that provides a person or group of people to provide guidance to a startup</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Startup_Advisor" value="Startup_Advisor"> Startup Advisor
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A startup advisor is a specialist with training and experience in a certain sector or industry who provides advice, mentoring, and
+                                        networking opportunities to startup founders to help startups in their infancy succeed by providing workspace, seed funding, mentoring and training</div>
                                     </label>
                                 </div>
                             </div>
@@ -550,18 +553,19 @@ they were expecting to generate as a side job</div>
                                     <input type="checkbox" id="main-checkbox3" name="filters[]" class="checkbox-item" id="Network" value="Network">
                                     Networking
                                     <span class="checkmark"></span>
-                                    <div class="hover-Content" ></div>
+                                    <div class="hover-Content" >Places and events that allow entrepreneurs to network with other entrepreneurs as well as
+                                    funders, universities, clients, etc</div>
                                 </label>
                                 <div class="dropdown" id="dropdown3">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Meetups" value="Meetups"> Meetups
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Gatherings where people can meet others interested in the same field or topic</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Networking" value="Networking"> Networking
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps people create connections and build relationships with one another</div>
                                 </label>
                                 </div>
                             </div>
@@ -570,53 +574,53 @@ they were expecting to generate as a side job</div>
                                     <input type="checkbox" id="main-checkbox7" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Assistance">
                                     Technological Assistance
                                     <span class="checkmark"></span>
-                                    <div class="hover-Content" ></div>
+                                    <div class="hover-Content" >Resources about different companies, softwares, and apps that can be useful for businesses</div>
                                 </label>
                                 <div class="dropdown" id="dropdown7">
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Cyber_Security" value="Cyber_Security"> Cyber Security
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that works to help digitaly secure a business</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_n_Web_App_Development" value="Mobile_&_Web_App_Development"> Mobile & Web App Development
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps develop mobile or web apps for a startup</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Mobile_Form_Development" value="Mobile_Form_Development"> Mobile Form Development
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps develop mobile apps for a startup</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Project_Management_Software" value="Project_Management_Software"> Project Management Software
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >Software that helps a startup with project management</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Software" value="Software"> Software
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A software that is helpful for entrepreneurs</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Software_Development" value="Software_Development"> Software Development
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company that will develop software for your business</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Tech_Assistance" value="Tech_Help"> Technological Help
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that provides general technological assistance to entrepreneurs</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Assistance" value="Website_Assistance"> Website Assistance
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A company or service that helps startups with creating or fixing their website</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
                                         <input type="checkbox" name="filters[]" class="checkbox-item" id="Website_Builder" value="Website_Builder"> Website Builder
                                         <span class="checkmark"></span>
-                                        <div class="hover-Content" ></div>
+                                        <div class="hover-Content" >A software where you can build your own website</div>
                                     </label>
                                     
                                 </div>
