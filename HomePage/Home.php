@@ -159,7 +159,7 @@
                                 <span class="checkmark"></span>
                                 Establishing
                                 <div class="hover-Content" >Business started, selling, reached owners expected income - could be income enough for them to sustain themselves or what
-they were expecting to generate as a side job</div>
+                                they were expecting to generate as a side job</div>
                             </label>
                             <label class="checkbox-container hover-filter">
                                 <input type="checkbox" name="filters[]" class="checkbox-item" id="Growing" value="Growing">
