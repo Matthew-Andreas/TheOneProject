@@ -49,19 +49,14 @@
     }
 
     .TeamMemberCard {
-        /*flex: 1 1 calc(33.333% - 16px);
-        max-width: calc(33.333% - 16px);*/
-        min-width: 300px;
-        /*max-height: 500px;*/
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     .teamImg {
-        grid-column: 1 / 6;
-        grid-row: 1/10;
-        justify-self: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
     .teamImgPic {
@@ -94,8 +89,6 @@
     }
 
     .linkinbtnSpot {
-        grid-column: 3/4;
-        grid-row: 9/11;
         justify-self: center;
         align-self: center;
     }
@@ -108,6 +101,27 @@
         margin-bottom: 50px;
         margin-left: 50px;
         margin-right: 50px;
+    }
+
+    .csusmBtn {
+        display: inline-block;
+        border: none;
+        background-color: #0062A5;
+        /* Original button color */
+        color: white;
+        padding: 0px 0px;
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 8px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        /* Rounded corners */
+        transition: background-color 0.3s, transform 0.1s;
     }
 </style>
 
@@ -129,9 +143,15 @@
                 <p class="TeamMemberTitle">Entrepreneurs Resources Coordinators</p>
                 <p class="TeamMemberDesc">Associate Professor of Management CSUSM</p>
             </div>
-            <a href="https://www.csusm.edu/coba/about/meet-our-faculty/pometto.html" class="linkinbtnSpot">
-                <button class="linkedin-button">in</button>
-            </a>
+            <div style="display: flex; justify-content: space-evenly;">
+                <a href="https://www.linkedin.com/in/maria-paola-ometto-72914416/" class="linkinbtnSpot">
+                    <button class="linkedin-button">in</button>
+                </a>
+                <a href="https://www.csusm.edu/coba/about/meet-our-faculty/pometto.html" class="CSUSMbtnSpot">
+                    <button class="csusmBtn">CSUSM</button>
+                </a>
+            </div>
+
         </div>
 
         <div class="TeamMemberCard">
@@ -142,9 +162,14 @@
                 <p class="TeamMemberTitle">Database Expert</p>
                 <p class="TeamMemberDesc">Professor of Computer Science CSUSM</p>
             </div>
-            <a href="https://www.csusm.edu/profiles/index.html?u=ahadaegh" class="linkinbtnSpot">
-                <button class="linkedin-button">in</button>
-            </a>
+            <div style="display: flex; justify-content: space-evenly;">
+                <a href="https://www.csusm.edu/profiles/index.html?u=ahadaegh" class="linkinbtnSpot">
+                    <button class="linkedin-button">in</button>
+                </a>
+                <a href="https://www.csusm.edu/profiles/index.html?u=ahadaegh" class="CSUSMbtnSpot">
+                    <button class="csusmBtn">CSUSM</button>
+                </a>
+            </div>
         </div>
 
         <div class="TeamMemberCard">
