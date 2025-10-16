@@ -153,10 +153,14 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.onload = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 document.getElementById('selected-filters').innerHTML = xhr.responseText;
-            } else {
+            } else if (document.querySelector('#pagination')) {
                 console.error("Request failed. Status: " + xhr.status);
                 document.getElementById("databaseTable").remove();
                 document.getElementById("pagination").remove();
+                document.getElementById("selected-filters").textContent = "No data in this section.";
+            } else {
+                console.error("Request failed. Status: " + xhr.status);
+                document.getElementById("databaseTable").remove();
                 document.getElementById("selected-filters").textContent = "No data in this section.";
             }
         };
