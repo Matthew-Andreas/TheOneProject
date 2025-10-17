@@ -62,7 +62,7 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
         // Display the output in a paragraph
         document.getElementById('output').innerHTML = output;
 
-        fetch("media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
+        fetch("/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
             "method": "POST", // fixed typo here
             "headers": {
                 "Content-Type": "application/json; charset=utf-8"
@@ -70,7 +70,7 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
             "body": JSON.stringify(contactUs)
         })
             .then(function (response) {
-                return response.text();
+                return response.json();
             })
             .then(function (data) {
                 console.log(data["message"]);

@@ -13,6 +13,18 @@
 
 <body>
     <div class="contactUs">
+        <?php
+            //include_once JPATH_BASE . "/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php";
+            /*
+            $data = json_decode(file_get_contents("php://input"),true);
+
+            if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($data['name'], $data['email'], $data['message'])){
+                echo json_encode(['success'=> false,'message' => 'Invalid input.']);
+                exit;
+            }else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                $contactForm = new ContactUsForm('ContactUsResponses', ['FullName', 'Email', 'UserMessage'],$data['name'], $data['email'], $data['message']);
+            }*/
+        ?>
         <div class="ContactImg-container">
             <img src="images/GetinTouch.png#joomlaImage://local-images/GetinTouch.png?width=1080&height=703"
                 class="ContactImg">
