@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const xhr = new XMLHttpRequest();
         const formData = new FormData();
 
-        document.documentElement.scrollTop = 0;  // For modern browsers
-        document.body.scrollTop = 0;  // For older browsers (especially IE)
+        //document.documentElement.scrollTop = 0;  // For modern browsers
+        //document.body.scrollTop = 0;  // For older browsers (especially IE)
 
         formData.append('ajax', 1);
         formData.append('page', page);
@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("resetBtn").style.display = "none";
         }
         //var select = collectCheckboxValues('select[]');
-        console.log(filters.length != 0)
+        /*console.log(filters.length != 0)
         console.log(paginationValue > 10)
         console.log(allCollumns)
-        console.log("load")
+        console.log("load")*/
         formData.append('itemLimit', paginationValue)
         formData.append('allColumns', allCollumns)
         filters.forEach(value => formData.append('filters[]', value));

@@ -735,6 +735,6 @@
         </div>
         <div id="popup" class="popup">Tooltip outside the hover div!</div>
     </body>
-    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.3" type="text/javascript"></script>
+    <script src="media/templates/site/cassiopeia/CustomCode/HomePage/HomeJS.js?v=1.0.4" type="text/javascript"></script>
 </html>
 {/source}
