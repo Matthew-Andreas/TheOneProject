@@ -680,7 +680,7 @@
             </div>
             <div class="TableAndBtn">
                 <div class="filtersAndPagination">
-                    <button class="column-button" id="columnBtn" onclick="setColumns()">Show All Columns</button>
+                    <button class="column-button" id="columnBtn" onclick="setColumns()">Show More Columns</button>
                     <button class="reset-button" id="resetBtn" onclick="resetFilters()">Reset Filters</button>
                     <!--<div class="filters">
                         <p class="showText">Show in search:</p>

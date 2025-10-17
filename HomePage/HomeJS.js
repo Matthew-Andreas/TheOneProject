@@ -189,9 +189,9 @@ function setColumns() {
     const setColumnsBtn = document.getElementById("columnBtn");
     allCollumns = !allCollumns;
     if (allCollumns) {
-        setColumnsBtn.textContent = "Show Less Columns";
+        setColumnsBtn.textContent = "Show Fewer Columns";
     } else {
-        setColumnsBtn.textContent = "Show All Columns";
+        setColumnsBtn.textContent = "Show More Columns";
     }
     //console.log(allCollumns);
     updateFilters();
