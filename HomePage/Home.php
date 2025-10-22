@@ -30,7 +30,7 @@
         <div class="page">
             <div  class="sidebar"  id="mySidebar"> 
                 <div style="display: flex;">
-                    <p class="filterTitle">All Filters</p>
+                    <p class="filterTitle">Filter Search</p>
                 </div>
                 <div class="dropbox" id="dropbox">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow FoP','dropdown-content')">
