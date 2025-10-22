@@ -26,13 +26,15 @@
 }
 
 .FilterSearch {
-    width: 250px;
+    display: flex;
+    /*width: 250px;*/
+    gap: 25px;
     height: 35px;
 }
 
 .FilterSearchTitle {
-    position: relative;
-    display: inline;
+    /*position: relative;
+    display: inline;*/
     top: 5px;
     left: 30px;
     color: #203A72;
@@ -43,7 +45,7 @@
 
 .FilterSearchTextBox {
     width: 1200px;
-    height: 325px;
+    height: 275px;
     background-color: #ffffff;
     border-top-left-radius: 0px;
     border-top-right-radius: 10px;
@@ -83,13 +85,15 @@
 }
 
 .CuratedQuestions {
-    width: 375px;
+    /*width: 375px;*/
+    display: flex;
+    gap: 25px;
     height: 35px;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .CuratedQuestionsTitle {
-    position: relative;
+    /*position: relative;*/
     top: 5px;
     left: 30px;
     color: #203A72;
@@ -408,8 +412,8 @@
 }
 
 .arrow {
-    position: absolute;
-    display: inline;
+    /*position: absolute;
+    display: inline;*/
     text-decoration: none;
     font-size: 30px;
     color: white;
@@ -423,7 +427,7 @@
 
 #CQ.arrow {
     left: 425px;
-    top: 530px;
+    top: 1135px;
 }
 
 .arrowButton {
