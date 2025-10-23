@@ -1,6 +1,3 @@
-console.log("Here")
-
-
 document.getElementById('Contact-Form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -60,30 +57,22 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
 
 
         // Display the output in a paragraph
-        document.getElementById('output').innerHTML = output;
+        //document.getElementById('output').innerHTML = output;
 
-        fetch("/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
-            "method": "POST", // fixed typo here
-            "headers": {
-                "Content-Type": "application/json; charset=utf-8"
-            },
-            "body": JSON.stringify(contactUs)
+        const formData = new FormData();
+        formData.append('name', Name);
+        formData.append('email', Email);
+        formData.append('message', Message);
+
+        fetch("https://onehubsd.org/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
+            method: "POST",
+            body: formData
         })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                console.log(data["message"]);
-            })
-            .catch(function (error) {
-                console.error("Error:", error);
-            });
+            .then(res => res.json())
+            .then(data => console.log(data.message))
+            .catch(err => console.error(err));
+
     }
-
-
-
-
-
 });
 
 function editErrors(errorName, borderName, errorMessage, borderStyle) {

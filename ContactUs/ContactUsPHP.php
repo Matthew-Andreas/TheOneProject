@@ -1,6 +1,17 @@
 <?php
+// Only define constants if not already defined
+$directCall = false;
+if (!defined('_JEXEC')) {
+    $directCall = true;
+    define('_JEXEC', 1);
+    define('JPATH_BASE', dirname(__FILE__, 7)); // adjust if needed
+    require_once JPATH_BASE . '/includes/defines.php';
+    require_once JPATH_BASE . '/includes/framework.php';
+}
 
-/*use Joomla\CMS\Factory;
+use Joomla\CMS\Factory;
+
+header('Content-Type: application/json');
 
 abstract class ContactUs{
 
@@ -35,7 +46,7 @@ class ContactUsForm extends ContactUs{
 
             $db->setQuery($query);
             $db->execute();
-
+            
             echo json_encode(['success' => true, 'message' => 'Message received!']);
         }catch(Exception $e){
             echo json_encode(['success' => false, 'message' => 'Server error.']);
@@ -51,9 +62,23 @@ class ContactUsForm extends ContactUs{
     }
 }
 
-header('Content-Type: application/json');
 
-$data = json_decode(file_get_contents("php://input"),true);
+try{
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email']?? '';
+    $message = $_POST['message']?? '';
+    if (!$name || !$email || !$message) {
+        echo json_encode(['success' => false, 'message' => 'Invalid input.']);
+        exit;
+    }else{
+        $contactForm = new ContactUsForm('ContactUsResponses', ['FullName', 'Email', 'UserMessage'], $name, $email, $message);
+    }
+}catch(Exception $e){
+    echo json_encode(['success'=> false, 'message' => 'Server error: '.$e->getMessage()]);
+}
+
+
+/*$data = json_decode(file_get_contents("php://input"),true);
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($data['name'], $data['email'], $data['message'])){
     echo json_encode(['success'=> false,'message' => 'Invalid input.']);
