@@ -1,5 +1,14 @@
 <?php
 
+$directCall = false;
+if (!defined('_JEXEC')) {
+    $directCall = true;
+    define('_JEXEC', 1);
+    define('JPATH_BASE', dirname(__FILE__, 7)); // adjust if needed
+    require_once JPATH_BASE . '/includes/defines.php';
+    require_once JPATH_BASE . '/includes/framework.php';
+}
+
 use Joomla\CMS\Factory;
 
 class DatabaseTable {
@@ -12,7 +21,7 @@ class DatabaseTable {
     public $limit; // Number of items per page
     public $page;
 
-    public function openDatabase($q) {
+    private function openDatabase($q) {
         try {
             $this->db = JFactory::getDbo();
             $this->query = $this->db->getQuery(true);
@@ -30,7 +39,7 @@ class DatabaseTable {
         }
     }
 
-    public function applyPagination() {
+    private function applyPagination() {
         // Calculate the total number of rows
         $countQuery = "SELECT COUNT(*) FROM (" . $this->originalQuery . ") AS total"; 
         $this->db->setQuery($countQuery);
@@ -49,7 +58,7 @@ class DatabaseTable {
         $this->result = $this->db->loadObjectList(); 
     }
 
-    public function printHeader() {
+    private function printHeader() {
         echo "<table id='databaseTable'>";
         echo "<tr style=\"background-color:#203A72;color:White\">";
         foreach ($this->columns as $columnName) {
@@ -64,7 +73,7 @@ class DatabaseTable {
         echo "</tr>";
     }
 
-    public function printData() {
+    private function printData() {
         $website = "Website";
         $i = 0;
         foreach ($this->result as $row) {
@@ -88,7 +97,7 @@ class DatabaseTable {
         }
     }
 
-    public function bottomTable(){
+    private function printBottomTable(){
         echo "<tr style=\"background-color:#203A72;color:#203A72\">";
         foreach ($this->columns as $columnName) {
             $result = str_replace('_', ' ', $columnName);
@@ -99,7 +108,7 @@ class DatabaseTable {
         echo "</table>";
     }
 
-    public function printPagination() {
+    private function printPagination() {
         // Calculate the total number of rows
         $countQuery = "SELECT COUNT(*) FROM (" . $this->originalQuery . ") AS total";
         
@@ -161,7 +170,7 @@ class DatabaseTable {
         $this->applyPagination();
         $this->printHeader();
         $this->printData();
-        $this->bottomTable();
+        $this->printBottomTable();
         $this->printPagination();
     }
 }
