@@ -348,3 +348,240 @@ td {
     transform: translate(-50%, -100%);
     z-index: 9999;
 }
+
+/* =========================
+   Mobile-first resets
+   ========================= */
+
+:root {
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+/* Constrain long words/URLs everywhere */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Main container: generous desktop padding, small on mobile */
+main {
+    padding: var(--space-sm) var(--space-md) var(--space-xl) var(--space-md);
+}
+
+/* Layout: stack by default (mobile), become rows on larger screens */
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* Filters header row */
+.filtersAndPagination,
+.filtersAndDatabase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+/* Filters bar */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* Sidebar: full-width on mobile, fixed min-width only on large */
+.sidebar {
+    width: 100%;
+    min-width: unset;
+    margin-right: 0;
+    padding: var(--space-sm) 0 var(--space-lg);
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+}
+
+/* Filter title/actions alignment */
+.filterTitle {
+    margin: 0;
+    padding-left: 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Checkbox grids collapse to one column on small screens */
+.selectCheckboxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm) var(--space-sm);
+}
+
+/* Labels & controls breathing room */
+.checkbox-container,
+.checkbox-containerSelect {
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+/* Buttons */
+.AllFiltersButton,
+.column-button,
+.reset-button {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Table: horizontal scroll on small screens */
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    /* prevents columns from exploding on narrow screens */
+}
+
+th,
+td {
+    padding: var(--space-sm);
+    vertical-align: top;
+    word-break: break-word;
+}
+
+/* Long website URLs */
+.websiteCell {
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Pagination center */
+.pagination {
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+/* Hover popups: keep within viewport on mobile */
+.popup {
+    max-width: 90vw;
+    transform: translate(-50%, -105%);
+}
+
+/* Fix: collapsed dropdown should be hidden by default (not forced flex) */
+.dropdown {
+    display: none;
+}
+
+.dropdown-content {
+    max-height: 0;
+}
+
+/* =========================
+   Breakpoints
+   ========================= */
+
+/* >= 576px */
+@media (min-width: 576px) {
+    main {
+        padding: var(--space-sm) var(--space-lg) var(--space-xl);
+    }
+
+    .selectCheckboxes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* >= 768px */
+@media (min-width: 768px) {
+    .page {
+        gap: var(--space-xl);
+    }
+
+    .sidebar {
+        width: 320px;
+    }
+
+    .filtersAndDatabase {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .TableAndBtn {
+        width: 100%;
+    }
+
+    .selectCheckboxes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 10px;
+    }
+
+    th,
+    td {
+        padding: 12px 14px;
+    }
+}
+
+/* >= 992px */
+@media (min-width: 992px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        min-width: 260px;
+        margin-right: 25px;
+    }
+
+    .filters {
+        gap: 20px;
+    }
+
+    .AllFiltersButton,
+    .column-button,
+    .reset-button {
+        width: auto;
+        max-width: 240px;
+    }
+
+    main {
+        padding: 1px 60px 50px;
+    }
+}
+
+/* >= 1200px */
+@media (min-width: 1200px) {
+    main {
+        padding: 1px 100px 50px;
+    }
+
+    th,
+    td {
+        padding: 14px 18px;
+    }
+}
+
+/* Motion/accessibility niceties */
+@media (prefers-reduced-motion: reduce) {
+
+    .FilterArrow,
+    .dropdown-content,
+    .dropbox,
+    .column-button,
+    .reset-button {
+        transition: none !important;
+    }
+}
