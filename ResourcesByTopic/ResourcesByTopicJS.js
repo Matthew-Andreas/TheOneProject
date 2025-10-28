@@ -15,3 +15,11 @@ document.addEventListener('click', function (event) {
         event.target.classList.toggle('flipped');
     }
 });
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('submitButton')) {
+        localStorage.setItem('TopHead', "Legal_Assistance");
+        localStorage.setItem('Topic', 'Legal_Assistance_IP_TM_P');
+        window.location.href = 'https://onehubsd.org/';
+    }
+})

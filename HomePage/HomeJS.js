@@ -173,6 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.loadPage = loadPage; // Expose the function globally
+
+    if (localStorage.getItem("TopHead") != null) {
+        topHead = localStorage.getItem("TopHead");
+        topic = localStorage.getItem("Topic");
+        localStorage.removeItem("TopHead");
+        localStorage.removeItem("Topic");
+        const checkbox1 = document.querySelector('input[type="checkbox"][value="' + topHead + '"]');
+        const checkbox2 = document.querySelector('input[type="checkbox"][value="' + topic + '"]');
+        checkbox1.checked = true;
+        checkbox2.checked = true;
+        loadPage(1);
+    }
 });
 
 //document.querySelectorAll('input[name="filters[]"], input[name="select[]"]').forEach((checkbox) => {
