@@ -19,7 +19,7 @@ document.addEventListener('click', function (event) {
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('submitButton')) {
         localStorage.setItem('TopHead', "Legal_Assistance");
-        localStorage.setItem('Topic', 'Legal_Assistance_IP_TM_P');
+        localStorage.setItem('Topic', 'Legal_Assistance:_Intellectual_Property,_Trademark,_Patents');
         window.location.href = 'https://onehubsd.org/';
     }
 })

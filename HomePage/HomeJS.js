@@ -71,6 +71,7 @@ function updateFilters() {
     var paginationValue = getSelectedRadio();
     var filterValues = collectCheckboxValues("filters[]");
     //var selectValues = collectCheckboxValues("select[]");
+    console.log(filterValues);
     if (filterValues.length != 0 || paginationValue > 10 || allCollumns) {
         document.getElementById("resetBtn").style.display = "block";
     } else {
@@ -184,6 +185,11 @@ document.addEventListener('DOMContentLoaded', function () {
         checkbox1.checked = true;
         checkbox2.checked = true;
         loadPage(1);
+        /*setTimeout(function () {
+            loadPage(1);
+            console.log("Run!");
+        }, 1000);*/
+
     }
 });
 
@@ -213,7 +219,7 @@ function resetFilters() {
     location.reload();
 }
 
-
+//for the pop description over the filters
 const targets = document.querySelectorAll('.hover-filter');
 const popup = document.getElementById('popup');
 

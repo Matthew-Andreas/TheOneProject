@@ -23,7 +23,7 @@ class DatabaseQuery{
                                 "Educational_Training" => "Topic_of_Resource_Header", "Training" => "Topic_of_Resource", "Article" => "Topic_of_Resource", "Education" => "Topic_of_Resource", "Podcast" => "Topic_of_Resource", 
                                 "Tech_Assistance" => "Topic_of_Resource_Header", "Tech_Help" => "Topic_of_Resource", "Project_Management_Software" => "Topic_of_Resource", "Website_Assistance" => "Topic_of_Resource", "Software" => "Topic_of_Resource", "Mobile_&_Web_App_Development" => "Topic_of_Resource", "Mobile_Form_Development" => "Topic_of_Resource", "Cyber_Security" => "Topic_of_Resource", "Website_Builder" => "Topic_of_Resource", "Software_Development" => "Topic_of_Resource", 
                                 "General_Business_Assistance" => "Topic_of_Resource_Header", "Mental_Health" => "Topic_of_Resource", "Hiring_Assistance" => "Topic_of_Resource", "Work_Space" => "Topic_of_Resource", "CRO" => "Topic_of_Resource", "Insurance" => "Topic_of_Resource", "General_Business_Assistance_Services" => "Topic_of_Resource", "Marketing" => "Topic_of_Resource", "Supply_Chain" => "Topic_of_Resource", "Consulting" => "Topic_of_Resource", "Commercialization_and_Marketplaces" => "Topic_of_Resource", "Certification" => "Topic_of_Resource", 
-                                "Legal_Assistance" => "Topic_of_Resource_Header", "General_Legal_Assistance" => "Topic_of_Resource", "Legal_Assistance_IP_TM_P" => "Topic_of_Resource", "Legal_Assistance_Legal_Formation"
+                                "Legal_Assistance" => "Topic_of_Resource_Header", "General_Legal_Assistance" => "Topic_of_Resource", "Legal_Assistance:_Intellectual_Property,_Trademark,_Patents" => "Topic_of_Resource", "Legal_Assistance:_Legal_Formation" => "Topic_of_Resource"
                             ];
 
     public function __construct($filters,$selected, $allColumns){
@@ -64,11 +64,12 @@ class DatabaseQuery{
 
     public function whereSetUp(){
         foreach($this->checkBoxValues as $value => $group){
+            //echo $value;
             if(in_array($value,$this->whereData)){
                 if($value == "AnyTop"){
                     break;
                 }
-                
+                //echo "here1";
                 $addition = "";
                 if(!($this->isWhere)){
                     //echo"Here2";

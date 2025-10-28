@@ -511,12 +511,12 @@
                                         <div class="hover-Content" >Legal assistance in general areas of business such as labor, taxes, contracts, etc</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
-                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_IP_TM_P" value="Legal_Assistance_IP_TM_P"> Legal Assistance: Intelectual Property, Trade Marks, Patents
+                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_IP_TM_P" value="Legal_Assistance:_Intellectual_Property,_Trademark,_Patents"> Legal Assistance: Intellectual Property, Trademark, Patents
                                         <span class="checkmark"></span>
                                         <div class="hover-Content" >Legal assistance regarding the name of the business (snd it is taken or not), trademarking, intellectual property</div>
                                     </label>
                                     <label class="checkbox-container hover-filter">
-                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_Legal_Formation" value="Legal_Assistance_Legal_Formation"> Legal Assistance: Legal Formation
+                                        <input type="checkbox" name="filters[]" class="checkbox-item" id="Legal_Assistance_Legal_Formation" value="Legal_Assistance:_Legal_Formation"> Legal Assistance: Legal Formation
                                         <span class="checkmark"></span>
                                         <div class="hover-Content" >Legal assistance regarding how to formalize your business, which type of company you should formalize, etc</div>
                                     </label>
