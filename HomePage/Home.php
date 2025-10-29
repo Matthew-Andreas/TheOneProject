@@ -32,6 +32,97 @@
                 <div style="display: flex;">
                     <p class="filterTitle">Filter Search</p>
                 </div>
+                <div class="dropbox" id="dropbox6">
+                    <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Sec','dropdown-content6')">
+                        <p style="margin:0; ">Entrepreneur Demographics</p>
+                        <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" id="FilterArrow Sec">
+                    </div>
+                    <form method="post">
+                        <div class="dropdown-content" id="dropdown-content6">
+                            <!--<label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnySe">
+                                <span class="checkmark"></span>
+                                Any
+                            </label>-->
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Asian" value="Asian">
+                                <span class="checkmark"></span>
+                                Asian
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Black" value="Black">
+                                <span class="checkmark"></span>
+                                Black
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Immigrants" value="Immigrants">
+                                <span class="checkmark"></span>
+                                Immigrants
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Indigenous_People" value="Indigenous_People">
+                                <span class="checkmark"></span>
+                                Indigenous People
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Latinx" value="Latinx">
+                                <span class="checkmark"></span>
+                                Latinx
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="LGBTQ" value="LGBTQ">
+                                <span class="checkmark"></span>
+                                LGBTQ+
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Low_Income" value="Low_Income">
+                                <span class="checkmark"></span>
+                                Low Income
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Multicultural" value="Multicultural">
+                                <span class="checkmark"></span>
+                                Multicultural/BIPOC
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="People_With_Disabilities" value="People_With_Disabilities">
+                                <span class="checkmark"></span>
+                                People With Disabilities
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Previously_Incarcerated" value="Previously_Incarcerated">
+                                <span class="checkmark"></span>
+                                Previously Incarcerated
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Student" value="Student">
+                                <span class="checkmark"></span>
+                                Student
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Undocumented_People" value="Undocumented_People">
+                                <span class="checkmark"></span>
+                                Undocumented People
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran" value="Veteran">
+                                <span class="checkmark"></span>
+                                Veteran
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Woman_Veterans" value="Woman_Veterans">
+                                <span class="checkmark"></span>
+                                Woman Veterans
+                            </label>
+                            <label class="checkbox-container bottom">
+                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Women" value="Women">
+                                <span class="checkmark"></span>
+                                Women
+                            </label>
+                            
+                        </div>
+                    </form>
+                </div>
                 <div class="dropbox" id="dropbox">
                     <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow FoP','dropdown-content')">
                         <p style="margin:0;">Free or Paid</p>
@@ -185,97 +276,6 @@
                                 Selling/Exiting
                                 <div class="hover-Content" >Business owner decided either to close the business or sell</div>
                             </label>
-                        </div>
-                    </form>
-                </div>
-                <div class="dropbox" id="dropbox6">
-                    <div class="FilterTitleText" style="display: flex;" onclick="toggleDropdown('FilterArrow Sec','dropdown-content6')">
-                        <p style="margin:0; ">Entrepreneur Demographics</p>
-                        <img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74" class="FilterArrow Sec" id="FilterArrow Sec">
-                    </div>
-                    <form method="post">
-                        <div class="dropdown-content" id="dropdown-content6">
-                            <!--<label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Local_North_County" value="AnySe">
-                                <span class="checkmark"></span>
-                                Any
-                            </label>-->
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Asian" value="Asian">
-                                <span class="checkmark"></span>
-                                Asian
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Black" value="Black">
-                                <span class="checkmark"></span>
-                                Black
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Immigrants" value="Immigrants">
-                                <span class="checkmark"></span>
-                                Immigrants
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Indigenous_People" value="Indigenous_People">
-                                <span class="checkmark"></span>
-                                Indigenous People
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Latinx" value="Latinx">
-                                <span class="checkmark"></span>
-                                Latinx
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="LGBTQ" value="LGBTQ">
-                                <span class="checkmark"></span>
-                                LGBTQ+
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Low_Income" value="Low_Income">
-                                <span class="checkmark"></span>
-                                Low Income
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Multicultural" value="Multicultural">
-                                <span class="checkmark"></span>
-                                Multicultural/BIPOC
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="People_With_Disabilities" value="People_With_Disabilities">
-                                <span class="checkmark"></span>
-                                People With Disabilities
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Previously_Incarcerated" value="Previously_Incarcerated">
-                                <span class="checkmark"></span>
-                                Previously Incarcerated
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Student" value="Student">
-                                <span class="checkmark"></span>
-                                Student
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Undocumented_People" value="Undocumented_People">
-                                <span class="checkmark"></span>
-                                Undocumented People
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Veteran" value="Veteran">
-                                <span class="checkmark"></span>
-                                Veteran
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Woman_Veterans" value="Woman_Veterans">
-                                <span class="checkmark"></span>
-                                Woman Veterans
-                            </label>
-                            <label class="checkbox-container bottom">
-                                <input type="checkbox" name="filters[]" class="checkbox-item" id="Women" value="Women">
-                                <span class="checkmark"></span>
-                                Women
-                            </label>
-                            
                         </div>
                     </form>
                 </div>
@@ -713,11 +713,11 @@
                     </div>-->
                     <div class="paginationChanger">
                         <p>Number of Resources per page:</p>
-                        <input type="radio" id="10" name="pagination" value="10" onclick="updateFilters()" checked>
+                        <input type="radio" id="10" name="pagination" value="10" onclick="loadPage(1)" checked>
                         <label for="10">10</label>
-                        <input type="radio" id="25" name="pagination" value="25" onclick="updateFilters()">
+                        <input type="radio" id="25" name="pagination" value="25" onclick="loadPage(1)">
                         <label for="25">25</label>
-                        <input type="radio" id="50" name="pagination" value="50" onclick="updateFilters()">
+                        <input type="radio" id="50" name="pagination" value="50" onclick="loadPage(1)">
                         <label for="50">50</label>
                     </div>
                 </div>

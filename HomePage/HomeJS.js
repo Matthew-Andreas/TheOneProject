@@ -1,4 +1,5 @@
 var allCollumns = false;
+var currentPage = 1;
 
 document.querySelectorAll(".sidebar-button").forEach(function (button) {
     button.onclick = function () {
@@ -48,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdown.style.maxHeight = 0;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight - dropdown.scrollHeight) + "px";
 
-                // Defer the updateFilters call
+                // Defer the loadPage call
                 setTimeout(() => {
-                    updateFilters();
+                    loadPage(1);
                 }, 50); // A small delay to allow the DOM to fully update
             }
 
@@ -65,41 +66,6 @@ function collectCheckboxValues(name) {
         values.push(checkbox.value);
     });
     return values;
-}
-
-function updateFilters() {
-    var paginationValue = getSelectedRadio();
-    var filterValues = collectCheckboxValues("filters[]");
-    //var selectValues = collectCheckboxValues("select[]");
-    console.log(filterValues);
-    if (filterValues.length != 0 || paginationValue > 10 || allCollumns) {
-        document.getElementById("resetBtn").style.display = "block";
-    } else {
-        document.getElementById("resetBtn").style.display = "none";
-    }
-    console.log(paginationValue);
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "", true);  // Update the URL as needed
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {  // Request is complete
-            if (xhr.status == 200) {  // Request was successful
-                document.getElementById("selected-filters").innerHTML = xhr.responseText;
-            } else {
-                console.error("Request failed. Status: " + xhr.status);
-            }
-        }
-    };
-    console.log(allCollumns)
-    console.log("updateFilters")
-    var data = "ajax=1";
-    data += "&itemLimit=" + encodeURIComponent(paginationValue);
-    data += "&allColumns=" + encodeURIComponent(allCollumns);
-    data += filterValues.map(value => "&filters[]=" + encodeURIComponent(value)).join("");
-    //data += selectValues.map(value => "&select[]=" + encodeURIComponent(value)).join("");
-
-    xhr.send(data);
 }
 
 // Debounce function
@@ -126,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function loadPage(page) {
         const xhr = new XMLHttpRequest();
         const formData = new FormData();
-
+        //global page counter
+        currentPage = page;
         //document.documentElement.scrollTop = 0;  // For modern browsers
         //document.body.scrollTop = 0;  // For older browsers (especially IE)
 
@@ -175,21 +142,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.loadPage = loadPage; // Expose the function globally
 
-    if (localStorage.getItem("TopHead") != null) {
-        topHead = localStorage.getItem("TopHead");
-        topic = localStorage.getItem("Topic");
-        localStorage.removeItem("TopHead");
-        localStorage.removeItem("Topic");
-        const checkbox1 = document.querySelector('input[type="checkbox"][value="' + topHead + '"]');
-        const checkbox2 = document.querySelector('input[type="checkbox"][value="' + topic + '"]');
+    if (localStorage.getItem("Topic") != null) {
+        topicHead = "";
+        topicFilterLocation = "";
+        if (localStorage.getItem("TopicHead") != null) {
+            topicHead = localStorage.getItem("TopicHead");
+            topicFilterLocation = localStorage.getItem("TopicFilterLocation");
+            localStorage.removeItem("TopicHead");
+            localStorage.removeItem("TopicFilterLocation");
+        }
+        filterLocation = localStorage.getItem("FilterLocation");
+        filter = localStorage.getItem("Filter");
+        arrow = localStorage.getItem("Arrow");
+
+        localStorage.removeItem("Arrow");
+        localStorage.removeItem("FilterLocation");
+        localStorage.removeItem("Filter");
+
+        const checkbox1 = document.querySelector('input[type="checkbox"][value="' + topicHead + '"]');
+        const checkbox2 = document.querySelector('input[type="checkbox"][value="' + filter + '"]');
+        const dropdownContent = document.getElementById(filterLocation);
+        const dropdown = document.getElementById(topicFilterLocation);
+        const filterArrow = document.getElementById(arrow);
+
+        filterArrow.classList.add("flipped");
         checkbox1.checked = true;
         checkbox2.checked = true;
-        loadPage(1);
-        /*setTimeout(function () {
-            loadPage(1);
-            console.log("Run!");
-        }, 1000);*/
+        dropdownContent.classList.add("expand");
+        dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+        dropdown.style.display = 'block';
+        dropdown.classList.add('expand');
+        dropdown.style.maxHeight = null;
+        dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";
 
+        loadPage(1);
     }
 });
 
@@ -212,7 +198,7 @@ function setColumns() {
         setColumnsBtn.textContent = "Show More Columns";
     }
     //console.log(allCollumns);
-    updateFilters();
+    loadPage(currentPage);
 }
 
 function resetFilters() {

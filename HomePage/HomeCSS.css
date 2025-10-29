@@ -337,7 +337,7 @@ td {
 
 .popup {
     display: none;
-    max-width: 250px;
+    max-width: 250px !important;
     position: absolute;
     background: #f0f4fb;
     color: #203A72;
