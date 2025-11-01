@@ -143,23 +143,20 @@ document.addEventListener('DOMContentLoaded', function () {
     window.loadPage = loadPage; // Expose the function globally
 
     if (localStorage.getItem("Topic") != null) {
-        topicHead = "";
-        topicFilterLocation = "";
-        if (localStorage.getItem("TopicHead") != null) {
-            topicHead = localStorage.getItem("TopicHead");
-            topicFilterLocation = localStorage.getItem("TopicFilterLocation");
-            localStorage.removeItem("TopicHead");
-            localStorage.removeItem("TopicFilterLocation");
-        }
-        filterLocation = localStorage.getItem("FilterLocation");
-        filter = localStorage.getItem("Filter");
-        arrow = localStorage.getItem("Arrow");
+        topicHead = JSON.parse(localStorage.getItem("TopicHead"));
+        topicFilterLocation = JSON.parse(localStorage.getItem("TopicFilterLocation"));
+        filterLocation = JSON.parse(localStorage.getItem("FilterLocation"));
+        filter = JSON.parse(localStorage.getItem("Filter"));
+        arrow = JSON.parse(localStorage.getItem("Arrow"));
+
 
         localStorage.removeItem("Arrow");
         localStorage.removeItem("FilterLocation");
         localStorage.removeItem("Filter");
+        localStorage.removeItem("TopicHead");
+        localStorage.removeItem("TopicFilterLocation");
 
-        const checkbox1 = document.querySelector('input[type="checkbox"][value="' + topicHead + '"]');
+        /*const checkbox1 = document.querySelector('input[type="checkbox"][value="' + topicHead + '"]');
         const checkbox2 = document.querySelector('input[type="checkbox"][value="' + filter + '"]');
         const dropdownContent = document.getElementById(filterLocation);
         const dropdown = document.getElementById(topicFilterLocation);
@@ -173,7 +170,37 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.style.display = 'block';
         dropdown.classList.add('expand');
         dropdown.style.maxHeight = null;
-        dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";
+        dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";*/
+
+        filter.forEach(selectedFilter => {
+            const checkbox = document.querySelector('input[type="checkbox"][value="' + selectedFilter + '"]');
+            checkbox.checked = true;
+        });
+
+        topicHead.forEach(selectedTopicHeader => {
+            const checkbox = document.querySelector('input[type="checkbox"][value="' + selectedTopicHeader + '"]');
+            checkbox.checked = true;
+        });
+
+        filterLocation.forEach(selectedFilterLocation => {
+            const dropdownContent = document.getElementById(selectedFilterLocation);
+            dropdownContent.classList.add("expand");
+            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+        });
+
+        arrow.forEach(selectedArrow => {
+            const filterArrow = document.getElementById(selectedArrow);
+            filterArrow.classList.add("flipped");
+        });
+
+        topicFilterLocation.forEach(selectedTopicLocation => {
+            const dropdown = document.getElementById(selectedTopicLocation);
+            const dropdownContent = document.getElementById("dropdown-content7")
+            dropdown.style.display = 'block';
+            dropdown.classList.add('expand');
+            dropdown.style.maxHeight = null;
+            dropdownContent.style.maxHeight = (dropdownContent.scrollHeight + dropdown.scrollHeight) + "px";
+        })
 
         loadPage(1);
     }
