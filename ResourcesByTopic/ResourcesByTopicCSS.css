@@ -1,5 +1,5 @@
 main {
-    padding: 1px 100px 50px 100px;
+    padding: 1px clamp(16px, 6vw, 100px) 50px clamp(16px, 6vw, 100px);
 }
 
 .title {
@@ -10,25 +10,27 @@ main {
 
 .boxTitle {
     color: white;
-    position: relative;
     font-family: 'Montserrat';
     font-size: 22px;
     font-weight: 600;
-    top: 10px;
-    left: 30px;
-    display: inline;
+    margin: 0;
 }
 
 .box {
-    display: block;
-    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: min(100%, 1000px);
     height: 50px;
     border: none;
-    margin-top: 25px;
+    margin: 25px auto 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 #blue.box {
@@ -40,79 +42,36 @@ main {
 }
 
 .dropdown {
-    display: block;
-    width: 1000px;
-    height: 710px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
     border: none;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 10px;
     background-color: #EAEAEA;
-}
-
-#FundingBased.dropdown {
-    height: 690px;
-}
-
-#businessLaw.dropdown {
-    height: 530px;
-}
-
-#ActiveNetworkingTraining.dropdown {
-    height: 650px;
-}
-
-#DigitalAssistance.dropdown {
-    height: 650px;
-}
-
-#Workshops.dropdown {
-    height: 250px;
-}
-
-#DiversityBased.dropdown {
-    height: 550px;
+    padding: 20px 0 30px;
+    box-sizing: border-box;
 }
 
 .CuratedQuestions {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 50px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .dropdownButton {
-    position: relative;
-    display: inline;
-    left: 780px;
-    top: 5px;
-}
-
-#FB.dropdownButton {
-    left: 765px;
-}
-
-#BL.dropdownButton {
-    left: 781px;
-}
-
-#ANT.dropdownButton {
-    left: 623px;
-}
-
-#DA.dropdownButton {
-    left: 737px;
-}
-
-#W.dropdownButton {
-    left: 808px;
-}
-
-#DB.dropdownButton {
-    left: 760px;
+    position: static;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
 .dropdownButtonimg {
@@ -126,13 +85,19 @@ main {
     overflow: hidden;
     transition: max-height 0.8s ease-in-out;
     max-height: 0px;
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .dropdown-Selections {
-    position: relative;
-    left: 60px;
-    top: 20px;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 24px;
+    margin: 20px 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .selectButton {
@@ -142,26 +107,15 @@ main {
 }
 
 .descriptionBox {
-    position: relative;
-    display: inline-block;
-    width: 820px;
-    top: 25px;
-    left: 25px;
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 820px;
     background-color: white;
     border: 2px solid #203A72;
     border-radius: 10px;
-}
-
-#doubleLines.descriptionBox {
-    height: 90px;
-}
-
-#tripleLines.descriptionBox {
-    height: 110px;
-}
-
-#quadLines.descriptionBox {
-    height: 130px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .descriptionTitle {
@@ -170,33 +124,60 @@ main {
 }
 
 .descriptionText {
-    position: relative;
     color: #203A72;
     font-family: 'Montserrat';
     font-weight: 600;
-    top: 15px;
-    left: 20px;
     line-height: 1.3;
+    margin: 0;
 }
 
 .submitButton {
-    display: inline-block;
+    display: block;
     border: none;
-    position: relative;
     color: white;
-    padding: 6px 60px;
+    padding: 8px 40px;
     text-align: center;
     text-decoration: none;
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 16px;
-    margin: 15px 2px;
+    margin: 15px 24px 0 auto;
     cursor: pointer;
     border-radius: 7.5px;
     transition: background-color 0.3s, transform 0.2s;
-    top: 40px;
-    left: 747px;
     background-color: #203A72;
+}
+
+@media (max-width: 600px) {
+    .box {
+        padding: 0 16px;
+    }
+
+    .CuratedQuestions {
+        padding: 0 16px;
+    }
+
+    .boxTitle {
+        font-size: 18px;
+    }
+
+    .dropdownButtonimg {
+        width: 36px;
+    }
+
+    .dropdown-Selections {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 16px;
+    }
+
+    .custom-checkbox {
+        margin-top: 0;
+    }
+
+    .submitButton {
+        margin: 20px 16px 0 auto;
+    }
 }
 
 .submitButton:hover {
@@ -209,6 +190,7 @@ main {
 }
 
 .ResourceQuestions {
+    width: 100%;
     margin-bottom: 25px;
 }
 
@@ -218,6 +200,13 @@ main {
 
 .custom-checkbox input[type="checkbox"] {
     display: none;
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    flex-shrink: 0;
+    margin-top: 6px;
+    align-self: center;
 }
 
 /* Create a custom checkbox */
@@ -257,16 +246,4 @@ main {
     position: relative;
     top: 2px;
     left: 6px;
-}
-
-#doubleLines.custom-checkbox {
-    display: inline-block;
-    position: relative;
-    top: 25px;
-}
-
-#tripleLines.custom-checkbox {
-    display: inline-block;
-    position: relative;
-    top: 13px;
 }

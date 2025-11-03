@@ -10,14 +10,14 @@ var topicFilterLocation = [];
 var arrow = [];
 
 
-function toggleDropdown(dropdownContentId, sizeOut) {
+function toggleDropdown(dropdownContentId) {
     var dropdownContent = document.getElementById(dropdownContentId);
-
+    var dropdown = document.querySelector(".dropdown")
     if (dropdownContent.classList.contains("expand")) {
         dropdownContent.style.maxHeight = null;
         dropdownContent.classList.remove("expand");
     } else {
-        dropdownContent.style.maxHeight = sizeOut;
+        dropdownContent.style.maxHeight = dropdown.scrollHeight + "px";
         dropdownContent.classList.add("expand");
     }
 }
