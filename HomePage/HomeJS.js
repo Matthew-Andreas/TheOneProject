@@ -1,5 +1,5 @@
 var allCollumns = false;
-var currentPage2 = 1;
+var currentPage = 1;
 
 document.querySelectorAll(".sidebar-button").forEach(function (button) {
     button.onclick = function () {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const xhr = new XMLHttpRequest();
         const formData = new FormData();
         //global page counter
-        currentPage2 = page;
+        currentPage = page;
         //document.documentElement.scrollTop = 0;  // For modern browsers
         //document.body.scrollTop = 0;  // For older browsers (especially IE)
 
@@ -225,7 +225,7 @@ function setColumns() {
         setColumnsBtn.textContent = "Show More Columns";
     }
     //console.log(allCollumns);
-    loadPage(currentPage2);
+    loadPage(currentPage);
 }
 
 function resetFilters() {

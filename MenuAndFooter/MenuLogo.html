@@ -71,15 +71,10 @@
 		display: flex;
 		flex-direction: column;
 		background-color: #7B95B1;
-		width: clamp(130px, 12cqi, 192px);
+		width: auto;
 		max-height: 0;
 		overflow: hidden;
 		transition: max-height 0.5s ease-out;
-	}
-
-
-	.menuDropdown.CU {
-		width: clamp(250px, 23cqi, 332px);
 	}
 
 
@@ -98,7 +93,7 @@
 
 
 	.containerAU:hover .menuDropdown.AU {
-		max-height: 155px;
+		max-height: fit-content;
 	}
 
 
@@ -116,12 +111,16 @@
 		margin-bottom: .5em;
 	}
 
+	.link.active {
+		color: #60A800 !important;
+	}
+
 
 	.container-below-top a:not(.btn).drop.big {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
-		padding-right: 0em;
-		padding-left: 2em;
+		padding-right: 1.5em;
+		padding-left: 1.5em;
 	}
 </style>
    
@@ -137,34 +136,55 @@
 						 class="Menu-img">
 					 </a>
 				 </li>
-			 <li><a href="https://onehubsd.org/" class="menuSelect">Database</a></li>
-			 <li>
-				 <div class="containerAU">
-					 <p class="menuSelect list AU">About Us</p>
-					 <div class="menuDropdown AU">
-						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop top">Info</a>
-						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop">Team</a>
-						 <a href="https://onehubsd.org/index.php/about-us/partners" class="drop bottom">Partners</a>
-						 </div>  
-					 </div>
-				 </li>
-			 <li><a href="https://onehubsd.org/index.php/resources-by-topic" class="menuSelect">Resources by Topic</a>
+			 <li><a href="https://onehubsd.org/" class="menuSelect link">Database</a></li>
+			 <li><a href="https://onehubsd.org/index.php/resources-by-topic" class="menuSelect link">Resources by
+					Topic</a>
 			</li>
-			 <li><a href="https://onehubsd.org/index.php/how-to-use-database" class="menuSelect">How to Use Database</a>
+			 <li><a href="https://onehubsd.org/index.php/how-to-use-database" class="menuSelect link">How to Use
+					Database</a>
 				 </li>
 			 <li>
 				 <div class="containerCU">
 					 <p class="menuSelect list CU">Contact Us</p>
 					 <div class="menuDropdown CU">
-						 <a href="https://onehubsd.org/index.php/contact-us/contact-us" class="drop top">Contact Us</a>
+						 <a href="https://onehubsd.org/index.php/contact-us/contact-us"
+							class="drop link big top">Contact
+							Us</a>
 						 <a href="https://onehubsd.org/index.php/contact-us/add-a-resource-to-database"
-							 class="drop big">Add a Resource to Database</a>
+							 class="drop link big">Add a Resource</a>
 						 <a href="https://onehubsd.org/index.php/contact-us/report-an-error"
-							 class="drop bottom big">Report an Error</a>
+							 class="drop bottom link big">Report an Error</a>
 						 </div>
 					 </div> 
 				 </li>
-			 </ul>
-		 </nav>
+			<li>
+				 <div class="containerAU">
+					 <p class="menuSelect list AU">About Us</p>
+					 <div class="menuDropdown AU">
+						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top">Info</a>
+						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link">Team</a>
+						 <a href="https://onehubsd.org/index.php/about-us/partners"
+							class="drop link bottom">Partners</a>
+						 </div>  
+					 </div>
+				 </li>
+			 
+		</ul>
+	</nav>
 </body>
+<script>
+	const currentPageLink = window.location.pathname;
+
+	document.querySelectorAll(".link").forEach(link => {
+		if (currentPageLink === '/') {
+			if (link.textContent === "Database") {
+				link.classList.add("active");
+			}
+		} else if (link.href.includes(currentPageLink)) {
+			link.classList.add("active");
+			console.log("here");
+		}
+		console.log("Loop");
+	});
+</script>
 {/source}
