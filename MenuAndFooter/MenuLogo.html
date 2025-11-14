@@ -111,8 +111,13 @@
 		margin-bottom: .5em;
 	}
 
-	.link.active {
+	.link.greenActive,
+	.list.greenActive {
 		color: #60A800 !important;
+	}
+
+	.link.blueActive {
+		color: #203A72 !important;
 	}
 
 
@@ -148,12 +153,12 @@
 					 <p class="menuSelect list CU">Contact Us</p>
 					 <div class="menuDropdown CU">
 						 <a href="https://onehubsd.org/index.php/contact-us/contact-us"
-							class="drop link big top">Contact
+							class="drop link big top CU">Contact
 							Us</a>
 						 <a href="https://onehubsd.org/index.php/contact-us/add-a-resource-to-database"
-							 class="drop link big">Add a Resource</a>
+							 class="drop link big Cu">Add a Resource</a>
 						 <a href="https://onehubsd.org/index.php/contact-us/report-an-error"
-							 class="drop bottom link big">Report an Error</a>
+							 class="drop bottom link big CU">Report an Error</a>
 						 </div>
 					 </div> 
 				 </li>
@@ -161,10 +166,10 @@
 				 <div class="containerAU">
 					 <p class="menuSelect list AU">About Us</p>
 					 <div class="menuDropdown AU">
-						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top">Info</a>
-						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link">Team</a>
+						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top AU">Info</a>
+						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link AU">Team</a>
 						 <a href="https://onehubsd.org/index.php/about-us/partners"
-							class="drop link bottom">Partners</a>
+							class="drop link bottom AU">Partners</a>
 						 </div>  
 					 </div>
 				 </li>
@@ -178,10 +183,19 @@
 	document.querySelectorAll(".link").forEach(link => {
 		if (currentPageLink === '/') {
 			if (link.textContent === "Database") {
-				link.classList.add("active");
+				link.classList.add("greenActive");
 			}
 		} else if (link.href.includes(currentPageLink)) {
-			link.classList.add("active");
+			if (link.classList.contains("drop")) {
+				link.classList.add("blueActive");
+				if (link.classList.contains("AU")) {
+					document.querySelector(".menuSelect.AU").classList.add("greenActive");
+				} else {
+					document.querySelector(".menuSelect.CU").classList.add("greenActive");
+				}
+			} else {
+				link.classList.add("greenActive");
+			}
 			console.log("here");
 		}
 		console.log("Loop");
