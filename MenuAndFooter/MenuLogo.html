@@ -32,6 +32,11 @@
 		height: 50px;
 	}
 
+	.menuSelect.AU,
+	.menuSelect.CU {
+		padding-right: 0px !important;
+	}
+
 
 	.menuSelect.list {
 		color: #203A72;
@@ -127,6 +132,24 @@
 		padding-right: 1.5em;
 		padding-left: 1.5em;
 	}
+
+	.menuArrow {
+		background-color: #ffffff;
+		border: 0px;
+		max-width: 35px;
+		max-height: 35px;
+		transition: transform 0.6s;
+		cursor: pointer;
+		margin-top: clamp(50px, 6.5cqi, 100px);
+	}
+
+	.containerAU:hover .menuArrow.AU {
+		transform: rotateX(180deg);
+	}
+
+	.containerCU:hover .menuArrow.CU {
+		transform: rotateX(180deg);
+	}
 </style>
    
 
@@ -150,7 +173,12 @@
 				 </li>
 			 <li>
 				 <div class="containerCU">
-					 <p class="menuSelect list CU">Contact Us</p>
+					<div style="display: flex;">
+						<p class="menuSelect list CU">Contact Us</p>
+						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
+							class="menuArrow CU" id="menuArrow">
+					</div>
+					 
 					 <div class="menuDropdown CU">
 						 <a href="https://onehubsd.org/index.php/contact-us/contact-us"
 							class="drop link big top CU">Contact
@@ -160,18 +188,24 @@
 						 <a href="https://onehubsd.org/index.php/contact-us/report-an-error"
 							 class="drop bottom link big CU">Report an Error</a>
 						 </div>
-					 </div> 
+					 
+				</div> 
 				 </li>
 			<li>
 				 <div class="containerAU">
-					 <p class="menuSelect list AU">About Us</p>
+					<div style="display: flex;">
+						<p class="menuSelect list AU">About Us</p>
+						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
+							class="menuArrow AU" id="menuArrow">
+					</div>
 					 <div class="menuDropdown AU">
 						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top AU">Info</a>
 						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link AU">Team</a>
 						 <a href="https://onehubsd.org/index.php/about-us/partners"
 							class="drop link bottom AU">Partners</a>
 						 </div>  
-					 </div>
+					 
+				</div>
 				 </li>
 			 
 		</ul>
