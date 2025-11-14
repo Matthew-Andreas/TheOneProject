@@ -55,6 +55,8 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
         editErrors(emailError, emailBorder, "", "0");
         editErrors(messageError, messageBorder, "", "0");
 
+        document.getElementById("Contact-Form").reset();
+        document.getElementById("success").classList.remove("hidden");
 
         // Display the output in a paragraph
         //document.getElementById('output').innerHTML = output;

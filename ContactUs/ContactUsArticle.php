@@ -33,7 +33,11 @@
             </div>
             <p class="error" id="Message-Error"></p>
             <button class="SendButton" type="submit">Send</button>
+            <div class="success hidden" id="success">
+                Your message was sent!
+            </div>
         </form>
+        
     </div>
 
     <p id="output"></p>
