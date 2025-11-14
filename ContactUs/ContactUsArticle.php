@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input with Icon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsCSS.css?v=1.0.1"
+    <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsCSS.css?v=1.0.2"
         type="text/css">
 </head>
 
@@ -42,7 +42,7 @@
 
     <p id="output"></p>
 
-    <script src="media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsJS.js?v=1.0.0" type="text/javascript"></script>
+    <script src="media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsJS.js?v=1.0.1" type="text/javascript"></script>
 
 </body>
 
