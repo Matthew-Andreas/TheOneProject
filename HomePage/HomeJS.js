@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.loadPage = loadPage; // Expose the function globally
 
-    if (localStorage.getItem("Topic") != null) {
+    if (localStorage.getItem("Filter") != null) {
         topicHead = JSON.parse(localStorage.getItem("TopicHead"));
         topicFilterLocation = JSON.parse(localStorage.getItem("TopicFilterLocation"));
         filterLocation = JSON.parse(localStorage.getItem("FilterLocation"));
