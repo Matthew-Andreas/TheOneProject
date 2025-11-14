@@ -4,7 +4,7 @@
     .footerBlock {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 22vw;
+        column-gap: clamp(10px, 2vw, 40px);
         width: 100%;
         height: 260px;
     }
@@ -70,35 +70,72 @@
         gap: 60px;
         justify-content: end;
     }
+
+    /* --- MOBILE OVERRIDES --- */
+    @media (max-width: 768px) {
+        .footerBlock {
+            grid-template-columns: 1fr;
+            /* stack items vertically */
+            row-gap: 20px;
+            height: auto;
+            /* let height grow with content */
+            padding: 20px 10px;
+            box-sizing: border-box;
+        }
+
+        .flexItem {
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* override the inline display:block on the last flexItem */
+        .footerBlock .flexItem:last-child {
+            display: flex !important;
+        }
+
+        .footer-text {
+            text-align: center;
+            width: auto;
+            /* prevent fixed width issues */
+        }
+
+        .links {
+            justify-self: center;
+            margin-bottom: 6px;
+        }
+    }
 </style>
 
 <div class="footerBlock">
-    <div class="flexItem">
-        <a href="https://onehubsd.org/" class="logoLink">
-            <img src="images/icon-navy.png#joomlaImage://local-images/icon-navy.png?width=1080&height=1080"
-                class="footer-img">
-        </a>
-    </div>
+        <div class="flexItem">
+                <a href="https://onehubsd.org/" class="logoLink">
+                        <img src="images/icon-navy.png#joomlaImage://local-images/icon-navy.png?width=1080&height=1080"
+                                class="footer-img">
+                    </a>
+            </div>
 
-    <div class="flexItem">
-        <a href="https://www.instagram.com/onehubsd/">
-            <img src="images/icons8-instagram-100.png#joomlaImage://local-images/icons8-instagram-100.png?width=100&height=100"
-                class="footer-img2">
-        </a>
-        <p class="copyright-text">© 2024, The One Project</p>
-    </div>
+        <div class="flexItem">
+                <a href="https://www.instagram.com/onehubsd/" target="_blank" rel="noopener noreferrer">
+                        <img
+                src="images/instagram_icon_navy.png#joomlaImage://local-images/instagram_icon_navy.png?width=50&height=50"
+                                class="footer-img2">
+                    </a>
+                <p class="copyright-text">© 2024, The One Project</p>
+            </div>
 
-    <div class="flexItem" style="display: block;">
-        <a  href="https://onehubsd.org/index.php/contact-us/contact-us" class="links top">
-            <p class="footer-text">Contact Us</p>
-        </a>
-        <a  href="https://onehubsd.org/index.php/contact-us/add-a-resource-to-database" class="links">
-            <p class="footer-text">Add a Resource</p>
-        </a>
-        <a  href="https://onehubsd.org/index.php/contact-us/report-an-error" class="links">
-            <p class="footer-text">Spot An Error?</p>
-        </a>
-    </div>
+        <div class="flexItem" style="display: block;">
+                <a  href="https://onehubsd.org/index.php/contact-us/contact-us" class="links top">
+                        <p class="footer-text">Contact Us</p>
+                    </a>
+                <a  href="https://onehubsd.org/index.php/contact-us/add-a-resource-to-database" class="links">
+                        <p class="footer-text">Add a Resource</p>
+                    </a>
+                <a  href="https://onehubsd.org/index.php/contact-us/report-an-error" class="links">
+                        <p class="footer-text">Spot An Error?</p>
+                    </a>
+            </div>
 </div>
 
 {/source}

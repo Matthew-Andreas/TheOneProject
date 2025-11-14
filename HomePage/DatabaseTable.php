@@ -85,7 +85,7 @@ class DatabaseTable {
             $i = $i + 1;
             foreach ($this->columns as $columnName) {
                 if($columnName =="Name_of_Organization"){
-                    echo "<td><a class='nameOfOrgLink' href='" . $row->$website ."'>" . $row->$columnName . "</a></td>";
+                    echo "<td><a class='nameOfOrgLink' href='" . $row->$website ."' target='_blank' rel='noopener noreferrer'>" . $row->$columnName . "</a></td>";
                 }else if($columnName =="Website"){
                     //echo "<td class='websiteCell'>" . $row->$columnName . "</td>";
                 }else{
