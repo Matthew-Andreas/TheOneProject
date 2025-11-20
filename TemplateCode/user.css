@@ -95,11 +95,6 @@
     color: #203A72;
 }
 
-.container-below-top .containerAU:hover .menuDropdown.AU,
-.container-below-top .containerCU:hover .menuDropdown.CU {
-    max-height: 155px;
-}
-
 .container-below-top .drop.top {
     margin-top: .5em;
 }

@@ -96,17 +96,6 @@
 		color: #203A72;
 	}
 
-
-	.containerAU:hover .menuDropdown.AU {
-		max-height: fit-content;
-	}
-
-
-	.containerCU:hover .menuDropdown.CU {
-		max-height: 155px;
-	}
-
-
 	.drop.top {
 		margin-top: .5em;
 	}
@@ -171,6 +160,22 @@
 			 <li><a href="https://onehubsd.org/index.php/how-to-use-database" class="menuSelect link">How to Use
 					Database</a>
 				 </li>
+			<li>
+				 <div class="containerAU">
+					<div style="display: flex;">
+						<p class="menuSelect list AU">About Us</p>
+						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
+							class="menuArrow AU" id="menuArrow">
+					</div>
+					 <div class="menuDropdown AU">
+						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top AU">Info</a>
+						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link AU">Team</a>
+						 <a href="https://onehubsd.org/index.php/about-us/partners"
+							class="drop link bottom AU">Partners</a>
+						 </div>  
+					 
+				</div>
+			</li>
 			 <li>
 				 <div class="containerCU">
 					<div style="display: flex;">
@@ -191,22 +196,7 @@
 					 
 				</div> 
 				 </li>
-			<li>
-				 <div class="containerAU">
-					<div style="display: flex;">
-						<p class="menuSelect list AU">About Us</p>
-						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
-							class="menuArrow AU" id="menuArrow">
-					</div>
-					 <div class="menuDropdown AU">
-						 <a href="https://onehubsd.org/index.php/about-us/info" class="drop link top AU">Info</a>
-						 <a href="https://onehubsd.org/index.php/about-us/team" class="drop link AU">Team</a>
-						 <a href="https://onehubsd.org/index.php/about-us/partners"
-							class="drop link bottom AU">Partners</a>
-						 </div>  
-					 
-				</div>
-				 </li>
+
 			 
 		</ul>
 	</nav>
@@ -233,6 +223,16 @@
 			console.log("here");
 		}
 		console.log("Loop");
+	});
+
+	document.querySelectorAll(".menuDropdown").forEach(drop => {
+		const parent = drop.parentElement;
+		parent.addEventListener("mouseenter", () => {
+			drop.style.maxHeight = drop.scrollHeight + "px";
+		})
+		parent.addEventListener("mouseleave", () => {
+			drop.style.maxHeight = "0px";
+		})
 	});
 </script>
 {/source}
