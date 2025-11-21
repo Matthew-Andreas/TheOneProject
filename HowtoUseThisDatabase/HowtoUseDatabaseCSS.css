@@ -1,7 +1,6 @@
 .com-content-article__body {
-    position: relative;
-    left: var(--left-spacing);
-    max-width: 1200px;
+    max-width: 1400px;
+    padding: 50px 100px;
 }
 
 :root {
@@ -33,10 +32,6 @@
 }
 
 .FilterSearchTitle {
-    /*position: relative;
-    display: inline;*/
-    top: 5px;
-    left: 30px;
     color: #203A72;
     font-family: 'Montserrat';
     font-weight: 800;
@@ -44,7 +39,7 @@
 }
 
 .FilterSearchTextBox {
-    width: 1200px;
+    max-width: 1200px;
     height: 275px;
     background-color: #ffffff;
     border-top-left-radius: 0px;
@@ -54,18 +49,16 @@
 }
 
 .FilterSearchText {
-    position: relative;
-    top: 25px;
-    left: 30px;
+    padding-left: 24px;
+    padding-top: 20px;
     font-weight: 500;
     color: #203A72;
     font-family: 'Montserrat';
 }
 
 .bullet-list {
-    position: relative;
-    top: 25px;
-    left: 80px;
+    margin-left: 75px;
+    padding-top: 10px;
     list-style-type: disc;
     padding-left: 20px;
     font-family: 'Montserrat';
@@ -88,7 +81,6 @@
     /*width: 375px;*/
     display: flex;
     gap: 25px;
-    height: 35px;
     margin-top: 60px;
 }
 
@@ -103,7 +95,7 @@
 }
 
 .CuratedQuestionsTextBox {
-    width: 860px;
+    max-width: 850px;
     height: 100px;
     background-color: #ffffff;
     border-top-left-radius: 0px;
@@ -447,4 +439,154 @@
 
 .arrow:hover {
     color: white;
+}
+
+/* Responsive adjustments for main article content */
+@media (max-width: 1024px) {
+    :root {
+        --left-spacing: 4vw;
+    }
+
+    .com-content-article__body {
+        left: 0;
+        margin: 0 auto;
+        padding: 0 24px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .title,
+    .subTitle {
+        width: 100%;
+    }
+
+    .FilterSearch,
+    .CuratedQuestions {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        height: auto;
+    }
+
+    .FilterSearchTitle,
+    .CuratedQuestionsTitle {
+        top: 0;
+        left: 0;
+    }
+
+    .FilterSearch .arrow,
+    .CuratedQuestions .arrow {
+        position: static;
+        margin-left: auto;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .arrowButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrowText {
+        position: static;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .FilterSearchTextBox,
+    .CuratedQuestionsTextBox {
+        width: 100%;
+        height: auto;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    .FilterSearchText,
+    .CuratedQuestionsText {
+        position: static;
+        margin: 0;
+    }
+
+    .bullet-list {
+        position: static;
+        margin: 12px 0 0 20px;
+    }
+
+    .titleBox {
+        width: 100%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .CategoryTitle {
+        position: static;
+        left: 0;
+        top: 0;
+    }
+
+    .dropdown-content {
+        max-width: 100%;
+    }
+
+    .descriptionBox,
+    .Categories {
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .descText,
+    .CategText {
+        position: static;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --left-spacing: 0;
+    }
+
+    .com-content-article__body {
+        padding: 0 16px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .subTitle {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .FilterSearchTitle,
+    .CuratedQuestionsTitle {
+        font-size: 20px;
+    }
+
+    .dropdownButtonimg {
+        width: 28px;
+    }
+
+    .titleBox {
+        padding: 12px 16px;
+    }
+
+    .bullet-list {
+        margin-left: 16px;
+    }
+
+    .arrowButton {
+        width: 44px;
+        height: 28px;
+    }
 }
