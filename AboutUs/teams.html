@@ -1,9 +1,12 @@
 {source}
     <style>
+    .com-content-article__body {
+        padding: 50px 100px;
+    }
+
     .Team-Title-Text {
         color: #203a72;
         font-family: 'Montserrat';
-        text-align: center;
     }
 
     .Team-Title {
@@ -51,6 +54,11 @@
     .TeamMemberCard {
         display: flex;
         flex-direction: column;
+        background-color: #F6F6F6;
+        border-radius: 20px;
+        padding: 20px;
+        max-width: 480px;
+        width: 100%;
     }
 
     .teamImg {
@@ -67,7 +75,6 @@
     .TeamMemberName {
         color: #203a72;
         font-family: 'Montserrat';
-        text-align: center;
         font-size: 22px;
         margin-bottom: 0px;
     }
@@ -75,7 +82,6 @@
     .TeamMemberTitle {
         color: #203a72;
         font-family: 'Montserrat';
-        text-align: center;
         font-weight: 600;
         margin-bottom: 0px;
     }
@@ -83,14 +89,13 @@
     .TeamMemberDesc {
         color: #203a72;
         font-family: 'Montserrat';
-        text-align: center;
         font-weight: 600;
         padding-bottom: 8px;
     }
 
     .linkinbtnSpot {
-        justify-self: center;
-        align-self: center;
+        /*justify-self: center;
+        align-self: center;*/
     }
 
     .TeamMembers {
@@ -98,9 +103,13 @@
         flex-wrap: wrap;
         gap: 16px;
         justify-content: space-evenly;
-        margin-bottom: 50px;
-        margin-left: 50px;
-        margin-right: 50px;
+        padding-bottom: 100px;
+        margin-bottom: 100px;
+        border-bottom: #A3A7AA 1px solid;
+    }
+
+    .TeamMembers.bottom {
+        border-bottom: none;
     }
 
     .csusmBtn {
@@ -126,12 +135,14 @@
 </style>
 
 <body>
-    <div class="Team-Title">
-        <h1 class="Team-Title-Text">Meet Our Team</h1>
+    <div class="Team-Title" style="margin-bottom: 10px;">
+        <h1 class="Team-Title-Text"><span style="color: #60A800;">M</span>eet <span style="color: #60A800;">O</span>ur
+            <span style="color: #60A800;">T</span>eam
+        </h1>
     </div>
 
     <div class="Team-Title">
-        <h2 class="Team-Title-Text">Professors</h2>
+        <p class="Team-Title-Text" style="font-size: 20px;">Professors</p>
     </div>
 
     <div class="TeamMembers">
@@ -139,11 +150,11 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Paolo3.png#joomlaImage://local-images/Paolo3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Dr. M. Paola Ometto</h1>
-                <p class="TeamMemberTitle">Entrepreneurs Resources Coordinators</p>
-                <p class="TeamMemberDesc">Associate Professor of Management CSUSM</p>
             </div>
-            <div style="display: flex; justify-content: space-evenly;">
+            <h1 class="TeamMemberName">Dr. M. Paola Ometto</h1>
+            <p class="TeamMemberTitle">Entrepreneurs Resources Coordinators</p>
+            <p class="TeamMemberDesc">Associate Professor of Management CSUSM</p>
+            <div style="display: flex; gap: 20px;">
                 <a target="_blank" rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/maria-paola-ometto-72914416/" class="linkinbtnSpot">
                     <button class="linkedin-button">in</button>
@@ -160,11 +171,11 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Dr.%20ahmad%20R.%20Hadaegh3.jpg#joomlaImage://local-images/Dr. ahmad R. Hadaegh3.jpg?width=400&height=400">
-                <h1 class="TeamMemberName">Dr. Ahmad R. Hadaegh</h1>
-                <p class="TeamMemberTitle">Database Expert</p>
-                <p class="TeamMemberDesc">Professor of Computer Science CSUSM</p>
             </div>
-            <div style="display: flex; justify-content: space-evenly;">
+            <h1 class="TeamMemberName">Dr. Ahmad R. Hadaegh</h1>
+            <p class="TeamMemberTitle">Database Expert</p>
+            <p class="TeamMemberDesc">Professor of Computer Science CSUSM</p>
+            <div style="display: flex; gap: 20px;">
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ahmad-hadaegh-1982b41a/"
                     class="linkinbtnSpot">
                     <button class="linkedin-button">in</button>
@@ -180,11 +191,11 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Carly3.png#joomlaImage://local-images/Carly3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Dr. Carly Offidani-Bertrand</h1>
-                <p class="TeamMemberTitle">Entrepreneurs Resources Coordinators</p>
-                <p class="TeamMemberDesc">Associate Professor of Human Development CSUSM</p>
             </div>
-            <div style="display: flex; justify-content: space-evenly;">
+            <h1 class="TeamMemberName">Dr. Carly Offidani-Bertrand</h1>
+            <p class="TeamMemberTitle">Entrepreneurs Resources Coordinators</p>
+            <p class="TeamMemberDesc">Associate Professor of Human Development CSUSM</p>
+            <div style="display: flex; gap: 20px;">
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/carly-offidani-bertrand/"
                     class="linkinbtnSpot">
                     <button class="linkedin-button">in</button>
@@ -200,11 +211,11 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Ghazal2.jpg#joomlaImage://local-images/Ghazal2.jpg?width=400&height=400">
-                <h1 class="TeamMemberName">Ghazal Foroutan</h1>
-                <p class="TeamMemberTitle">Graphic Design Expert</p>
-                <p class="TeamMemberDesc">Assistant Professor of Graphic Design CSUSM</p>
             </div>
-            <div style="display: flex; justify-content: space-evenly;">
+            <h1 class="TeamMemberName">Ghazal Foroutan</h1>
+            <p class="TeamMemberTitle">Graphic Design Expert</p>
+            <p class="TeamMemberDesc">Assistant Professor of Graphic Design CSUSM</p>
+            <div style="display: flex; gap: 20px;">
                 <a target="_blank" rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/ghazal-foroutan-043201105/" class="linkinbtnSpot">
                     <button class="linkedin-button">in</button>
@@ -219,7 +230,7 @@
     </div>
 
     <div class="Team-Title">
-        <h2 class="Team-Title-Text">Current Student Members</h2>
+        <p class="Team-Title-Text" style="font-size: 20px;">Current Student Members</p>
     </div>
 
     <div class="TeamMembers">
@@ -227,10 +238,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Arash3.jpg#joomlaImage://local-images/Arash3.jpg?width=400&height=400">
-                <h1 class="TeamMemberName">Arash Peighambari</h1>
-                <p class="TeamMemberTitle">Front-End Developer</p>
-                <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Arash Peighambari</h1>
+            <p class="TeamMemberTitle">Front-End Developer</p>
+            <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/arash-peighambari/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -240,10 +251,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Jakob3.png#joomlaImage://local-images/Jakob3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Jakob Hatlestad</h1>
-                <p class="TeamMemberTitle">Data Collection Supervisor</p>
-                <p class="TeamMemberDesc">Global Business Management Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Jakob Hatlestad</h1>
+            <p class="TeamMemberTitle">Data Collection Supervisor</p>
+            <p class="TeamMemberDesc">Global Business Management Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jakob-hatlestad/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -254,10 +265,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Matthew3.png#joomlaImage://local-images/Matthew3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Matthew Andreas</h1>
-                <p class="TeamMemberTitle">Full-Stack Developer</p>
-                <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Matthew Andreas</h1>
+            <p class="TeamMemberTitle">Full-Stack Developer</p>
+            <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/matthew-andreas/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -266,18 +277,18 @@
     </div>
 
     <div class="Team-Title">
-        <h2 class="Team-Title-Text">Former Student Members</h2>
+        <p class="Team-Title-Text" style="font-size: 20px;">Former Student Members</p>
     </div>
 
-    <div class="TeamMembers">
+    <div class="TeamMembers bottom">
         <div class="TeamMemberCard">
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Bella3.png#joomlaImage://local-images/Bella3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Bella Bowman</h1>
-                <p class="TeamMemberTitle">Graphic Designer</p>
-                <p class="TeamMemberDesc">Arts, Media, and Design Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Bella Bowman</h1>
+            <p class="TeamMemberTitle">Graphic Designer</p>
+            <p class="TeamMemberDesc">Arts, Media, and Design Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/bellabowman/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -288,10 +299,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Daniel3.png#joomlaImage://local-images/Daniel3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Daniel Hernandez</h1>
-                <p class="TeamMemberTitle">Database Developer</p>
-                <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Daniel Hernandez</h1>
+            <p class="TeamMemberTitle">Database Developer</p>
+            <p class="TeamMemberDesc">Computer Science Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/daniel-h-43187b24b/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -302,10 +313,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Kunmi3.png#joomlaImage://local-images/Kunmi3.png?width=400&height=400">
-                <h1 class="TeamMemberName">Kunmi Akanle</h1>
-                <p class="TeamMemberTitle">Data Collection</p>
-                <p class="TeamMemberDesc">Biotechnology Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Kunmi Akanle</h1>
+            <p class="TeamMemberTitle">Data Collection</p>
+            <p class="TeamMemberDesc">Biotechnology Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ayokunmi-akanle-1a2523154/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
@@ -315,10 +326,10 @@
             <div class="teamImg">
                 <img class="teamImgPic"
                     src="images/Rasha3.jpg#joomlaImage://local-images/Rasha3.jpg?width=400&height=400">
-                <h1 class="TeamMemberName">Rasha Badrani</h1>
-                <p class="TeamMemberTitle">Data Collection</p>
-                <p class="TeamMemberDesc">Product Management Major CSUSM</p>
             </div>
+            <h1 class="TeamMemberName">Rasha Badrani</h1>
+            <p class="TeamMemberTitle">Data Collection</p>
+            <p class="TeamMemberDesc">Product Management Major CSUSM</p>
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rashabadrani/"
                 class="linkinbtnSpot">
                 <button class="linkedin-button">in</button>
