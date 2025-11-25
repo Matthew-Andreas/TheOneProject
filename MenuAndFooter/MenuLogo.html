@@ -205,11 +205,7 @@
 	const currentPageLink = window.location.pathname;
 
 	document.querySelectorAll(".link").forEach(link => {
-		if (currentPageLink === '/') {
-			if (link.textContent === "Database") {
-				link.classList.add("greenActive");
-			}
-		} else if (link.href.includes(currentPageLink)) {
+		if ((link.href.includes(currentPageLink)) && (currentPageLink !== '/')) {
 			if (link.classList.contains("drop")) {
 				link.classList.add("blueActive");
 				if (link.classList.contains("AU")) {
