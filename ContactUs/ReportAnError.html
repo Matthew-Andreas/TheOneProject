@@ -12,7 +12,7 @@
      
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
      
-  <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/ContactUs/LetUsKnowAboutErrorCSS.css?v=1.0.1"
+  <link rel="stylesheet" href="media/templates/site/cassiopeia/CustomCode/ContactUs/LetUsKnowAboutErrorCSS.css?v=1.0.2"
     type="text/css">
 </head>
 
@@ -43,13 +43,13 @@
         <p class="checkboxTitle">Check the error</p>
         <div class="checkbox-rows">
           <div class="checkbox-container" id="WDE">
-            <input type="checkbox" class="checkbox" id="WDECheckBox">
+            <input type="checkbox" class="checkbox" id="WDECheckBox" value="Website does not exist">
             <label class="checkbox-label" for="WDECheckBox">
               Website doesn't exist
             </label>
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" class="checkbox" id="AIWCheckBox">
+            <input type="checkbox" class="checkbox" id="AIWCheckBox" value="Address is wrong">
             <label class="checkbox-label" for="AIWCheckBox">
                   Address is wrong
             </label>
@@ -58,13 +58,13 @@
         </div>
         <div class="checkbox-rows">
           <div class="checkbox-container" id="CSI">
-            <input type="checkbox" class="checkbox" id="CSICheckBox">
+            <input type="checkbox" class="checkbox" id="CSICheckBox" value="Category seems incorrect">
             <label class="checkbox-label" for="CSICheckBox">
                   Category seems incorrect
             </label>
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" class="checkbox" id="MICheckBox">
+            <input type="checkbox" class="checkbox" id="MICheckBox" value="Missing information">
             <label class="checkbox-label" for="MICheckBox">
                   Missing information
             </label>
@@ -73,7 +73,7 @@
         </div>
         <div class="checkbox-rows" id="Other-Row">
           <div class="checkbox-container" id="Other">
-            <input type="checkbox" class="checkbox" id="OtherCheckBox">
+            <input type="checkbox" class="checkbox" id="OtherCheckBox" value="Other">
             <label class="checkbox-label" for="OtherCheckBox">
                   Other
             </label>
@@ -88,14 +88,16 @@
       </div>
       <p class="error" id="More-Info-Error"></p>
       <button class="SendButton" type="submit">Send</button>
-         
+      <div class="success hidden" id="success">
+        Your message was sent!
+      </div>
     </form>
   </div>
 
   <p id="output"></p>
 
      
-  <script src="media/templates/site/cassiopeia/CustomCode/ContactUs/LetUsKnowAboutErrorJS.js"
+  <script src="media/templates/site/cassiopeia/CustomCode/ContactUs/LetUsKnowAboutErrorJS.js?v=1.0.0"
     type="text/javascript"></script>
 
 </body>

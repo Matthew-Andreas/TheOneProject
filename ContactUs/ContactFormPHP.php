@@ -73,5 +73,17 @@ class ContactUsForm extends ContactUs{
     }
 }
 
+class ReportAnErrorForm extends ContactUs{
+    public function __construct(string $table, array $columns, string $name, string $email, string $resourceName, string $checkError, string $message){
+        $mName = $this->textSanitization($name);
+        $mEmail = $this->emailValidation($email);
+        $mResourceName = $this->textSanitization($resourceName);
+        $mCheckError = $this->textSanitization($checkError);
+        $mMessage = $this->textSanitization($message);
+        $values = [$mName, $mEmail, $mResourceName, $mCheckError, $mMessage];
+        $this->saveData($table, $columns, $values);
+    }
+}
+
 
 
