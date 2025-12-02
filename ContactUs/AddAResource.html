@@ -26,7 +26,7 @@
         </div>
         <div style="justify-items: center;">
                 <form class="Contact-Form" id="Contact-Form">
-                <label for="textbox">Add a Resource form</label>
+                <label>Add a Resource form</label>
                 <div class="input-container" id="Name-Container">
                     <input type="text" placeholder="Name" id="Name">
                            
@@ -39,14 +39,16 @@
                 <div class="input-container" id="Resource-Container">
                     <input type="text" placeholder="Name of Resource" id="Resource">        
                 </div>
+                <p class="error" id="Resource-Name-Error"></p>
                 <div class="input-container" id="Resource-Container">
-                    <input type="text" placeholder="Resource's Website" id="Resource">        
+                    <input type="text" placeholder="Resource's Website URL" id="Resource-URL">        
                 </div>
+                <p class="error" id="Resource-URL-Error"></p>
                 <div>
                     <textarea class="More-Info" type="text"     placeholder="Resource's Description"
-                        id="Description-Container"></textarea>        
+                        id="Resource-Desc"></textarea>        
                 </div>
-                <p class="error" id="Resource-Error"></p>
+                <p class="error" id="Resource-Desc-Error"></p>
                 <div class="sidebar" id="mySidebar">
                     <div style="display: flex;">
                         <p class="filterTitle">Choose All Filters That Apply</p>
@@ -947,9 +949,10 @@
                             </div>
                         </form>
                     </div>
+                    <div style="justify-self: center; margin-top: 30px;">
+                        <button class="SendButton" type="submit">Send</button>
+                    </div>
                 </div>
-                <button class="SendButton" type="submit">Send</button>
-                   
             </form>
         </div>
     </div>

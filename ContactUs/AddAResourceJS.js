@@ -16,9 +16,9 @@ targets.forEach(target => {
     });
 });
 
-popup.addEventListener('mouseenter', () => {
+/*popup.addEventListener('mouseenter', () => {
     popup.style.display = "none"; // disappear if hovered
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= 9; i++) {
@@ -71,3 +71,87 @@ function toggleDropdown(filterArrowNum, dropdownContentNum) {
     }
 
 }
+
+document.getElementById('Contact-Form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values of the inputs
+    const NameError = document.getElementById('Name-Error');
+    const Name = document.getElementById('Name');
+    const EmailError = document.getElementById('Email-Error');
+    const Email = document.getElementById('Email');
+    const ResourceError = document.getElementById('Resource-Name-Error');
+    const Resource = document.getElementById('Resource');
+    const ResourceURLError = document.getElementById('Resource-URL-Error');
+    const ResourceURL = document.getElementById('Resource-URL');
+    const ResourceDescError = document.getElementById('Resource-Desc-Error');
+    const ResourceDesc = document.getElementById('Resource-Desc');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    var emailCorrect = true;
+
+    if (!(emailRegex.test(Email.value.trim()))) {
+        editErrors(EmailError, Email, "Invalid email address. Please enter a valid email.", "2px solid #FF0000");
+        emailCorrect = false;
+    }
+
+    if (Email === '') {
+        editErrors(emailError, emailBorder, "Please enter your Email.", "2px solid #FF0000");
+    } else if (emailCorrect) {
+        editErrors(emailError, emailBorder, "", "0");
+    }
+
+    handleInputFilled(Name.value.trim(), NameError, Name, "Please enter your Name.");
+    handleInputFilled(Resource.value.trim(), ResourceError, Resource, "Please enter the Resource's Name.");
+    handleInputFilled(ResourceURL.value.trim(), ResourceURLError, ResourceURL, "Please enter the Resource's Website URL.");
+    handleInputFilled(ResourceDesc.value.trim(), ResourceDescError, ResourceDesc, "Please enter a Description about the Resource.");
+    /*if ((!(Name === '' || Email === '' || Message === '')) && emailCorrect) {
+        const output = `Name: ${Name}<br>
+                        Email: ${Email}<br>
+                        Message: ${Message}`;
+
+        const contactUs = {
+            name: Name,
+            email: Email,
+            message: Message
+        };
+
+        editErrors(nameError, nameBorder, "", "0");
+        editErrors(emailError, emailBorder, "", "0");
+        editErrors(ResourceError, ResourceBorder, "", "0");
+
+        document.getElementById("Contact-Form").reset();
+        document.getElementById("success").classList.remove("hidden");
+
+        // Display the output in a paragraph
+        //document.getElementById('output').innerHTML = output;
+
+        const formData = new FormData();
+        formData.append('name', Name);
+        formData.append('email', Email);
+        formData.append('message', Message);
+
+        fetch("https://onehubsd.org/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => console.log(data.message))
+            .catch(err => console.error(err));
+
+    }*/
+});
+
+function handleInputFilled(value, error, border, errorMessage) {
+    if (value === '') {
+        editErrors(error, border, errorMessage, "2px solid #FF0000");
+    } else {
+        editErrors(error, border, "", "0");
+    }
+}
+
+function editErrors(errorName, borderName, errorResource, borderStyle) {
+    errorName.innerHTML = errorResource;
+    borderName.style.border = borderStyle;
+};
