@@ -156,60 +156,121 @@
     /* vertically centers content */
     width: 100%;
   }
-</style>
-<!--<div class="container">
-          <div class="content"><img
-      src="images/InfoPage-header.png#joomlaImage://local-images/InfoPage-header.png?width=1920&height=1080"></div>
-          <div class="overlay">
-                <div class="overlay-content">
-                      <a href="https://onehubsd.org/">
-                            <button class="GoToData">Go to database</button>
-                        </a>
-                  </div>
-            </div>
-      </div>-->
 
+
+
+  @media (max-width: 900px) {
+    .topInfo {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .topInfo>div:last-child {
+      width: 100%;
+    }
+
+    .topInfo h1 {
+      text-align: left;
+    }
+
+    .topInfo p {
+      max-width: none !important;
+    }
+
+    .GoToData {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      width: 100%;
+      height: auto;
+    }
+
+    .content img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: static;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      padding: 1.5rem 0 0;
+    }
+
+    .overlay-content-2,
+    .overlay-content-3 {
+      position: static;
+      transform: none;
+      width: 100%;
+    }
+
+    .GiveFButton,
+    .meetTButton {
+      width: 100%;
+    }
+  }
+</style>
 <div class="topInfo">
-  <div class="topText">
-    <h1 style="color: #203A72; font-weight: 900; font-size: 60px;"><span style="font-size: 20px;">THE</span><br><span
-        style="color:#60A800;">O</span>pen<br><span style="color: #60A800;">N</span>etwork <span
-        style="font-size: 20px;">FOR</span><br>
-      <span style="color: #60A800;">E</span>ntrepreneurship
-    </h1>
-    <p style="color: #203A72; max-width: 550px; font-weight: 600;">The ONE Project is a centralized resource hub
-      designed to help entrepreneurs in finding the resources they need to start,
-      develop, or exit their businesses. ONE Hub SD focuses on resources for entrepreneurs in the San Diego region. </p>
-    <p style="color: #203A72; max-width: 550px;">
-      We are a multi-disciplinary team of California State University San Marcos professors and students working to help
-      entrepreneurs and small business owners succeed. We recognize that different entrepreneurs have varying needs
-      based on their backgrounds and ventures, so we have developed a guide that helps them find precisely the resources
-      they need. With this project, we hope to make the entrepreneurial ecosystem more accessible to all entrepreneurs.
-    </p>
-  </div>
-  <div>
-    <a href="https://onehubsd.org/">
-      <button class="GoToData">Go to database</button>
-    </a>
-  </div>
+    <div class="topText">
+        <h1 style="color: #203A72; font-weight: 900; font-size: 60px; text-align: left;"><span
+        style="font-size: 20px;">THE</span><br><span         style="color:#60A800;">O</span>pen<br><span
+        style="color: #60A800;">N</span>etwork <span         style="font-size: 20px;">FOR</span><br>
+            <span style="color: #60A800;">E</span>ntrepreneurship
+          </h1>
+        <p style="color: #203A72; max-width: 550px; font-weight: 600;">The ONE Project is a centralized resource hub
+            designed to help entrepreneurs in finding the resources they need to start,
+            develop, or exit their businesses. ONE Hub SD focuses on resources for entrepreneurs in the San Diego
+      region. </p>
+        <p style="color: #203A72; max-width: 550px;">
+            We are a multi-disciplinary team of California State University San Marcos professors and students working
+      to help
+            entrepreneurs and small business owners succeed. We recognize that different entrepreneurs have varying
+      needs
+            based on their backgrounds and ventures, so we have developed a guide that helps them find precisely the
+      resources
+            they need. With this project, we hope to make the entrepreneurial ecosystem more accessible to all
+      entrepreneurs.
+          </p>
+      </div>
+    <div>
+        <a href="https://onehubsd.org/database">
+            <button class="GoToData">Go to database</button>
+          </a>
+      </div>
 </div>
 
 <div class="container">
-  <div class="content">
-    <img
+    <div class="content">
+        <img      
       src="images/InfoPage_FeedbackGraphic.png#joomlaImage://local-images/InfoPage_FeedbackGraphic.png?width=1920&height=1080">
-  </div>
-  <div class="overlay">
-    <div class="overlay-content-2">
-      <a href="https://onehubsd.org/index.php/contact-us/report-an-error">
-        <button class="GiveFButton">Give feedback</button>
-      </a>
-    </div>
-    <div class="overlay-content-3">
-      <a href="https://onehubsd.org/index.php/about-us/team">
-        <button class="meetTButton">Meet the team 🡄</button>
-      </a>
-    </div>
-  </div>
+      </div>
+    <div class="overlay">
+        <div class="overlay-content-2">
+            <a href="https://onehubsd.org/contact-us/report-an-error">
+                <button class="GiveFButton">Give feedback</button>
+              </a>
+          </div>
+        <div class="overlay-content-3">
+            <a href="https://onehubsd.org/about-us/team">
+                <button class="meetTButton">Meet the team</button>
+              </a>;
+          </div>
+      </div>
 </div>
 
 {/source}

@@ -40,7 +40,7 @@ document.addEventListener('click', function (event) {
             localStorage.setItem('FilterLocation', JSON.stringify(filterLocation));
             localStorage.setItem('TopicFilterLocation', JSON.stringify(topicFilterLocation));
             localStorage.setItem('Arrow', JSON.stringify(arrow));
-            window.location.href = 'https://onehubsd.org/';
+            window.location.href = 'https://onehubsd.org/database';
         }
 
     }
