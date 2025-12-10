@@ -16,9 +16,9 @@ targets.forEach(target => {
     });
 });
 
-/*popup.addEventListener('mouseenter', () => {
+popup.addEventListener('mouseenter', () => {
     popup.style.display = "none"; // disappear if hovered
-});*/
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= 9; i++) {
@@ -41,11 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdown.classList.remove('expand');
                 dropdown.style.maxHeight = 0;
                 dropdownContent.style.maxHeight = (dropdownContent.scrollHeight - dropdown.scrollHeight) + "px";
-
-                // Defer the updateFilters call
-                setTimeout(() => {
-                    updateFilters();
-                }, 50); // A small delay to allow the DOM to fully update
             }
 
         });
@@ -72,6 +67,8 @@ function toggleDropdown(filterArrowNum, dropdownContentNum) {
 
 }
 
+var filterError = false;
+
 document.getElementById('Contact-Form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -96,16 +93,118 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
         emailCorrect = false;
     }
 
-    if (Email === '') {
-        editErrors(emailError, emailBorder, "Please enter your Email.", "2px solid #FF0000");
+    if (Email.value.trim() === '') {
+        editErrors(EmailError, Email, "Please enter your Email.", "2px solid #FF0000");
     } else if (emailCorrect) {
-        editErrors(emailError, emailBorder, "", "0");
+        editErrors(EmailError, Email, "", "0");
     }
 
-    handleInputFilled(Name.value.trim(), NameError, Name, "Please enter your Name.");
-    handleInputFilled(Resource.value.trim(), ResourceError, Resource, "Please enter the Resource's Name.");
-    handleInputFilled(ResourceURL.value.trim(), ResourceURLError, ResourceURL, "Please enter the Resource's Website URL.");
-    handleInputFilled(ResourceDesc.value.trim(), ResourceDescError, ResourceDesc, "Please enter a Description about the Resource.");
+
+
+    handleInputFilled(Name.value.trim() === '', NameError, Name, "Please enter your Name.");
+    handleInputFilled(Resource.value.trim() === '', ResourceError, Resource, "Please enter the Resource's Name.");
+    handleInputFilled(ResourceURL.value.trim() === '', ResourceURLError, ResourceURL, "Please enter the Resource's Website URL.");
+    handleInputFilled(ResourceDesc.value.trim() === '', ResourceDescError, ResourceDesc, "Please enter a Description about the Resource.");
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    const EdTr = ["Article", "Training", "Education", "Podcast"];
+    const FinInfo = ["Accounting_Assistance", "Banking", "Education: Financial Literacy, Business Plans, Business Cards", "Investment_Advisor", "Wealth_Management"];
+    const Fund = ["Crowdfunding", "Funding_Angel", "Grant", "Loans", "Funding_Venture_Capital", "Microcredit/Microloans", "Private_Equity_Firms", "Other_Funding"];
+    const GenBusinessAssist = ["Certification", "Commercialization_and_Marketplaces", "Consulting", "CRO", "General_Business_Assistance_Services", "Hiring_Assistance", "Insurance", "Marketing", "Mental_Health", "Supply_Chain", "Work_Space"];
+    const IncAcc = ["Accelerator", "Incubator"];
+    const LegalAssist = ["General_Legal_Assistance", "Legal_Assistance:_Intellectual_Property,_Trademark,_Patents", "Legal_Assistance:_Legal_Formation"];
+    const Mentor = ["Business_Counseling", "Mentoring", "Startup_Advisor"];
+    const NetWork = ["Meetups", "Networking"];
+    const TechAssist = ["Cyber_Security", "Mobile_&_Web_App_Development", "Mobile_Form_Development", "Project_Management_Software", "Software", "Software_Development", "Tech_Help", "Website_Assistance", "Website_Builder"];
+
+    FoP = [];
+    Geo = [];
+    Ind = [];
+    SoB = [];
+    EntDem = [];
+    ToRH = [];
+    ToR = [];
+    ToB = [];
+
+    checkboxes.forEach(myCheckbox => {
+        if (myCheckbox.checked) {
+            if (myCheckbox.id === "FoP") {
+                FoP.push(myCheckbox.value);
+            } else if (myCheckbox.id === "Geo") {
+                Geo.push(myCheckbox.value);
+            } else if (myCheckbox.id === "Ind") {
+                Ind.push(myCheckbox.value);
+            } else if (myCheckbox.id === "SoB") {
+                SoB.push(myCheckbox.value);
+            } else if (myCheckbox.id === "EntDem") {
+                EntDem.push(myCheckbox.value);
+            } else if (myCheckbox.id.includes("main-checkbox")) {
+                ToRH.push(myCheckbox.value);
+            } else if (myCheckbox.id === "ToR") {
+                ToR.push(myCheckbox.value);
+            } else if (myCheckbox.id === "ToB") {
+                ToB.push(myCheckbox.value);
+            }
+        }
+    });
+
+    handlecheckboxErrors(FoP, document.getElementById("Resource-FoP-Error"), document.getElementById("dropbox"), "Please select one of the options above.");
+    handlecheckboxErrors(Geo, document.getElementById("Resource-Geo-Error"), document.getElementById("dropbox2"), "Please select one of the options above.");
+    handlecheckboxErrors(Ind, document.getElementById("Resource-Ind-Error"), document.getElementById("dropbox5"), "Please select one of the options above.");
+    handlecheckboxErrors(SoB, document.getElementById("Resource-SoB-Error"), document.getElementById("dropbox3"), "Please select one of the options above.");
+    handlecheckboxErrors(EntDem, document.getElementById("Resource-EnDe-Error"), document.getElementById("dropbox6"), "Please select one of the options above.");
+    handlecheckboxErrors(ToR, document.getElementById("Resource-ToR-Error"), document.getElementById("dropbox7"), "Please select one of the options above.");
+    handlecheckboxErrors(ToB, document.getElementById("Resource-ToB-Error"), document.getElementById("dropbox4"), "Please select one of the options above.");
+
+    const ToRset = new Set(ToR);
+    var ToRError = false;
+    ToRH.forEach(topic => {
+        switch (topic) {
+            case "Educational_Training":
+                ToRError = handleToRErrors(EdTr, ToRset, ToRError);
+                break;
+            case "Financial_Information":
+                ToRError = handleToRErrors(FinInfo, ToRset, ToRError);
+                break;
+            case "Funding":
+                ToRError = handleToRErrors(Fund, ToRset, ToRError);
+                break;
+            case "General_Business_Assistance":
+                ToRError = handleToRErrors(GenBusinessAssist, ToRset, ToRError);
+                break;
+            case "Incubator_Accelerator":
+                ToRError = handleToRErrors(IncAcc, ToRset, ToRError);
+                break;
+            case "Legal_Assistance":
+                ToRError = handleToRErrors(LegalAssist, ToRset, ToRError);
+                break;
+            case "Mentorship":
+                ToRError = handleToRErrors(Mentor, ToRset, ToRError);
+                break;
+            case "Network":
+                ToRError = handleToRErrors(NetWork, ToRset, ToRError);
+                break;
+            case "Tech_Assistance":
+                ToRError = handleToRErrors(TechAssist, ToRset, ToRError);
+                break;
+        }
+    })
+
+
+
+
+
+    console.log(FoP);
+    console.log(Geo);
+    console.log(Ind);
+    console.log(SoB);
+    console.log(EntDem);
+    console.log(ToRH);
+    console.log(ToR);
+    console.log(ToB);
+
+
     /*if ((!(Name === '' || Email === '' || Message === '')) && emailCorrect) {
         const output = `Name: ${Name}<br>
                         Email: ${Email}<br>
@@ -143,15 +242,35 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
     }*/
 });
 
-function handleInputFilled(value, error, border, errorMessage) {
-    if (value === '') {
+function handleToRErrors(resourceHeader, ToRset, toRError) {
+    if (!(resourceHeader.some(value => ToRset.has(value)))) {
+        editErrors(document.getElementById("Resource-ToR-Error"), document.getElementById("dropbox7"), "Please select a sub-category for all topic of resources selected.", "2px solid #FF0000");
+        toRError = true;
+    } else if (!toRError) {
+        editErrors(document.getElementById("Resource-ToR-Error"), document.getElementById("dropbox7"), "", "0");
+        document.getElementById("dropbox7").style.borderTop = "1px solid #e4e4e4";
+    }
+    return toRError;
+}
+
+function handleInputFilled(condition, error, border, errorMessage) {
+    if (condition) {
         editErrors(error, border, errorMessage, "2px solid #FF0000");
     } else {
         editErrors(error, border, "", "0");
     }
 }
 
-function editErrors(errorName, borderName, errorResource, borderStyle) {
-    errorName.innerHTML = errorResource;
-    borderName.style.border = borderStyle;
+function handlecheckboxErrors(filterSelections, error, border, errorMessage) {
+    if (filterSelections.length == 0) {
+        editErrors(error, border, errorMessage, "2px solid #FF0000");
+    } else {
+        editErrors(error, border, "", "0");
+        border.style.borderTop = "1px solid #e4e4e4";
+    }
+}
+
+function editErrors(errorElement, borderElement, errorMessage, borderStyle) {
+    errorElement.innerHTML = errorMessage;
+    borderElement.style.border = borderStyle;
 };

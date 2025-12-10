@@ -321,3 +321,26 @@ textarea[type="text"]:focus {
     display: block;
     margin-bottom: 5px;
 }
+
+
+.hover-Content {
+    display: none;
+}
+
+.popup {
+    display: none;
+    max-width: 250px !important;
+    position: absolute;
+    background: #f0f4fb;
+    color: #203A72;
+    padding: 8px;
+    border: #203A72 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -100%);
+    z-index: 9999;
+}
+
+.flipped {
+    transform: rotateX(180deg);
+}
