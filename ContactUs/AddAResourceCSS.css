@@ -281,7 +281,7 @@ textarea[type="text"]:focus {
 
 .filterTitle {
     margin-left: 10px;
-    margin-right: 120px;
+    margin-right: 16px;
     font-size: 22px;
     font-weight: 800;
     padding-left: 6px;
@@ -343,4 +343,18 @@ textarea[type="text"]:focus {
 
 .flipped {
     transform: rotateX(180deg);
+}
+
+.success {
+    background: #e8ffd6;
+    color: #203A72;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    max-width: fit-content;
+    justify-self: center;
+}
+
+.hidden {
+    display: none;
 }

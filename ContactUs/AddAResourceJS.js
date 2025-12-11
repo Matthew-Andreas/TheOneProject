@@ -71,7 +71,7 @@ var filterError = false;
 
 document.getElementById('Contact-Form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
-
+    filterError = false;
     // Get the values of the inputs
     const NameError = document.getElementById('Name-Error');
     const Name = document.getElementById('Name');
@@ -205,28 +205,44 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
     console.log(ToB);
 
 
-    /*if ((!(Name === '' || Email === '' || Message === '')) && emailCorrect) {
-        const output = `Name: ${Name}<br>
-                        Email: ${Email}<br>
-                        Message: ${Message}`;
-
-        const contactUs = {
-            name: Name,
-            email: Email,
-            message: Message
-        };
-
-        editErrors(nameError, nameBorder, "", "0");
-        editErrors(emailError, emailBorder, "", "0");
-        editErrors(ResourceError, ResourceBorder, "", "0");
+    if ((!(Name.value.trim() === '' || Email.value.trim() === '' || Resource.value.trim() === '' || ResourceDesc.value.trim() === '' || ResourceURL.value.trim() === '' || ToRError || filterError)) && emailCorrect) {
 
         document.getElementById("Contact-Form").reset();
         document.getElementById("success").classList.remove("hidden");
 
+        allDropdownContent = document.querySelectorAll(".dropdown-content");
+
+        allDropdownContent.forEach(dropdownContent => {
+            if (dropdownContent.classList.contains("expand")) {
+                dropdownContent.classList.remove("expand");
+                dropdownContent.style.maxHeight = null;
+            }
+        });
+
+        allFilterArrows = document.querySelectorAll(".FilterArrow");
+
+        allFilterArrows.forEach(filterArrow => {
+            if (filterArrow.classList.contains("flipped")) {
+                filterArrow.classList.toggle('flipped');
+            }
+        });
+
+        allDropdowns = document.querySelectorAll(".dropdown");
+
+        allDropdowns.forEach(dropdown => {
+            if (dropdown.classList.contains("expand")) {
+                dropdown.classList.remove("expand");
+                dropdown.style.maxHeight = 0;
+                dropdown.style.display = "none";
+            }
+        })
+
+
+
         // Display the output in a paragraph
         //document.getElementById('output').innerHTML = output;
 
-        const formData = new FormData();
+        /*const formData = new FormData();
         formData.append('name', Name);
         formData.append('email', Email);
         formData.append('message', Message);
@@ -237,9 +253,9 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
         })
             .then(res => res.json())
             .then(data => console.log(data.message))
-            .catch(err => console.error(err));
-
-    }*/
+            .catch(err => console.error(err));*/
+        console.log("Sent!");
+    }
 });
 
 function handleToRErrors(resourceHeader, ToRset, toRError) {
@@ -264,6 +280,7 @@ function handleInputFilled(condition, error, border, errorMessage) {
 function handlecheckboxErrors(filterSelections, error, border, errorMessage) {
     if (filterSelections.length == 0) {
         editErrors(error, border, errorMessage, "2px solid #FF0000");
+        filterError = true;
     } else {
         editErrors(error, border, "", "0");
         border.style.borderTop = "1px solid #e4e4e4";

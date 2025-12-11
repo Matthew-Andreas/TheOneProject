@@ -85,5 +85,38 @@ class ReportAnErrorForm extends ContactUs{
     }
 }
 
+class AddAResourceForm extends ContactUs{
+
+    private function urlSanitization(string $url): string{
+        $newUrl = trim($url);
+
+        if(!filter_var($newUrl,FILTER_VALIDATE_URL)){
+            $this->status = false;
+            return "";
+        }
+
+        return $newUrl;
+    }
+
+    public function __construct(string $table, array $columns, string $name, string $email, string $resourceName, string $resourceUrl, string $resourceDescription, 
+    string $FoP, string $Geo, string $Ind, string $SoB, string $EnDe, string $ToRH, string $ToR, string $ToB){
+        $mName = $this->textSanitization($name);
+        $mEmail = $this->emailValidation($email);
+        $mResourceName = $this->textSanitization($resourceName);
+        $mResourceUrl = $this->urlSanitization($resourceUrl);
+        $mResourceDescription = $this->textSanitization($resourceDescription);
+        $mFoP = $this->textSanitization($FoP);
+        $mGeo = $this->textSanitization($Geo);
+        $mInd = $this->textSanitization($Ind);
+        $mSoB = $this->textSanitization($SoB);
+        $mEnDe = $this->textSanitization($EnDe);
+        $mToRH = $this->textSanitization($ToRH);
+        $mToR = $this->textSanitization($ToR);
+        $mToB = $this->textSanitization($ToB);
+        $mMessage = $this->textSanitization($message);
+        $values = [$mName, $mEmail, $mResourceName,$mResourceUrl,$mResourceDescription, $mFoP, $mGeo, $mInd, $mSoB, $mEnDe, $mToRH, $mToR, $mToB];
+        $this->saveData($table, $columns, $values);
+    }
+}
 
 
