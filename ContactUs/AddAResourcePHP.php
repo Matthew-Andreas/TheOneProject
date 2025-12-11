@@ -34,9 +34,7 @@ try{
         echo json_encode(['success' => false, 'message' => 'Invalid input.']);
         exit;
     }else{
-        $contactForm = new AddAResourceForm('UserResources', ['FullName', 'Email', 'Name_of_Organization','Website','Description','Free_or_Paid','Geography',
-        'Industry','Stage_of_Business','Entrepreneur_Demographics','Topic_of_Resource_Header','Topic_of_Resource','Type_of_Business'], $name, $email, $resourceName, $resourceUrl,$resourceDescription,
-        $FoP, $Geo, $Ind, $SoB, $EnDe, $ToRH, $ToR, $ToB);
+        $contactForm = new AddAResourceForm('UserResources', ['FullName', 'Email', 'Name_of_Organization','Description','Website','Geography', 'Topic_of_Resource_Header','Topic_of_Resource','Free_or_Paid','Entrepreneur_Demographics','Stage_of_Business','Industry','Type_of_Business'], $name, $email, $resourceName, $resourceUrl,$resourceDescription,$FoP, $Geo, $Ind, $SoB, $EnDe, $ToRH, $ToR, $ToB);
         if($contactForm->getStatus()){
             echo json_encode(['success' => true, 'message' => 'Message received!']);
         }else{

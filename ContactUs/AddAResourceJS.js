@@ -192,23 +192,7 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
     })
 
 
-
-
-
-    console.log(FoP);
-    console.log(Geo);
-    console.log(Ind);
-    console.log(SoB);
-    console.log(EntDem);
-    console.log(ToRH);
-    console.log(ToR);
-    console.log(ToB);
-
-
     if ((!(Name.value.trim() === '' || Email.value.trim() === '' || Resource.value.trim() === '' || ResourceDesc.value.trim() === '' || ResourceURL.value.trim() === '' || ToRError || filterError)) && emailCorrect) {
-
-        document.getElementById("Contact-Form").reset();
-        document.getElementById("success").classList.remove("hidden");
 
         allDropdownContent = document.querySelectorAll(".dropdown-content");
 
@@ -235,28 +219,58 @@ document.getElementById('Contact-Form').addEventListener('submit', function (eve
                 dropdown.style.maxHeight = 0;
                 dropdown.style.display = "none";
             }
-        })
+        });
 
+        stringFoP = arrayToString(FoP);
+        stringGeo = arrayToString(Geo);
+        stringInd = arrayToString(Ind);
+        stringSoB = arrayToString(SoB);
+        stringEnDe = arrayToString(EntDem);
+        stringToRH = arrayToString(ToRH);
+        stringToR = arrayToString(ToR);
+        stringToB = arrayToString(ToB);
 
+        const formData = new FormData();
+        formData.append('name', Name.value.trim());
+        formData.append('email', Email.value.trim());
+        formData.append('resourceName', Resource.value.trim());
+        formData.append('resourceUrl', ResourceURL.value.trim());
+        formData.append('resourceDescription', ResourceDesc.value.trim());
+        formData.append('FoP', stringFoP);
+        formData.append('Geo', stringGeo);
+        formData.append('Ind', stringInd);
+        formData.append('SoB', stringSoB);
+        formData.append('EnDe', stringEnDe);
+        formData.append('ToRH', stringToRH);
+        formData.append('ToR', stringToR);
+        formData.append('ToB', stringToB);
 
-        // Display the output in a paragraph
-        //document.getElementById('output').innerHTML = output;
-
-        /*const formData = new FormData();
-        formData.append('name', Name);
-        formData.append('email', Email);
-        formData.append('message', Message);
-
-        fetch("https://onehubsd.org/media/templates/site/cassiopeia/CustomCode/ContactUs/ContactUsPHP.php", {
+        fetch("https://onehubsd.org/media/templates/site/cassiopeia/CustomCode/ContactUs/AddAResourcePHP.php", {
             method: "POST",
             body: formData
         })
             .then(res => res.json())
             .then(data => console.log(data.message))
-            .catch(err => console.error(err));*/
-        console.log("Sent!");
+            .catch(err => console.error(err));
+
+        document.getElementById("Contact-Form").reset();
+        document.getElementById("success").classList.remove("hidden");
     }
 });
+
+function arrayToString(filterArray) {
+    stringArray = "";
+    first = true;
+    filterArray.forEach(filter => {
+        if (first) {
+            first = false;
+            stringArray = filter;
+        } else {
+            stringArray += ", " + filter;
+        }
+    })
+    return stringArray;
+}
 
 function handleToRErrors(resourceHeader, ToRset, toRError) {
     if (!(resourceHeader.some(value => ToRset.has(value)))) {

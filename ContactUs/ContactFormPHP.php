@@ -92,14 +92,13 @@ class AddAResourceForm extends ContactUs{
 
         if(!filter_var($newUrl,FILTER_VALIDATE_URL)){
             $this->status = false;
-            return "";
+            return "https://onehubsd.org/contact-us/add-a-resource-to-database";
         }
 
         return $newUrl;
     }
 
-    public function __construct(string $table, array $columns, string $name, string $email, string $resourceName, string $resourceUrl, string $resourceDescription, 
-    string $FoP, string $Geo, string $Ind, string $SoB, string $EnDe, string $ToRH, string $ToR, string $ToB){
+    public function __construct(string $table, array $columns, string $name, string $email, string $resourceName, string $resourceUrl, string $resourceDescription, string $FoP, string $Geo, string $Ind, string $SoB, string $EnDe, string $ToRH, string $ToR, string $ToB){
         $mName = $this->textSanitization($name);
         $mEmail = $this->emailValidation($email);
         $mResourceName = $this->textSanitization($resourceName);
@@ -113,8 +112,7 @@ class AddAResourceForm extends ContactUs{
         $mToRH = $this->textSanitization($ToRH);
         $mToR = $this->textSanitization($ToR);
         $mToB = $this->textSanitization($ToB);
-        $mMessage = $this->textSanitization($message);
-        $values = [$mName, $mEmail, $mResourceName,$mResourceUrl,$mResourceDescription, $mFoP, $mGeo, $mInd, $mSoB, $mEnDe, $mToRH, $mToR, $mToB];
+        $values = [$mName, $mEmail, $mResourceName,$mResourceDescription, $mResourceUrl,$mGeo, $mToRH, $mToR, $mFoP,  $mEnDe,  $mSoB, $mInd, $mToB];
         $this->saveData($table, $columns, $values);
     }
 }
