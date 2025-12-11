@@ -123,7 +123,6 @@
 	}
 
 	.menuArrow {
-		background-color: #ffffff;
 		border: 0px;
 		max-width: 35px;
 		max-height: 35px;
@@ -139,6 +138,42 @@
 	.containerCU:hover .menuArrow.CU {
 		transform: rotateX(180deg);
 	}
+
+	.sidebarMenu {
+		display: none;
+		width: 400px;
+		position: absolute;
+		right: -450;
+		background-color: #EAEAEA;
+	}
+
+	.hamburgerBar {
+		color: #203A72;
+		margin-top: 40px;
+		margin-right: 30px;
+		font-size: 40px;
+		cursor: pointer;
+	}
+
+	.mobileMenu {
+		display: none;
+	}
+
+	@media (max-width: 1250px) {
+		.menuOptions {
+			display: none;
+		}
+
+		.mobileMenu {
+			display: block;
+		}
+	}
+
+	@media (min-width: 1250px) {
+		.sidebarMenu {
+			display: none !important;
+		}
+	}
 </style>
    
 
@@ -153,14 +188,16 @@
 						 class="Menu-img">
 					 </a>
 				 </li>
-			 <li><a href="https://onehubsd.org/database" class="menuSelect link">Database</a></li>
-			 <li><a href="https://onehubsd.org/resources-by-topic" class="menuSelect link">Resources by
+			 <li class="menuOptions"><a href="https://onehubsd.org/database" class="menuSelect link">Database</a></li>
+			 <li class="menuOptions"><a href="https://onehubsd.org/resources-by-topic" class="menuSelect link">Resources
+					by
 					Topic</a>
 			</li>
-			 <li><a href="https://onehubsd.org/how-to-use-database" class="menuSelect link">How to Use
+			 <li class="menuOptions"><a href="https://onehubsd.org/how-to-use-database" class="menuSelect link">How to
+					Use
 					Database</a>
 				 </li>
-			<li>
+			<li class="menuOptions">
 				 <div class="containerAU">
 					<div style="display: flex;">
 						<p class="menuSelect list AU">About Us</p>
@@ -175,7 +212,7 @@
 					 
 				</div>
 			</li>
-			 <li>
+			 <li class="menuOptions">
 				 <div class="containerCU">
 					<div style="display: flex;">
 						<p class="menuSelect list CU">Contact Us</p>
@@ -193,8 +230,75 @@
 						 </div>
 					 
 				</div> 
-				 </li>
+			</li>
+			<li class="mobileMenu">
+				<p class="hamburgerBar" id="hamburgerBar">☰</p>
+			</li>
+			<!--☰-->
+			 
+		</ul>
+	</nav>
 
+	<nav class="sidebarMenu" id="sideMenu" style="padding-bottom: 50px;">
+		 <ul style="flex-direction: column;">
+			 <li style="width: 100%; display: flex; justify-content: space-around;">
+				 <a href="https://onehubsd.org/">
+					 <img src="images/image%204.png#joomlaImage://local-images/image 4.png?width=180&height=180"
+						 class="Menu-img" style="max-width: 120px;">
+					 </a>
+				<p class="exitSideMenu" id="exitSideMenu"
+					style="font-size: 50px; margin-top: 10px; margin-bottom: 0px; font-weight: 500; cursor: pointer; color: #203A72;">
+					X
+				</p>
+				 
+			</li>
+			 <li><a href="https://onehubsd.org/database" class="menuSelect link">Database</a></li>
+			<hr style="width: 50%; border: 1px solid #353b41;">
+			 <li><a href="https://onehubsd.org/resources-by-topic" class="menuSelect link">Resources by
+					Topic</a>
+			</li>
+			<hr style="width: 50%; border: 1px solid #353b41;">
+			 <li><a href="https://onehubsd.org/how-to-use-database" class="menuSelect link">How to Use
+					Database</a>
+				 </li>
+			<hr style="width: 50%; border: 1px solid #353b41;">
+			<li>
+
+				 <div class="containerAU">
+					<div style="display: flex;">
+						<p class="menuSelect list AU">About Us</p>
+						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
+							class="menuArrow AU" id="menuArrow">
+					</div>
+					 <div class="menuDropdown AU">
+						 <a href="https://onehubsd.org/about-us/info" class="drop link top AU">Info</a>
+						 <a href="https://onehubsd.org/about-us/team" class="drop link AU">Team</a>
+						 <a href="https://onehubsd.org/about-us/partners" class="drop link bottom AU">Partners</a>
+						 </div>  
+					 
+				</div>
+			</li>
+			<hr style="width: 50%; border: 1px solid #353b41;">
+			 <li>
+				 <div class="containerCU">
+					<div style="display: flex; justify-self: center;">
+						<p class="menuSelect list CU">Contact Us</p>
+						<img src="images/Filter-bluearrow.png#joomlaImage://local-images/Filter-bluearrow.png?width=75&height=74"
+							class="menuArrow CU" id="menuArrow">
+					</div>
+					 
+					 <div class="menuDropdown CU">
+						 <a href="https://onehubsd.org/contact-us/contact-us" class="drop link big top CU">Contact
+							Us</a>
+						 <a href="https://onehubsd.org/contact-us/add-a-resource-to-database"
+							 class="drop link big Cu">Add a Resource</a>
+						 <a href="https://onehubsd.org/contact-us/report-an-error"
+							 class="drop bottom link big CU">Report an Error</a>
+						 </div>
+					 
+				</div> 
+			</li>
+			<!--☰-->
 			 
 		</ul>
 	</nav>
@@ -226,5 +330,19 @@
 			drop.style.maxHeight = "0px";
 		})
 	});
+
+	document.getElementById("hamburgerBar").addEventListener('click', function () {
+		const sideMenu = document.getElementById("sideMenu");
+		sideMenu.style.right = "-31px";
+		sideMenu.style.top = "-15px";
+		sideMenu.style.display = "block";
+	});
+
+	document.getElementById("exitSideMenu").addEventListener('click', function () {
+		const sideMenu = document.getElementById("sideMenu");
+		sideMenu.style.right = "-450";
+		sideMenu.style.display = "none";
+	});
+
 </script>
 {/source}

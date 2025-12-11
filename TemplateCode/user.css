@@ -26,7 +26,6 @@
 
 .container-below-top nav li {
     height: 175px;
-    display: flex;
     align-items: center;
 }
 
@@ -112,14 +111,14 @@
 
 @media (max-width: 1250px) {
     .container-below-top nav ul {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 0;
     }
 
     .container-below-top nav li {
         height: auto;
-        width: 100%;
+        width: fit-content;
         justify-content: left;
     }
 
@@ -178,8 +177,6 @@
 .mod-custom.custom {
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: left;
     align-items: center;
 }
 
