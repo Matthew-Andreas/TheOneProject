@@ -48,6 +48,7 @@
 
 .container-below-top .menuSelect.list {
     color: #203A72;
+    height: fit-content !important;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: clamp(14px, 1.25cqi, 18px);
