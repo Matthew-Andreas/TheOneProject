@@ -28,7 +28,7 @@
                 <input type="text" placeholder="Email" id="Email">
             </div>
             <p class="error" id="Email-Error"></p>
-            <div class="" id="Message-container">
+            <div class="Message-container" id="Message-container">
                 <textarea class="input-container2" type="text" placeholder="Message" id="Message"></textarea>
             </div>
             <p class="error" id="Message-Error"></p>
